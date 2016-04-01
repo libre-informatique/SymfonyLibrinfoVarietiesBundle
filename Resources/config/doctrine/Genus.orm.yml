@@ -1,4 +1,4 @@
-Librinfo\LibioBundle\Entity\Genus:
+Librinfo\VarietiesBundle\Entity\Genus:
     type: entity
     table: genus
     fields:

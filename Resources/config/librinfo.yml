@@ -6,7 +6,7 @@ parameters:
 # FAMILY
 ##########
 
-        Librinfo\LibioBundle\Entity\Family:
+        Librinfo\VarietiesBundle\Entity\Family:
             Sonata\AdminBundle\Show\ShowMapper:
                 _copy: Sonata\AdminBundle\Form\FormMapper
             Sonata\AdminBundle\Form\FormMapper:
@@ -44,7 +44,7 @@ parameters:
 # GENUS
 ##########
 
-        Librinfo\LibioBundle\Entity\Genus:
+        Librinfo\VarietiesBundle\Entity\Genus:
             Sonata\AdminBundle\Show\ShowMapper:
                 _copy: Sonata\AdminBundle\Form\FormMapper
             Sonata\AdminBundle\Form\FormMapper:

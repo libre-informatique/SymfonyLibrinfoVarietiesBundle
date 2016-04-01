@@ -1,4 +1,4 @@
-Librinfo\LibioBundle\Entity\Family:
+Librinfo\VarietiesBundle\Entity\Family:
     type: entity
     table: family
     librinfo:

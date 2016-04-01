@@ -1,6 +1,6 @@
 <?php
 
-namespace Librinfo\LibioBundle\Admin;
+namespace Librinfo\VarietiesBundle\Admin;
 
 use Librinfo\CoreBundle\Admin\Traits\HandlesRelationsAdmin;
 

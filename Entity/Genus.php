@@ -1,6 +1,6 @@
 <?php
 
-namespace Librinfo\LibioBundle\Entity;
+namespace Librinfo\VarietiesBundle\Entity;
 
 use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
 use Librinfo\DoctrineBundle\Entity\Traits\Nameable;
