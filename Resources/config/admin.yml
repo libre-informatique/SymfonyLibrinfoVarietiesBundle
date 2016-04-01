@@ -1,0 +1,19 @@
+services:
+
+    librinfo_varieties.admin.family:
+        class: Librinfo\VarietiesBundle\Admin\FamilyAdminConcrete
+        arguments: [~, Librinfo\VarietiesBundle\Entity\Family, SonataAdminBundle:CRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: Family
+
+    librinfo_varieties.admin.genus:
+        class: Librinfo\VarietiesBundle\Admin\GenusAdminConcrete
+        arguments: [~, Librinfo\VarietiesBundle\Entity\Genus, SonataAdminBundle:CRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: Family

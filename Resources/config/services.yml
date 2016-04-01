@@ -1,0 +1,4 @@
+services:
+#    librinfo_varieties.example:
+#        class: Librinfo\VarietiesBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

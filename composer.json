@@ -1,0 +1,44 @@
+{
+    "name": "libre-informatique/varieties-bundle",
+    "type": "symfony-bundle",
+    "description": "Plant taxonomy management : Family / Genus / Species / Subspecies / Variety",
+    "require": {
+        "php": ">=5.3.0",
+        "symfony/symfony": "2.7.*",
+        "libre-informatique/core-bundle": "dev-master",
+        "libre-informatique/doctrine-bundle": "dev-master"
+    },
+    "license": "GPL-3.0",
+    "keywords": [
+        "e-venement",
+        "libio",
+        "symfony",
+        "doctrine",
+        "sonata admin",
+        "taxonomy",
+        "botanic",
+        "family",
+        "genus",
+        "species",
+        "variety"
+    ],
+    "homepage": "https://github.com/libre-informatique/SymfonyLibrinfoVarietiesBundle",
+    "authors": [
+        {
+            "name": "Marcos Bezerra de Menezes",
+            "email": "marcos.bezerra@libre-informatique.fr"
+        },
+        {
+            "name": "Libre Informatique",
+            "homepage": "http://www.libre-informatique.fr/"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Librinfo\\VarietiesBundle\\": ""
+        }
+    },
+    "suggest": {
+        "libre-informatique/crm-bundle": "Manage contacts, organisms and more..."
+    }
+}
