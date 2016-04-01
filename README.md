@@ -1,1 +1,1 @@
-# SymfonyLibrinfoVarietyBundle
+# SymfonyLibrinfoVarietiesBundle
