@@ -6,5 +6,13 @@ Librinfo\VarietiesBundle\Entity\Family:
     fields:
         latin_name:
             type:     string(255)
+            nullable: true
         alias:
             type:     string(255)
+            nullable: true
+
+    oneToMany:
+        genuses:
+            targetEntity: Librinfo\VarietiesBundle\Entity\Genus
+            mappedBy: family
+            cascade: [ persist ]

@@ -29,6 +29,19 @@ class Family
     private $alias;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $genuses;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->genuses = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
      * Set latinName
      *
      * @param string $latinName
@@ -74,5 +87,41 @@ class Family
     public function getAlias()
     {
         return $this->alias;
+    }
+
+    /**
+     * Add genus
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Genus $genus
+     *
+     * @return Family
+     */
+    public function addGenus(\Librinfo\VarietiesBundle\Entity\Genus $genus)
+    {
+        $genus->setFamily($this);
+        $this->genuses->add($genus);
+        return $this;
+    }
+
+    /**
+     * Remove genus
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Genus $genus
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeGenus(\Librinfo\VarietiesBundle\Entity\Genus $genus)
+    {
+        return $this->genuses->removeElement($genus);
+    }
+
+    /**
+     * Get genuses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGenuses()
+    {
+        return $this->genuses;
     }
 }

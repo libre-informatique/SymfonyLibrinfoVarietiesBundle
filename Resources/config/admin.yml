@@ -16,4 +16,13 @@ services:
             - name: sonata.admin
               manager_type: orm
               group: admin
-              label: Family
+              label: Genus
+
+    librinfo_varieties.admin.genus_embedded:
+        class: Librinfo\VarietiesBundle\Admin\GenusEmbeddedAdmin
+        arguments: [~, Librinfo\VarietiesBundle\Entity\Genus, SonataAdminBundle:CRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: Genus

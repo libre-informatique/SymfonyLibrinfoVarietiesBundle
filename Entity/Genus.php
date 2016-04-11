@@ -28,6 +28,11 @@ class Genus
      */
     private $alias;
 
+    /**
+     * @var \Librinfo\VarietiesBundle\Entity\Family
+     */
+    private $family;
+
 
     /**
      * Set latinName
@@ -76,5 +81,28 @@ class Genus
     {
         return $this->alias;
     }
-}
 
+    /**
+     * Set family
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Family $family
+     *
+     * @return Genus
+     */
+    public function setFamily(\Librinfo\VarietiesBundle\Entity\Family $family = null)
+    {
+        $this->family = $family;
+
+        return $this;
+    }
+
+    /**
+     * Get family
+     *
+     * @return \Librinfo\VarietiesBundle\Entity\Family
+     */
+    public function getFamily()
+    {
+        return $this->family;
+    }
+}

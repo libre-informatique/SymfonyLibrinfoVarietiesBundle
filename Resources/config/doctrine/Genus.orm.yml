@@ -1,8 +1,20 @@
 Librinfo\VarietiesBundle\Entity\Genus:
     type: entity
     table: genus
+    librinfo:
+        loggable: true
     fields:
         latin_name:
             type:     string(255)
+            nullable: true
         alias:
             type:     string(255)
+            nullable: true
+
+    manyToOne:
+        family:
+            targetEntity: Librinfo\VarietiesBundle\Entity\Family
+            inversedBy: genuses
+            joinColumn:
+                name: family_id
+            cascade: [ persist ]
