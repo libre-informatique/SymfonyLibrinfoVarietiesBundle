@@ -82,7 +82,23 @@ parameters:
 
         Librinfo\VarietiesBundle\Entity\Genus:
             Sonata\AdminBundle\Show\ShowMapper:
-                _copy: Sonata\AdminBundle\Form\FormMapper
+                remove: [description, createdAt, updatedAt]
+                add:
+                    form_group_general:
+                        '':
+                            latin_name: ~
+                            alias: ~
+                            description: ~
+                            specieses:
+                                admin_code: librinfo_varieties.admin.species
+                    form_group_specifics:
+                        form_group_misc:
+                            createdAt: ~
+                            updatedAt: ~
+                            createdBy: ~
+                            updatedBy: ~
+                    _options:
+                        tabsOrder: [form_group_general, form_group_specieses, form_group_specifics]
             Sonata\AdminBundle\Form\FormMapper:
                 add:
                     form_group_general:
@@ -94,6 +110,77 @@ parameters:
                                 type: text
                                 required: false
                             family: ~
+                    form_group_specieses:
+                        '':
+                            specieses:
+                                type: sonata_type_collection
+                                by_reference: false
+                                type_options:
+                                    required: false
+                                    btn_add: false
+                                    delete: false
+                                required: false
+                                label: false
+                                _options:
+                                    edit: inline
+                                    inline: table
+                                    allow_delete: false
+                                    admin_code: librinfo_varieties.admin.species_embedded
+                    _options:
+                        tabsOrder: [form_group_general, form_group_specieses]
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                remove: [createdAt]
+                add:
+                    latin_name: ~
+                    alias: ~
+                    description: ~
+                    _options:
+                        fieldsOrder:
+                            - name
+                            - latin_name
+                            - alias
+                            - description
+                    _export_format:
+                        csv: [name, latinName, alias, description, createdAt, updatedAt]
+                        xls: csv
+                        json: csv
+                        xml: csv
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add:
+                    name: ~
+
+
+##########
+# SPECIES
+##########
+
+        Librinfo\VarietiesBundle\Entity\Species:
+            Sonata\AdminBundle\Show\ShowMapper:
+                add:
+                    form_group_general:
+                        '':
+                            latin_name:
+                                type: text
+                                required: false
+                            alias:
+                                type: text
+                                required: false
+                            genus:
+                                admin_code: librinfo_varieties.admin.genus
+                                required: true
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+                    form_group_general:
+                        '':
+                            latin_name:
+                                type: text
+                                required: false
+                            alias:
+                                type: text
+                                required: false
+                            genus:
+                                _options:
+                                    admin_code: librinfo_varieties.admin.genus
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:

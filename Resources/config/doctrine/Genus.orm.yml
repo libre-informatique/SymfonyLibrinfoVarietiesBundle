@@ -18,3 +18,9 @@ Librinfo\VarietiesBundle\Entity\Genus:
             joinColumn:
                 name: family_id
             cascade: [ persist ]
+
+    oneToMany:
+        specieses:
+            targetEntity: Librinfo\VarietiesBundle\Entity\Species
+            mappedBy: genus
+            cascade: [ persist ]

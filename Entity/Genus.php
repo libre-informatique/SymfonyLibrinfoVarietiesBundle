@@ -33,6 +33,18 @@ class Genus
      */
     private $family;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $specieses;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->specieses = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Set latinName
@@ -104,5 +116,54 @@ class Genus
     public function getFamily()
     {
         return $this->family;
+    }
+
+    /**
+     * Alias for addSpecies
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Species $species
+     * @return \Librinfo\VarietiesBundle\Entity\Genus
+     */
+    public function addSpeciese(\Librinfo\VarietiesBundle\Entity\Species $species)
+    {
+        $species->setGenus($this);
+        $this->specieses->add($species);
+        return $this;
+    }
+
+    /**
+     * Add species
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Species $species
+     *
+     * @return Genus
+     */
+    public function addSpecies(\Librinfo\VarietiesBundle\Entity\Species $species)
+    {
+        $species->setGenus($this);
+        $this->specieses->add($species);
+        return $this;
+    }
+
+    /**
+     * Remove speciese
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Species $species
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeSpecies(\Librinfo\VarietiesBundle\Entity\Species $species)
+    {
+        return $this->specieses->removeElement($species);
+    }
+
+    /**
+     * Get specieses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSpecieses()
+    {
+        return $this->specieses;
     }
 }
