@@ -29,10 +29,23 @@ class Species
     private $alias;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $varieties;
+
+    /**
      * @var \Librinfo\VarietiesBundle\Entity\Genus
      */
     private $genus;
 
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->varieties = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Set latinName
@@ -104,6 +117,42 @@ class Species
     public function getGenus()
     {
         return $this->genus;
+    }
+
+    /**
+     * Add variety
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Variety $variety
+     *
+     * @return Species
+     */
+    public function addVariety(\Librinfo\VarietiesBundle\Entity\Variety $variety)
+    {
+        $variety->setSpecies($this);
+        $this->varieties->add($variety);
+        return $this;
+    }
+
+    /**
+     * Remove variety
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Variety $variety
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeVariety(\Librinfo\VarietiesBundle\Entity\Variety $variety)
+    {
+        return $this->varieties->removeElement($variety);
+    }
+
+    /**
+     * Get varieties
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getVarieties()
+    {
+        return $this->varieties;
     }
 }
 
