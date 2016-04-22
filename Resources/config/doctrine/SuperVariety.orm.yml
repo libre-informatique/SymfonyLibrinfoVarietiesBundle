@@ -2,7 +2,7 @@ Librinfo\VarietiesBundle\Entity\SuperVariety:
     type: mappedSuperclass
     librinfo:
         loggable: true
-        
+
     fields:
         latin_name:
             type:     string(255)
@@ -17,8 +17,7 @@ Librinfo\VarietiesBundle\Entity\SuperVariety:
         # inscrit au catalogue officiel
         official:
             type:     boolean
-            nullable: false
-            default:  false
+            nullable: true
         official_name:
             type:     string(255)
             nullable: true
