@@ -1,0 +1,53 @@
+Librinfo\VarietiesBundle\Entity\SuperVariety:
+    type: mappedSuperclass
+    librinfo:
+        loggable: true
+        
+    fields:
+        latin_name:
+            type:     string(255)
+            nullable: true
+        alias:
+            type:     string(255)
+            nullable: true
+        code:
+            type:     string(6)
+            # TODO: not nullable
+            nullable: true
+        # inscrit au catalogue officiel
+        official:
+            type:     boolean
+            nullable: false
+            default:  false
+        official_name:
+            type:     string(255)
+            nullable: true
+        # date d'inscription au catalogue officiel
+        official_date_in:
+            type:     date
+            nullable: true
+        # date de radiation du catalogue officiel
+        official_date_out:
+            type:     date
+            nullable: true
+        maintainer:
+            type:     string
+            nullable: true
+        legal_germination_rate:
+            type:     integer
+            nullable: true
+        germination_rate:
+            type:     integer
+            nullable: true
+        # poids de mille graines (grammes)
+        tkw:
+            type:     integer
+            nullable: true
+        # durée de vie théorique de la graine (années)
+        seed_lifespan:
+            type:     integer
+            nullable: true
+        # durée de levée dans les conditions naturelles (jours)
+        raise_duration:
+            type:     integer
+            nullable: true

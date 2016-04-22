@@ -1,0 +1,13 @@
+# info: Strain extends SuperVariety (mapped superclass)
+
+Librinfo\VarietiesBundle\Entity\Strain:
+    type: entity
+    table: strain
+
+    manyToOne:
+        variety:
+            targetEntity: Librinfo\VarietiesBundle\Entity\Variety
+            inversedBy: strains
+            joinColumn:
+                name: variety_id
+            cascade: [ persist ]

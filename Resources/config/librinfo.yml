@@ -254,3 +254,56 @@ parameters:
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
                     name: ~
+
+
+##########
+# STRAIN
+##########
+
+        Librinfo\VarietiesBundle\Entity\Strain:
+            Sonata\AdminBundle\Show\ShowMapper:
+                add:
+                    form_group_general:
+                        '':
+                            latin_name:
+                                type: text
+                                required: false
+                            alias:
+                                type: text
+                                required: false
+                            variety:
+                                admin_code: librinfo_varieties.admin.variety
+                                required: true
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+                    form_group_general:
+                        '':
+                            latin_name:
+                                type: text
+                                required: false
+                            alias:
+                                type: text
+                                required: false
+                            variety:
+                                _options:
+                                    admin_code: librinfo_varieties.admin.variety
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                remove: [createdAt]
+                add:
+                    latin_name: ~
+                    alias: ~
+                    description: ~
+                    _options:
+                        fieldsOrder:
+                            - name
+                            - latin_name
+                            - alias
+                            - description
+                    _export_format:
+                        csv: [name, latinName, alias, description, createdAt, updatedAt]
+                        xls: csv
+                        json: csv
+                        xml: csv
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add:
+                    name: ~
