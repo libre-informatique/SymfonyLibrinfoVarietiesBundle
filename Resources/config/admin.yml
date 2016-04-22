@@ -7,7 +7,8 @@ services:
             - name: sonata.admin
               manager_type: orm
               group: admin
-              label: Family
+              label: librinfo.varieties.family_admin.label
+              label_translator_strategy: librinfo_core.label.strategy.librinfo
 
     librinfo_varieties.admin.genus:
         class: Librinfo\VarietiesBundle\Admin\GenusAdminConcrete
@@ -16,7 +17,8 @@ services:
             - name: sonata.admin
               manager_type: orm
               group: admin
-              label: Genus
+              label: librinfo.varieties.genus_admin.label
+              label_translator_strategy: librinfo_core.label.strategy.librinfo
 
     librinfo_varieties.admin.genus_embedded:
         class: Librinfo\VarietiesBundle\Admin\GenusEmbeddedAdmin
@@ -25,7 +27,8 @@ services:
             - name: sonata.admin
               manager_type: orm
               group: admin
-              label: Genus
+              label: librinfo.varieties.genus_admin.label
+              label_translator_strategy: librinfo_core.label.strategy.librinfo
 
     librinfo_varieties.admin.species:
         class: Librinfo\VarietiesBundle\Admin\SpeciesAdminConcrete
@@ -34,7 +37,8 @@ services:
             - name: sonata.admin
               manager_type: orm
               group: admin
-              label: Species
+              label: librinfo.varieties.species_admin.label
+              label_translator_strategy: librinfo_core.label.strategy.librinfo
 
     librinfo_varieties.admin.species_embedded:
         class: Librinfo\VarietiesBundle\Admin\SpeciesEmbeddedAdmin
@@ -43,7 +47,8 @@ services:
             - name: sonata.admin
               manager_type: orm
               group: admin
-              label: Species
+              label: librinfo.varieties.species_admin.label
+              label_translator_strategy: librinfo_core.label.strategy.librinfo
 
     librinfo_varieties.admin.variety:
         class: Librinfo\VarietiesBundle\Admin\VarietyAdminConcrete
@@ -52,7 +57,8 @@ services:
             - name: sonata.admin
               manager_type: orm
               group: admin
-              label: Variety
+              label: librinfo.varieties.variety_admin.label
+              label_translator_strategy: librinfo_core.label.strategy.librinfo
 
     librinfo_varieties.admin.strain:
         class: Librinfo\VarietiesBundle\Admin\StrainAdminConcrete
@@ -61,4 +67,5 @@ services:
             - name: sonata.admin
               manager_type: orm
               group: admin
-              label: Strain
+              label: librinfo.varieties.strain_admin.label
+              label_translator_strategy: librinfo_core.label.strategy.librinfo

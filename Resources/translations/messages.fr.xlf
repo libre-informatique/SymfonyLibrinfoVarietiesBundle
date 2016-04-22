@@ -2,10 +2,64 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit id="1">
-                <source>Symfony2 is great</source>
-                <target>J'aime Symfony2</target>
+<!-- FAMILY -->
+            <trans-unit id="entity_Family">
+                <source>Family</source>
+                <target>Famille</target>
             </trans-unit>
+            <trans-unit id="librinfo.link.family_list">
+                <source>librinfo.link.family_list</source>
+                <target>Liste des familles</target>
+            </trans-unit>
+            <trans-unit id="librinfo.label.family">
+                <source>librinfo.label.family</source>
+                <target>Famille</target>
+            </trans-unit>
+            <trans-unit id="librinfo.label.families">
+                <source>librinfo.label.families</source>
+                <target>Familles</target>
+            </trans-unit>            
+            <trans-unit id="librinfo.label.latin_name">
+                <source>librinfo.label.latin_name</source>
+                <target>Nom latin</target>
+            </trans-unit>            
+            <trans-unit id="librinfo.label.alias">
+                <source>librinfo.label.alias</source>
+                <target>Synonymes</target>
+            </trans-unit>      
+            <trans-unit id="form_group_genuses">
+                <source>form_group_genuses</source>
+                <target>Genres</target>
+            </trans-unit>                
+            <trans-unit id="librinfo.varieties.family_admin.label">
+                <source>librinfo.varieties.family_admin.label</source>
+                <target>Familles</target>
+            </trans-unit>    
+            
+<!-- GENUS -->
+            <trans-unit id="librinfo.varieties.genus_admin.label">
+                <source>librinfo.varieties.genus_admin.label</source>
+                <target>Genres</target>
+            </trans-unit> 
+            
+<!-- SPECIES -->
+            <trans-unit id="librinfo.varieties.species_admin.label">
+                <source>librinfo.varieties.species_admin.label</source>
+                <target>Espèces</target>
+            </trans-unit> 
+            
+<!-- VARIETY -->
+            <trans-unit id="librinfo.varieties.variety_admin.label">
+                <source>librinfo.varieties.variety_admin.label</source>
+                <target>Variétés</target>
+            </trans-unit> 
+            
+<!-- STRAIN -->
+            <trans-unit id="librinfo.varieties.strain_admin.label">
+                <source>librinfo.varieties.strain_admin.label</source>
+                <target>Souches</target>
+            </trans-unit> 
+            
         </body>
     </file>
 </xliff>
