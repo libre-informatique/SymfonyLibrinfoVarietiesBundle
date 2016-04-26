@@ -1,0 +1,16 @@
+Librinfo\VarietiesBundle\Entity\PlantCategory:
+    type: entity
+    repositoryClass: Librinfo\VarietiesBundle\Entity\Repository\PlantCategoryRepository
+#    entityListeners:
+#        PlantCategoryListener: ~
+
+    fields:
+        code:
+            type:     string(6)
+            nullable: true
+
+    oneToMany:
+        specieses:
+            targetEntity: Librinfo\VarietiesBundle\Entity\Species
+            mappedBy: plant_category
+            cascade: [ persist ]

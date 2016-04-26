@@ -69,3 +69,13 @@ services:
               group: admin
               label: librinfo.varieties.strain_admin.label
               label_translator_strategy: librinfo_core.label.strategy.librinfo
+
+    librinfo_varieties.admin.plant_category:
+        class: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete
+        arguments: [~, Librinfo\VarietiesBundle\Entity\PlantCategory, LibrinfoBaseEntitiesBundle:TreeableCRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: librinfo.varieties.plant_category_admin.label
+              label_translator_strategy: librinfo_core.label.strategy.librinfo

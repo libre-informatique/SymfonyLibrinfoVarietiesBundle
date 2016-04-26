@@ -38,6 +38,10 @@ class Species
      */
     private $genus;
 
+    /**
+     * @var \Librinfo\VarietiesBundle\Entity\PlantCategory
+     */
+    private $plant_category;
 
     /**
      * Constructor
@@ -153,6 +157,30 @@ class Species
     public function getVarieties()
     {
         return $this->varieties;
+    }
+
+    /**
+     * Set plantCategory
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\PlantCategory $plantCategory
+     *
+     * @return Species
+     */
+    public function setPlantCategory(\Librinfo\VarietiesBundle\Entity\PlantCategory $plantCategory = null)
+    {
+        $this->plant_category = $plantCategory;
+
+        return $this;
+    }
+
+    /**
+     * Get plantCategory
+     *
+     * @return \Librinfo\VarietiesBundle\Entity\PlantCategory
+     */
+    public function getPlantCategory()
+    {
+        return $this->plant_category;
     }
 }
 

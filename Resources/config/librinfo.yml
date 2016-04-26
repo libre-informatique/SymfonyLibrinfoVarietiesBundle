@@ -150,6 +150,32 @@ parameters:
                     name: ~
 
 
+#################
+# PLANT CATEGORY
+#################
+
+        Librinfo\VarietiesBundle\Entity\PlantCategory:
+            Sonata\AdminBundle\Show\ShowMapper:
+                _copy: Sonata\AdminBundle\Form\FormMapper
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+                    form_group_general:
+                        '':
+                            name:
+                                type: text
+                            code:
+                                type: text
+                            parentNode:
+                                type: librinfo_baseentities_treeable
+                                class: Librinfo\VarietiesBundle\Entity\PlantCategory
+                                required: true
+                                label: librinfo.label.parent_category
+                                max_node_level: 2
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                add:
+                    name: ~
+
+
 ##########
 # SPECIES
 ##########
@@ -203,9 +229,10 @@ parameters:
                     name: ~
 
 
-##########
-# VARIETY
-##########
+
+###############
+# SUPER VARIETY
+###############
 
         Librinfo\VarietiesBundle\Entity\Variety:
             Sonata\AdminBundle\Show\ShowMapper:
@@ -234,6 +261,26 @@ parameters:
                             species:
                                 _options:
                                     admin_code: librinfo_varieties.admin.species
+                    form_group_technical:
+                        '':
+                            tkw: ~
+                            _options:
+                                description: This section contains general settings for the web page
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add:
+                    name: ~
+
+##########
+# VARIETY
+##########
+
+        Librinfo\VarietiesBundle\Entity\Variety:
+            Sonata\AdminBundle\Show\ShowMapper:
+                add:
+
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:
@@ -251,9 +298,7 @@ parameters:
                         xls: csv
                         json: csv
                         xml: csv
-            Sonata\AdminBundle\Datagrid\DatagridMapper:
-                add:
-                    name: ~
+
 
 
 ##########
@@ -263,30 +308,8 @@ parameters:
         Librinfo\VarietiesBundle\Entity\Strain:
             Sonata\AdminBundle\Show\ShowMapper:
                 add:
-                    form_group_general:
-                        '':
-                            latin_name:
-                                type: text
-                                required: false
-                            alias:
-                                type: text
-                                required: false
-                            variety:
-                                admin_code: librinfo_varieties.admin.variety
-                                required: true
             Sonata\AdminBundle\Form\FormMapper:
                 add:
-                    form_group_general:
-                        '':
-                            latin_name:
-                                type: text
-                                required: false
-                            alias:
-                                type: text
-                                required: false
-                            variety:
-                                _options:
-                                    admin_code: librinfo_varieties.admin.variety
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:
@@ -304,6 +327,3 @@ parameters:
                         xls: csv
                         json: csv
                         xml: csv
-            Sonata\AdminBundle\Datagrid\DatagridMapper:
-                add:
-                    name: ~

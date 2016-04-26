@@ -2,3 +2,10 @@ services:
 #    librinfo_varieties.example:
 #        class: Librinfo\VarietiesBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+#    librinfo_varieties.plant_category.listener:
+#        class: Librinfo\VarietiesBundle\EventListener\PlantCategoryListener
+#        tags:
+#            - { name: doctrine.event_listener, event: prePersist }
+#            - { name: doctrine.event_listener, event: preUpdate }
+#            - { name: doctrine.event_listener, event: preFlush }

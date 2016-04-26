@@ -42,6 +42,28 @@
                 <target>Genres</target>
             </trans-unit> 
             
+<!-- PLANT CATEGORY -->
+            <trans-unit id="librinfo.varieties.plant_category_admin.label">
+                <source>librinfo.varieties.plant_category_admin.label</source>
+                <target>Catégories</target>
+            </trans-unit> 
+            <trans-unit id="librinfo.link.plant_category_list">
+                <source>librinfo.link.plant_category_list</source>
+                <target>Liste des catégories de plantes</target>
+            </trans-unit>            
+            <trans-unit id="librinfo.link.plant_category_create">
+                <source>librinfo.link.plant_category_create</source>
+                <target>Nouvelle catégorie de plantes</target>
+            </trans-unit>    
+            <trans-unit id="librinfo.label.code">
+                <source>librinfo.label.code</source>
+                <target>Code</target>
+            </trans-unit>                      
+            <trans-unit id="librinfo.label.parent_category">
+                <source>librinfo.label.parent_category</source>
+                <target>Catégorie parente</target>
+            </trans-unit>                      
+            
 <!-- SPECIES -->
             <trans-unit id="librinfo.varieties.species_admin.label">
                 <source>librinfo.varieties.species_admin.label</source>
@@ -53,6 +75,10 @@
                 <source>librinfo.varieties.variety_admin.label</source>
                 <target>Variétés</target>
             </trans-unit> 
+            <trans-unit id="librinfo.label.tkw">
+                <source>librinfo.label.tkw</source>
+                <target>Poids de mille graines</target>
+            </trans-unit>             
             
 <!-- STRAIN -->
             <trans-unit id="librinfo.varieties.strain_admin.label">
