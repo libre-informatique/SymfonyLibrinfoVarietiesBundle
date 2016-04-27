@@ -27,6 +27,10 @@
                 <source>librinfo.label.alias</source>
                 <target>Synonymes</target>
             </trans-unit>      
+            <trans-unit id="librinfo.label.genuses">
+                <source>librinfo.label.genuses</source>
+                <target>Genres</target>
+            </trans-unit>      
             <trans-unit id="form_group_genuses">
                 <source>form_group_genuses</source>
                 <target>Genres</target>
@@ -49,7 +53,15 @@
                 <source>librinfo.link.genus_list</source>
                 <target>Liste des genres</target>
             </trans-unit>              
-            
+            <trans-unit id="form_group_specieses">
+                <source>form_group_specieses</source>
+                <target>Espèces</target>
+            </trans-unit>                
+            <trans-unit id="librinfo.label.specieses">
+                <source>librinfo.label.specieses</source>
+                <target>Espèces</target>
+            </trans-unit>      
+
 <!-- PLANT CATEGORY -->
             <trans-unit id="librinfo.varieties.plant_category_admin.label">
                 <source>librinfo.varieties.plant_category_admin.label</source>
