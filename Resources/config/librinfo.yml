@@ -133,15 +133,17 @@ parameters:
                 add:
                     latin_name: ~
                     alias: ~
+                    family: ~
                     description: ~
                     _options:
                         fieldsOrder:
                             - name
                             - latin_name
                             - alias
+                            - family
                             - description
                     _export_format:
-                        csv: [name, latinName, alias, description, createdAt, updatedAt]
+                        csv: [name, latinName, alias, family, description, createdAt, updatedAt]
                         xls: csv
                         json: csv
                         xml: csv
@@ -253,15 +255,13 @@ parameters:
                 add:
                     form_group_general:
                         '':
-                            latin_name:
-                                type: text
-                                required: false
-                            alias:
-                                type: text
-                                required: false
+                            latin_name: ~
+                            alias: ~
                             species:
                                 admin_code: librinfo_varieties.admin.species
-                                required: true
+                    form_group_technical:
+                        '':
+                            tkw: ~
             Sonata\AdminBundle\Form\FormMapper:
                 add:
                     form_group_general:
@@ -278,11 +278,31 @@ parameters:
                     form_group_technical:
                         '':
                             tkw: ~
-                            _options:
-                                description: This section contains general settings for the web page
+                    _options:
+                        tabsOrder: [form_group_general, form_group_technical, form_group_specific]
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
                     name: ~
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                remove: [createdAt]
+                add:
+                    latin_name: ~
+                    alias: ~
+                    speciesName: ~
+                    description: ~
+                    _options:
+                        fieldsOrder:
+                            - name
+                            - latin_name
+                            - alias
+                            - speciesName
+                            - description
+                    _export_format:
+                        csv: [name, latinName, alias, speciesName, description, createdAt, updatedAt]
+                        xls: csv
+                        json: csv
+                        xml: csv
+
 
 ##########
 # VARIETY

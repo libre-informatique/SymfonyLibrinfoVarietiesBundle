@@ -31,6 +31,10 @@
                 <source>form_group_genuses</source>
                 <target>Genres</target>
             </trans-unit>                
+            <trans-unit id="form_group_technical">
+                <source>form_group_technical</source>
+                <target>Technique</target>
+            </trans-unit>                
             <trans-unit id="librinfo.varieties.family_admin.label">
                 <source>librinfo.varieties.family_admin.label</source>
                 <target>Familles</target>
@@ -41,6 +45,10 @@
                 <source>librinfo.varieties.genus_admin.label</source>
                 <target>Genres</target>
             </trans-unit> 
+            <trans-unit id="librinfo.link.genus_list">
+                <source>librinfo.link.genus_list</source>
+                <target>Liste des genres</target>
+            </trans-unit>              
             
 <!-- PLANT CATEGORY -->
             <trans-unit id="librinfo.varieties.plant_category_admin.label">
@@ -69,6 +77,10 @@
                 <source>librinfo.varieties.species_admin.label</source>
                 <target>Espèces</target>
             </trans-unit> 
+            <trans-unit id="librinfo.link.species_list">
+                <source>librinfo.link.species_list</source>
+                <target>Liste des espèces</target>
+            </trans-unit>               
             <trans-unit id="librinfo.label.genus">
                 <source>librinfo.label.genus</source>
                 <target>Genre</target>
@@ -87,12 +99,20 @@
                 <source>librinfo.varieties.variety_admin.label</source>
                 <target>Variétés</target>
             </trans-unit> 
+            <trans-unit id="librinfo.link.variety_list">
+                <source>librinfo.link.variety_list</source>
+                <target>Liste des variétés</target>
+            </trans-unit>                 
             <trans-unit id="librinfo.label.tkw">
                 <source>librinfo.label.tkw</source>
                 <target>Poids de mille graines</target>
             </trans-unit>             
             <trans-unit id="librinfo.label.species">
                 <source>librinfo.label.species</source>
+                <target>Espèce</target>
+            </trans-unit>             
+            <trans-unit id="librinfo.label.species_name">
+                <source>librinfo.label.species_name</source>
                 <target>Espèce</target>
             </trans-unit>             
             

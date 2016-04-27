@@ -92,5 +92,10 @@ class Variety extends SuperVariety
     {
         return $this->species;
     }
+
+    public function getSpeciesName()
+    {
+        return $this->species->getName();
+    }
 }
 
