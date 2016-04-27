@@ -69,6 +69,18 @@
                 <source>librinfo.varieties.species_admin.label</source>
                 <target>Espèces</target>
             </trans-unit> 
+            <trans-unit id="librinfo.label.genus">
+                <source>librinfo.label.genus</source>
+                <target>Genre</target>
+            </trans-unit>                
+            <trans-unit id="librinfo.label.plant_category">
+                <source>librinfo.label.plant_category</source>
+                <target>Catégorie</target>
+            </trans-unit>                
+            <trans-unit id="librinfo.label.parent_species">
+                <source>librinfo.label.parent_species</source>
+                <target>Est une sous-espèce de</target>
+            </trans-unit>                
             
 <!-- VARIETY -->
             <trans-unit id="librinfo.varieties.variety_admin.label">
@@ -78,6 +90,10 @@
             <trans-unit id="librinfo.label.tkw">
                 <source>librinfo.label.tkw</source>
                 <target>Poids de mille graines</target>
+            </trans-unit>             
+            <trans-unit id="librinfo.label.species">
+                <source>librinfo.label.species</source>
+                <target>Espèce</target>
             </trans-unit>             
             
 <!-- STRAIN -->

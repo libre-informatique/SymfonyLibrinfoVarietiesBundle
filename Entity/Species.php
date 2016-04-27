@@ -44,11 +44,24 @@ class Species
     private $plant_category;
 
     /**
+     * @var \Librinfo\VarietiesBundle\Entity\Species
+     */
+    private $parent_species;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $subspecieses;
+
+
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->varieties = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->subspecieses = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -181,6 +194,68 @@ class Species
     public function getPlantCategory()
     {
         return $this->plant_category;
+    }
+
+
+    /**
+     * Add subspecies
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Species $subspecies
+     *
+     * @return Species
+     */
+    public function addSubspecies(\Librinfo\VarietiesBundle\Entity\Species $subspecies)
+    {
+        $subspecies->setParentSpecies($this);
+        $this->subspecieses[] = $subspecies;
+        return $this;
+    }
+
+    /**
+     * Remove subspecies
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Species $subspecies
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeSubspeciese(\Librinfo\VarietiesBundle\Entity\Species $subspecies)
+    {
+        return $this->subspecieses->removeElement($subspecies);
+    }
+
+    /**
+     * Get subspecieses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSubspecieses()
+    {
+        return $this->subspecieses;
+    }
+
+
+    /**
+     * Set parentSpecies
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Species $parentSpecies
+     *
+     * @return Species
+     */
+    public function setParentSpecies(\Librinfo\VarietiesBundle\Entity\Species $parentSpecies = null)
+    {
+        $this->parent_species = $parentSpecies;
+
+        return $this;
+    }
+
+    /**
+     * Get parentSpecies
+     *
+     * @return \Librinfo\VarietiesBundle\Entity\Species
+     */
+    public function getParentSpecies()
+    {
+        return $this->parent_species;
     }
 }
 

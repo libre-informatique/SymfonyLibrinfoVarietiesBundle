@@ -207,6 +207,20 @@ parameters:
                             genus:
                                 _options:
                                     admin_code: librinfo_varieties.admin.genus
+                            plant_category:
+                                type: librinfo_baseentities_treeable
+                                class: Librinfo\VarietiesBundle\Entity\PlantCategory
+                                required: false
+                                max_node_level: 3
+                                min_node_level: 2
+                            parent_species:
+                                type: sonata_type_model_autocomplete
+                                route: { name: searchable_admin_retrieve_autocomplete_items }
+                                by_reference: false
+                                property: name # not used but required
+                                required: false
+                                _options:
+                                    admin_code: librinfo_varieties.admin.species_embedded
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:

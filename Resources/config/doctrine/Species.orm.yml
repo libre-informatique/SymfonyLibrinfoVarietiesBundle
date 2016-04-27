@@ -24,9 +24,19 @@ Librinfo\VarietiesBundle\Entity\Species:
             joinColumn:
                 name: plant_category_id
             cascade: [ persist ]
+        parent_species:
+            targetEntity: Librinfo\VarietiesBundle\Entity\Species
+            inversedBy: subspecieses
+            joinColumn:
+                name: parent_species_id
+            cascade: [ persist ]
 
     oneToMany:
         varieties:
             targetEntity: Librinfo\VarietiesBundle\Entity\Variety
             mappedBy: species
+            cascade: [ persist ]
+        subspecieses:
+            targetEntity: Librinfo\VarietiesBundle\Entity\Species
+            mappedBy: parent_species
             cascade: [ persist ]
