@@ -51,4 +51,12 @@ class PlantCategoryRepository extends TreeableRepository
         $em->flush();
         return $root;
     }
+
+    public function getAllWithoutRootQB($rootAlias = 't')
+    {
+        $qb = $this->createQueryBuilder($rootAlias)
+                ->andWhere("$rootAlias.name != :root_name")
+                ->setParameter(':root_name', '_ROOT_');
+        return $qb;
+    }
 }

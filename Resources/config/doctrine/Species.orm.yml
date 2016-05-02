@@ -18,12 +18,6 @@ Librinfo\VarietiesBundle\Entity\Species:
             joinColumn:
                 name: genus_id
             cascade: [ persist ]
-        plant_category:
-            targetEntity: Librinfo\VarietiesBundle\Entity\PlantCategory
-            inversedBy: specieses
-            joinColumn:
-                name: plant_category_id
-            cascade: [ persist ]
         parent_species:
             targetEntity: Librinfo\VarietiesBundle\Entity\Species
             inversedBy: subspecieses

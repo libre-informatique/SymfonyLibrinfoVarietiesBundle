@@ -2,23 +2,11 @@
 
 namespace Librinfo\VarietiesBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
-use Knp\DoctrineBehaviors\Model\Tree\NodeInterface;
-use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
-use Librinfo\DoctrineBundle\Entity\Traits\Nameable;
-use Librinfo\DoctrineBundle\Entity\Traits\Treeable;
-
 /**
  * PlantCategory
  */
-class PlantCategory implements NodeInterface
+class PlantCategory
 {
-    use BaseEntity,
-        Treeable,
-        Nameable
-    ;
-
     /**
      * @var string
      */
@@ -34,7 +22,7 @@ class PlantCategory implements NodeInterface
      */
     public function __construct()
     {
-        $this->varieties = new ArrayCollection();
+        $this->varieties = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -95,38 +83,6 @@ class PlantCategory implements NodeInterface
     public function getVarieties()
     {
         return $this->varieties;
-    }
-
-    public function setChildNodeOf(NodeInterface $node)
-    {
-        $path = rtrim($node->getRealMaterializedPath(), static::getMaterializedPathSeparator());
-        $this->setMaterializedPath($path);
-        $this->setSortMaterializedPath($path . static::getMaterializedPathSeparator() . $this->getId());
-
-        if (null !== $this->parentNode)
-        {
-            $this->parentNode->getChildNodes()->removeElement($this);
-        }
-
-        $this->parentNode = $node;
-        $this->parentNode->addChildNode($this);
-
-        foreach ($this->getChildNodes() as $child)
-        {
-            $child->setChildNodeOf($this);
-        }
-
-        return $this;
-    }
-
-    public function setParentNode(NodeInterface $node = null)
-    {
-        $this->parentNode = $node;
-        if ($node !== null)
-        {
-            $this->setChildNodeOf($this->parentNode);
-        }
-        return $this;
     }
 }
 

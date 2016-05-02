@@ -38,9 +38,9 @@ Librinfo\VarietiesBundle\Entity\SuperVariety:
         germination_rate:
             type:     integer
             nullable: true
-        # poids de mille graines (grammes)
+        # poids de mille graines - PMG (grammes)
         tkw:
-            type:     integer
+            type:     float
             nullable: true
         # durée de vie théorique de la graine (années)
         seed_lifespan:

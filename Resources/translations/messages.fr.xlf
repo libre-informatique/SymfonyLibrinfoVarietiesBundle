@@ -111,6 +111,10 @@
                 <source>librinfo.label.species</source>
                 <target>Espèce</target>
             </trans-unit>             
+            <trans-unit id="librinfo.label.plant_categories">
+                <source>librinfo.label.plant_categories</source>
+                <target>Catégories</target>
+            </trans-unit>             
             <trans-unit id="librinfo.label.species_name">
                 <source>librinfo.label.species_name</source>
                 <target>Espèce</target>

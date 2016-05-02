@@ -4,6 +4,12 @@ Librinfo\VarietiesBundle\Entity\Variety:
     type: entity
     table: variety
 
+    manyToMany:
+        plant_categories:
+            targetEntity: Librinfo\VarietiesBundle\Entity\PlantCategory
+            inversedBy: varieties
+            joinTable:
+                name: librinfo_varieties_variety_category
     manyToOne:
         species:
             targetEntity: Librinfo\VarietiesBundle\Entity\Species

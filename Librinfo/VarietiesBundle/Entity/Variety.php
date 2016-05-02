@@ -2,19 +2,11 @@
 
 namespace Librinfo\VarietiesBundle\Entity;
 
-use Librinfo\DoctrineBundle\Entity\Traits\Nameable;
-use Librinfo\UserBundle\Entity\Traits\Traceable;
-use Librinfo\DoctrineBundle\Entity\Traits\Descriptible;
-
 /**
  * Variety
  */
-class Variety extends SuperVariety
+class Variety
 {
-    use Nameable,
-        Traceable,
-        Descriptible;
-
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
@@ -97,11 +89,6 @@ class Variety extends SuperVariety
     public function getSpecies()
     {
         return $this->species;
-    }
-
-    public function getSpeciesName()
-    {
-        return $this->species->getName();
     }
 
     /**
