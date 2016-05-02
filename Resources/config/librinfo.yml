@@ -279,7 +279,8 @@ parameters:
                                 query_builder: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete::getAllWithoutRootQB
                     form_group_technical:
                         '':
-                            tkw: ~
+                            tkw:
+                                help: librinfo.help.twk
                     _options:
                         tabsOrder: [form_group_general, form_group_technical, form_group_specific]
             Sonata\AdminBundle\Datagrid\DatagridMapper:

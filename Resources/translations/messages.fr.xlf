@@ -93,6 +93,10 @@
                 <source>librinfo.label.parent_species</source>
                 <target>Est une sous-espèce de</target>
             </trans-unit>                
+            <trans-unit id="librinfo.help.twk">
+                <source>librinfo.help.twk</source>
+                <target>en grammes</target>
+            </trans-unit>                
             
 <!-- VARIETY -->
             <trans-unit id="librinfo.varieties.variety_admin.label">
