@@ -14,7 +14,6 @@ class PlantCategoryRepository extends TreeableRepository
      */
     public function getFormTree($rootAlias = 't')
     {
-        dump('here');
         $all = $this->createQueryBuilder($rootAlias)
             ->andWhere($rootAlias.'.materializedPath NOT LIKE :pattern')
             ->addOrderBy($rootAlias.'.sortMaterializedPath', 'ASC')

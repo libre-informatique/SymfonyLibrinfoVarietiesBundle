@@ -172,7 +172,7 @@ parameters:
                                 class: Librinfo\VarietiesBundle\Entity\PlantCategory
                                 required: true
                                 label: librinfo.label.parent_category
-                                max_node_level: 2
+#                                max_node_level: 2
             Sonata\AdminBundle\Datagrid\ListMapper:
                 add:
                     name: ~
@@ -209,12 +209,6 @@ parameters:
                             genus:
                                 _options:
                                     admin_code: librinfo_varieties.admin.genus
-#                            plant_category:
-#                                type: librinfo_baseentities_treeable
-#                                class: Librinfo\VarietiesBundle\Entity\PlantCategory
-#                                required: false
-#                                max_node_level: 3
-#                                min_node_level: 2
                             parent_species:
                                 type: sonata_type_model_autocomplete
                                 route: { name: searchable_admin_retrieve_autocomplete_items }
@@ -277,6 +271,11 @@ parameters:
                                     admin_code: librinfo_varieties.admin.species
                             plant_categories:
                                 query_builder: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete::getAllWithoutRootQB
+#                                type: librinfo_baseentities_treeable
+#                                class: Librinfo\VarietiesBundle\Entity\PlantCategory
+#                                required: false
+#                                max_node_level: 3
+#                                min_node_level: 2
                     form_group_technical:
                         '':
                             tkw:
