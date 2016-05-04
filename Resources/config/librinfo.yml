@@ -172,7 +172,7 @@ parameters:
                                 class: Librinfo\VarietiesBundle\Entity\PlantCategory
                                 required: true
                                 label: librinfo.label.parent_category
-#                                max_node_level: 2
+                                max_node_level: 2
             Sonata\AdminBundle\Datagrid\ListMapper:
                 add:
                     name: ~
