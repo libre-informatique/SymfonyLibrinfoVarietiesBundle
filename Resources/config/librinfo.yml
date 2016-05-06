@@ -277,6 +277,15 @@ parameters:
 #                                required: false
 #                                max_node_level: 3
 #                                min_node_level: 2
+                            life_cycle:
+                                type: choice
+                                expanded: false
+                                multiple: false
+                                required: false
+                                choices:
+                                    annual: librinfo.label.lifecycle_annual
+                                    bisannual: librinfo.label.lifecycle_bisannual
+                                    perennial: librinfo.label.lifecycle_perennial
                         form_group_offical_catalogue:
                             official: ~
                             official_name: ~

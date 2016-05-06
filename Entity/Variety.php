@@ -16,6 +16,41 @@ class Variety extends SuperVariety
         Descriptible;
 
     /**
+     * @var string
+     */
+    private $life_cycle;
+
+    /**
+     * @var bool
+     */
+    private $official;
+
+    /**
+     * @var string
+     */
+    private $official_name;
+
+    /**
+     * @var \DateTime
+     */
+    private $official_date_in;
+
+    /**
+     * @var \DateTime
+     */
+    private $official_date_out;
+
+    /**
+     * @var string
+     */
+    private $official_maintainer;
+
+    /**
+     * @var int
+     */
+    private $legal_germination_rate;
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      */
     private $strains;
@@ -37,6 +72,174 @@ class Variety extends SuperVariety
     {
         $this->strains = new \Doctrine\Common\Collections\ArrayCollection();
         $this->plant_categories = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+   /**
+     * Set lifeCycle
+     *
+     * @param string $lifeCycle
+     *
+     * @return SuperVariety
+     */
+    public function setLifeCycle($lifeCycle)
+    {
+        $this->life_cycle = $lifeCycle;
+
+        return $this;
+    }
+
+    /**
+     * Get lifeCycle
+     *
+     * @return string
+     */
+    public function getLifeCycle()
+    {
+        return $this->life_cycle;
+    }
+
+    /**
+     * Set official
+     *
+     * @param bool $official
+     *
+     * @return SuperVariety
+     */
+    public function setOfficial($official)
+    {
+        $this->official = $official;
+
+        return $this;
+    }
+
+    /**
+     * Get official
+     *
+     * @return bool
+     */
+    public function getOfficial()
+    {
+        return $this->official;
+    }
+
+    /**
+     * Set officialName
+     *
+     * @param string $officialName
+     *
+     * @return SuperVariety
+     */
+    public function setOfficialName($officialName)
+    {
+        $this->official_name = $officialName;
+
+        return $this;
+    }
+
+    /**
+     * Get officialName
+     *
+     * @return string
+     */
+    public function getOfficialName()
+    {
+        return $this->official_name;
+    }
+
+    /**
+     * Set officialDateIn
+     *
+     * @param \DateTime $officialDateIn
+     *
+     * @return SuperVariety
+     */
+    public function setOfficialDateIn($officialDateIn)
+    {
+        $this->official_date_in = $officialDateIn;
+
+        return $this;
+    }
+
+    /**
+     * Get officialDateIn
+     *
+     * @return \DateTime
+     */
+    public function getOfficialDateIn()
+    {
+        return $this->official_date_in;
+    }
+
+    /**
+     * Set officialDateOut
+     *
+     * @param \DateTime $officialDateOut
+     *
+     * @return SuperVariety
+     */
+    public function setOfficialDateOut($officialDateOut)
+    {
+        $this->official_date_out = $officialDateOut;
+
+        return $this;
+    }
+
+    /**
+     * Get officialDateOut
+     *
+     * @return \DateTime
+     */
+    public function getOfficialDateOut()
+    {
+        return $this->official_date_out;
+    }
+
+    /**
+     * Set officialMaintainer
+     *
+     * @param string $officialMaintainer
+     *
+     * @return SuperVariety
+     */
+    public function setOfficialMaintainer($officialMaintainer)
+    {
+        $this->official_maintainer = $officialMaintainer;
+
+        return $this;
+    }
+
+    /**
+     * Get officialMaintainer
+     *
+     * @return string
+     */
+    public function getOfficialMaintainer()
+    {
+        return $this->official_maintainer;
+    }
+
+    /**
+     * Set legalGerminationRate
+     *
+     * @param int $legalGerminationRate
+     *
+     * @return SuperVariety
+     */
+    public function setLegalGerminationRate($legalGerminationRate)
+    {
+        $this->legal_germination_rate = $legalGerminationRate;
+
+        return $this;
+    }
+
+    /**
+     * Get legalGerminationRate
+     *
+     * @return int
+     */
+    public function getLegalGerminationRate()
+    {
+        return $this->legal_germination_rate;
     }
 
     /**
