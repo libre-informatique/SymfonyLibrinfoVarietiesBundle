@@ -266,6 +266,7 @@ parameters:
                             alias:
                                 type: text
                                 required: false
+                            code: ~
                             species:
                                 _options:
                                     admin_code: librinfo_varieties.admin.species
@@ -276,10 +277,40 @@ parameters:
 #                                required: false
 #                                max_node_level: 3
 #                                min_node_level: 2
+                        form_group_offical_catalogue:
+                            official: ~
+                            official_name: ~
+                            official_name: ~
+                            official_date_in:
+                                type: sonata_type_date_picker
+                                required: false
+                            official_date_out:
+                                type: sonata_type_date_picker
+                                required: false
+                            official_maintainer: ~
                     form_group_technical:
                         '':
                             tkw:
                                 help: librinfo.help.twk
+                            legal_germination_rate:
+                                help: librinfo.help.legal_germination_rate
+                            germination_rate:
+                                help: librinfo.help.germination_rate
+                            seed_lifespan:
+                                help: librinfo.help.seed_lifespan
+                            raise_duration:
+                                help: librinfo.help.raise_duration
+                            seedhead_yield:
+                                help: librinfo.help.seedhead_yield
+                            ditance_on_line:
+                                help: librinfo.help.ditance_on_line
+                            ditance_between_lines:
+                                help: librinfo.help.ditance_between_lines
+                            plant_density:
+                                help: librinfo.help.plant_density
+                            area_per_kg:
+                                help: librinfo.help.area_per_kg
+                            seedheads_per_kg: ~
                     _options:
                         tabsOrder: [form_group_general, form_group_technical, form_group_specific]
             Sonata\AdminBundle\Datagrid\DatagridMapper:

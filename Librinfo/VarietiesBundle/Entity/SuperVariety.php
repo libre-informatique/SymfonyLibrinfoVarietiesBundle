@@ -2,15 +2,11 @@
 
 namespace Librinfo\VarietiesBundle\Entity;
 
-use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
-
 /**
  * SuperVariety
  */
 class SuperVariety
 {
-    use BaseEntity;
-
     /**
      * @var string
      */
@@ -62,7 +58,7 @@ class SuperVariety
     private $germination_rate;
 
     /**
-     * @var int
+     * @var float
      */
     private $tkw;
 
@@ -276,21 +272,21 @@ class SuperVariety
     }
 
     /**
-     * Set official maintainer
+     * Set officialMaintainer
      *
-     * @param string $maintainer
+     * @param string $officialMaintainer
      *
      * @return SuperVariety
      */
-    public function setOfficialMaintainer($maintainer)
+    public function setOfficialMaintainer($officialMaintainer)
     {
-        $this->official_maintainer = $maintainer;
+        $this->official_maintainer = $officialMaintainer;
 
         return $this;
     }
 
     /**
-     * Get official maintainer
+     * Get officialMaintainer
      *
      * @return string
      */
@@ -350,7 +346,7 @@ class SuperVariety
     /**
      * Set tkw
      *
-     * @param int $tkw
+     * @param float $tkw
      *
      * @return SuperVariety
      */
@@ -364,7 +360,7 @@ class SuperVariety
     /**
      * Get tkw
      *
-     * @return int
+     * @return float
      */
     public function getTkw()
     {
