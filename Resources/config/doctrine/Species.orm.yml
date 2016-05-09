@@ -10,6 +10,10 @@ Librinfo\VarietiesBundle\Entity\Species:
         alias:
             type:     string(255)
             nullable: true
+        # cycle végétatif
+        life_cycle:
+            type:     string(10)
+            nullable: true
 
     manyToOne:
         genus:

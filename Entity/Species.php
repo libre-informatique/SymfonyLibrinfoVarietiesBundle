@@ -29,6 +29,11 @@ class Species
     private $alias;
 
     /**
+     * @var string
+     */
+    private $life_cycle;
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      */
     private $varieties;
@@ -105,6 +110,30 @@ class Species
     public function getAlias()
     {
         return $this->alias;
+    }
+
+    /**
+     * Set lifeCycle
+     *
+     * @param string $lifeCycle
+     *
+     * @return Species
+     */
+    public function setLifeCycle($lifeCycle)
+    {
+        $this->life_cycle = $lifeCycle;
+
+        return $this;
+    }
+
+    /**
+     * Get lifeCycle
+     *
+     * @return string
+     */
+    public function getLifeCycle()
+    {
+        return $this->life_cycle;
     }
 
     /**

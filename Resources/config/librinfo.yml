@@ -196,6 +196,9 @@ parameters:
                             genus:
                                 admin_code: librinfo_varieties.admin.genus
                                 required: true
+                            life_cycle:
+                                type: trans
+                                catalogue: varieties
             Sonata\AdminBundle\Form\FormMapper:
                 add:
                     form_group_general:
@@ -217,6 +220,9 @@ parameters:
                                 required: false
                                 _options:
                                     admin_code: librinfo_varieties.admin.species_embedded
+                            life_cycle:
+                                type: librinfo_varieties_lifecycle
+                                required: false
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:
