@@ -223,6 +223,34 @@
                 <source>librinfo.label.seedheads_per_kg</source>
                 <target>Nombre de porte-graines par kg</target>
             </trans-unit>                    
+            <trans-unit id="librinfo.label.life_cycle">
+                <source>librinfo.label.life_cycle</source>
+                <target>Cycle végétatif</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.life_cycle_annual">
+                <source>librinfo.label.life_cycle_annual</source>
+                <target>Plante annuelle</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.life_cycle_bisannual">
+                <source>librinfo.label.life_cycle_bisannual</source>
+                <target>Plante bisannuelle</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.life_cycle_perennial">
+                <source>librinfo.label.life_cycle_perennial</source>
+                <target>Plante vivace</target>
+            </trans-unit>                    
+            <trans-unit id="annual">
+                <source>annual</source>
+                <target>Plante annuelle</target>
+            </trans-unit>                    
+            <trans-unit id="bisannual">
+                <source>bisannual</source>
+                <target>Plante bisannuelle</target>
+            </trans-unit>                    
+            <trans-unit id="perennial">
+                <source>perennial</source>
+                <target>Plante vivace</target>
+            </trans-unit>                    
             
 <!-- STRAIN -->
             <trans-unit id="librinfo.varieties.strain_admin.label">

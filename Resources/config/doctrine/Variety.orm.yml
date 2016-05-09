@@ -7,7 +7,7 @@ Librinfo\VarietiesBundle\Entity\Variety:
     fields:
         # cycle végétatif
         life_cycle:
-            type:     string(6)
+            type:     string(10)
             nullable: true
         # inscrit au catalogue officiel
         official:
