@@ -1,0 +1,15 @@
+Librinfo\VarietiesBundle\Entity\GenericDescription:
+    type: mappedSuperclass
+    librinfo:
+        loggable: true
+
+    fields:
+        group:
+            type:     string(255)
+            nullable: false
+        field:
+            type:     string(255)
+            nullable: false
+        value:
+            type:     text
+            nullable: true

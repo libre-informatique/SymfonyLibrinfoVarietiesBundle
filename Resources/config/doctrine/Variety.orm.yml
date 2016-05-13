@@ -50,5 +50,9 @@ Librinfo\VarietiesBundle\Entity\Variety:
     oneToMany:
         strains:
             targetEntity: Librinfo\VarietiesBundle\Entity\Strain
-            mappedBy: strains
+            mappedBy: variety
+            cascade: [ persist ]
+        variety_descriptions:
+            targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescription
+            mappedBy: variety
             cascade: [ persist ]

@@ -56,6 +56,11 @@ class Variety extends SuperVariety
     private $strains;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $variety_descriptions;
+
+    /**
      * @var \Librinfo\VarietiesBundle\Entity\Species
      */
     private $species;
@@ -71,6 +76,7 @@ class Variety extends SuperVariety
     public function __construct()
     {
         $this->strains = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->variety_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
         $this->plant_categories = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -251,8 +257,8 @@ class Variety extends SuperVariety
      */
     public function addStrain(\Librinfo\VarietiesBundle\Entity\Strain $strain)
     {
-        $this->strains[] = $strain;
-
+        $strain->setVariety($this);
+        $this->strains->add($strain);
         return $this;
     }
 
@@ -276,6 +282,42 @@ class Variety extends SuperVariety
     public function getStrains()
     {
         return $this->strains;
+    }
+
+    /**
+     * Add varietyDescription
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\VarietyDescription $varietyDescription
+     *
+     * @return Variety
+     */
+    public function addVarietyDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescription $varietyDescription)
+    {
+        $varietyDescription->setVariety($this);
+        $this->variety_descriptions->add($varietyDescription);
+        return $this;
+    }
+
+    /**
+     * Remove varietyDescription
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\VarietyDescription $varietyDescription
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeVarietyDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescription $varietyDescription)
+    {
+        return $this->variety_descriptions->removeElement($varietyDescription);
+    }
+
+    /**
+     * Get varietyDescriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getVarietyDescriptions()
+    {
+        return $this->variety_descriptions;
     }
 
     /**

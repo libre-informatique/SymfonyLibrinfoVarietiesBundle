@@ -1,0 +1,13 @@
+# info: VarietyDescription extends GenericDescription (mapped superclass)
+
+Librinfo\VarietiesBundle\Entity\VarietyDescription:
+    type: entity
+    table: variety_description
+
+    manyToOne:
+        variety:
+            targetEntity: Librinfo\VarietiesBundle\Entity\Variety
+            inversedBy: variety_descriptions
+            joinColumn:
+                name: variety_id
+            cascade: [ persist ]
