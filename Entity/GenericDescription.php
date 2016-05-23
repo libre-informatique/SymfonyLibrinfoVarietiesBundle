@@ -14,7 +14,7 @@ class GenericDescription
     /**
      * @var string
      */
-    private $group;
+    private $fieldset;
 
     /**
      * @var string
@@ -28,27 +28,27 @@ class GenericDescription
 
 
     /**
-     * Set group
+     * Set fieldset
      *
-     * @param string $group
+     * @param string $fieldset
      *
      * @return GenericDescription
      */
-    public function setGroup($group)
+    public function setFieldset($fieldset)
     {
-        $this->group = $group;
+        $this->fieldset = $fieldset;
 
         return $this;
     }
 
     /**
-     * Get group
+     * Get fieldset
      *
      * @return string
      */
-    public function getGroup()
+    public function getFieldset()
     {
-        return $this->group;
+        return $this->fieldset;
     }
 
     /**

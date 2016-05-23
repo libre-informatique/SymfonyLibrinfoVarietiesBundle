@@ -289,6 +289,18 @@ parameters:
                             life_cycle:
                                 type: librinfo_varieties_lifecycle
                                 required: false
+# TODO: restore this when variety_descriptions are finished
+#                        form_group_gardeners:
+#                            variety_descriptions:
+#                                type: sonata_type_collection
+#                                by_reference: true
+#                                required: true # if not true, child form fields cannot be required (why ??)
+#                                btn_add: false
+#                                label: false
+#                                type_options:
+#                                    delete: false
+#                                    btn_add: false
+#                                    label: false
                         form_group_offical_catalogue:
                             official: ~
                             official_name: ~
@@ -350,37 +362,6 @@ parameters:
 
 
 ##########
-# VARIETY
-##########
-
-        Librinfo\VarietiesBundle\Entity\Variety:
-            Sonata\AdminBundle\Show\ShowMapper:
-                add:
-
-            Sonata\AdminBundle\Form\FormMapper:
-                add:
-
-            Sonata\AdminBundle\Datagrid\ListMapper:
-                remove: [createdAt]
-                add:
-                    latin_name: ~
-                    alias: ~
-                    description: ~
-                    _options:
-                        fieldsOrder:
-                            - name
-                            - latin_name
-                            - alias
-                            - description
-                    _export_format:
-                        csv: [name, latinName, alias, description, createdAt, updatedAt]
-                        xls: csv
-                        json: csv
-                        xml: csv
-
-
-
-##########
 # STRAIN
 ##########
 
@@ -406,3 +387,40 @@ parameters:
                         xls: csv
                         json: csv
                         xml: csv
+
+
+#####################
+# VARIETY DESCRIPTION
+#####################
+
+        Librinfo\VarietiesBundle\Entity\VarietyDescription:
+            Sonata\AdminBundle\Show\ShowMapper:
+                add:
+                    fieldset: ~
+#                    field: ~
+#                    value: ~
+#                    variety: ~
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+                    form_group_general:
+                        '':
+                            fieldset:
+                                type: hidden
+                                label_render: false
+                            field:
+                                type: hidden
+                                label_render: false
+                            value: ~
+#                            variety: ~
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                add:
+                    fieldsdet: ~
+#                    field: ~
+#                    value: ~
+#                    variety: ~
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add:
+                    fieldset: ~
+#                    field: ~
+#                    value: ~
+#                    variety: ~

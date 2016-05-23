@@ -80,6 +80,28 @@ class Variety extends SuperVariety
         $this->plant_categories = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+//    public function __get($name)
+//    {
+//        if (property_exists($this, $name)) {
+//          return $this->$name;
+//        }
+//
+//        if ( strpos($name, 'description_') === 0 )
+//        {
+//            $parts = explode('_', $name);
+//            if ( count($parts) == 3 )
+//                return $this->getGenericDescription($parts[1], $parts[2]);
+//        }
+//
+//
+//        trigger_error(
+//            'Undefined property via __get(): ' . $name .
+//            ' in ' . $trace[0]['file'] .
+//            ' on line ' . $trace[0]['line'],
+//            E_USER_NOTICE);
+//        return null;
+//    }
+
    /**
      * Set lifeCycle
      *
@@ -320,6 +342,12 @@ class Variety extends SuperVariety
         return $this->variety_descriptions;
     }
 
+    public function getVariety_descriptions()
+    {
+        return $this->getVarietyDescriptions();
+    }
+
+
     /**
      * Set species
      *
@@ -384,5 +412,25 @@ class Variety extends SuperVariety
     {
         return $this->plant_categories;
     }
+
+    /**
+     *
+     * @param string $fieldset
+     * @param string $field
+     * @return \Librinfo\VarietiesBundle\Entity\VarietyDescription
+     */
+//    public function getGenericDescription($fieldset, $field)
+//    {
+//        foreach ( $this->getVarietyDescriptions() as $description )
+//        if ( $description->getFieldset() == $fieldset && $description->getField() == $field )
+//            return $description;
+//
+//        $description = new VarietyDescription();
+//        $description->setFieldset($fieldset);
+//        $description->setField($field);
+//        $this->addVarietyDescription($description);
+//        return $description;
+//    }
+
 }
 
