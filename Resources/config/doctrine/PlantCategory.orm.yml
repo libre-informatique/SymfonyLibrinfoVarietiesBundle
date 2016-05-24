@@ -9,8 +9,7 @@ Librinfo\VarietiesBundle\Entity\PlantCategory:
             type:     string(6)
             nullable: true
 
-    oneToMany:
-        specieses:
-            targetEntity: Librinfo\VarietiesBundle\Entity\Species
-            mappedBy: plant_category
-            cascade: [ persist ]
+    manyToMany:
+        varieties:
+            targetEntity: Librinfo\VarietiesBundle\Entity\Variety
+            mappedBy: plant_categories

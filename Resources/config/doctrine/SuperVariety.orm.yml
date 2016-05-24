@@ -14,33 +14,13 @@ Librinfo\VarietiesBundle\Entity\SuperVariety:
             type:     string(6)
             # TODO: not nullable
             nullable: true
-        # inscrit au catalogue officiel
-        official:
-            type:     boolean
-            nullable: true
-        official_name:
-            type:     string(255)
-            nullable: true
-        # date d'inscription au catalogue officiel
-        official_date_in:
-            type:     date
-            nullable: true
-        # date de radiation du catalogue officiel
-        official_date_out:
-            type:     date
-            nullable: true
-        maintainer:
-            type:     string
-            nullable: true
-        legal_germination_rate:
-            type:     integer
-            nullable: true
+        # taux de germination AS (%)
         germination_rate:
             type:     integer
             nullable: true
-        # poids de mille graines (grammes)
+        # poids de mille graines - PMG (grammes)
         tkw:
-            type:     integer
+            type:     float
             nullable: true
         # durée de vie théorique de la graine (années)
         seed_lifespan:
@@ -48,5 +28,29 @@ Librinfo\VarietiesBundle\Entity\SuperVariety:
             nullable: true
         # durée de levée dans les conditions naturelles (jours)
         raise_duration:
+            type:     integer
+            nullable: true
+        # rendement par porte-graines (nombre de graines ou poids ?)
+        seedhead_yield:
+            type:     integer
+            nullable: true
+        # distance sur la ligne (cm)
+        ditance_on_line:
+            type:     integer
+            nullable: true
+        # écartement des lignes (cm)
+        ditance_between_lines:
+            type:     integer
+            nullable: true
+        # densité au m²
+        plant_density:
+            type:     integer
+            nullable: true
+        # surface pour produire 1kg graines (m²)
+        area_per_kg:
+            type:     integer
+            nullable: true
+        # nombre de porte-graines pour produire 1kg graines
+        seedheads_per_kg:
             type:     integer
             nullable: true

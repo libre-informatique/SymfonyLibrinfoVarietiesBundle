@@ -27,36 +27,6 @@ class SuperVariety
     private $code;
 
     /**
-     * @var bool
-     */
-    private $official;
-
-    /**
-     * @var string
-     */
-    private $official_name;
-
-    /**
-     * @var \DateTime
-     */
-    private $official_date_in;
-
-    /**
-     * @var \DateTime
-     */
-    private $official_date_out;
-
-    /**
-     * @var string
-     */
-    private $maintainer;
-
-    /**
-     * @var int
-     */
-    private $legal_germination_rate;
-
-    /**
      * @var int
      */
     private $germination_rate;
@@ -75,6 +45,36 @@ class SuperVariety
      * @var int
      */
     private $raise_duration;
+
+    /**
+     * @var int
+     */
+    private $seedhead_yield;
+
+    /**
+     * @var int
+     */
+    private $ditance_on_line;
+
+    /**
+     * @var int
+     */
+    private $ditance_between_lines;
+
+    /**
+     * @var int
+     */
+    private $plant_density;
+
+    /**
+     * @var int
+     */
+    private $area_per_kg;
+
+    /**
+     * @var int
+     */
+    private $seedheads_per_kg;
 
 
     /**
@@ -147,150 +147,6 @@ class SuperVariety
     public function getCode()
     {
         return $this->code;
-    }
-
-    /**
-     * Set official
-     *
-     * @param bool $official
-     *
-     * @return SuperVariety
-     */
-    public function setOfficial($official)
-    {
-        $this->official = $official;
-
-        return $this;
-    }
-
-    /**
-     * Get official
-     *
-     * @return bool
-     */
-    public function getOfficial()
-    {
-        return $this->official;
-    }
-
-    /**
-     * Set officialName
-     *
-     * @param string $officialName
-     *
-     * @return SuperVariety
-     */
-    public function setOfficialName($officialName)
-    {
-        $this->official_name = $officialName;
-
-        return $this;
-    }
-
-    /**
-     * Get officialName
-     *
-     * @return string
-     */
-    public function getOfficialName()
-    {
-        return $this->official_name;
-    }
-
-    /**
-     * Set officialDateIn
-     *
-     * @param \DateTime $officialDateIn
-     *
-     * @return SuperVariety
-     */
-    public function setOfficialDateIn($officialDateIn)
-    {
-        $this->official_date_in = $officialDateIn;
-
-        return $this;
-    }
-
-    /**
-     * Get officialDateIn
-     *
-     * @return \DateTime
-     */
-    public function getOfficialDateIn()
-    {
-        return $this->official_date_in;
-    }
-
-    /**
-     * Set officialDateOut
-     *
-     * @param \DateTime $officialDateOut
-     *
-     * @return SuperVariety
-     */
-    public function setOfficialDateOut($officialDateOut)
-    {
-        $this->official_date_out = $officialDateOut;
-
-        return $this;
-    }
-
-    /**
-     * Get officialDateOut
-     *
-     * @return \DateTime
-     */
-    public function getOfficialDateOut()
-    {
-        return $this->official_date_out;
-    }
-
-    /**
-     * Set maintainer
-     *
-     * @param string $maintainer
-     *
-     * @return SuperVariety
-     */
-    public function setMaintainer($maintainer)
-    {
-        $this->maintainer = $maintainer;
-
-        return $this;
-    }
-
-    /**
-     * Get maintainer
-     *
-     * @return string
-     */
-    public function getMaintainer()
-    {
-        return $this->maintainer;
-    }
-
-    /**
-     * Set legalGerminationRate
-     *
-     * @param int $legalGerminationRate
-     *
-     * @return SuperVariety
-     */
-    public function setLegalGerminationRate($legalGerminationRate)
-    {
-        $this->legal_germination_rate = $legalGerminationRate;
-
-        return $this;
-    }
-
-    /**
-     * Get legalGerminationRate
-     *
-     * @return int
-     */
-    public function getLegalGerminationRate()
-    {
-        return $this->legal_germination_rate;
     }
 
     /**
@@ -387,6 +243,150 @@ class SuperVariety
     public function getRaiseDuration()
     {
         return $this->raise_duration;
+    }
+
+    /**
+     * Set seedheadYield
+     *
+     * @param int $seedheadYield
+     *
+     * @return SuperVariety
+     */
+    public function setSeedheadYield($seedheadYield)
+    {
+        $this->seedhead_yield = $seedheadYield;
+
+        return $this;
+    }
+
+    /**
+     * Get seedheadYield
+     *
+     * @return int
+     */
+    public function getSeedheadYield()
+    {
+        return $this->seedhead_yield;
+    }
+
+    /**
+     * Set ditanceOnLine
+     *
+     * @param int $ditanceOnLine
+     *
+     * @return SuperVariety
+     */
+    public function setDitanceOnLine($ditanceOnLine)
+    {
+        $this->ditance_on_line = $ditanceOnLine;
+
+        return $this;
+    }
+
+    /**
+     * Get ditanceOnLine
+     *
+     * @return int
+     */
+    public function getDitanceOnLine()
+    {
+        return $this->ditance_on_line;
+    }
+
+    /**
+     * Set ditanceBetweenLines
+     *
+     * @param int $ditanceBetweenLines
+     *
+     * @return SuperVariety
+     */
+    public function setDitanceBetweenLines($ditanceBetweenLines)
+    {
+        $this->ditance_between_lines = $ditanceBetweenLines;
+
+        return $this;
+    }
+
+    /**
+     * Get ditanceBetweenLines
+     *
+     * @return int
+     */
+    public function getDitanceBetweenLines()
+    {
+        return $this->ditance_between_lines;
+    }
+
+    /**
+     * Set plantDensity
+     *
+     * @param int $plantDensity
+     *
+     * @return SuperVariety
+     */
+    public function setPlantDensity($plantDensity)
+    {
+        $this->plant_density = $plantDensity;
+
+        return $this;
+    }
+
+    /**
+     * Get plantDensity
+     *
+     * @return int
+     */
+    public function getPlantDensity()
+    {
+        return $this->plant_density;
+    }
+
+    /**
+     * Set areaPerKg
+     *
+     * @param int $areaPerKg
+     *
+     * @return SuperVariety
+     */
+    public function setAreaPerKg($areaPerKg)
+    {
+        $this->area_per_kg = $areaPerKg;
+
+        return $this;
+    }
+
+    /**
+     * Get areaPerKg
+     *
+     * @return int
+     */
+    public function getAreaPerKg()
+    {
+        return $this->area_per_kg;
+    }
+
+    /**
+     * Set seedheadsPerKg
+     *
+     * @param int $seedheadsPerKg
+     *
+     * @return SuperVariety
+     */
+    public function setSeedheadsPerKg($seedheadsPerKg)
+    {
+        $this->seedheads_per_kg = $seedheadsPerKg;
+
+        return $this;
+    }
+
+    /**
+     * Get seedheadsPerKg
+     *
+     * @return int
+     */
+    public function getSeedheadsPerKg()
+    {
+        return $this->seedheads_per_kg;
     }
 }
 

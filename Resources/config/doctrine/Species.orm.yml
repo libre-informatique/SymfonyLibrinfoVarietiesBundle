@@ -10,6 +10,10 @@ Librinfo\VarietiesBundle\Entity\Species:
         alias:
             type:     string(255)
             nullable: true
+        # cycle végétatif
+        life_cycle:
+            type:     string(10)
+            nullable: true
 
     manyToOne:
         genus:
@@ -17,12 +21,6 @@ Librinfo\VarietiesBundle\Entity\Species:
             inversedBy: specieses
             joinColumn:
                 name: genus_id
-            cascade: [ persist ]
-        plant_category:
-            targetEntity: Librinfo\VarietiesBundle\Entity\PlantCategory
-            inversedBy: specieses
-            joinColumn:
-                name: plant_category_id
             cascade: [ persist ]
         parent_species:
             targetEntity: Librinfo\VarietiesBundle\Entity\Species

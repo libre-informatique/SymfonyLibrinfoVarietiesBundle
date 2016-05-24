@@ -25,16 +25,16 @@ class PlantCategory implements NodeInterface
     private $code;
 
     /**
-     * @var Collection
+     * @var \Doctrine\Common\Collections\Collection
      */
-    private $specieses;
+    private $varieties;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->specieses = new ArrayCollection();
+        $this->varieties = new ArrayCollection();
     }
 
     /**
@@ -62,42 +62,40 @@ class PlantCategory implements NodeInterface
     }
 
     /**
-     * Add species
+     * Add variety
      *
-     * @param \Librinfo\VarietiesBundle\Entity\Species $species
+     * @param \Librinfo\VarietiesBundle\Entity\Variety $variety
      *
      * @return PlantCategory
      */
-    public function addSpecies(\Librinfo\VarietiesBundle\Entity\Species $species)
+    public function addVariety(\Librinfo\VarietiesBundle\Entity\Variety $variety)
     {
-        $species->setPlantCategory($this);
-        $this->specieses[] = $species;
+        $this->varieties[] = $variety;
 
         return $this;
     }
 
     /**
-     * Remove species
+     * Remove variety
      *
-     * @param \Librinfo\VarietiesBundle\Entity\Species $species
+     * @param \Librinfo\VarietiesBundle\Entity\Variety $variety
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeSpecies(\Librinfo\VarietiesBundle\Entity\Species $species)
+    public function removeVariety(\Librinfo\VarietiesBundle\Entity\Variety $variety)
     {
-        return $this->specieses->removeElement($species);
+        return $this->varieties->removeElement($variety);
     }
 
     /**
-     * Get specieses
+     * Get varieties
      *
-     * @return Collection
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function getSpecieses()
+    public function getVarieties()
     {
-        return $this->specieses;
+        return $this->varieties;
     }
-
 
     public function setChildNodeOf(NodeInterface $node)
     {

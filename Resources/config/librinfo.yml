@@ -196,6 +196,9 @@ parameters:
                             genus:
                                 admin_code: librinfo_varieties.admin.genus
                                 required: true
+                            life_cycle:
+                                type: trans
+                                catalogue: varieties
             Sonata\AdminBundle\Form\FormMapper:
                 add:
                     form_group_general:
@@ -209,12 +212,6 @@ parameters:
                             genus:
                                 _options:
                                     admin_code: librinfo_varieties.admin.genus
-                            plant_category:
-                                type: librinfo_baseentities_treeable
-                                class: Librinfo\VarietiesBundle\Entity\PlantCategory
-                                required: false
-                                max_node_level: 3
-                                min_node_level: 2
                             parent_species:
                                 type: sonata_type_model_autocomplete
                                 route: { name: searchable_admin_retrieve_autocomplete_items }
@@ -223,6 +220,9 @@ parameters:
                                 required: false
                                 _options:
                                     admin_code: librinfo_varieties.admin.species_embedded
+                            life_cycle:
+                                type: librinfo_varieties_lifecycle
+                                required: false
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:
@@ -259,6 +259,9 @@ parameters:
                             alias: ~
                             species:
                                 admin_code: librinfo_varieties.admin.species
+                            life_cycle:
+                                type: trans
+                                catalogue: varieties
                     form_group_technical:
                         '':
                             tkw: ~
@@ -272,12 +275,66 @@ parameters:
                             alias:
                                 type: text
                                 required: false
+                            code: ~
                             species:
                                 _options:
                                     admin_code: librinfo_varieties.admin.species
+                            plant_categories:
+                                query_builder: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete::getAllWithoutRootQB
+#                                type: librinfo_baseentities_treeable
+#                                class: Librinfo\VarietiesBundle\Entity\PlantCategory
+#                                required: false
+#                                max_node_level: 3
+#                                min_node_level: 2
+                            life_cycle:
+                                type: librinfo_varieties_lifecycle
+                                required: false
+# TODO: restore this when variety_descriptions are finished
+#                        form_group_gardeners:
+#                            variety_descriptions:
+#                                type: sonata_type_collection
+#                                by_reference: true
+#                                required: true # if not true, child form fields cannot be required (why ??)
+#                                btn_add: false
+#                                label: false
+#                                type_options:
+#                                    delete: false
+#                                    btn_add: false
+#                                    label: false
+                        form_group_offical_catalogue:
+                            official: ~
+                            official_name: ~
+                            official_name: ~
+                            official_date_in:
+                                type: sonata_type_date_picker
+                                required: false
+                            official_date_out:
+                                type: sonata_type_date_picker
+                                required: false
+                            official_maintainer: ~
                     form_group_technical:
                         '':
-                            tkw: ~
+                            tkw:
+                                help: librinfo.help.twk
+                            legal_germination_rate:
+                                help: librinfo.help.legal_germination_rate
+                            germination_rate:
+                                help: librinfo.help.germination_rate
+                            seed_lifespan:
+                                help: librinfo.help.seed_lifespan
+                            raise_duration:
+                                help: librinfo.help.raise_duration
+                            seedhead_yield:
+                                help: librinfo.help.seedhead_yield
+                            ditance_on_line:
+                                help: librinfo.help.ditance_on_line
+                            ditance_between_lines:
+                                help: librinfo.help.ditance_between_lines
+                            plant_density:
+                                help: librinfo.help.plant_density
+                            area_per_kg:
+                                help: librinfo.help.area_per_kg
+                            seedheads_per_kg: ~
                     _options:
                         tabsOrder: [form_group_general, form_group_technical, form_group_specific]
             Sonata\AdminBundle\Datagrid\DatagridMapper:
@@ -302,37 +359,6 @@ parameters:
                         xls: csv
                         json: csv
                         xml: csv
-
-
-##########
-# VARIETY
-##########
-
-        Librinfo\VarietiesBundle\Entity\Variety:
-            Sonata\AdminBundle\Show\ShowMapper:
-                add:
-
-            Sonata\AdminBundle\Form\FormMapper:
-                add:
-
-            Sonata\AdminBundle\Datagrid\ListMapper:
-                remove: [createdAt]
-                add:
-                    latin_name: ~
-                    alias: ~
-                    description: ~
-                    _options:
-                        fieldsOrder:
-                            - name
-                            - latin_name
-                            - alias
-                            - description
-                    _export_format:
-                        csv: [name, latinName, alias, description, createdAt, updatedAt]
-                        xls: csv
-                        json: csv
-                        xml: csv
-
 
 
 ##########
@@ -361,3 +387,40 @@ parameters:
                         xls: csv
                         json: csv
                         xml: csv
+
+
+#####################
+# VARIETY DESCRIPTION
+#####################
+
+        Librinfo\VarietiesBundle\Entity\VarietyDescription:
+            Sonata\AdminBundle\Show\ShowMapper:
+                add:
+                    fieldset: ~
+#                    field: ~
+#                    value: ~
+#                    variety: ~
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+                    form_group_general:
+                        '':
+                            fieldset:
+                                type: hidden
+                                label_render: false
+                            field:
+                                type: hidden
+                                label_render: false
+                            value: ~
+#                            variety: ~
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                add:
+                    fieldsdet: ~
+#                    field: ~
+#                    value: ~
+#                    variety: ~
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add:
+                    fieldset: ~
+#                    field: ~
+#                    value: ~
+#                    variety: ~

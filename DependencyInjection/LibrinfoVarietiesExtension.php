@@ -26,6 +26,8 @@ class LibrinfoVarietiesExtension extends LibrinfoCoreExtension
         $loader->load('services.yml');
         $loader->load('admin.yml');
 
+        $container->setParameter('librinfo_varieties', $config);
+
         if ($container->getParameter('kernel.environment') == 'test')
         {
             $loader->load('datafixtures.yml');

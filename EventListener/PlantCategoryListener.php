@@ -9,6 +9,10 @@ use Librinfo\DoctrineBundle\EventListener\Traits\ClassChecker;
 use Psr\Log\LoggerAwareInterface;
 use Librinfo\DoctrineBundle\EventListener\Traits\Logger;
 
+
+/**
+ * Not used any more. Remove ???
+ */
 class PlantCategoryListener implements LoggerAwareInterface, EventSubscriber
 {
     use ClassChecker, Logger;

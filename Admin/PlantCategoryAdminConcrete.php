@@ -23,4 +23,22 @@ class PlantCategoryAdminConcrete extends PlantCategoryAdmin
 
         parent::preValidate($object);
     }
+
+    public function createQuery($context = 'list') {
+        $query = parent::createQuery($context);
+        $query->andWhere($query->getRootAliases()[0] . '.name != :root_name');
+        $query->setParameter('root_name', '_ROOT_');
+        return $query;
+    }
+
+    /**
+     * Create a query builder that fetches all the plant categories without the root element
+     *
+     * @param PlantCategoryRepository $repo
+     * @return QueryBuilder
+     */
+    public static function getAllWithoutRootQB($repo)
+    {
+        return $repo->getAllWithoutRootQB();
+    }
 }

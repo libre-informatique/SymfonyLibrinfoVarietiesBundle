@@ -14,7 +14,6 @@ class PlantCategoryRepository extends TreeableRepository
      */
     public function getFormTree($rootAlias = 't')
     {
-        dump('here');
         $all = $this->createQueryBuilder($rootAlias)
             ->andWhere($rootAlias.'.materializedPath NOT LIKE :pattern')
             ->addOrderBy($rootAlias.'.sortMaterializedPath', 'ASC')
@@ -50,5 +49,13 @@ class PlantCategoryRepository extends TreeableRepository
         $em->persist($root);
         $em->flush();
         return $root;
+    }
+
+    public function getAllWithoutRootQB($rootAlias = 't')
+    {
+        $qb = $this->createQueryBuilder($rootAlias)
+                ->andWhere("$rootAlias.name != :root_name")
+                ->setParameter(':root_name', '_ROOT_');
+        return $qb;
     }
 }

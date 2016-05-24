@@ -105,6 +105,10 @@
                 <source>librinfo.label.parent_species</source>
                 <target>Est une sous-espèce de</target>
             </trans-unit>                
+            <trans-unit id="librinfo.help.twk">
+                <source>librinfo.help.twk</source>
+                <target>en grammes</target>
+            </trans-unit>                
             
 <!-- VARIETY -->
             <trans-unit id="librinfo.varieties.variety_admin.label">
@@ -123,10 +127,142 @@
                 <source>librinfo.label.species</source>
                 <target>Espèce</target>
             </trans-unit>             
+            <trans-unit id="librinfo.label.plant_categories">
+                <source>librinfo.label.plant_categories</source>
+                <target>Catégories</target>
+            </trans-unit>             
             <trans-unit id="librinfo.label.species_name">
                 <source>librinfo.label.species_name</source>
                 <target>Espèce</target>
             </trans-unit>             
+            <trans-unit id="form_group_offical_catalogue">
+                <source>form_group_offical_catalogue</source>
+                <target>Catalogue officiel</target>
+            </trans-unit>       
+            <trans-unit id="librinfo.label.official">
+                <source>librinfo.label.official</source>
+                <target>Inscrit au catalogue officiel</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.official_name">
+                <source>librinfo.label.official_name</source>
+                <target>Nom au catalogue officiel</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.official_date_in">
+                <source>librinfo.label.official_date_in</source>
+                <target>Date d'inscription</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.official_date_out">
+                <source>librinfo.label.official_date_out</source>
+                <target>Date de radiation</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.official_maintainer">
+                <source>librinfo.label.official_maintainer</source>
+                <target>Mainteneur</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.legal_germination_rate">
+                <source>librinfo.label.legal_germination_rate</source>
+                <target>Taux de germination légal</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.help.legal_germination_rate">
+                <source>librinfo.help.legal_germination_rate</source>
+                <target>(si inscrit au catalogue) - en %</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.germination_rate">
+                <source>librinfo.label.germination_rate</source>
+                <target>Taux de germination AS</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.help.germination_rate">
+                <source>librinfo.help.germination_rate</source>
+                <target>en %</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.seed_lifespan">
+                <source>librinfo.label.seed_lifespan</source>
+                <target>Durée de vie théorique de la graine</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.help.seed_lifespan">
+                <source>librinfo.help.seed_lifespan</source>
+                <target>en années</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.raise_duration">
+                <source>librinfo.label.raise_duration</source>
+                <target>Durée de levée dans les conditions naturelles</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.help.raise_duration">
+                <source>librinfo.help.raise_duration</source>
+                <target>en jours</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.seedhead_yield">
+                <source>librinfo.label.seedhead_yield</source>
+                <target>Rendement par porte-graines</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.help.seedhead_yield">
+                <source>librinfo.help.seedhead_yield</source>
+                <target>unité : nombre de graines ou grammes ???</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.ditance_on_line">
+                <source>librinfo.label.ditance_on_line</source>
+                <target>Distance sur la ligne</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.help.ditance_on_line">
+                <source>librinfo.help.ditance_on_line</source>
+                <target>en cm</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.ditance_between_lines">
+                <source>librinfo.label.ditance_between_lines</source>
+                <target>Écartement des lignes</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.help.ditance_between_lines">
+                <source>librinfo.help.ditance_between_lines</source>
+                <target>en cm</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.plant_density">
+                <source>librinfo.label.plant_density</source>
+                <target>Densité au m²</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.help.plant_density">
+                <source>librinfo.help.plant_density</source>
+                <target>unité : nombre de porte-graines ???</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.area_per_kg">
+                <source>librinfo.label.area_per_kg</source>
+                <target>Surface pour produire 1kg de graines</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.help.area_per_kg">
+                <source>librinfo.help.area_per_kg</source>
+                <target>en m²</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.seedheads_per_kg">
+                <source>librinfo.label.seedheads_per_kg</source>
+                <target>Nombre de porte-graines par kg</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.life_cycle">
+                <source>librinfo.label.life_cycle</source>
+                <target>Cycle végétatif</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.life_cycle_annual">
+                <source>librinfo.label.life_cycle_annual</source>
+                <target>Plante annuelle</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.life_cycle_bisannual">
+                <source>librinfo.label.life_cycle_bisannual</source>
+                <target>Plante bisannuelle</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.life_cycle_perennial">
+                <source>librinfo.label.life_cycle_perennial</source>
+                <target>Plante vivace</target>
+            </trans-unit>                    
+            <trans-unit id="annual">
+                <source>annual</source>
+                <target>Plante annuelle</target>
+            </trans-unit>                    
+            <trans-unit id="bisannual">
+                <source>bisannual</source>
+                <target>Plante bisannuelle</target>
+            </trans-unit>                    
+            <trans-unit id="perennial">
+                <source>perennial</source>
+                <target>Plante vivace</target>
+            </trans-unit>                    
             
 <!-- STRAIN -->
             <trans-unit id="librinfo.varieties.strain_admin.label">
