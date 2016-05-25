@@ -347,6 +347,17 @@ class Variety extends SuperVariety
         return $this->getVarietyDescriptions();
     }
 
+    /**
+     * Set varietyDescriptions
+     * @param \Doctrine\Common\Collections\Collection $variety_descriptions
+     * @return Variety
+     */
+    public function setVarietyDescriptions($variety_descriptions)
+    {
+        $this->variety_descriptions = $variety_descriptions;
+        return $this;
+    }
+
 
     /**
      * Set species

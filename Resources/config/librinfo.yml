@@ -289,18 +289,17 @@ parameters:
                             life_cycle:
                                 type: librinfo_varieties_lifecycle
                                 required: false
-# TODO: restore this when variety_descriptions are finished
-#                        form_group_gardeners:
-#                            variety_descriptions:
-#                                type: sonata_type_collection
-#                                by_reference: true
-#                                required: true # if not true, child form fields cannot be required (why ??)
-#                                btn_add: false
-#                                label: false
-#                                type_options:
-#                                    delete: false
-#                                    btn_add: false
-#                                    label: false
+                        form_group_gardeners:
+                            variety_descriptions:
+                                type: sonata_type_collection
+                                by_reference: true
+                                required: true # if not true, child form fields cannot be required (why ??)
+                                btn_add: false
+                                label: false
+                                type_options:
+                                    delete: false
+                                    btn_add: false
+                                    label: false
                         form_group_offical_catalogue:
                             official: ~
                             official_name: ~
