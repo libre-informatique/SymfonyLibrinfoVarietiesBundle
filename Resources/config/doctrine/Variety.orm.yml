@@ -52,7 +52,15 @@ Librinfo\VarietiesBundle\Entity\Variety:
             targetEntity: Librinfo\VarietiesBundle\Entity\Strain
             mappedBy: variety
             cascade: [ persist ]
-        variety_descriptions:
-            targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescription
+        professional_descriptions:
+            targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionProfessional
+            mappedBy: variety
+            cascade: [ persist ]
+        amateur_descriptions:
+            targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionAmateur
+            mappedBy: variety
+            cascade: [ persist ]
+        inner_descriptions:
+            targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionInner
             mappedBy: variety
             cascade: [ persist ]

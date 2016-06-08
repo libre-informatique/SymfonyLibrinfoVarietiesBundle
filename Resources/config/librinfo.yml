@@ -199,6 +199,7 @@ parameters:
                             life_cycle:
                                 type: trans
                                 catalogue: varieties
+                            varieties: ~
             Sonata\AdminBundle\Form\FormMapper:
                 add:
                     form_group_general:
@@ -289,17 +290,6 @@ parameters:
                             life_cycle:
                                 type: librinfo_varieties_lifecycle
                                 required: false
-                        form_group_gardeners:
-                            variety_descriptions:
-                                type: sonata_type_collection
-                                by_reference: true
-                                required: true # if not true, child form fields cannot be required (why ??)
-                                btn_add: false
-                                label: false
-                                type_options:
-                                    delete: false
-                                    btn_add: false
-                                    label: false
                         form_group_offical_catalogue:
                             official: ~
                             official_name: ~
@@ -311,6 +301,29 @@ parameters:
                                 type: sonata_type_date_picker
                                 required: false
                             official_maintainer: ~
+                    form_tab_inner:
+                        form_group_inner:
+                            _options:
+                                description: La liste des champs est encore incomplète...
+                    form_tab_professionals:
+                        form_group_professionals:
+                            professional_descriptions:
+                                type: sonata_type_collection
+                                by_reference: true
+                                required: true
+                                btn_add: false
+                                label: false
+                                type_options:
+                                    required: false
+                                    delete: false
+                                    btn_add: false
+                                    label: false
+                            _options:
+                                description: La liste des champs est encore incomplète...
+                    form_tab_amateurs:
+                        form_group_amateurs:
+                            _options:
+                                description: La liste des champs est encore incomplète...
                     form_group_technical:
                         '':
                             tkw:
@@ -335,7 +348,13 @@ parameters:
                                 help: librinfo.help.area_per_kg
                             seedheads_per_kg: ~
                     _options:
-                        tabsOrder: [form_group_general, form_group_technical, form_group_specific]
+                        tabsOrder:
+                            - form_group_general
+                            - form_tab_inner
+                            - form_tab_professionals
+                            - form_tab_amateurs
+                            - form_group_technical
+                            - form_group_specific
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
                     name: ~

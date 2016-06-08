@@ -2,12 +2,13 @@
 
 Librinfo\VarietiesBundle\Entity\VarietyDescription:
     type: entity
+    inheritanceType: SINGLE_TABLE
+    discriminatorColumn:
+        name: fieldset
+        type: string
+    discriminatorMap:
+        variety: VarietyDescription
+        professional: VarietyDescriptionProfessional
+        amateur: VarietyDescriptionAmateur
+        inner: VarietyDescriptionInner
     table: variety_description
-
-    manyToOne:
-        variety:
-            targetEntity: Librinfo\VarietiesBundle\Entity\Variety
-            inversedBy: variety_descriptions
-            joinColumn:
-                name: variety_id
-            cascade: [ persist ]
