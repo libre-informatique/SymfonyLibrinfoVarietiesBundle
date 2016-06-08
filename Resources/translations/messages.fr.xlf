@@ -37,13 +37,13 @@
             </trans-unit>                
             <trans-unit id="librinfo.varieties.family_admin.label">
                 <source>librinfo.varieties.family_admin.label</source>
-                <target>Familles</target>
+                <target>Famille</target>
             </trans-unit>    
             
 <!-- GENUS -->
             <trans-unit id="librinfo.varieties.genus_admin.label">
                 <source>librinfo.varieties.genus_admin.label</source>
-                <target>Genres</target>
+                <target>Genre</target>
             </trans-unit> 
             <trans-unit id="librinfo.link.genus_list">
                 <source>librinfo.link.genus_list</source>
@@ -53,7 +53,7 @@
 <!-- PLANT CATEGORY -->
             <trans-unit id="librinfo.varieties.plant_category_admin.label">
                 <source>librinfo.varieties.plant_category_admin.label</source>
-                <target>Catégories</target>
+                <target>Catégorie de variété</target>
             </trans-unit> 
             <trans-unit id="librinfo.link.plant_category_list">
                 <source>librinfo.link.plant_category_list</source>
@@ -75,7 +75,7 @@
 <!-- SPECIES -->
             <trans-unit id="librinfo.varieties.species_admin.label">
                 <source>librinfo.varieties.species_admin.label</source>
-                <target>Espèces</target>
+                <target>Espèce</target>
             </trans-unit> 
             <trans-unit id="librinfo.link.species_list">
                 <source>librinfo.link.species_list</source>
@@ -101,7 +101,7 @@
 <!-- VARIETY -->
             <trans-unit id="librinfo.varieties.variety_admin.label">
                 <source>librinfo.varieties.variety_admin.label</source>
-                <target>Variétés</target>
+                <target>Variété</target>
             </trans-unit> 
             <trans-unit id="librinfo.link.variety_list">
                 <source>librinfo.link.variety_list</source>
@@ -289,7 +289,7 @@
 <!-- STRAIN -->
             <trans-unit id="librinfo.varieties.strain_admin.label">
                 <source>librinfo.varieties.strain_admin.label</source>
-                <target>Souches</target>
+                <target>Souche</target>
             </trans-unit>                       
             
         </body>
