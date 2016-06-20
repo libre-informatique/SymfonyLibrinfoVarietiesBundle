@@ -55,11 +55,11 @@ Librinfo\VarietiesBundle\Entity\Variety:
         professional_descriptions:
             targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionProfessional
             mappedBy: variety
-            cascade: [ persist ]
+            cascade: [ persist , remove]
         amateur_descriptions:
             targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionAmateur
             mappedBy: variety
-            cascade: [ persist ]
+            cascade: [ persist , remove]
         inner_descriptions:
             targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionInner
             mappedBy: variety
