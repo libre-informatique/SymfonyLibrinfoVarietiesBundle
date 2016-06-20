@@ -211,6 +211,7 @@ parameters:
                                 type: text
                                 required: false
                             genus:
+                                type: sonata_type_model
                                 _options:
                                     admin_code: librinfo_varieties.admin.genus
                             parent_species:
