@@ -38,18 +38,19 @@ class VarietyAdminConcrete extends VarietyAdmin
             if ( $mapping['type'] == ClassMetadataInfo::MANY_TO_MANY && !$mapping['isOwningSide'] )
                 $this->addManyToManyCollections($fieldname);
         }
-
+        
         // END HandlesRelationsAdmin::configureFormFields
 
         // Manage VarietyDescriptions according to configurationsettings
         $config = $this->getConfigurationPool()->getContainer()->getParameter('librinfo_varieties')['variety_descriptions'];
         $admin = $this;
+        
         $formMapper->getFormBuilder()->addEventListener(FormEvents::PRE_SET_DATA,
             function ($event) use ($admin, $config)
             {
                 $subject = $admin->getSubject($event->getData());
 
-                foreach (['professional'] as $fieldset) {
+                foreach (['professional', 'amateur'] as $fieldset) {
                     $getter = 'get' . ucfirst($fieldset) . 'Descriptions';
                     $setter = 'set' . ucfirst($fieldset) . 'Descriptions';
                     $remover = 'remove' . ucfirst($fieldset) . 'Description';

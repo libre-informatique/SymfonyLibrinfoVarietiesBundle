@@ -259,6 +259,14 @@
                 <source>form_group_professionals</source>
                 <target>Conseils de culture pour les professionnels</target>
             </trans-unit>                    
+            <trans-unit id="form_tab_amateurs">
+                <source>form_tab_amateurs</source>
+                <target>Conseils Jardiniers</target>
+            </trans-unit>                    
+            <trans-unit id="form_group_amateurs">
+                <source>form_group_amateurs</source>
+                <target>Conseils de culture pour les jardiniers amateurs</target>
+            </trans-unit>                    
              
 <!-- VARIETY DESCRIPTIONS -->
             <trans-unit id="librinfo_description_professional_possible_sowing_periods">
@@ -284,6 +292,10 @@
             <trans-unit id="librinfo_description_professional_germination_conditions">
                 <source>librinfo_description_professional_germination_conditions</source>
                 <target>Conditions de germination</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_possible_sowing_periods">
+                <source>librinfo_description_amateur_possible_sowing_periods</source>
+                <target>Périodes de semis possibles</target>
             </trans-unit> 
             
 <!-- STRAIN -->
