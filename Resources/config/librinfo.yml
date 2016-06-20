@@ -280,6 +280,7 @@ parameters:
                                 required: false
                             code: ~
                             species:
+                                type: sonata_type_model
                                 _options:
                                     admin_code: librinfo_varieties.admin.species
                             plant_categories:
