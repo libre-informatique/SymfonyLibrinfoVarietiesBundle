@@ -411,6 +411,16 @@ class Variety extends SuperVariety
     {
         return $this->amateur_descriptions;
     }
+    
+     /**
+     * Get amateurDescriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAmateur_descriptions()
+    {
+        return $this->amateur_descriptions;
+    }
 
     /**
      * Set amateur descriptions
