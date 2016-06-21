@@ -34,7 +34,7 @@ class Configuration implements ConfigurationInterface
                                 ->arrayNode('options')
                                     ->children()
                                         ->booleanNode('required')->defaultFalse()->end()
-                                        ->booleanNode('help')->defaultFalse()->end()
+                                        ->scalarNode('help')->defaultFalse()->end()
                                         ->scalarNode('label')->defaultNull()->end()
                                     ->end()
                                     ->addDefaultsIfNotSet()

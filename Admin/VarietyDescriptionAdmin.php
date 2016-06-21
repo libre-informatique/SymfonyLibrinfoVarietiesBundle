@@ -52,7 +52,7 @@ class VarietyDescriptionAdmin extends CoreAdmin
         $fieldset = $this->subject->getFieldset();
         $field = $this->subject->getField();
         $config = empty($vd_config[$fieldset][$field]) ? '' : $vd_config[$fieldset][$field];
-        
+
         $type = empty($config['widget']) ? 'text' : $config['widget']; // TODO: limit types ?
         $options = empty($config['options']) ? [] : $config['options'];
         if (!isset($options['label']) || !$options['label'])
