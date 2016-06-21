@@ -3,7 +3,7 @@
 Librinfo\VarietiesBundle\Entity\Variety:
     type: entity
     table: variety
-
+    
     fields:
         # cycle végétatif
         life_cycle:

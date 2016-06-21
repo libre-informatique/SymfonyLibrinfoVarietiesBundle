@@ -293,10 +293,91 @@
                 <source>librinfo_description_professional_germination_conditions</source>
                 <target>Conditions de germination</target>
             </trans-unit> 
-            <trans-unit id="librinfo_description_amateur_possible_sowing_periods">
-                <source>librinfo_description_amateur_possible_sowing_periods</source>
-                <target>Périodes de semis possibles</target>
+            <trans-unit id="librinfo.varieties.variety_description_amateur_admin.label">
+                <source>librinfo.varieties.variety_description_amateur_admin.label</source>
+                <target>Conseils Jardiniers</target>
+            </trans-unit>  
+            <trans-unit id="librinfo_description_professional_seed_storage">
+                <source>librinfo_description_professional_seed_storage</source>
+                <target>Stockage optimal (semence)</target>
             </trans-unit> 
+            <trans-unit id=" librinfo_description_professional_transplant ">
+                <source> librinfo_description_professional_transplant </source>
+                <target>Repiquage</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_sowing_density">
+                <source>librinfo_description_professional_sowing_density</source>
+                <target>Densité de semis</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_on_line_distance">
+                <source>librinfo_description_professional_on_line_distance</source>
+                <target>Distance sur ligne</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_between_distance">
+                <source>librinfo_description_professional_between_distance</source>
+                <target>Distance entre les lignes</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_exposure">
+                <source>librinfo_description_professional_exposure</source>
+                <target>Exposition</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_seedling_irrigation">
+                <source>librinfo_description_professional_seedling_irrigation</source>
+                <target>Irrigation (stade semis)</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_manure">
+                <source> librinfo_description_professional_manure </source>
+                <target>Fumure</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_cuttings_period">
+                <source> librinfo_description_professional_cuttings_period </source>
+                <target>Période de bouturage</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_transplant_irrigation">
+                <source>librinfo_description_professional_transplant_irrigation</source>
+                <target>Irrigation (stade repiquage)</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_transplant_manure_quantity">
+                <source>librinfo_description_professional_transplant_manure_quantity</source>
+                <target>Quantité de fumure</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_substratum">
+                <source>librinfo_description_professional_substratum</source>
+                <target>Substrat</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_treatments">
+                <source>librinfo_description_professional_treatments</source>
+                <target>Traitements</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_harvest_storage">
+                <source>librinfo_description_professional_harvest_storage</source>
+                <target>Stockage optimal (récoltes)</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_advised_outcome">
+                <source>librinfo_description_professional_advised_outcome</source>
+                <target>Débouchées conseillées</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_possible_outcome">
+                <source>librinfo_description_professional_possible_outcome</source>
+                <target>Débouchées possibles</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_soil">
+                <source>librinfo_description_professional_soil</source>
+                <target>Sol</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_yield">
+                <source>librinfo_description_professional_yield</source>
+                <target>Rendement</target>
+            </trans-unit> 
+            <trans-unit id="librinfo.help.yield">
+                <source>librinfo.help.yield</source>
+                <target>par m2</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_biodynamics">
+                <source>librinfo_description_professional_biodynamics</source>
+                <target>Biodynamie</target>
+            </trans-unit> 
+            
             
 <!-- STRAIN -->
             <trans-unit id="librinfo.varieties.strain_admin.label">

@@ -369,6 +369,15 @@ parameters:
                             - form_tab_amateurs
                             - form_group_technical
                             - form_group_specific
+#                    customfields:
+#                        professional:
+#                            possible_sowing_periods: 
+#                                type: text
+#                            seedling_irrigation:
+#                                type: number
+#                        amateur:
+#                            cutting_period:
+#                                type: text
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
                     name: ~

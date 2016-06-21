@@ -2,7 +2,7 @@ Librinfo\VarietiesBundle\Entity\SuperVariety:
     type: mappedSuperclass
     librinfo:
         loggable: true
-
+        
     fields:
         latin_name:
             type:     string(255)
