@@ -11,6 +11,10 @@
                 <source>librinfo.link.family_list</source>
                 <target>Families list</target>
             </trans-unit>
+            <trans-unit id="librinfo.link.family_create">
+                <source>librinfo.link.family_create</source>
+                <target>New family</target>
+            </trans-unit>
             <trans-unit id="librinfo.label.family">
                 <source>librinfo.label.family</source>
                 <target>Family</target>
@@ -48,7 +52,15 @@
             <trans-unit id="librinfo.link.genus_list">
                 <source>librinfo.link.genus_list</source>
                 <target>Genuses list</target>
-            </trans-unit>              
+            </trans-unit>    
+            <trans-unit id="librinfo.link.genus_create">
+                <source>librinfo.link.genus_create</source>
+                <target>New genus</target>
+            </trans-unit>
+            <trans-unit id="form_group_specieses">
+                <source>form_group_specieses</source>
+                <target>Species</target>
+            </trans-unit>                 
             
 <!-- PLANT CATEGORY -->
             <trans-unit id="librinfo.varieties.plant_category_admin.label">
@@ -61,7 +73,7 @@
             </trans-unit>            
             <trans-unit id="librinfo.link.plant_category_create">
                 <source>librinfo.link.plant_category_create</source>
-                <target>New plant categorie</target>
+                <target>New plant category</target>
             </trans-unit>    
             <trans-unit id="librinfo.label.code">
                 <source>librinfo.label.code</source>
@@ -96,6 +108,10 @@
             <trans-unit id="librinfo.help.twk">
                 <source>librinfo.help.twk</source>
                 <target>lbs</target>
+            </trans-unit> 
+            <trans-unit id="librinfo.link.species_create">
+                <source>librinfo.link.species_create</source>
+                <target>New species</target>
             </trans-unit>                
             
 <!-- VARIETY -->

@@ -11,6 +11,10 @@
                 <source>librinfo.link.family_list</source>
                 <target>Liste des familles</target>
             </trans-unit>
+            <trans-unit id="librinfo.link.family_create">
+                <source>librinfo.link.family_create</source>
+                <target>Nouvelle famille</target>
+            </trans-unit>
             <trans-unit id="librinfo.label.family">
                 <source>librinfo.label.family</source>
                 <target>Famille</target>
@@ -48,7 +52,15 @@
             <trans-unit id="librinfo.link.genus_list">
                 <source>librinfo.link.genus_list</source>
                 <target>Liste des genres</target>
+            </trans-unit>
+            <trans-unit id="librinfo.link.genus_create">
+                <source>librinfo.link.genus_create</source>
+                <target>Nouveau genre</target>
             </trans-unit>              
+            <trans-unit id="form_group_specieses">
+                <source>form_group_specieses</source>
+                <target>Espèces</target>
+            </trans-unit>          
             
 <!-- PLANT CATEGORY -->
             <trans-unit id="librinfo.varieties.plant_category_admin.label">
@@ -80,6 +92,10 @@
             <trans-unit id="librinfo.link.species_list">
                 <source>librinfo.link.species_list</source>
                 <target>Liste des espèces</target>
+            </trans-unit>
+            <trans-unit id="librinfo.link.species_create">
+                <source>librinfo.link.species_create</source>
+                <target>Nouvelle espèce</target>
             </trans-unit>               
             <trans-unit id="librinfo.label.genus">
                 <source>librinfo.label.genus</source>
