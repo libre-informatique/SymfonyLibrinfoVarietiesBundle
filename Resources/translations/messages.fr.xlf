@@ -122,6 +122,10 @@
             <trans-unit id="librinfo.link.variety_list">
                 <source>librinfo.link.variety_list</source>
                 <target>Liste des variétés</target>
+            </trans-unit> 
+            <trans-unit id="librinfo.link.variety_create">
+                <source>librinfo.link.variety_create</source>
+                <target>Nouvelle variété</target>
             </trans-unit>                 
             <trans-unit id="librinfo.label.tkw">
                 <source>librinfo.label.tkw</source>
@@ -399,7 +403,15 @@
             <trans-unit id="librinfo.varieties.strain_admin.label">
                 <source>librinfo.varieties.strain_admin.label</source>
                 <target>Souche</target>
-            </trans-unit>                       
+            </trans-unit>     
+            <trans-unit id="librinfo.link.strain_list">
+                <source>librinfo.link.strain_list</source>
+                <target>Liste des souches</target>
+            </trans-unit>         
+            <trans-unit id="librinfo.link.strain_create">
+                <source>librinfo.link.strain_create</source>
+                <target>Nouvelle souche</target>
+            </trans-unit>                   
             
         </body>
     </file>

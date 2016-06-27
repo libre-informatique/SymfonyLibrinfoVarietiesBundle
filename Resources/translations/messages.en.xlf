@@ -122,7 +122,11 @@
             <trans-unit id="librinfo.link.variety_list">
                 <source>librinfo.link.variety_list</source>
                 <target>Varieties list</target>
-            </trans-unit>                 
+            </trans-unit>           
+            <trans-unit id="librinfo.link.variety_create">
+                <source>librinfo.link.variety_create</source>
+                <target>New variety</target>
+            </trans-unit>       
             <trans-unit id="librinfo.label.tkw">
                 <source>librinfo.label.tkw</source>
                 <target>Thousand kernel weight</target>
@@ -399,7 +403,15 @@
             <trans-unit id="librinfo.varieties.strain_admin.label">
                 <source>librinfo.varieties.strain_admin.label</source>
                 <target>Strain</target>
-            </trans-unit>                       
+            </trans-unit>
+            <trans-unit id="librinfo.link.strain_list">
+                <source>librinfo.link.strain_list</source>
+                <target>Strains list</target>
+            </trans-unit>          
+            <trans-unit id="librinfo.link.strain_create">
+                <source>librinfo.link.strain_create</source>
+                <target>New strain</target>
+            </trans-unit>                 
             
         </body>
     </file>
