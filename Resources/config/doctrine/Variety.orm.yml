@@ -33,6 +33,10 @@ Librinfo\VarietiesBundle\Entity\Variety:
         legal_germination_rate:
             type:     integer
             nullable: true
+        # statut règlementaire
+#        regulatory_status:
+#            type:     string(255)
+#            nullable: true
 
     manyToMany:
         plant_categories:

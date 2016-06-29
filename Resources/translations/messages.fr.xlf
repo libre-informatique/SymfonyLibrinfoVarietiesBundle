@@ -35,9 +35,9 @@
                 <source>form_group_genuses</source>
                 <target>Genres</target>
             </trans-unit>                
-            <trans-unit id="form_group_technical">
-                <source>form_group_technical</source>
-                <target>Technique</target>
+            <trans-unit id="form_tab_seeds_production">
+                <source>form_tab_seeds_production</source>
+                <target>Production de semences</target>
             </trans-unit>                
             <trans-unit id="librinfo.varieties.family_admin.label">
                 <source>librinfo.varieties.family_admin.label</source>
@@ -286,9 +286,14 @@
             <trans-unit id="form_group_amateurs">
                 <source>form_group_amateurs</source>
                 <target>Conseils de culture pour les jardiniers amateurs</target>
-            </trans-unit>                    
+            </trans-unit>
+            <trans-unit id="form_group_density">
+                <source>form_group_density</source>
+                <target>Densité au m2</target>
+            </trans-unit>                     
              
 <!-- VARIETY DESCRIPTIONS -->
+             <!-- professional -->
             <trans-unit id="librinfo_description_professional_possible_sowing_periods">
                 <source>librinfo_description_professional_possible_sowing_periods</source>
                 <target>Périodes de semis possibles</target>
@@ -396,8 +401,64 @@
             <trans-unit id="librinfo_description_professional_biodynamics">
                 <source>librinfo_description_professional_biodynamics</source>
                 <target>Biodynamie</target>
-            </trans-unit> 
-            
+            </trans-unit>
+            <trans-unit id="librinfo_description_professional_tutoring">
+                <source>librinfo_description_professional_tutoring</source>
+                <target>Tuteurage</target>
+            </trans-unit>
+            <!-- amateur --> 
+            <trans-unit id="librinfo_description_amateur_possible_sowing_periods">
+                <source>librinfo_description_amateur_possible_sowing_periods</source>
+                <target>Périodes de semis possibles</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_germination_conditions">
+                <source>librinfo_description_amateur_germination_conditions</source>
+                <target>Conditions de germination</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_seed_storage">
+                <source>librinfo_description_amateur_seed_storage</source>
+                <target>Conditions de stockage otpimal (semences)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_transplant">
+                <source>librinfo_description_amateur_transplant</source>
+                <target>Repiquage, plantation</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_sowing_density">
+                <source>librinfo_description_amateur_sowing_density</source>
+                <target>Densité de semis</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_on_line_distance">
+                <source>librinfo_description_amateur_on_line_distance</source>
+                <target>Distance sur ligne</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_between_distance">
+                <source>librinfo_description_amateur_between_distance</source>
+                <target>Distance entre les lignes</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_seedling_irrigation">
+                <source>librinfo_description_amateur_seedling_irrigation</source>
+                <target>Irrigation (stade semis)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_exposure">
+                <source>librinfo_description_amateur_exposure</source>
+                <target>Exposition</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_manure">
+                <source>librinfo_description_amateur_manure</source>
+                <target>Fumure</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_soil">
+                <source>librinfo_description_amateur_soil</source>
+                <target>Sol</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_yield">
+                <source>librinfo_description_amateur_yield</source>
+                <target>Rendement au m2</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_biodynamics">
+                <source>librinfo_description_amateur_biodynamics</source>
+                <target>Biodynamie</target>
+            </trans-unit>
             
 <!-- STRAIN -->
             <trans-unit id="librinfo.varieties.strain_admin.label">
