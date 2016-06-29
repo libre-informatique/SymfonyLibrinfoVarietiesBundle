@@ -52,9 +52,14 @@ class VarietyDescriptionAdmin extends CoreAdmin
         $fieldset = $this->subject->getFieldset();
         $field = $this->subject->getField();
         $config = empty($vd_config[$fieldset][$field]) ? '' : $vd_config[$fieldset][$field];
-
-        $type = empty($config['widget']) ? 'text' : $config['widget']; // TODO: limit types ?
+        
+        $type = $config['type']; // TODO: limit types ?
+        
         $options = empty($config['options']) ? [] : $config['options'];
+        
+        if(isset($options['choices']) && empty($options['choices']))
+            unset($options['choices']);
+            
         if (!isset($options['label']) || !$options['label'])
             $options['label'] = sprintf("librinfo_description_%s_%s", $fieldset, $field);
 

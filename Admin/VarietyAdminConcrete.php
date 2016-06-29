@@ -49,7 +49,7 @@ class VarietyAdminConcrete extends VarietyAdmin
             function ($event) use ($admin, $config)
             {
                 $subject = $admin->getSubject($event->getData());
-
+                
                 foreach (['professional', 'amateur'] as $fieldset) {
                     $getter = 'get' . ucfirst($fieldset) . 'Descriptions';
                     $setter = 'set' . ucfirst($fieldset) . 'Descriptions';
