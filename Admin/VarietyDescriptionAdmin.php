@@ -48,11 +48,26 @@ class VarietyDescriptionAdmin extends CoreAdmin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $vd_config = $this->getConfigurationPool()->getContainer()->getParameter('librinfo_varieties')['variety_descriptions'];
+        $fieldset = $this->subject->getFieldset();
+        $field = $this->subject->getField();
+        $config = empty($vd_config[$fieldset][$field]) ? '' : $vd_config[$fieldset][$field];
+        
+        $type = $config['type']; // TODO: limit types ?
+        
+        $options = empty($config['options']) ? [] : $config['options'];
+        
+        if(isset($options['choices']) && empty($options['choices']))
+            unset($options['choices']);
+            
+        if (!isset($options['label']) || !$options['label'])
+            $options['label'] = sprintf("librinfo_description_%s_%s", $fieldset, $field);
+
         $formMapper
-            ->add('group')
-            ->add('field')
-            ->add('value')
-            ->add('id')
+            ->add('fieldset', 'hidden')
+            ->add('field', 'hidden')
+            ->add('id', 'hidden')
+            ->add('value', $type, $options)
         ;
     }
 

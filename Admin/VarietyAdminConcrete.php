@@ -27,8 +27,10 @@ class VarietyAdminConcrete extends VarietyAdmin
         // relationships that will be handled by CollectionsManager
         $type = 'sonata_type_collection';
         foreach ( $this->formFieldDescriptions as $fieldname => $fieldDescription )
-        if ( $fieldDescription->getType() == $type )
+        if ( $fieldDescription->getType() == $type ) {
             $this->addManagedCollections($fieldname);
+        }
+
         // relationships that will be handled by ManyToManyManager
         foreach ( $this->formFieldDescriptions as $fieldname => $fieldDescription )
         {
@@ -36,55 +38,61 @@ class VarietyAdminConcrete extends VarietyAdmin
             if ( $mapping['type'] == ClassMetadataInfo::MANY_TO_MANY && !$mapping['isOwningSide'] )
                 $this->addManyToManyCollections($fieldname);
         }
-
+        
         // END HandlesRelationsAdmin::configureFormFields
 
         // Manage VarietyDescriptions according to configurationsettings
         $config = $this->getConfigurationPool()->getContainer()->getParameter('librinfo_varieties')['variety_descriptions'];
         $admin = $this;
+        
         $formMapper->getFormBuilder()->addEventListener(FormEvents::PRE_SET_DATA,
             function ($event) use ($admin, $config)
             {
                 $subject = $admin->getSubject($event->getData());
+                
+                foreach (['professional', 'amateur'] as $fieldset) {
+                    $getter = 'get' . ucfirst($fieldset) . 'Descriptions';
+                    $setter = 'set' . ucfirst($fieldset) . 'Descriptions';
+                    $remover = 'remove' . ucfirst($fieldset) . 'Description';
+                    $adder = 'add' . ucfirst($fieldset) . 'Description';
+                    $constructor = '\Librinfo\VarietiesBundle\Entity\VarietyDescription' . ucfirst($fieldset);
 
-                // Hide VarietyDescriptions that are not found in configuration
-                foreach ( $subject->getVarietyDescriptions() as $desc ) {
-                    $found = false;
-                    foreach ( $config as $fieldset => $fields )
-                    foreach ( $fields as $field => $settings )
-                    if ( $desc->getFieldset() == $fieldset && $desc->getField() == $field ) {
-                        $found = true;
-                        break;
+                    // Hide VarietyDescriptions that are not found in configuration
+                    foreach ( $subject->$getter() as $desc ) {
+                        $found = false;
+                        foreach ( $config[$fieldset] as $field => $settings )
+                        if ( $desc->getField() == $field ) {
+                            $found = true;
+                            break;
+                        }
+                        if ( !$found )
+                            $subject->$remover($desc);
                     }
-                    if ( !$found )
-                        $subject->removeVarietyDescription($desc);
-                }
 
-                // Create missing VarietyDescriptions (described in configuration and not present in the Variety)
-                foreach ( $config as $fieldset => $fields )
-                foreach ( $fields as $field => $settings )
-                {
-                    $exists = $subject->getVarietyDescriptions()->exists(function($key, $element) use ($fieldset, $field) {
-                        return $element->getFieldset() == $fieldset && $element->getField() == $field;
+                    // Create missing VarietyDescriptions (described in configuration and not present in the Variety)
+                    foreach ( $config[$fieldset] as $field => $settings )
+                    {
+                        $exists = $subject->$getter()->exists(function($key, $element) use ($field) {
+                            return $element->getField() == $field;
+                        });
+                        if ( !$exists) {
+                            $desc = new $constructor();
+                            $desc->setFieldset($fieldset);
+                            $desc->setField($field);
+                            $subject->$adder($desc);
+                        }
+                    }
+
+                    // Sort VarietyDescriptions according to the configuration order
+                    $order = []; $i = 0;
+                    foreach ( $config[$fieldset] as $field => $settings )
+                        $order[$field] = $i++;
+                    $iterator = $subject->$getter()->getIterator();
+                    $iterator->uasort(function ($a, $b) use ($order) {
+                        return ( $order[$a->getField()] < $order[$b->getField()] ) ? -1 : 1;
                     });
-                    if ( !$exists) {
-                        $desc = new \Librinfo\VarietiesBundle\Entity\VarietyDescription();
-                        $desc->setFieldset($fieldset);
-                        $desc->setField($field);
-                        $subject->addVarietyDescription($desc);
-                    }
+                    $subject->$setter( new ArrayCollection(iterator_to_array($iterator)) );
                 }
-
-                // Sort VarietyDescriptions according to the configuration order
-                $order = []; $i = 0;
-                foreach ( $config as $fieldset => $fields )
-                foreach ( $fields as $field => $settings )
-                    $order[$fieldset][$field] = $i++;
-                $iterator = $subject->getVarietyDescriptions()->getIterator();
-                $iterator->uasort(function ($a, $b) use ($order) {
-                    return ( $order[$a->getFieldset()][$a->getField()] < $order[$b->getFieldset()][$b->getField()] ) ? -1 : 1;
-                });
-                $subject->setVarietyDescriptions( new ArrayCollection(iterator_to_array($iterator)) );
             }
         );
     } // END configureFormFields()

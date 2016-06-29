@@ -3,14 +3,18 @@
 namespace Librinfo\VarietiesBundle\Entity;
 
 /**
- * VarietyDescription
+ * VarietyDescriptionAmateur
  */
-class VarietyDescription extends GenericDescription
+class VarietyDescriptionAmateur extends VarietyDescription
 {
     /**
      * @var \Librinfo\VarietiesBundle\Entity\Variety
      */
     private $variety;
+    
+    public function getFieldset() {
+        return 'amateur';
+    }
 
     /**
      * Set variety

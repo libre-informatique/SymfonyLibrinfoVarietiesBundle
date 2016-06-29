@@ -3,9 +3,9 @@
 namespace Librinfo\VarietiesBundle\Entity;
 
 /**
- * VarietyDescription
+ * VarietyDescriptionInner
  */
-class VarietyDescription extends GenericDescription
+class VarietyDescriptionInner extends VarietyDescription
 {
     /**
      * @var \Librinfo\VarietiesBundle\Entity\Variety

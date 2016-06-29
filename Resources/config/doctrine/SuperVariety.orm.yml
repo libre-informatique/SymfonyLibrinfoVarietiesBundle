@@ -2,7 +2,7 @@ Librinfo\VarietiesBundle\Entity\SuperVariety:
     type: mappedSuperclass
     librinfo:
         loggable: true
-
+        
     fields:
         latin_name:
             type:     string(255)
@@ -54,3 +54,11 @@ Librinfo\VarietiesBundle\Entity\SuperVariety:
         seedheads_per_kg:
             type:     integer
             nullable: true
+#        # conseils de sélection
+#        selection_advice:
+#            type: string(255)
+#            nullable: true
+#        # critères de sélection
+#        selection_criteria:
+#            type: string(255)
+#            nullable: true

@@ -58,7 +58,17 @@ class Variety extends SuperVariety
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $variety_descriptions;
+    private $professional_descriptions;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $amateur_descriptions;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $inner_descriptions;
 
     /**
      * @var \Librinfo\VarietiesBundle\Entity\Species
@@ -76,7 +86,9 @@ class Variety extends SuperVariety
     public function __construct()
     {
         $this->strains = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->variety_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->professional_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->amateur_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->inner_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
         $this->plant_categories = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -307,57 +319,166 @@ class Variety extends SuperVariety
     }
 
     /**
-     * Add varietyDescription
+     * Add professionalDescription
      *
-     * @param \Librinfo\VarietiesBundle\Entity\VarietyDescription $varietyDescription
+     * @param VarietyDescriptionProfessional $description
      *
      * @return Variety
      */
-    public function addVarietyDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescription $varietyDescription)
+    public function addProfessionalDescription(VarietyDescriptionProfessional $description)
     {
-        $varietyDescription->setVariety($this);
-        $this->variety_descriptions->add($varietyDescription);
+        $description->setVariety($this);
+        $this->professional_descriptions->add($description);
         return $this;
     }
 
     /**
-     * Remove varietyDescription
+     * Remove professionalDescription
      *
-     * @param \Librinfo\VarietiesBundle\Entity\VarietyDescription $varietyDescription
+     * @param VarietyDescriptionProfessional $professionalDescription
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeVarietyDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescription $varietyDescription)
+    public function removeProfessionalDescription(VarietyDescriptionProfessional $professionalDescription)
     {
-        return $this->variety_descriptions->removeElement($varietyDescription);
+        return $this->professional_descriptions->removeElement($professionalDescription);
     }
 
     /**
-     * Get varietyDescriptions
+     * Get professionalDescriptions
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getVarietyDescriptions()
+    public function getProfessionalDescriptions()
     {
-        return $this->variety_descriptions;
-    }
-
-    public function getVariety_descriptions()
-    {
-        return $this->getVarietyDescriptions();
+        return $this->professional_descriptions;
     }
 
     /**
-     * Set varietyDescriptions
-     * @param \Doctrine\Common\Collections\Collection $variety_descriptions
+     * alias for getProfessionalDescriptions()
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProfessional_descriptions()
+    {
+        return $this->getProfessionalDescriptions();
+    }
+
+    /**
+     * Set professional descriptions
+     * @param \Doctrine\Common\Collections\Collection $descriptions
      * @return Variety
      */
-    public function setVarietyDescriptions($variety_descriptions)
+    public function setProfessionalDescriptions($descriptions)
     {
-        $this->variety_descriptions = $variety_descriptions;
+        foreach($descriptions as $description)
+            $description->setVariety($this);
+        $this->professional_descriptions = $descriptions;
         return $this;
     }
 
+    /**
+     * Add amateurDescription
+     *
+     * @param VarietyDescriptionAmateur $description
+     *
+     * @return Variety
+     */
+    public function addAmateurDescription(VarietyDescriptionAmateur $description)
+    {
+        $description->setVariety($this);
+        $this->amateur_descriptions->add($description);
+        return $this;
+    }
+
+    /**
+     * Remove amateurDescription
+     *
+     * @param VarietyDescriptionAmateur $amateurDescription
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeAmateurDescription(VarietyDescriptionAmateur $amateurDescription)
+    {
+        return $this->amateur_descriptions->removeElement($amateurDescription);
+    }
+
+    /**
+     * Get amateurDescriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAmateurDescriptions()
+    {
+        return $this->amateur_descriptions;
+    }
+    
+     /**
+     * Get amateurDescriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAmateur_descriptions()
+    {
+        return $this->amateur_descriptions;
+    }
+
+    /**
+     * Set amateur descriptions
+     * @param \Doctrine\Common\Collections\Collection $descriptions
+     * @return Variety
+     */
+    public function setAmateurDescriptions($descriptions)
+    {
+        $this->amateur_descriptions = $descriptions;
+        return $this;
+    }
+
+    /**
+     * Add innerDescription
+     *
+     * @param VarietyDescriptionInner $description
+     *
+     * @return Variety
+     */
+    public function addInnerDescription(VarietyDescriptionInner $description)
+    {
+        $description->setVariety($this);
+        $this->inner_descriptions->add($description);
+        return $this;
+    }
+
+    /**
+     * Remove innerDescription
+     *
+     * @param VarietyDescriptionInner $innerDescription
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeInnerDescription(VarietyDescriptionInner $innerDescription)
+    {
+        return $this->inner_descriptions->removeElement($innerDescription);
+    }
+
+    /**
+     * Get innerDescriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInnerDescriptions()
+    {
+        return $this->inner_descriptions;
+    }
+
+    /**
+     * Set inner descriptions
+     * @param \Doctrine\Common\Collections\Collection $descriptions
+     * @return Variety
+     */
+    public function setInnerDescriptions($descriptions)
+    {
+        $this->inner_descriptions = $descriptions;
+        return $this;
+    }
 
     /**
      * Set species

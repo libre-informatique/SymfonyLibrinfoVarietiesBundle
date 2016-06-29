@@ -2,15 +2,21 @@
 
 namespace Librinfo\VarietiesBundle\Entity;
 
+
+
 /**
- * VarietyDescription
+ * VarietyDescriptionProfessional
  */
-class VarietyDescription extends GenericDescription
+class VarietyDescriptionProfessional extends VarietyDescription
 {
     /**
      * @var \Librinfo\VarietiesBundle\Entity\Variety
      */
     private $variety;
+
+//    public function getFieldset() {
+//        return 'professional';
+//    }
 
     /**
      * Set variety
@@ -35,5 +41,6 @@ class VarietyDescription extends GenericDescription
     {
         return $this->variety;
     }
+
 }
 

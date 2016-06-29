@@ -5,83 +5,75 @@
 <!-- FAMILY -->
             <trans-unit id="entity_Family">
                 <source>Family</source>
-                <target>Famille</target>
+                <target>Family</target>
             </trans-unit>
             <trans-unit id="librinfo.link.family_list">
                 <source>librinfo.link.family_list</source>
-                <target>Liste des familles</target>
+                <target>Families list</target>
             </trans-unit>
             <trans-unit id="librinfo.link.family_create">
                 <source>librinfo.link.family_create</source>
-                <target>Nouvelle famille</target>
+                <target>New family</target>
             </trans-unit>
             <trans-unit id="librinfo.label.family">
                 <source>librinfo.label.family</source>
-                <target>Famille</target>
+                <target>Family</target>
             </trans-unit>
             <trans-unit id="librinfo.label.families">
                 <source>librinfo.label.families</source>
-                <target>Familles</target>
+                <target>Families</target>
             </trans-unit>            
             <trans-unit id="librinfo.label.latin_name">
                 <source>librinfo.label.latin_name</source>
-                <target>Nom latin</target>
+                <target>Latin Name</target>
             </trans-unit>            
             <trans-unit id="librinfo.label.alias">
                 <source>librinfo.label.alias</source>
-                <target>Synonymes</target>
-            </trans-unit>      
-            <trans-unit id="librinfo.label.genuses">
-                <source>librinfo.label.genuses</source>
-                <target>Genres</target>
+                <target>Synonyms</target>
             </trans-unit>      
             <trans-unit id="form_group_genuses">
                 <source>form_group_genuses</source>
-                <target>Genres</target>
+                <target>Genus</target>
             </trans-unit>                
-            <trans-unit id="form_tab_seeds_production">
-                <source>form_tab_seeds_production</source>
-                <target>Production de semences</target>
+            <trans-unit id="form_group_technical">
+                <source>form_group_technical</source>
+                <target>Technical</target>
             </trans-unit>                
             <trans-unit id="librinfo.varieties.family_admin.label">
                 <source>librinfo.varieties.family_admin.label</source>
-                <target>Famille</target>
+                <target>Family</target>
             </trans-unit>    
             
 <!-- GENUS -->
             <trans-unit id="librinfo.varieties.genus_admin.label">
                 <source>librinfo.varieties.genus_admin.label</source>
-                <target>Genre</target>
+                <target>Genus</target>
             </trans-unit> 
             <trans-unit id="librinfo.link.genus_list">
                 <source>librinfo.link.genus_list</source>
-                <target>Liste des genres</target>
-            </trans-unit>
+                <target>Genuses list</target>
+            </trans-unit>    
             <trans-unit id="librinfo.link.genus_create">
                 <source>librinfo.link.genus_create</source>
-                <target>Nouveau genre</target>
-            </trans-unit>              
+                <target>New genus</target>
+            </trans-unit>
             <trans-unit id="form_group_specieses">
                 <source>form_group_specieses</source>
-                <target>Espèces</target>
-            </trans-unit>                
-            <trans-unit id="librinfo.label.specieses">
-                <source>librinfo.label.specieses</source>
-                <target>Espèces</target>
-            </trans-unit>      
-
+                <target>Species</target>
+            </trans-unit>                 
+            
 <!-- PLANT CATEGORY -->
             <trans-unit id="librinfo.varieties.plant_category_admin.label">
                 <source>librinfo.varieties.plant_category_admin.label</source>
-                <target>Catégorie de variété</target>
+                <target>Variety category</target>
             </trans-unit> 
             <trans-unit id="librinfo.link.plant_category_list">
                 <source>librinfo.link.plant_category_list</source>
-                <target>Liste des catégories de plantes</target>
+                <target>Plant categories list</target>
             </trans-unit>            
             <trans-unit id="librinfo.link.plant_category_create">
                 <source>librinfo.link.plant_category_create</source>
-                <target>Nouvelle catégorie de plantes</target>
+                <target>New plant category</target>
             </trans-unit>    
             <trans-unit id="librinfo.label.code">
                 <source>librinfo.label.code</source>
@@ -89,151 +81,151 @@
             </trans-unit>                      
             <trans-unit id="librinfo.label.parent_category">
                 <source>librinfo.label.parent_category</source>
-                <target>Catégorie parente</target>
+                <target>Parent category</target>
             </trans-unit>                      
             
 <!-- SPECIES -->
             <trans-unit id="librinfo.varieties.species_admin.label">
                 <source>librinfo.varieties.species_admin.label</source>
-                <target>Espèce</target>
+                <target>Species</target>
             </trans-unit> 
             <trans-unit id="librinfo.link.species_list">
                 <source>librinfo.link.species_list</source>
-                <target>Liste des espèces</target>
-            </trans-unit>
-            <trans-unit id="librinfo.link.species_create">
-                <source>librinfo.link.species_create</source>
-                <target>Nouvelle espèce</target>
+                <target>Species list</target>
             </trans-unit>               
             <trans-unit id="librinfo.label.genus">
                 <source>librinfo.label.genus</source>
-                <target>Genre</target>
+                <target>Genus</target>
             </trans-unit>                
             <trans-unit id="librinfo.label.plant_category">
                 <source>librinfo.label.plant_category</source>
-                <target>Catégorie</target>
+                <target>Category</target>
             </trans-unit>                
             <trans-unit id="librinfo.label.parent_species">
                 <source>librinfo.label.parent_species</source>
-                <target>Est une sous-espèce de</target>
+                <target>Subspecies of</target>
             </trans-unit>                
             <trans-unit id="librinfo.help.twk">
                 <source>librinfo.help.twk</source>
-                <target>en grammes</target>
+                <target>lbs</target>
+            </trans-unit> 
+            <trans-unit id="librinfo.link.species_create">
+                <source>librinfo.link.species_create</source>
+                <target>New species</target>
             </trans-unit>                
             
 <!-- VARIETY -->
             <trans-unit id="librinfo.varieties.variety_admin.label">
                 <source>librinfo.varieties.variety_admin.label</source>
-                <target>Variété</target>
+                <target>Variety</target>
             </trans-unit> 
             <trans-unit id="librinfo.link.variety_list">
                 <source>librinfo.link.variety_list</source>
-                <target>Liste des variétés</target>
-            </trans-unit> 
+                <target>Varieties list</target>
+            </trans-unit>           
             <trans-unit id="librinfo.link.variety_create">
                 <source>librinfo.link.variety_create</source>
-                <target>Nouvelle variété</target>
-            </trans-unit>                 
+                <target>New variety</target>
+            </trans-unit>       
             <trans-unit id="librinfo.label.tkw">
                 <source>librinfo.label.tkw</source>
-                <target>Poids de mille graines</target>
+                <target>Thousand kernel weight</target>
             </trans-unit>             
             <trans-unit id="librinfo.label.species">
                 <source>librinfo.label.species</source>
-                <target>Espèce</target>
+                <target>Species</target>
             </trans-unit>             
             <trans-unit id="librinfo.label.plant_categories">
                 <source>librinfo.label.plant_categories</source>
-                <target>Catégories</target>
+                <target>Categories</target>
             </trans-unit>             
             <trans-unit id="librinfo.label.species_name">
                 <source>librinfo.label.species_name</source>
-                <target>Espèce</target>
+                <target>Species</target>
             </trans-unit>             
             <trans-unit id="form_group_offical_catalogue">
                 <source>form_group_offical_catalogue</source>
-                <target>Catalogue officiel</target>
+                <target>Official catalogue</target>
             </trans-unit>       
             <trans-unit id="librinfo.label.official">
                 <source>librinfo.label.official</source>
-                <target>Inscrit au catalogue officiel</target>
+                <target>Registered in official catalogue</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.official_name">
                 <source>librinfo.label.official_name</source>
-                <target>Nom au catalogue officiel</target>
+                <target>Official catalogue name</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.official_date_in">
                 <source>librinfo.label.official_date_in</source>
-                <target>Date d'inscription</target>
+                <target>Registration date</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.official_date_out">
                 <source>librinfo.label.official_date_out</source>
-                <target>Date de radiation</target>
+                <target>Removal date</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.official_maintainer">
                 <source>librinfo.label.official_maintainer</source>
-                <target>Mainteneur</target>
+                <target>Maintainer</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.legal_germination_rate">
                 <source>librinfo.label.legal_germination_rate</source>
-                <target>Taux de germination légal</target>
+                <target>Legal germination rate</target>
             </trans-unit>                    
             <trans-unit id="librinfo.help.legal_germination_rate">
                 <source>librinfo.help.legal_germination_rate</source>
-                <target>(si inscrit au catalogue) - en %</target>
+                <target>% (if registered in official catalogue)</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.germination_rate">
                 <source>librinfo.label.germination_rate</source>
-                <target>Taux de germination AS</target>
+                <target>Germination rate</target>
             </trans-unit>                    
             <trans-unit id="librinfo.help.germination_rate">
                 <source>librinfo.help.germination_rate</source>
-                <target>en %</target>
+                <target>%</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.seed_lifespan">
                 <source>librinfo.label.seed_lifespan</source>
-                <target>Durée de vie théorique de la graine</target>
+                <target>Theoretical seed lifespan</target>
             </trans-unit>                    
             <trans-unit id="librinfo.help.seed_lifespan">
                 <source>librinfo.help.seed_lifespan</source>
-                <target>en années</target>
+                <target>years</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.raise_duration">
                 <source>librinfo.label.raise_duration</source>
-                <target>Durée de levée dans les conditions naturelles</target>
+                <target>Raise duration</target>
             </trans-unit>                    
             <trans-unit id="librinfo.help.raise_duration">
                 <source>librinfo.help.raise_duration</source>
-                <target>en jours</target>
+                <target>days</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.seedhead_yield">
                 <source>librinfo.label.seedhead_yield</source>
-                <target>Rendement par porte-graines</target>
+                <target>Yield per seedhead</target>
             </trans-unit>                    
             <trans-unit id="librinfo.help.seedhead_yield">
                 <source>librinfo.help.seedhead_yield</source>
-                <target>unité : nombre de graines ou grammes ???</target>
+                <target>lbs</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.ditance_on_line">
                 <source>librinfo.label.ditance_on_line</source>
-                <target>Distance sur la ligne</target>
+                <target>On line distance</target>
             </trans-unit>                    
             <trans-unit id="librinfo.help.ditance_on_line">
                 <source>librinfo.help.ditance_on_line</source>
-                <target>en cm</target>
+                <target>inches</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.ditance_between_lines">
                 <source>librinfo.label.ditance_between_lines</source>
-                <target>Écartement des lignes</target>
+                <target>Distance between lines</target>
             </trans-unit>                    
             <trans-unit id="librinfo.help.ditance_between_lines">
                 <source>librinfo.help.ditance_between_lines</source>
-                <target>en cm</target>
+                <target>inches</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.plant_density">
                 <source>librinfo.label.plant_density</source>
-                <target>Densité au m²</target>
+                <target>Square meter density</target>
             </trans-unit>                    
             <trans-unit id="librinfo.help.plant_density">
                 <source>librinfo.help.plant_density</source>
@@ -241,246 +233,185 @@
             </trans-unit>                    
             <trans-unit id="librinfo.label.area_per_kg">
                 <source>librinfo.label.area_per_kg</source>
-                <target>Surface pour produire 1kg de graines</target>
+                <target>Area per kg produced</target>
             </trans-unit>                    
             <trans-unit id="librinfo.help.area_per_kg">
                 <source>librinfo.help.area_per_kg</source>
-                <target>en m²</target>
+                <target>Square meters</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.seedheads_per_kg">
                 <source>librinfo.label.seedheads_per_kg</source>
-                <target>Nombre de porte-graines par kg</target>
+                <target>Amount of seedheads per kg produced</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.life_cycle">
                 <source>librinfo.label.life_cycle</source>
-                <target>Cycle végétatif</target>
+                <target>Vegetative cycle</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.life_cycle_annual">
                 <source>librinfo.label.life_cycle_annual</source>
-                <target>Plante annuelle</target>
+                <target>Annual</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.life_cycle_biennial">
                 <source>librinfo.label.life_cycle_biennial</source>
-                <target>Plante bisannuelle</target>
+                <target>Biennial</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.life_cycle_perennial">
                 <source>librinfo.label.life_cycle_perennial</source>
-                <target>Plante vivace</target>
+                <target>Perennial</target>
             </trans-unit>                    
             <trans-unit id="annual">
                 <source>annual</source>
-                <target>Plante annuelle</target>
+                <target>Annual</target>
             </trans-unit>                    
-            <trans-unit id="biennial">
-                <source>biennial</source>
-                <target>Plante bisannuelle</target>
+            <trans-unit id="bienniall">
+                <source>Biennial</source>
+                <target>Biennial</target>
             </trans-unit>                    
             <trans-unit id="perennial">
                 <source>perennial</source>
-                <target>Plante vivace</target>
+                <target>Perennial</target>
             </trans-unit>                    
             <trans-unit id="form_tab_professionals">
                 <source>form_tab_professionals</source>
-                <target>Conseils Pro</target>
+                <target>Cultivation tips</target>
             </trans-unit>                    
             <trans-unit id="form_group_professionals">
                 <source>form_group_professionals</source>
-                <target>Conseils de culture pour les professionnels</target>
+                <target>Cultivation tips for professionals</target>
             </trans-unit>                    
             <trans-unit id="form_tab_amateurs">
                 <source>form_tab_amateurs</source>
-                <target>Conseils Jardiniers</target>
+                <target>Cultivation tips</target>
             </trans-unit>                    
             <trans-unit id="form_group_amateurs">
                 <source>form_group_amateurs</source>
-                <target>Conseils de culture pour les jardiniers amateurs</target>
-            </trans-unit>
-            <trans-unit id="form_group_density">
-                <source>form_group_density</source>
-                <target>Densité au m2</target>
-            </trans-unit>                     
+                <target>Cultivation tips for amateurs</target>
+            </trans-unit>                    
              
 <!-- VARIETY DESCRIPTIONS -->
-             <!-- professional -->
             <trans-unit id="librinfo_description_professional_possible_sowing_periods">
                 <source>librinfo_description_professional_possible_sowing_periods</source>
-                <target>Périodes de semis possibles</target>
+                <target>Possible sowing period</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_cutting_period">
                 <source>librinfo_description_professional_cutting_period</source>
-                <target>Période de bouturage</target>
+                <target>Cuttings period</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_sowing_date">
                 <source>librinfo_description_professional_sowing_date</source>
-                <target>Date de semis</target>
+                <target>Sowing date</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_transplant_date">
                 <source>librinfo_description_professional_transplant_date</source>
-                <target>Date de repiquage</target>
+                <target>Transplant date</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_cutting_date">
                 <source>librinfo_description_professional_cutting_date</source>
-                <target>Date de bouturage</target>
+                <target>Cutting date</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_germination_conditions">
                 <source>librinfo_description_professional_germination_conditions</source>
-                <target>Conditions de germination</target>
+                <target>Germination conditions</target>
             </trans-unit> 
             <trans-unit id="librinfo.varieties.variety_description_amateur_admin.label">
                 <source>librinfo.varieties.variety_description_amateur_admin.label</source>
-                <target>Conseils Jardiniers</target>
+                <target>Cultivation tips</target>
             </trans-unit>  
             <trans-unit id="librinfo_description_professional_seed_storage">
                 <source>librinfo_description_professional_seed_storage</source>
-                <target>Stockage optimal (semence)</target>
+                <target>Seed optimal storage</target>
             </trans-unit> 
             <trans-unit id=" librinfo_description_professional_transplant ">
                 <source>librinfo_description_professional_transplant</source>
-                <target>Repiquage</target>
+                <target>Transplant</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_sowing_density">
                 <source>librinfo_description_professional_sowing_density</source>
-                <target>Densité de semis</target>
+                <target>Sowing density</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_on_line_distance">
                 <source>librinfo_description_professional_on_line_distance</source>
-                <target>Distance sur ligne</target>
+                <target>Distance on line</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_between_distance">
                 <source>librinfo_description_professional_between_distance</source>
-                <target>Distance entre les lignes</target>
+                <target>Distance between lines</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_exposure">
                 <source>librinfo_description_professional_exposure</source>
-                <target>Exposition</target>
+                <target>Exposure</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_seedling_irrigation">
                 <source>librinfo_description_professional_seedling_irrigation</source>
-                <target>Irrigation (stade semis)</target>
+                <target>Irrigation (seedling stage)</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_manure">
                 <source>librinfo_description_professional_manure</source>
-                <target>Fumure</target>
+                <target>Manure</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_cuttings_period">
                 <source>librinfo_description_professional_cuttings_period</source>
-                <target>Période de bouturage</target>
+                <target>Cuttings period</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_transplant_irrigation">
                 <source>librinfo_description_professional_transplant_irrigation</source>
-                <target>Irrigation (stade repiquage)</target>
+                <target>Irrigation(transplanting stage)</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_transplant_manure_quantity">
                 <source>librinfo_description_professional_transplant_manure_quantity</source>
-                <target>Quantité de fumure</target>
+                <target>Manure quantity</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_substratum">
                 <source>librinfo_description_professional_substratum</source>
-                <target>Substrat</target>
+                <target>Substratum</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_treatments">
                 <source>librinfo_description_professional_treatments</source>
-                <target>Traitements</target>
+                <target>Treatments</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_harvest_storage">
                 <source>librinfo_description_professional_harvest_storage</source>
-                <target>Stockage optimal (récoltes)</target>
+                <target>Harvest optimal storage</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_advised_outcome">
                 <source>librinfo_description_professional_advised_outcome</source>
-                <target>Débouchées conseillées</target>
+                <target>Advised outcome</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_possible_outcome">
                 <source>librinfo_description_professional_possible_outcome</source>
-                <target>Débouchées possibles</target>
+                <target>Possible outcome</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_soil">
                 <source>librinfo_description_professional_soil</source>
-                <target>Sol</target>
+                <target>Soil</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_yield">
                 <source>librinfo_description_professional_yield</source>
-                <target>Rendement</target>
+                <target>Yield</target>
             </trans-unit> 
             <trans-unit id="librinfo.help.yield">
                 <source>librinfo.help.yield</source>
-                <target>par m2</target>
+                <target>per square meter</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_professional_biodynamics">
                 <source>librinfo_description_professional_biodynamics</source>
-                <target>Biodynamie</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_professional_tutoring">
-                <source>librinfo_description_professional_tutoring</source>
-                <target>Tuteurage</target>
-            </trans-unit>
-            <!-- amateur --> 
-            <trans-unit id="librinfo_description_amateur_possible_sowing_periods">
-                <source>librinfo_description_amateur_possible_sowing_periods</source>
-                <target>Périodes de semis possibles</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_amateur_germination_conditions">
-                <source>librinfo_description_amateur_germination_conditions</source>
-                <target>Conditions de germination</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_amateur_seed_storage">
-                <source>librinfo_description_amateur_seed_storage</source>
-                <target>Conditions de stockage otpimal (semences)</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_amateur_transplant">
-                <source>librinfo_description_amateur_transplant</source>
-                <target>Repiquage, plantation</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_amateur_sowing_density">
-                <source>librinfo_description_amateur_sowing_density</source>
-                <target>Densité de semis</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_amateur_on_line_distance">
-                <source>librinfo_description_amateur_on_line_distance</source>
-                <target>Distance sur ligne</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_amateur_between_distance">
-                <source>librinfo_description_amateur_between_distance</source>
-                <target>Distance entre les lignes</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_amateur_seedling_irrigation">
-                <source>librinfo_description_amateur_seedling_irrigation</source>
-                <target>Irrigation (stade semis)</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_amateur_exposure">
-                <source>librinfo_description_amateur_exposure</source>
-                <target>Exposition</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_amateur_manure">
-                <source>librinfo_description_amateur_manure</source>
-                <target>Fumure</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_amateur_soil">
-                <source>librinfo_description_amateur_soil</source>
-                <target>Sol</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_amateur_yield">
-                <source>librinfo_description_amateur_yield</source>
-                <target>Rendement au m2</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_amateur_biodynamics">
-                <source>librinfo_description_amateur_biodynamics</source>
-                <target>Biodynamie</target>
-            </trans-unit>
+                <target>Biodynamics</target>
+            </trans-unit> 
+            
             
 <!-- STRAIN -->
             <trans-unit id="librinfo.varieties.strain_admin.label">
                 <source>librinfo.varieties.strain_admin.label</source>
-                <target>Souche</target>
-            </trans-unit>     
+                <target>Strain</target>
+            </trans-unit>
             <trans-unit id="librinfo.link.strain_list">
                 <source>librinfo.link.strain_list</source>
-                <target>Liste des souches</target>
-            </trans-unit>         
+                <target>Strains list</target>
+            </trans-unit>          
             <trans-unit id="librinfo.link.strain_create">
                 <source>librinfo.link.strain_create</source>
-                <target>Nouvelle souche</target>
-            </trans-unit>                   
+                <target>New strain</target>
+            </trans-unit>                 
             
         </body>
     </file>

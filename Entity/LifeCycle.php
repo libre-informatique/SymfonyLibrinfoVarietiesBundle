@@ -6,6 +6,6 @@ class LifeCycle
 {
     public static function values()
     {
-        return ['annual', 'bisannual', 'perennial'];
+        return ['annual', 'biennial', 'perennial'];
     }
 }
