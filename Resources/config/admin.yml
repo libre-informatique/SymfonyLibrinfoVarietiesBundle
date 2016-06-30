@@ -109,3 +109,41 @@ services:
               group: admin
               label: librinfo.varieties.variety_description_amateur_admin.label
               label_translator_strategy: librinfo_core.label.strategy.librinfo
+              
+    librinfo_varieties.admin.variety_description_production:
+        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdmin
+        arguments: [~, Librinfo\VarietiesBundle\Entity\VarietyDescriptionProduction, SonataAdminBundle:CRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: librinfo.varieties.variety_description_production_admin.label
+              label_translator_strategy: librinfo_core.label.strategy.librinfo
+    librinfo_varieties.admin.variety_description_commercial:
+        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdmin
+        arguments: [~, Librinfo\VarietiesBundle\Entity\VarietyDescriptionCommercial, SonataAdminBundle:CRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: librinfo.varieties.variety_description_commercial_admin.label
+              label_translator_strategy: librinfo_core.label.strategy.librinfo
+    librinfo_varieties.admin.variety_description_plant:
+        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdmin
+        arguments: [~, Librinfo\VarietiesBundle\Entity\VarietyDescriptionPlant, SonataAdminBundle:CRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: librinfo.varieties.variety_description_plant_admin.label
+              label_translator_strategy: librinfo_core.label.strategy.librinfo
+
+    librinfo_varieties.admin.variety_description_culture:
+        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdmin
+        arguments: [~, Librinfo\VarietiesBundle\Entity\VarietyDescriptionCulture, SonataAdminBundle:CRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: librinfo.varieties.variety_description_culture_admin.label
+              label_translator_strategy: librinfo_core.label.strategy.librinfo

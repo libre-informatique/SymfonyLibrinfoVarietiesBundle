@@ -333,6 +333,21 @@ parameters:
                                     label: false
                             _options:
                                 description: La liste des champs est encore incomplète...
+                    form_tab_production:
+                        form_group_production:
+                            production_descriptions:
+                                type: sonata_type_collection
+                                by_reference: true
+                                required: true
+                                btn_add: false
+                                label: false
+                                type_options:
+                                    required: false
+                                    delete: false
+                                    btn_add: false
+                                    label: false
+                            _options:
+                                description: La liste des champs est encore incomplète...
                     form_tab_amateurs:
                         form_group_amateurs:
                             amateur_descriptions:

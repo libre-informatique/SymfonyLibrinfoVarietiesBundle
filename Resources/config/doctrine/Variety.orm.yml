@@ -64,7 +64,24 @@ Librinfo\VarietiesBundle\Entity\Variety:
             targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionAmateur
             mappedBy: variety
             cascade: [ persist , remove]
+        production_descriptions:
+            targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionProduction
+            mappedBy: variety
+            cascade: [ persist , remove]
+        commercial_descriptions:
+            targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionCommercial
+            mappedBy: variety
+            cascade: [ persist , remove]
+        plant_descriptions:
+            targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionPlant
+            mappedBy: variety
+            cascade: [ persist , remove]
+        culture_descriptions:
+            targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionCulture
+            mappedBy: variety
+            cascade: [ persist , remove]
         inner_descriptions:
             targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionInner
             mappedBy: variety
-            cascade: [ persist ]
+            cascade: [ persist , remove]
+        

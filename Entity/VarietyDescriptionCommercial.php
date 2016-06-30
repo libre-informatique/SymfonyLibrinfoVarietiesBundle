@@ -5,9 +5,9 @@ namespace Librinfo\VarietiesBundle\Entity;
 
 
 /**
- * VarietyDescriptionProfessional
+ * VarietyDescriptionCommercial
  */
-class VarietyDescriptionProfessional extends VarietyDescription
+class VarietyDescriptionCommercial extends VarietyDescription
 {
     /**
      * @var \Librinfo\VarietiesBundle\Entity\Variety
@@ -15,7 +15,7 @@ class VarietyDescriptionProfessional extends VarietyDescription
     private $variety;
 
 //    public function getFieldset() {
-//        return 'professional';
+//        return 'commercial';
 //    }
 
     /**

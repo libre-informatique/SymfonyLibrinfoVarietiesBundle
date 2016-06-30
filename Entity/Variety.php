@@ -69,6 +69,26 @@ class Variety extends SuperVariety
      * @var \Doctrine\Common\Collections\Collection
      */
     private $inner_descriptions;
+    
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $production_descriptions;
+    
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $commercial_descriptions;
+    
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $plant_descriptions;
+    
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $culture_descriptions;
 
     /**
      * @var \Librinfo\VarietiesBundle\Entity\Species
@@ -89,7 +109,10 @@ class Variety extends SuperVariety
         $this->professional_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
         $this->amateur_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
         $this->inner_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->plant_categories = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->production_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->commercial_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->plant_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->culture_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 //    public function __get($name)
@@ -376,6 +399,238 @@ class Variety extends SuperVariety
         return $this;
     }
 
+    /**
+     * Add productionDescription
+     *
+     * @param VarietyDescriptionProduction $description
+     *
+     * @return Variety
+     */
+    public function addProductionDescription(VarietyDescriptionProduction $description)
+    {
+        $description->setVariety($this);
+        $this->production_descriptions->add($description);
+        return $this;
+    }
+
+    /**
+     * Remove productionDescription
+     *
+     * @param VarietyDescriptionProduction $productionDescription
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeProductionDescription(VarietyDescriptionProduction $productionDescription)
+    {
+        return $this->production_descriptions->removeElement($productionDescription);
+    }
+
+    /**
+     * Get productionDescriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProductionDescriptions()
+    {
+        return $this->production_descriptions;
+    }
+
+    /**
+     * alias for getProductionDescriptions()
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProduction_descriptions()
+    {
+        return $this->getProductionDescriptions();
+    }
+
+    /**
+     * Set production descriptions
+     * @param \Doctrine\Common\Collections\Collection $descriptions
+     * @return Variety
+     */
+    public function setProductionDescriptions($descriptions)
+    {
+        foreach($descriptions as $description)
+            $description->setVariety($this);
+        $this->production_descriptions = $descriptions;
+        return $this;
+    }
+    
+    /**
+     * Add commercialDescription
+     *
+     * @param VarietyDescriptionCommercial $description
+     *
+     * @return Variety
+     */
+    public function addCommercialDescription(VarietyDescriptionCommercial $description)
+    {
+        $description->setVariety($this);
+        $this->commercial_descriptions->add($description);
+        return $this;
+    }
+
+    /**
+     * Remove commercialDescription
+     *
+     * @param VarietyDescriptionCommercial $commercialDescription
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeCommercialDescription(VarietyDescriptionCommercial $commercialDescription)
+    {
+        return $this->commercial_descriptions->removeElement($commercialDescription);
+    }
+
+    /**
+     * Get commercialDescriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCommercialDescriptions()
+    {
+        return $this->commercial_descriptions;
+    }
+
+    /**
+     * alias for getCommercialDescriptions()
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCommercial_descriptions()
+    {
+        return $this->getCommercialDescriptions();
+    }
+
+    /**
+     * Set commercial descriptions
+     * @param \Doctrine\Common\Collections\Collection $descriptions
+     * @return Variety
+     */
+    public function setCommercialDescriptions($descriptions)
+    {
+        foreach($descriptions as $description)
+            $description->setVariety($this);
+        $this->commercial_descriptions = $descriptions;
+        return $this;
+    }
+    
+    /**
+     * Add plantDescription
+     *
+     * @param VarietyDescriptionPlant $description
+     *
+     * @return Variety
+     */
+    public function addPlantDescription(VarietyDescriptionPlant $description)
+    {
+        $description->setVariety($this);
+        $this->plant_descriptions->add($description);
+        return $this;
+    }
+
+    /**
+     * Remove plantDescription
+     *
+     * @param VarietyDescriptionPlant $plantDescription
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removePlantDescription(VarietyDescriptionPlant $plantDescription)
+    {
+        return $this->plant_descriptions->removeElement($plantDescription);
+    }
+
+    /**
+     * Get plantDescriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPlantDescriptions()
+    {
+        return $this->plant_descriptions;
+    }
+
+    /**
+     * alias for getPlantDescriptions()
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPlant_descriptions()
+    {
+        return $this->getPlantDescriptions();
+    }
+
+    /**
+     * Set plant descriptions
+     * @param \Doctrine\Common\Collections\Collection $descriptions
+     * @return Variety
+     */
+    public function setPlantDescriptions($descriptions)
+    {
+        foreach($descriptions as $description)
+            $description->setVariety($this);
+        $this->plant_descriptions = $descriptions;
+        return $this;
+    }
+    
+    /**
+     * Add cultureDescription
+     *
+     * @param VarietyDescriptionCulture $description
+     *
+     * @return Variety
+     */
+    public function addCultureDescription(VarietyDescriptionCulture $description)
+    {
+        $description->setVariety($this);
+        $this->culture_descriptions->add($description);
+        return $this;
+    }
+
+    /**
+     * Remove cultureDescription
+     *
+     * @param VarietyDescriptionCulture $cultureDescription
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeCultureDescription(VarietyDescriptionCulture $cultureDescription)
+    {
+        return $this->culture_descriptions->removeElement($cultureDescription);
+    }
+
+    /**
+     * Get cultureDescriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCultureDescriptions()
+    {
+        return $this->culture_descriptions;
+    }
+
+    /**
+     * alias for getCultureDescriptions()
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCulture_descriptions()
+    {
+        return $this->getCultureDescriptions();
+    }
+
+    /**
+     * Set culture descriptions
+     * @param \Doctrine\Common\Collections\Collection $descriptions
+     * @return Variety
+     */
+    public function setCultureDescriptions($descriptions)
+    {
+        foreach($descriptions as $description)
+            $description->setVariety($this);
+        $this->culture_descriptions = $descriptions;
+        return $this;
+    }
+    
     /**
      * Add amateurDescription
      *

@@ -1,10 +1,10 @@
 
-Librinfo\VarietiesBundle\Entity\VarietyDescriptionProfessional:
+Librinfo\VarietiesBundle\Entity\VarietyDescriptionPlant:
     type: entity
     manyToOne:
         variety:
             targetEntity: Librinfo\VarietiesBundle\Entity\Variety
-            inversedBy: professional_descriptions
+            inversedBy: plant_descriptions
             joinColumn:
                 name: variety_id
             cascade: [ persist ]
