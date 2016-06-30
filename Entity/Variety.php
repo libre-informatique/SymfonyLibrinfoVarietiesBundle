@@ -51,6 +51,21 @@ class Variety extends SuperVariety
     private $legal_germination_rate;
 
     /**
+     * @var string
+     */
+    private $regulatory_status;
+    
+     /**
+     * @var String
+     */
+    private $selection_advice;
+    
+    /**
+     * @var String
+     */
+    private $selection_criteria;
+    
+    /**
      * @var \Doctrine\Common\Collections\Collection
      */
     private $strains;
@@ -303,6 +318,78 @@ class Variety extends SuperVariety
     public function getLegalGerminationRate()
     {
         return $this->legal_germination_rate;
+    }
+    
+    /**
+     * Set regulatoryStatus
+     *
+     * @param string $regulatoryStatus
+     *
+     * @return Variety
+     */
+    public function setRegulatoryStatus($regulatoryStatus)
+    {
+        $this->regulatory_status = $regulatoryStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get regulatoryStatus
+     *
+     * @return string
+     */
+    public function getRegulatoryStatus()
+    {
+        return $this->regulatory_status;
+    }
+    
+     /**
+     * Set selectionAdvice
+     *
+     * @param string $selectionAdvice
+     *
+     * @return SuperVariety
+     */
+    public function setSelectionAdvice($selectionAdvice)
+    {
+        $this->selection_advice = $selectionAdvice;
+
+        return $this;
+    }
+
+    /**
+     * Get selectionAdvice
+     *
+     * @return string
+     */
+    public function getSelectionAdvice()
+    {
+        return $this->selection_advice;
+    }
+
+    /**
+     * Set selectionCriteria
+     *
+     * @param string $selectionCriteria
+     *
+     * @return SuperVariety
+     */
+    public function setSelectionCriteria($selectionCriteria)
+    {
+        $this->selection_criteria = $selectionCriteria;
+
+        return $this;
+    }
+
+    /**
+     * Get selectionCriteria
+     *
+     * @return string
+     */
+    public function getSelectionCriteria()
+    {
+        return $this->selection_criteria;
     }
 
     /**

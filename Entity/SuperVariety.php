@@ -75,7 +75,7 @@ class SuperVariety
      * @var int
      */
     private $seedheads_per_kg;
-
+    
 
     /**
      * Set latinName
