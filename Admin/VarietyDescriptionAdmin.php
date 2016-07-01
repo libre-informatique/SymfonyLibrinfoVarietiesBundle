@@ -62,6 +62,9 @@ class VarietyDescriptionAdmin extends CoreAdmin
             
         if (!isset($options['label']) || !$options['label'])
             $options['label'] = sprintf("librinfo_description_%s_%s", $fieldset, $field);
+        
+        if (!isset($options['help']) || !$options['help'])
+            $options['help'] = sprintf("librinfo.help.%s", $field);
 
         $formMapper
             ->add('fieldset', 'hidden')
