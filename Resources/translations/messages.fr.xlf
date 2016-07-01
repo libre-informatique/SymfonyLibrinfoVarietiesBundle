@@ -459,6 +459,263 @@
                 <source>librinfo_description_amateur_biodynamics</source>
                 <target>Biodynamie</target>
             </trans-unit>
+            <trans-unit id="form_group_selection">
+                <source>form_group_selection</source>
+                <target>Sélection</target>
+            </trans-unit>
+            <trans-unit id="librinfo.label.selection_advice">
+                <source>librinfo.label.selection_advice</source>
+                <target>Conseils de sélection</target>
+            </trans-unit>
+            <trans-unit id="librinfo.label.selection_criteria">
+                <source>librinfo.label.selection_criteria</source>
+                <target>Critères de sélection</target>
+            </trans-unit>
+            <!-- plant  -->
+             <trans-unit id="form_group_plant">
+                <source>form_group_plant</source>
+                <target>Caractéristiques de la plante</target>
+            </trans-unit>
+            <trans-unit id="form_tab_plant">
+                <source>form_tab_plant</source>
+                <target>Plante</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_plant_foliage_type">
+                <source>librinfo_description_plant_foliage_type</source>
+                <target>Type de feuillage</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_plant_foliage_color">
+                <source>librinfo_description_plant_foliage_color</source>
+                <target>Couleur du feuillage</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_plant_required_size">
+                <source>librinfo_description_plant_required_size</source>
+                <target>Taille nécessaire</target>
+            </trans-unit>
+            
+            <!-- culture  -->
+            <trans-unit id="librinfo_description_culture_location">
+                <source>librinfo_description_culture_location</source>
+                <target>Localisation</target>
+            </trans-unit>
+            <trans-unit id="form_group_culture">
+                <source>form_group_culture</source>
+                <target>Culture</target>
+            </trans-unit>
+            <trans-unit id="form_tab_culture">
+                <source>form_tab_culture</source>
+                <target>Culture</target>
+            </trans-unit>
+            
+            
+            <!-- commercial  -->
+            <trans-unit id="form_tab_commercial">
+                <source>form_tab_commercial</source>
+                <target>Commercial</target>
+            </trans-unit>
+            <trans-unit id="form_group_commercial">
+                <source>form_group_commercial</source>
+                <target>Commercial</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_taste_rating">
+                <source>librinfo_description_commercial_taste_rating</source>
+                <target>Qualité goût</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_taste">
+                <source>librinfo_description_commercial_taste</source>
+                <target>Qualités gustatives</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_texture">
+                <source>librinfo_description_commercial_texture</source>
+                <target>Texture</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_nutrition_rating">
+                <source>librinfo_description_commercial_nutrition_rating</source>
+                <target>Qualité nutritive</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_nutrients">
+                <source>librinfo_description_commercial_nutrients</source>
+                <target>Nutriments</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_main_color">
+                <source>librinfo_description_commercial_main_color</source>
+                <target>Couleur principale</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_secondary_color">
+                <source>librinfo_description_commercial_secondary_color</source>
+                <target>Couleur secondaire</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_yield">
+                <source>librinfo_description_commercial_yield</source>
+                <target>Rendement</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_max_harvest_span">
+                <source>librinfo_description_commercial_max_harvest_span</source>
+                <target>Etalement max. de la récolte</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_min_harvest_span">
+                <source>librinfo_description_commercial_min_harvest_span</source>
+                <target>Etalement min. de la récolte</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_prefered_zone">
+                <source>librinfo_description_commercial_prefered_zone</source>
+                <target>Zone de culture préférée</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_grade">
+                <source>librinfo_description_commercial_grade</source>
+                <target>Calibre</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_main_usages">
+                <source>librinfo_description_commercial_main_usages</source>
+                <target>Usages principaux</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_usages">
+                <source>librinfo_description_commercial_usages</source>
+                <target>Usages conseillés</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_plant_type">
+                <source>librinfo_description_commercial_plant_type</source>
+                <target>Type de plante</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_targeted_audience">
+                <source>librinfo_description_commercial_targeted_audience</source>
+                <target>Public</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_precocity">
+                <source>librinfo_description_commercial_precocity</source>
+                <target>Précocité</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_rusticicty">
+                <source>librinfo_description_commercial_rusticicty</source>
+                <target>Rusticité</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_cultivation_ease">
+                <source>librinfo_description_commercial_cultivation_ease</source>
+                <target>Facilité de culture</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_pot_cultivation_ease">
+                <source>librinfo_description_commercial_pot_cultivation_ease</source>
+                <target>Culture en pot</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_commercial_inner_commment">
+                <source>librinfo_description_commercial_inner_commment</source>
+                <target>Commentaire (non mutualisé)</target>
+            </trans-unit>
+            
+            
+            <!-- production -->
+            <trans-unit id="form_tab_production">
+                <source>form_tab_production</source>
+                <target>Mise en production</target>
+            </trans-unit> 
+            <trans-unit id="form_group_production">
+                <source>form_group_production</source>
+                <target>Mise en production</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_possible_sowing_periods">
+                <source>librinfo_description_production_possible_sowing_periods</source>
+                <target>Périodes de semis possibles</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_cutting_period">
+                <source>librinfo_description_production_cutting_period</source>
+                <target>Période de bouturage</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_sowing_date">
+                <source>librinfo_description_production_sowing_date</source>
+                <target>Date de semis</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_transplant_date">
+                <source>librinfo_description_production_transplant_date</source>
+                <target>Date de repiquage</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_cutting_date">
+                <source>librinfo_description_production_cutting_date</source>
+                <target>Date de bouturage</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_germination_conditions">
+                <source>librinfo_description_production_germination_conditions</source>
+                <target>Conditions de germination</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_seed_storage">
+                <source>librinfo_description_production_seed_storage</source>
+                <target>Stockage optimal (semence)</target>
+            </trans-unit> 
+            <trans-unit id=" librinfo_description_production_transplant ">
+                <source>librinfo_description_production_transplant</source>
+                <target>Repiquage</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_sowing_density">
+                <source>librinfo_description_production_sowing_density</source>
+                <target>Densité de semis</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_on_line_distance">
+                <source>librinfo_description_production_on_line_distance</source>
+                <target>Distance sur ligne</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_between_distance">
+                <source>librinfo_description_production_between_distance</source>
+                <target>Distance entre les lignes</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_exposure">
+                <source>librinfo_description_production_exposure</source>
+                <target>Exposition</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_seedling_irrigation">
+                <source>librinfo_description_production_seedling_irrigation</source>
+                <target>Irrigation (stade semis)</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_manure">
+                <source>librinfo_description_production_manure</source>
+                <target>Fumure</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_cuttings_period">
+                <source>librinfo_description_production_cuttings_period</source>
+                <target>Période de bouturage</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_transplant_irrigation">
+                <source>librinfo_description_production_transplant_irrigation</source>
+                <target>Irrigation (stade repiquage)</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_transplant_manure_quantity">
+                <source>librinfo_description_production_transplant_manure_quantity</source>
+                <target>Quantité de fumure</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_substratum">
+                <source>librinfo_description_production_substratum</source>
+                <target>Substrat</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_treatments">
+                <source>librinfo_description_production_treatments</source>
+                <target>Traitements</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_harvest_storage">
+                <source>librinfo_description_production_harvest_storage</source>
+                <target>Stockage optimal (récoltes)</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_advised_outcome">
+                <source>librinfo_description_production_advised_outcome</source>
+                <target>Débouchées conseillées</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_possible_outcome">
+                <source>librinfo_description_production_possible_outcome</source>
+                <target>Débouchées possibles</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_soil">
+                <source>librinfo_description_production_soil</source>
+                <target>Sol</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_yield">
+                <source>librinfo_description_production_yield</source>
+                <target>Rendement</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_production_biodynamics">
+                <source>librinfo_description_production_biodynamics</source>
+                <target>Biodynamie</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_production_tutoring">
+                <source>librinfo_description_production_tutoring</source>
+                <target>Tuteurage</target>
+            </trans-unit>
             
 <!-- STRAIN -->
             <trans-unit id="librinfo.varieties.strain_admin.label">
