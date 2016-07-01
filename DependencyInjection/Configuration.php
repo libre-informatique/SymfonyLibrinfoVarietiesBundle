@@ -31,6 +31,7 @@ class Configuration implements ConfigurationInterface
                         ->prototype('array')
                             ->children()
                                 ->scalarNode('type')->defaultValue('textarea')->end()
+                                
                                 ->arrayNode('options')
                                     ->children()
                                         ->booleanNode('required')->defaultFalse()->end()
@@ -40,6 +41,9 @@ class Configuration implements ConfigurationInterface
                                         ->booleanNode('expanded')->end()
                                         ->arrayNode('choices')
                                           ->prototype('scalar')->end()
+                                        ->end()
+                                        ->arrayNode('attr')
+                                            ->prototype('scalar')->end()
                                         ->end()
                                     ->end()
                                     ->addDefaultsIfNotSet()
