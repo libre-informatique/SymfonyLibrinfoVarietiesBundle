@@ -398,6 +398,10 @@
                 <source>librinfo.help.yield</source>
                 <target>par m2</target>
             </trans-unit> 
+            <trans-unit id="librinfo.help.yield_rating">
+                <source>librinfo.help.yield_rating</source>
+                <target></target>
+            </trans-unit> 
             <trans-unit id="librinfo_description_professional_biodynamics">
                 <source>librinfo_description_professional_biodynamics</source>
                 <target>Biodynamie</target>
@@ -405,6 +409,18 @@
             <trans-unit id="librinfo_description_professional_tutoring">
                 <source>librinfo_description_professional_tutoring</source>
                 <target>Tuteurage</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_professional_seedling_hotbed">
+                <source>librinfo_description_professional_seedling_hotbed</source>
+                <target>Couche chaude (stade semis)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_professional_transplant_hotbed">
+                <source>librinfo_description_professional_transplant_hotbed</source>
+                <target>Couche chaude (repiqage semis)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_professional_plant_transplant_hotbed">
+                <source>librinfo_description_professional_plant_transplant_hotbed</source>
+                <target>Couche chaude (repiquage plants)</target>
             </trans-unit>
             <!-- amateur --> 
             <trans-unit id="librinfo_description_amateur_possible_sowing_periods">
@@ -453,7 +469,7 @@
             </trans-unit>
             <trans-unit id="librinfo_description_amateur_yield">
                 <source>librinfo_description_amateur_yield</source>
-                <target>Rendement au m2</target>
+                <target>Rendement</target>
             </trans-unit>
             <trans-unit id="librinfo_description_amateur_biodynamics">
                 <source>librinfo_description_amateur_biodynamics</source>
@@ -545,8 +561,8 @@
                 <source>librinfo_description_commercial_secondary_color</source>
                 <target>Couleur secondaire</target>
             </trans-unit>
-            <trans-unit id="librinfo_description_commercial_yield">
-                <source>librinfo_description_commercial_yield</source>
+            <trans-unit id="librinfo_description_commercial_yield_rating">
+                <source>librinfo_description_commercial_yield_rating</source>
                 <target>Rendement</target>
             </trans-unit>
             <trans-unit id="librinfo_description_commercial_max_harvest_span">
@@ -899,6 +915,26 @@
             </trans-unit>
             <trans-unit id="librinfo.help.tutoring">
                 <source>librinfo.help.tutoring</source>
+                <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.pot_cultivation_ease">
+                <source>librinfo.help.pot_cultivation_ease</source>
+                <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.cutting_date">
+                <source>librinfo.help.cutting_date</source>
+                <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.seedling_hotbed">
+                <source>librinfo.help.seedling_hotbed</source>
+                <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.transplant_hotbed">
+                <source>librinfo.help.transplant_hotbed</source>
+                <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.plant_transplant_hotbed">
+                <source>librinfo.help.plant_transplant_hotbed</source>
                 <target> </target>
             </trans-unit>
              
