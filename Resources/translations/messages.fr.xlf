@@ -716,7 +716,192 @@
                 <source>librinfo_description_production_tutoring</source>
                 <target>Tuteurage</target>
             </trans-unit>
-            
+<!--  VARIETY DESCRIPTION HELP -->
+            <trans-unit id="librinfo.help.foliage_type">
+                <source>librinfo.help.foliage_type</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.foliage_color">
+                <source>librinfo.help.foliage_color</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.required_size">
+                <source>librinfo.help.required_size</source>
+                <target>en cm</target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.location">
+                <source>librinfo.help.location</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.taste_rating">
+                <source>librinfo.help.taste_rating</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.taste">
+                <source>librinfo.help.taste</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.texture">
+                <source>librinfo.help.texture</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.nutrition_rating">
+                <source>librinfo.help.nutrition_rating</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.nutrients">
+                <source>librinfo.help.nutrients</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.main_color">
+                <source>librinfo.help.main_color</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.secondary_color">
+                <source>librinfo.help.secondary_color</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.max_harvest_span">
+                <source>librinfo.help.max_harvest_span</source>
+                <target>en semaines</target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.min_harvest_span">
+                <source>librinfo.help.min_harvest_span</source>
+                <target>en semaines</target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.prefered_zone">
+                <source>librinfo.help.prefered_zone</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.grade">
+                <source>librinfo.help.grade</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.main_usages">
+                <source>librinfo.help.main_usages</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.usages">
+                <source>librinfo.help.usages</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.plant_type">
+                <source>librinfo.help.plant_type</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.targeted_audience">
+                <source>librinfo.help.targeted_audience</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.precocity">
+                <source>librinfo.help.precocity</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.rusticicty">
+                <source>librinfo.help.rusticicty</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.cultivation_ease">
+                <source>librinfo.help.cultivation_ease</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.inner_commment">
+                <source>librinfo.help.inner_commment</source>
+                <target>non mutualisé</target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.possible_sowing_periods">
+                <source>librinfo.help.possible_sowing_periods</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.germination_conditions">
+                <source>librinfo.help.germination_conditions</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.transplant">
+                <source>librinfo.help.transplant</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.sowing_density">
+                <source>librinfo.help.sowing_density</source>
+                <target>nbre/m2</target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.on_line_distance">
+                <source>librinfo.help.on_line_distance</source>
+                <target>en cm</target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.between_distance">
+                <source>librinfo.help.between_distance</source>
+                <target>en cm</target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.exposure">
+                <source>librinfo.help.exposure</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.seedling_irrigation">
+                <source>librinfo.help.seedling_irrigation</source>
+                <target>en cl</target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.transplant_irrigation">
+                <source>librinfo.help.transplant_irrigation</source>
+                <target>en cl</target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.manure">
+                <source>librinfo.help.manure</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.cuttings_period">
+                <source>librinfo.help.cuttings_period</source>
+                <target>semaines après levée</target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.sowing_date">
+                <source>librinfo.help.sowing_date</source>
+                <target> </target>
+            </trans-unit>         
+            <trans-unit id="librinfo.help.transplant_date">
+                <source>librinfo.help.transplant_date</source>
+                <target> </target>
+            </trans-unit>  
+            <trans-unit id="librinfo.help.transplant_manure_quantity">
+                <source>librinfo.help.transplant_manure_quantity</source>
+                <target>en grammes</target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.substratum">
+                <source>librinfo.help.substratum</source>
+                <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.treatments">
+                <source>librinfo.help.treatments</source>
+                <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.seed_storage">
+                <source>librinfo.help.seed_storage</source>
+                <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.harvest_storage">
+                <source>librinfo.help.harvest_storage</source>
+                <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.advised_outcome">
+                <source>librinfo.help.advised_outcome</source>
+                <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.possible_outcome">
+                <source>librinfo.help.possible_outcome</source>
+                <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.soil">
+                <source>librinfo.help.soil</source>
+                <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.biodynamics">
+                <source>librinfo.help.biodynamics</source>
+                <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.tutoring">
+                <source>librinfo.help.tutoring</source>
+                <target> </target>
+            </trans-unit>
+             
 <!-- STRAIN -->
             <trans-unit id="librinfo.varieties.strain_admin.label">
                 <source>librinfo.varieties.strain_admin.label</source>
