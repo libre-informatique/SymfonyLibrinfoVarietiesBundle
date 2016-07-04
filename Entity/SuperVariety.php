@@ -75,7 +75,10 @@ class SuperVariety
      * @var int
      */
     private $seedheads_per_kg;
-    
+    /**
+     * @var int
+     */
+    private $base_seed_per_kg;
 
     /**
      * Set latinName
@@ -387,6 +390,30 @@ class SuperVariety
     public function getSeedheadsPerKg()
     {
         return $this->seedheads_per_kg;
+    }
+    
+    /**
+     * Set baseSeedPerKg
+     *
+     * @param int $baseSeedPerKg
+     *
+     * @return SuperVariety
+     */
+    public function setBaseSeedPerKg($baseSeedPerKg)
+    {
+        $this->base_seed_per_kg = $baseSeedPerKg;
+
+        return $this;
+    }
+
+    /**
+     * Get baseSeedPerKg
+     *
+     * @return int
+     */
+    public function getBaseSeedPerKg()
+    {
+        return $this->base_seed_per_kg;
     }
 }
 

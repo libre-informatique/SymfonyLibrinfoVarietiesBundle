@@ -54,3 +54,7 @@ Librinfo\VarietiesBundle\Entity\SuperVariety:
         seedheads_per_kg:
             type:     integer
             nullable: true
+        # besoins semence de base pour produire 1kg (grammes)
+        base_seed_per_kg:
+            type:     integer
+            nullable: true
