@@ -1,1 +1,9 @@
-
+#insert chosen template in edit form
+librinfo_choice_getChoices:
+    path:     librinfo/ajax/choices/get/{fieldName}
+    defaults: { _controller: LibrinfoVarietiesBundle:Choice:getChoices }
+    
+#upload attachments
+librinfo_choice_addChoice:
+    path:     librinfo/ajax/choices/add
+    defaults: { _controller: LibrinfoVarietiesBundle:Choice:addChoice }

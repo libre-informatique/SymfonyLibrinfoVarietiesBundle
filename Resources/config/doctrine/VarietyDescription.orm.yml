@@ -10,5 +10,9 @@ Librinfo\VarietiesBundle\Entity\VarietyDescription:
         variety: VarietyDescription
         professional: VarietyDescriptionProfessional
         amateur: VarietyDescriptionAmateur
+        production: VarietyDescriptionProduction
+        commercial: VarietyDescriptionCommercial
+        plant: VarietyDescriptionPlant
+        culture: VarietyDescriptionCulture
         inner: VarietyDescriptionInner
     table: variety_description

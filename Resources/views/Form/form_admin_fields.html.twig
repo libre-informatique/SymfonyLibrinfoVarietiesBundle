@@ -13,3 +13,11 @@
 {% endspaceless %}
 {% endblock form_label %}#}
 
+{% block librinfo_custom_choice_widget %}
+    {% set subject = sonata_admin.admin.subject %}
+    {% spaceless %}
+        {{ block('choice_widget') }}
+        <a id="{{ subject.fieldset }}_{{ subject.field }}" class="add-choice editable editable-click inline-input" href="#"><i class="fa fa-plus-circle"></i></a>
+    {% endspaceless %}
+    <script type="text/javascript" src="{{ asset('bundles/librinfovarieties/js/customChoice.js') }}"></script>
+{% endblock %}

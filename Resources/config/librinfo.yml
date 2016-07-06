@@ -1,7 +1,5 @@
 parameters:
     librinfo:
-
-
 ##########
 # FAMILY
 ##########
@@ -258,7 +256,7 @@ parameters:
                 add:
                     form_group_general:
                         '':
-                            latin_name: ~
+                            latin_name: 
                             alias: ~
                             species:
                                 admin_code: librinfo_varieties.admin.species
@@ -272,6 +270,7 @@ parameters:
                 add:
                     form_group_general:
                         '':
+                            
                             species:
                                 type: sonata_type_model
                                 _options:
@@ -279,10 +278,15 @@ parameters:
                             latin_name:
                                 type: text
                                 required: false
+                                attr:
+                                    class: inline-block
+                            code: 
+                                attr:
+                                    class: inline-block
                             alias:
                                 type: text
                                 required: false
-                            code: ~
+                            
                             plant_categories:
                                 query_builder: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete::getAllWithoutRootQB
 #                                type: librinfo_baseentities_treeable
@@ -292,27 +296,40 @@ parameters:
 #                                min_node_level: 2
                             legal_germination_rate:
                                 help: librinfo.help.legal_germination_rate
+                                attr:
+                                    class: inline-block
                             germination_rate:
                                 help: librinfo.help.germination_rate
+                                attr:
+                                    class: inline-block
                             tkw:
-                                help: librinfo.help.twk
+                                help: librinfo.help.tkw
+                                attr:
+                                    class: inline-block
                             seed_lifespan:
                                 help: librinfo.help.seed_lifespan
+                                attr:
+                                    class: inline-block
                             raise_duration:
                                 help: librinfo.help.raise_duration
+                                attr:
+                                    class: inline-block
                             life_cycle:
-                                type: librinfo_varieties_lifecycle
+                                type: choice
                                 required: false
                         form_group_offical_catalogue:
                             official: ~
                             official_name: ~
-                            official_name: ~
                             official_date_in:
                                 type: sonata_type_date_picker
                                 required: false
+                                attr:
+                                    class: inline-block
                             official_date_out:
                                 type: sonata_type_date_picker
                                 required: false
+                                attr:
+                                    class: inline-block
                             official_maintainer: ~
                     form_tab_inner:
                         form_group_inner:
@@ -333,6 +350,60 @@ parameters:
                                     label: false
                             _options:
                                 description: La liste des champs est encore incomplète...
+                    form_tab_production:
+                        form_group_production:
+                            production_descriptions:
+                                type: sonata_type_collection
+                                by_reference: true
+                                required: true
+                                btn_add: false
+                                label: false
+                                type_options:
+                                    required: false
+                                    delete: false
+                                    btn_add: false
+                                    label: false
+                            _options:
+                                description: La liste des champs est encore incomplète...
+                    form_tab_commercial:
+                        form_group_commercial:
+                            commercial_descriptions:
+                                type: sonata_type_collection
+                                by_reference: true
+                                required: true
+                                btn_add: false
+                                label: false
+                                type_options:
+                                    required: false
+                                    delete: false
+                                    btn_add: false
+                                    label: false
+                    form_tab_plant:
+                        form_group_plant:
+                            plant_descriptions:
+                                type: sonata_type_collection
+                                by_reference: true
+                                required: true
+                                btn_add: false
+                                label: false
+                                type_options:
+                                    required: false
+                                    delete: false
+                                    btn_add: false
+                                    label: false
+                    form_tab_culture:
+                        form_group_culture:
+                            culture_descriptions:
+                                type: sonata_type_collection
+                                by_reference: true
+                                required: true
+                                btn_add: false
+                                label: false
+                                type_options:
+                                    required: false
+                                    delete: false
+                                    btn_add: false
+                                    label: false
                     form_tab_amateurs:
                         form_group_amateurs:
                             amateur_descriptions:
@@ -352,22 +423,45 @@ parameters:
                         '':
                             seedhead_yield:
                                 help: librinfo.help.seedhead_yield
+                                attr:
+                                    class: inline-block
                             area_per_kg:
                                 help: librinfo.help.area_per_kg
-                            seedheads_per_kg: ~
-                        #    selection_advice: ~
-                        #    selection_criteria: ~
+                                attr:
+                                    class: inline-block
+                            seedheads_per_kg:
+                                attr:
+                                    class: inline-block
+                                help: librinfo.help.seedheads_per_kg
+                            base_seed_per_kg:
+                                attr:
+                                    class: inline-block
+                                help: librinfo.help.base_seed_per_kg
+                        form_group_selection:
+                            selection_advice: 
+                                type: textarea
+                                required: false
+                            selection_criteria:
+                                type: textarea
+                                required: false
                         form_group_density:         
                             ditance_on_line:
                                 help: librinfo.help.ditance_on_line
+                                attr:
+                                    class: inline-block
                             ditance_between_lines:
                                 help: librinfo.help.ditance_between_lines
-                            
+                                attr:
+                                    class: inline-block
                     _options:
                         tabsOrder:
                             - form_group_general
                             - form_tab_seeds_production
                             - form_tab_inner
+                            - form_tab_plant
+                            - form_tab_culture
+                            - form_tab_commercial
+                            - form_tab_production
                             - form_tab_professionals
                             - form_tab_amateurs
                             - form_group_specific
@@ -404,7 +498,6 @@ parameters:
                         xls: csv
                         json: csv
                         xml: csv
-
 
 ##########
 # STRAIN

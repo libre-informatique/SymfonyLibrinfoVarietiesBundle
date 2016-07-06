@@ -54,11 +54,7 @@ Librinfo\VarietiesBundle\Entity\SuperVariety:
         seedheads_per_kg:
             type:     integer
             nullable: true
-#        # conseils de sélection
-#        selection_advice:
-#            type: string(255)
-#            nullable: true
-#        # critères de sélection
-#        selection_criteria:
-#            type: string(255)
-#            nullable: true
+        # besoins semence de base pour produire 1kg (grammes)
+        base_seed_per_kg:
+            type:     integer
+            nullable: true
