@@ -4,22 +4,17 @@ namespace Librinfo\VarietiesBundle\Form\Type;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Librinfo\CoreBundle\Form\AbstractType as BaseAbstractType;
-use Librinfo\VarietiesBundle\Entity\LifeCycle;
 
-class LifeCycleType extends BaseAbstractType
+class CustomChoiceType extends BaseAbstractType
 {
     public function getParent() {
         return 'choice';
     }
 
+    public function getName() {
+        return 'librinfo_custom_choice';
+    }
+    
     public function configureOptions(OptionsResolver $resolver) {
-        $choices = [];
-        foreach ( LifeCycle::values() as $lifecycle )
-            $choices[$lifecycle] = 'librinfo.label.life_cycle_' . $lifecycle;
-        $resolver->setDefaults([
-            'multiple' => false,
-            'expanded' => false,
-            'choices' => $choices
-        ]);
     }
 }
