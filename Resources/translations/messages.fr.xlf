@@ -109,8 +109,12 @@
                 <source>librinfo.label.parent_species</source>
                 <target>Est une sous-espèce de</target>
             </trans-unit>                
-            <trans-unit id="librinfo.help.twk">
-                <source>librinfo.help.twk</source>
+            <trans-unit id="librinfo.label.tkw">
+                <source>librinfo.label.tkw</source>
+                <target>Poids de mille graines</target>
+            </trans-unit>       
+            <trans-unit id="librinfo.help.tkw">
+                <source>librinfo.help.tkw</source>
                 <target>en grammes</target>
             </trans-unit>                
             
@@ -126,11 +130,7 @@
             <trans-unit id="librinfo.link.variety_create">
                 <source>librinfo.link.variety_create</source>
                 <target>Nouvelle variété</target>
-            </trans-unit>                 
-            <trans-unit id="librinfo.label.tkw">
-                <source>librinfo.label.tkw</source>
-                <target>Poids de mille graines</target>
-            </trans-unit>             
+            </trans-unit>                       
             <trans-unit id="librinfo.label.species">
                 <source>librinfo.label.species</source>
                 <target>Espèce</target>
@@ -205,7 +205,15 @@
             </trans-unit>                    
             <trans-unit id="librinfo.help.seedhead_yield">
                 <source>librinfo.help.seedhead_yield</source>
-                <target>unité : nombre de graines ou grammes ???</target>
+                <target>en grammes</target>
+            </trans-unit>                    
+            <trans-unit id="librinfo.label.base_seed_per_kg">
+                <source>librinfo.label.base_seed_per_kg</source>
+                <target>Besoins semence de base pour 1kg de graines</target>
+            </trans-unit>   
+            <trans-unit id="librinfo.help.base_seed_per_kg">
+                <source>librinfo.help.base_seed_per_kg</source>
+                <target>en grammes</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.ditance_on_line">
                 <source>librinfo.label.ditance_on_line</source>
@@ -508,10 +516,14 @@
                 <source>librinfo_description_plant_required_size</source>
                 <target>Taille nécessaire</target>
             </trans-unit>
+            <trans-unit id="librinfo_description_plant_development">
+                <source>librinfo_description_plant_development</source>
+                <target>Développement</target>
+            </trans-unit>
             
             <!-- culture  -->
             <trans-unit id="librinfo_description_culture_location">
-                <source>librinfo_description_culture_location</source>
+                <source>librinfo_desc   ription_culture_location</source>
                 <target>Localisation</target>
             </trans-unit>
             <trans-unit id="form_group_culture">
@@ -936,6 +948,14 @@
             <trans-unit id="librinfo.help.plant_transplant_hotbed">
                 <source>librinfo.help.plant_transplant_hotbed</source>
                 <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.development">
+                <source>librinfo.help.development</source>
+                <target> </target>
+            </trans-unit>
+            <trans-unit id="librinfo.help.seedheads_per_kg">
+                <source>librinfo.help.seedheads_per_kg</source>
+                <target>Unités </target>
             </trans-unit>
              
 <!-- STRAIN -->
