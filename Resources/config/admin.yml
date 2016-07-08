@@ -147,3 +147,9 @@ services:
               group: admin
               label: librinfo.varieties.variety_description_culture_admin.label
               label_translator_strategy: librinfo_core.label.strategy.librinfo
+
+    librinfo_varieties.admin.select_choice:
+        class: Librinfo\VarietiesBundle\Admin\SelectChoiceAdminConcrete
+        arguments: [~, Librinfo\VarietiesBundle\Entity\SelectChoice, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: SelectChoice }
