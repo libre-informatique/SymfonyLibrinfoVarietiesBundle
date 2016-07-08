@@ -3,14 +3,15 @@
 namespace Librinfo\VarietiesBundle\Entity;
 
 use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
-use Librinfo\DoctrineBundle\Entity\Superclass\Jsonable;
+use Librinfo\DoctrineBundle\Entity\Traits\Jsonable;
 
 /**
  * SelectChoice
  */
-class SelectChoice extends Jsonable
+class SelectChoice implements \JsonSerializable
 {
     use BaseEntity;
+    use Jsonable;
     
     /**
      * @var string
