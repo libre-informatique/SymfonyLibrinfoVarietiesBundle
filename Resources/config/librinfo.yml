@@ -270,11 +270,17 @@ parameters:
                 add:
                     form_group_general:
                         '':
-                            
                             species:
                                 type: sonata_type_model
+                                attr:
+                                    class: new-line
+                                    width: 30
                                 _options:
                                     admin_code: librinfo_varieties.admin.species
+                            name: 
+                                attr:
+                                    class: inline-block
+                                    
                             latin_name:
                                 type: text
                                 required: false
@@ -289,7 +295,10 @@ parameters:
                             
                             plant_categories:
                                 query_builder: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete::getAllWithoutRootQB
-#                                type: librinfo_baseentities_treeable
+                                attr:
+                                    class: new-line
+                                    width: 50
+#                               type: librinfo_baseentities_treeable
 #                                class: Librinfo\VarietiesBundle\Entity\PlantCategory
 #                                required: false
 #                                max_node_level: 3
@@ -305,7 +314,8 @@ parameters:
                             tkw:
                                 help: librinfo.help.tkw
                                 attr:
-                                    class: inline-block
+                                    class: new-line
+                                    width: 30
                             seed_lifespan:
                                 help: librinfo.help.seed_lifespan
                                 attr:
@@ -315,10 +325,18 @@ parameters:
                                 attr:
                                     class: inline-block
                             life_cycle:
-                                type: choice
+                                type: librinfo_varieties_lifecycle
                                 required: false
+                                attr:
+                                    class: inline-block
+                                    
+                            description: 
+                                attr:
+                                    class: new-line
+                                    height: 200
                         form_group_offical_catalogue:
-                            official: ~
+                            official:
+                                label: skljdfg
                             official_name: ~
                             official_date_in:
                                 type: sonata_type_date_picker
