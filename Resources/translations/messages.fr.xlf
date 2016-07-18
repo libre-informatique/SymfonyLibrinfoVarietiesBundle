@@ -530,10 +530,6 @@
             </trans-unit>
             
             <!-- culture  -->
-            <trans-unit id="librinfo_description_culture_location">
-                <source>librinfo_desc   ription_culture_location</source>
-                <target>Localisation</target>
-            </trans-unit>
             <trans-unit id="form_group_culture">
                 <source>form_group_culture</source>
                 <target>Culture</target>
@@ -542,7 +538,22 @@
                 <source>form_tab_culture</source>
                 <target>Culture</target>
             </trans-unit>
-            
+            <trans-unit id="librinfo_description_culture_location">
+                <source>librinfo_description_culture_location</source>
+                <target>Localisation</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_culture_strain_origin">
+                <source>librinfo_description_culture_strain_origin</source>
+                <target>Origine de la souche</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_culture_description">
+                <source>librinfo_description_culture_description</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_culture_several_strains">
+                <source>librinfo_description_culture_several_strains</source>
+                <target>Plusieurs souches disponibles</target>
+            </trans-unit>  
             
             <!-- commercial  -->
             <trans-unit id="form_tab_commercial">
@@ -965,6 +976,19 @@
                 <source>librinfo.help.seedheads_per_kg</source>
                 <target>Unités </target>
             </trans-unit>
+            <trans-unit id="librinfo.help.strain_origin">
+                <source>librinfo.help.strain_origin</source>
+                <target> </target>
+            </trans-unit>       
+            <trans-unit id="librinfo.help.several_strains">
+                <source>librinfo.help.several_strains</source>
+                <target> </target>
+            </trans-unit>       
+            <trans-unit id="librinfo.help.description">
+                <source>librinfo.help.description</source>
+                <target> </target>
+            </trans-unit>       
+            
              
 <!-- STRAIN -->
             <trans-unit id="librinfo.varieties.strain_admin.label">
