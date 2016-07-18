@@ -17,7 +17,6 @@ class ChoiceController extends Controller
     {
         $repo = $this->getDoctrine()->getRepository('LibrinfoVarietiesBundle:SelectChoice');
         $choices = $repo->findBy(array('label' => $fieldName));
-        dump($choices);
         
         return new JsonResponse(array('choices' => $choices));
     }
@@ -33,6 +32,6 @@ class ChoiceController extends Controller
         $manager->persist($choice);
         $manager->flush();
         
-        return new JsonResponse(array('name' => $choice->getLabel(), 'value' => $choice->getValue(), 'button' => '<i>fa-check-square</i>'));
+        return new JsonResponse(array('name' => $choice->getLabel(), 'value' => $choice->getValue()));
     }
 }

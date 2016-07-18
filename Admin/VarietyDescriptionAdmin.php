@@ -7,9 +7,11 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Librinfo\VarietiesBundle\Entity\SelectChoice;
 
 class VarietyDescriptionAdmin extends CoreAdmin
 {
+
     /**
      * @param DatagridMapper $datagridMapper
      */
@@ -52,17 +54,35 @@ class VarietyDescriptionAdmin extends CoreAdmin
         $fieldset = $this->subject->getFieldset();
         $field = $this->subject->getField();
         $config = empty($vd_config[$fieldset][$field]) ? '' : $vd_config[$fieldset][$field];
-        
-        $type = $config['type']; // TODO: limit types ?
-        
+
+        $type = isset($config['type']) ? $config['type'] : 'textarea'; // TODO: limit types ?
+
         $options = empty($config['options']) ? [] : $config['options'];
-        
-        if(isset($options['choices']) && empty($options['choices']))
+
+        if (isset($options['choices']) && empty($options['choices']))
+        {
             unset($options['choices']);
-            
+        } else if (isset($options['choices']) && $type == 'librinfo_custom_choice')
+        {
+            $manager = $this->getConfigurationPool()->getContainer()->get('doctrine')->getManager();
+            $repo = $manager->getRepository('LibrinfoVarietiesBundle:SelectChoice');
+
+            foreach ($options['choices'] as $choice)
+            {
+                if ($repo->findBy(array('value' => $choice)) == null)
+                {
+                    $newChoice = new SelectChoice();
+                    $newChoice->setLabel($fieldset . '_' . $field);
+                    $newChoice->setValue($choice);
+
+                    $manager->persist($newChoice);
+                    $manager->flush();
+                }
+            }
+        }
         if (!isset($options['label']) || !$options['label'])
             $options['label'] = sprintf("librinfo_description_%s_%s", $fieldset, $field);
-        
+
         if (!isset($options['help']) || !$options['help'])
             $options['help'] = sprintf("librinfo.help.%s", $field);
 
@@ -86,4 +106,5 @@ class VarietyDescriptionAdmin extends CoreAdmin
             ->add('id')
         ;
     }
+
 }
