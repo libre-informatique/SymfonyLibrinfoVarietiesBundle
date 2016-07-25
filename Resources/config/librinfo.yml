@@ -331,6 +331,7 @@ parameters:
                                     class: inline-block
                                     
                             description: 
+                                type: Librinfo\CoreBundle\Form\Type\TinyMceType
                                 attr:
                                     class: new-line
                                     height: 200

@@ -16,7 +16,3 @@ services:
         class: Librinfo\VarietiesBundle\Form\Type\LifeCycleType
         tags:
             - { name: form.type, alias: librinfo_varieties_lifecycle }
-    librinfo.form.type.custom_choice:
-        class: Librinfo\VarietiesBundle\Form\Type\CustomChoiceType
-        tags:
-            - { name: form.type, alias: librinfo_custom_choice }
