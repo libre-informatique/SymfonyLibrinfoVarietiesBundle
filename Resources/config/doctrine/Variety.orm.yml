@@ -45,6 +45,10 @@ Librinfo\VarietiesBundle\Entity\Variety:
         selection_criteria:
             type: string(255)
             nullable: true
+        # Caractéristiques particulières de la souche
+        strain_characteristics:
+            type: string(255)
+            nullable: true
 
     manyToMany:
         plant_categories:

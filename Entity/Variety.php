@@ -66,6 +66,11 @@ class Variety extends SuperVariety
     private $selection_criteria;
     
     /**
+     * @var string
+     */
+    private $strain_characteristics;
+    
+    /**
      * @var \Doctrine\Common\Collections\Collection
      */
     private $strains;
@@ -174,6 +179,30 @@ class Variety extends SuperVariety
     public function getLifeCycle()
     {
         return $this->life_cycle;
+    }
+    
+    /**
+     * Set strainCharacteristics
+     *
+     * @param string $strainCharacteristics
+     *
+     * @return Variety
+     */
+    public function setStrainCharacteristics($strainCharacteristics)
+    {
+        $this->strain_characteristics = $strainCharacteristics;
+
+        return $this;
+    }
+
+    /**
+     * Get strainCharacteristics
+     *
+     * @return string
+     */
+    public function getStrainCharacteristics()
+    {
+        return $this->strain_characteristics;
     }
 
     /**
