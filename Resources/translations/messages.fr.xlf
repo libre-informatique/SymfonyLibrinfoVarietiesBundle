@@ -124,9 +124,41 @@
             <trans-unit id="librinfo.help.tkw">
                 <source>librinfo.help.tkw</source>
                 <target>en grammes</target>
-            </trans-unit>                
-            
+            </trans-unit>
+<!-- STRAIN -->
+            <trans-unit id="Strains">
+                <source>Strains</source>
+                <target>Souches</target>
+            </trans-unit>  
+            <trans-unit id="librinfo.varieties.strain_admin.label">
+                <source>librinfo.varieties.strain_admin.label</source>
+                <target>Souche</target>
+            </trans-unit>     
+            <trans-unit id="librinfo.link.strain_list">
+                <source>librinfo.link.strain_list</source>
+                <target>Liste des souches</target>
+            </trans-unit>         
+            <trans-unit id="librinfo.link.strain_create">
+                <source>librinfo.link.strain_create</source>
+                <target>Nouvelle souche</target>
+            </trans-unit>                    
 <!-- VARIETY -->
+            <trans-unit id="Varieties">
+                <source>Varieties</source>
+                <target>Variétés</target>
+            </trans-unit> 
+            <trans-unit id="form_group_selection">
+                <source>form_group_selection</source>
+                <target>Sélection</target>
+            </trans-unit> 
+            <trans-unit id="librinfo.label.selection_criteria">
+                <source>librinfo.label.selection_criteria</source>
+                <target>Critères de sélection</target>
+            </trans-unit> 
+            <trans-unit id="librinfo.label.selection_advice">
+                <source>librinfo.label.selection_advice</source>
+                <target>Conseils de sélection</target>
+            </trans-unit> 
             <trans-unit id="librinfo.varieties.variety_admin.label">
                 <source>librinfo.varieties.variety_admin.label</source>
                 <target>Variété</target>
@@ -274,7 +306,15 @@
             <trans-unit id="librinfo.label.life_cycle_perennial">
                 <source>librinfo.label.life_cycle_perennial</source>
                 <target>Plante vivace</target>
-            </trans-unit>                    
+            </trans-unit>
+            <trans-unit id="librinfo.label.regulatory_status">
+                <source>librinfo.label.regulatory_status</source>
+                <target>Statut réglementaire</target>
+            </trans-unit>    
+            <trans-unit id="librinfo.label.strain_characteristics">
+                <source>librinfo.label.strain_characteristics</source>
+                <target>Charactéristiques de la souche</target>
+            </trans-unit>                      
             <trans-unit id="annual">
                 <source>annual</source>
                 <target>Plante annuelle</target>
@@ -428,80 +468,180 @@
             </trans-unit>
             <trans-unit id="librinfo_description_professional_seedling_hotbed">
                 <source>librinfo_description_professional_seedling_hotbed</source>
-                <target>Couche chaude (stade semis)</target>
+                <target>Couche chaude (semis)</target>
             </trans-unit>
             <trans-unit id="librinfo_description_professional_transplant_hotbed">
                 <source>librinfo_description_professional_transplant_hotbed</source>
-                <target>Couche chaude (repiqage semis)</target>
+                <target>Couche chaude (repiqage)</target>
             </trans-unit>
             <trans-unit id="librinfo_description_professional_plant_transplant_hotbed">
                 <source>librinfo_description_professional_plant_transplant_hotbed</source>
-                <target>Couche chaude (repiquage plants)</target>
+                <target>Couche chaude (plants)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_professional_seedling_irrigation_quantity">
+                <source>librinfo_description_professional_seedling_irrigation_quantity</source>
+                <target>Irrigation stade semis (Quantité)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_professional_seedling_irrigation_frequency">
+                <source>librinfo_description_professional_seedling_irrigation_frequency</source>
+                <target>Irrigation stade semis (Fréquence)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_professional_transplant_irrigation_quantity">
+                <source>librinfo_description_professional_transplant_irrigation_quantity</source>
+                <target>Irrigation stade repiquage (Quantité)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_professional_transplant_irrigation_frequency">
+                <source>librinfo_description_professional_transplant_irrigation_frequency</source>
+                <target>Irrigation stade repiquage (Fréquence)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_professional_germination_temperature">
+                <source>librinfo_description_professional_germination_temperature</source>
+                <target>Conditions de germination (Température)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_professional_germination_light">
+                <source>librinfo_description_professional_germination_light</source>
+                <target>Conditions de germination (Lumière)</target>
             </trans-unit>
             <!-- amateur --> 
             <trans-unit id="librinfo_description_amateur_possible_sowing_periods">
                 <source>librinfo_description_amateur_possible_sowing_periods</source>
                 <target>Périodes de semis possibles</target>
-            </trans-unit>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_cutting_period">
+                <source>librinfo_description_amateur_cutting_period</source>
+                <target>Période de bouturage</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_sowing_date">
+                <source>librinfo_description_amateur_sowing_date</source>
+                <target>Date de semis</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_transplant_date">
+                <source>librinfo_description_amateur_transplant_date</source>
+                <target>Date de repiquage</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_cutting_date">
+                <source>librinfo_description_amateur_cutting_date</source>
+                <target>Date de bouturage</target>
+            </trans-unit> 
             <trans-unit id="librinfo_description_amateur_germination_conditions">
                 <source>librinfo_description_amateur_germination_conditions</source>
                 <target>Conditions de germination</target>
-            </trans-unit>
+            </trans-unit> 
             <trans-unit id="librinfo_description_amateur_seed_storage">
                 <source>librinfo_description_amateur_seed_storage</source>
-                <target>Conditions de stockage otpimal (semences)</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_amateur_transplant">
+                <target>Stockage optimal (semence)</target>
+            </trans-unit> 
+            <trans-unit id=" librinfo_description_amateur_transplant ">
                 <source>librinfo_description_amateur_transplant</source>
-                <target>Repiquage, plantation</target>
-            </trans-unit>
+                <target>Repiquage</target>
+            </trans-unit> 
             <trans-unit id="librinfo_description_amateur_sowing_density">
                 <source>librinfo_description_amateur_sowing_density</source>
                 <target>Densité de semis</target>
-            </trans-unit>
+            </trans-unit> 
             <trans-unit id="librinfo_description_amateur_on_line_distance">
                 <source>librinfo_description_amateur_on_line_distance</source>
                 <target>Distance sur ligne</target>
-            </trans-unit>
+            </trans-unit> 
             <trans-unit id="librinfo_description_amateur_between_distance">
                 <source>librinfo_description_amateur_between_distance</source>
                 <target>Distance entre les lignes</target>
-            </trans-unit>
-            <trans-unit id="librinfo_description_amateur_seedling_irrigation">
-                <source>librinfo_description_amateur_seedling_irrigation</source>
-                <target>Irrigation (stade semis)</target>
-            </trans-unit>
+            </trans-unit> 
             <trans-unit id="librinfo_description_amateur_exposure">
                 <source>librinfo_description_amateur_exposure</source>
                 <target>Exposition</target>
-            </trans-unit>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_seedling_irrigation">
+                <source>librinfo_description_amateur_seedling_irrigation</source>
+                <target>Irrigation (stade semis)</target>
+            </trans-unit> 
             <trans-unit id="librinfo_description_amateur_manure">
                 <source>librinfo_description_amateur_manure</source>
                 <target>Fumure</target>
-            </trans-unit>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_cuttings_period">
+                <source>librinfo_description_amateur_cuttings_period</source>
+                <target>Période de bouturage</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_transplant_irrigation">
+                <source>librinfo_description_amateur_transplant_irrigation</source>
+                <target>Irrigation (stade repiquage)</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_transplant_manure_quantity">
+                <source>librinfo_description_amateur_transplant_manure_quantity</source>
+                <target>Quantité de fumure</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_substratum">
+                <source>librinfo_description_amateur_substratum</source>
+                <target>Substrat</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_treatments">
+                <source>librinfo_description_amateur_treatments</source>
+                <target>Traitements</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_harvest_storage">
+                <source>librinfo_description_amateur_harvest_storage</source>
+                <target>Stockage optimal (récoltes)</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_advised_outcome">
+                <source>librinfo_description_amateur_advised_outcome</source>
+                <target>Débouchées conseillées</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_possible_outcome">
+                <source>librinfo_description_amateur_possible_outcome</source>
+                <target>Débouchées possibles</target>
+            </trans-unit> 
             <trans-unit id="librinfo_description_amateur_soil">
                 <source>librinfo_description_amateur_soil</source>
                 <target>Sol</target>
-            </trans-unit>
+            </trans-unit> 
             <trans-unit id="librinfo_description_amateur_yield">
                 <source>librinfo_description_amateur_yield</source>
                 <target>Rendement</target>
-            </trans-unit>
+            </trans-unit> 
             <trans-unit id="librinfo_description_amateur_biodynamics">
                 <source>librinfo_description_amateur_biodynamics</source>
                 <target>Biodynamie</target>
             </trans-unit>
-            <trans-unit id="form_group_selection">
-                <source>form_group_selection</source>
-                <target>Sélection</target>
+            <trans-unit id="librinfo_description_amateur_tutoring">
+                <source>librinfo_description_amateur_tutoring</source>
+                <target>Tuteurage</target>
             </trans-unit>
-            <trans-unit id="librinfo.label.selection_advice">
-                <source>librinfo.label.selection_advice</source>
-                <target>Conseils de sélection</target>
+            <trans-unit id="librinfo_description_amateur_seedling_hotbed">
+                <source>librinfo_description_amateur_seedling_hotbed</source>
+                <target>Couche chaude (semis)</target>
             </trans-unit>
-            <trans-unit id="librinfo.label.selection_criteria">
-                <source>librinfo.label.selection_criteria</source>
-                <target>Critères de sélection</target>
+            <trans-unit id="librinfo_description_amateur_transplant_hotbed">
+                <source>librinfo_description_amateur_transplant_hotbed</source>
+                <target>Couche chaude (repiqage)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_plant_transplant_hotbed">
+                <source>librinfo_description_amateur_plant_transplant_hotbed</source>
+                <target>Couche chaude (plants)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_seedling_irrigation_quantity">
+                <source>librinfo_description_amateur_seedling_irrigation_quantity</source>
+                <target>Irrigation stade semis (Quantité)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_seedling_irrigation_frequency">
+                <source>librinfo_description_amateur_seedling_irrigation_frequency</source>
+                <target>Irrigation stade semis (Fréquence)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_transplant_irrigation_quantity">
+                <source>librinfo_description_amateur_transplant_irrigation_quantity</source>
+                <target>Irrigation stade repiquage (Quantité)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_transplant_irrigation_frequency">
+                <source>librinfo_description_amateur_transplant_irrigation_frequency</source>
+                <target>Irrigation stade repiquage (Fréquence)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_germination_temperature">
+                <source>librinfo_description_amateur_germination_temperature</source>
+                <target>Conditions de germination (Température)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_amateur_germination_light">
+                <source>librinfo_description_amateur_germination_light</source>
+                <target>Conditions de germination (Lumière)</target>
             </trans-unit>
             <!-- plant  -->
              <trans-unit id="form_group_plant">
@@ -648,8 +788,7 @@
                 <source>librinfo_description_commercial_inner_commment</source>
                 <target>Commentaire (non mutualisé)</target>
             </trans-unit>
-            
-            
+         
             <!-- production -->
             <trans-unit id="form_tab_production">
                 <source>form_tab_production</source>
@@ -763,7 +902,67 @@
                 <source>librinfo_description_production_tutoring</source>
                 <target>Tuteurage</target>
             </trans-unit>
+            <trans-unit id="librinfo_description_production_germination_temperature">
+                <source>librinfo_description_production_germination_temperature</source>
+                <target>Conditions de germination (Température)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_production_germination_light">
+                <source>librinfo_description_production_germination_light</source>
+                <target>Température de germination (Lumière)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_production_seedling_irrigation_quantity">
+                <source>librinfo_description_production_seedling_irrigation_quantity</source>
+                <target>Irrigation stade semis (Quantité)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_production_seedling_irrigation_frequency">
+                <source>librinfo_description_production_seedling_irrigation_frequency</source>
+                <target>Irrigation stade semis (Fréquence)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_production_seedling_hotbed">
+                <source>librinfo_description_production_seedling_hotbed</source>
+                <target>Couche chaude (semis)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_production_plant_hotbed">
+                <source>librinfo_description_production_plant_hotbed</source>
+                <target>Couche chaude (plante)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_production_transplant_irrigation_quantity">
+                <source>librinfo_description_production_transplant_irrigation_quantity</source>
+                <target>Irrigation stade semis (Quantité)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_production_transplant_irrigation_frequency">
+                <source>librinfo_description_production_transplant_irrigation_frequency</source>
+                <target>Irrigation stade repiquage (Fréquence)</target>
+            </trans-unit>
 <!--  VARIETY DESCRIPTION HELP -->
+            <trans-unit id="librinfo.help.seedling_irrigation_quantity">
+                <source>librinfo.help.seedling_irrigation_quantity</source>
+                <target> </target>
+            </trans-unit> 
+            <trans-unit id="librinfo.help.seedling_irrigation_frequency">
+                <source>librinfo.help.seedling_irrigation_frequency</source>
+                <target> </target>
+            </trans-unit> 
+            <trans-unit id="librinfo.help.transplant_irrigation_quantity">
+                <source>librinfo.help.transplant_irrigation_quantity</source>
+                <target> </target>
+            </trans-unit> 
+            <trans-unit id="librinfo.help.transplant_irrigation_frequency">
+                <source>librinfo.help.transplant_irrigation_frequency</source>
+                <target> </target>
+            </trans-unit> 
+            <trans-unit id="librinfo.help.plant_hotbed">
+                <source>librinfo.help.plant_hotbed</source>
+                <target> </target>
+            </trans-unit> 
+            <trans-unit id="librinfo.help.germination_light">
+                <source>librinfo.help.germination_light</source>
+                <target> </target>
+            </trans-unit> 
+            <trans-unit id="librinfo.help.germination_temperature">
+                <source>librinfo.help.germination_temperature</source>
+                <target> </target>
+            </trans-unit>         
             <trans-unit id="librinfo.help.foliage_type">
                 <source>librinfo.help.foliage_type</source>
                 <target> </target>
@@ -987,23 +1186,7 @@
             <trans-unit id="librinfo.help.description">
                 <source>librinfo.help.description</source>
                 <target> </target>
-            </trans-unit>       
-            
-             
-<!-- STRAIN -->
-            <trans-unit id="librinfo.varieties.strain_admin.label">
-                <source>librinfo.varieties.strain_admin.label</source>
-                <target>Souche</target>
-            </trans-unit>     
-            <trans-unit id="librinfo.link.strain_list">
-                <source>librinfo.link.strain_list</source>
-                <target>Liste des souches</target>
-            </trans-unit>         
-            <trans-unit id="librinfo.link.strain_create">
-                <source>librinfo.link.strain_create</source>
-                <target>Nouvelle souche</target>
             </trans-unit>                   
-            
         </body>
     </file>
 </xliff>

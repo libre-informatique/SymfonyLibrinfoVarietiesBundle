@@ -2,21 +2,14 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
-            
-<!-- LIFE CYCLE -->
-            <trans-unit id="annual">
-                <source>annual</source>
-                <target>Plante annuelle</target>
-            </trans-unit>                    
-            <trans-unit id="biennial">
-                <source>biennial</source>
-                <target>Plante bisannuelle</target>
-            </trans-unit>                    
-            <trans-unit id="perennial">
-                <source>perennial</source>
-                <target>Plante vivace</target>
-            </trans-unit>                    
-            
+            <trans-unit id="Strains">
+                <source>Strains</source>
+                <target>Souches</target>
+            </trans-unit>  
+            <trans-unit id="Varieties">
+                <source>Varieties</source>
+                <target>Variétés</target>
+            </trans-unit> 
         </body>
     </file>
 </xliff>
