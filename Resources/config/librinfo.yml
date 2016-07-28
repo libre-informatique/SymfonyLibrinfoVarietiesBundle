@@ -283,26 +283,26 @@ parameters:
                                     
                             latin_name:
                                 type: text
-                                required: false
                                 attr:
                                     class: inline-block
+                                    width: 30
                             code: 
                                 attr:
                                     class: inline-block
                             alias:
                                 type: text
                                 required: false
-                            
+                                attr:
+                                    class: new-line
+                                    width: 50
                             plant_categories:
                                 query_builder: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete::getAllWithoutRootQB
                                 attr:
                                     class: new-line
                                     width: 50
-#                               type: librinfo_baseentities_treeable
-#                                class: Librinfo\VarietiesBundle\Entity\PlantCategory
-#                                required: false
-#                                max_node_level: 3
-#                                min_node_level: 2
+                                #type: sonata_type_model
+                                _options:
+                                    btn_add: true
                             legal_germination_rate:
                                 help: librinfo.help.legal_germination_rate
                                 attr:
@@ -328,17 +328,25 @@ parameters:
                                 type: librinfo_varieties_lifecycle
                                 required: false
                                 attr:
+                                    class: new-line
+                                    width: 30
+                            regulatory_status:
+                                type: librinfo_customchoice
+                                attr:
                                     class: inline-block
-                                    
+                            strain_characteristics: ~
                             description: 
-                                type: Librinfo\CoreBundle\Form\Type\TinyMceType
+                                type: librinfo_tinymce
                                 attr:
                                     class: new-line
                                     height: 200
+                            
                         form_group_offical_catalogue:
-                            official:
-                                label: skljdfg
-                            official_name: ~
+                            official: ~
+                            official_name: 
+                                attr:
+                                    class: new-line
+                                    width: 30
                             official_date_in:
                                 type: sonata_type_date_picker
                                 required: false
@@ -349,7 +357,10 @@ parameters:
                                 required: false
                                 attr:
                                     class: inline-block
-                            official_maintainer: ~
+                            official_maintainer:
+                                attr:
+                                    class: new-line
+                                    width: 30
                     form_tab_inner:
                         form_group_inner:
                             _options:
@@ -456,13 +467,6 @@ parameters:
                                 attr:
                                     class: inline-block
                                 help: librinfo.help.base_seed_per_kg
-                        form_group_selection:
-                            selection_advice: 
-                                type: textarea
-                                required: false
-                            selection_criteria:
-                                type: textarea
-                                required: false
                         form_group_density:         
                             ditance_on_line:
                                 help: librinfo.help.ditance_on_line
@@ -472,6 +476,13 @@ parameters:
                                 help: librinfo.help.ditance_between_lines
                                 attr:
                                     class: inline-block
+                        form_group_selection:
+                            selection_advice: 
+                                type: textarea
+                                required: false
+                            selection_criteria:
+                                type: textarea
+                                required: false
                     _options:
                         tabsOrder:
                             - form_group_general
@@ -527,6 +538,8 @@ parameters:
                 add:
             Sonata\AdminBundle\Form\FormMapper:
                 add:
+                    description: 
+                        type: librinfo_tinymces
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:
