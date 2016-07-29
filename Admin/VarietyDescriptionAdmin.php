@@ -59,15 +59,11 @@ class VarietyDescriptionAdmin extends CoreAdmin
 
         $options = empty($config['options']) ? [] : $config['options'];
 
-        if (isset($options['choices']) && empty($options['choices']))
-        {
-            unset($options['choices']);
-        } else if (isset($options['choices']) && $type == 'librinfo_customchoice')
+        if (isset($options['choices']) && $type == 'librinfo_customchoice')
         {
             $manager = $this->getConfigurationPool()->getContainer()->get('doctrine')->getManager();
             $repo = $manager->getRepository('LibrinfoVarietiesBundle:SelectChoice');
             $label = $fieldset . '_' . $field;
-            
             foreach ($options['choices'] as $choice)
             {
                 if ($repo->findBy(array('label' => $label, 'value' => $choice)) == null)
@@ -76,11 +72,13 @@ class VarietyDescriptionAdmin extends CoreAdmin
                     $newChoice->setLabel($label);
                     $newChoice->setValue($choice);
 
-                    $manager->persist($newChoice);
-                    $manager->flush();
+                    $manager->persist($newChoice);                   
                 }
             }
+            $manager->flush();
         }
+        unset($options['choices']);
+        
         if (!isset($options['label']) || !$options['label'])
             $options['label'] = sprintf("librinfo_description_%s_%s", $fieldset, $field);
 
