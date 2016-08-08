@@ -14,9 +14,9 @@ class VarietyDescriptionPlant extends VarietyDescription
      */
     private $variety;
 
-//    public function getFieldset() {
-//        return 'plant';
-//    }
+    public function getFieldset() {
+        return 'plant';
+    }
 
     /**
      * Set variety

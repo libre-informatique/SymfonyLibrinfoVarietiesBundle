@@ -14,9 +14,9 @@ class VarietyDescriptionProfessional extends VarietyDescription
      */
     private $variety;
 
-//    public function getFieldset() {
-//        return 'professional';
-//    }
+    public function getFieldset() {
+        return 'professional';
+    }
 
     /**
      * Set variety

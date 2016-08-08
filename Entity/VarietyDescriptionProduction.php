@@ -14,9 +14,9 @@ class VarietyDescriptionProduction extends VarietyDescription
      */
     private $variety;
 
-//    public function getFieldset() {
-//        return 'production';
-//    }
+    public function getFieldset() {
+        return 'production';
+    }
 
     /**
      * Set variety

@@ -14,9 +14,9 @@ class VarietyDescriptionCommercial extends VarietyDescription
      */
     private $variety;
 
-//    public function getFieldset() {
-//        return 'commercial';
-//    }
+    public function getFieldset() {
+        return 'commercial';
+    }
 
     /**
      * Set variety

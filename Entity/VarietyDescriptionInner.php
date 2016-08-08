@@ -35,5 +35,9 @@ class VarietyDescriptionInner extends VarietyDescription
     {
         return $this->variety;
     }
+    
+    public function getFieldset() {
+        return 'inner';
+    }
 }
 

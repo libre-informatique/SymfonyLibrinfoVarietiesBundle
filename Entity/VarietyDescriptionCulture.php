@@ -14,9 +14,9 @@ class VarietyDescriptionCulture extends VarietyDescription
      */
     private $variety;
 
-//    public function getFieldset() {
-//        return 'culture';
-//    }
+    public function getFieldset() {
+        return 'culture';
+    }
 
     /**
      * Set variety
