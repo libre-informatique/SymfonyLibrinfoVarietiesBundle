@@ -354,6 +354,14 @@
                 <source>librinfo_description_professional_possible_sowing_periods</source>
                 <target>Périodes de semis possibles</target>
             </trans-unit> 
+            <trans-unit id="librinfo_description_professional_manure_quantity">
+                <source>librinfo_description_professional_manure_quantity</source>
+                <target>Quantité de fumure</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_professional_plant_hotbed">
+                <source>librinfo_description_professional_plant_hotbed</source>
+                <target>Couche chaude (plante)</target>
+            </trans-unit> 
             <trans-unit id="librinfo_description_professional_cutting_period">
                 <source>librinfo_description_professional_cutting_period</source>
                 <target>Période de bouturage</target>
@@ -502,7 +510,15 @@
                 <source>librinfo_description_professional_germination_light</source>
                 <target>Conditions de germination (Lumière)</target>
             </trans-unit>
-            <!-- amateur --> 
+            <!-- amateur -->
+            <trans-unit id="librinfo_description_amateur_manure_quantity">
+                <source>librinfo_description_amateur_manure_quantity</source>
+                <target>Quantité de fumure</target>
+            </trans-unit> 
+            <trans-unit id="librinfo_description_amateur_plant_hotbed">
+                <source>librinfo_description_amateur_plant_hotbed</source>
+                <target>Couche chaude (repiquage)</target>
+            </trans-unit>  
             <trans-unit id="librinfo_description_amateur_possible_sowing_periods">
                 <source>librinfo_description_amateur_possible_sowing_periods</source>
                 <target>Périodes de semis possibles</target>
@@ -862,8 +878,8 @@
                 <source>librinfo_description_production_transplant_irrigation</source>
                 <target>Irrigation (stade repiquage)</target>
             </trans-unit> 
-            <trans-unit id="librinfo_description_production_transplant_manure_quantity">
-                <source>librinfo_description_production_transplant_manure_quantity</source>
+            <trans-unit id="librinfo_description_production_manure_quantity">
+                <source>librinfo_description_production_manure_quantity</source>
                 <target>Quantité de fumure</target>
             </trans-unit> 
             <trans-unit id="librinfo_description_production_substratum">
@@ -908,7 +924,7 @@
             </trans-unit>
             <trans-unit id="librinfo_description_production_germination_light">
                 <source>librinfo_description_production_germination_light</source>
-                <target>Température de germination (Lumière)</target>
+                <target>Conditions de germination (Lumière)</target>
             </trans-unit>
             <trans-unit id="librinfo_description_production_seedling_irrigation_quantity">
                 <source>librinfo_description_production_seedling_irrigation_quantity</source>
@@ -928,11 +944,15 @@
             </trans-unit>
             <trans-unit id="librinfo_description_production_transplant_irrigation_quantity">
                 <source>librinfo_description_production_transplant_irrigation_quantity</source>
-                <target>Irrigation stade semis (Quantité)</target>
+                <target>Irrigation stade repiquage (Quantité)</target>
             </trans-unit>
             <trans-unit id="librinfo_description_production_transplant_irrigation_frequency">
                 <source>librinfo_description_production_transplant_irrigation_frequency</source>
                 <target>Irrigation stade repiquage (Fréquence)</target>
+            </trans-unit>
+            <trans-unit id="librinfo_description_production_transplant_hotbed">
+                <source>librinfo_description_production_transplant_hotbed</source>
+                <target>Couche chaude (repiquage)</target>
             </trans-unit>
 <!--  VARIETY DESCRIPTION HELP -->
             <trans-unit id="librinfo.help.seedling_irrigation_quantity">
@@ -1107,8 +1127,8 @@
                 <source>librinfo.help.transplant_date</source>
                 <target> </target>
             </trans-unit>  
-            <trans-unit id="librinfo.help.transplant_manure_quantity">
-                <source>librinfo.help.transplant_manure_quantity</source>
+            <trans-unit id="librinfo.help.manure_quantity">
+                <source>librinfo.help.manure_quantity</source>
                 <target>en grammes</target>
             </trans-unit>
             <trans-unit id="librinfo.help.substratum">
