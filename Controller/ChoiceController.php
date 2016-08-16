@@ -28,10 +28,14 @@ class ChoiceController extends Controller
         $choice = new SelectChoice;
         $choice->setLabel($request->get('name'));
         $choice->setValue($request->get('value'));
-        
         $manager->persist($choice);
         $manager->flush();
         
-        return new JsonResponse(array('name' => $choice->getLabel(), 'value' => $choice->getValue()));
+        return new JsonResponse(array(
+            'name'  => $choice->getLabel(), 
+            'value' => $choice->getValue(),
+            'id'    => $choice->getId()
+            )
+        );
     }
 }
