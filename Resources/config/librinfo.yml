@@ -107,7 +107,7 @@ parameters:
                             alias:
                                 type: text
                                 required: false
-                            family: 
+                            family:
                                 type: sonata_type_model
                     form_group_specieses:
                         '':
@@ -256,7 +256,7 @@ parameters:
                 add:
                     form_group_general:
                         '':
-                            latin_name: 
+                            latin_name:
                             alias: ~
                             species:
                                 admin_code: librinfo_varieties.admin.species
@@ -277,16 +277,16 @@ parameters:
                                     width: 30
                                 _options:
                                     admin_code: librinfo_varieties.admin.species
-                            name: 
+                            name:
                                 attr:
                                     class: inline-block
-                                    
+
                             latin_name:
                                 type: text
                                 attr:
                                     class: inline-block
                                     width: 30
-                            code: 
+                            code:
                                 attr:
                                     class: inline-block
                             alias:
@@ -332,18 +332,22 @@ parameters:
                                     width: 30
                             regulatory_status:
                                 type: librinfo_customchoice
+                                expanded: false
+                                multiple: false
+                                choices_class: \Librinfo\VarietiesBundle\Entity\SelectChoice
+                                choices_field: regulatory_status
                                 attr:
                                     class: inline-block
                             strain_characteristics: ~
-                            description: 
+                            description:
                                 type: librinfo_tinymce
                                 attr:
                                     class: new-line
                                     height: 200
-                            
+
                         form_group_offical_catalogue:
                             official: ~
-                            official_name: 
+                            official_name:
                                 attr:
                                     class: new-line
                                     width: 30
@@ -467,7 +471,7 @@ parameters:
                                 attr:
                                     class: inline-block
                                 help: librinfo.help.base_seed_per_kg
-                        form_group_density:         
+                        form_group_density:
                             ditance_on_line:
                                 help: librinfo.help.ditance_on_line
                                 attr:
@@ -477,7 +481,7 @@ parameters:
                                 attr:
                                     class: inline-block
                         form_group_selection:
-                            selection_advice: 
+                            selection_advice:
                                 type: textarea
                                 required: false
                             selection_criteria:
@@ -497,7 +501,7 @@ parameters:
                             - form_group_specific
 #                    customfields:
 #                        professional:
-#                            possible_sowing_periods: 
+#                            possible_sowing_periods:
 #                                type: text
 #                            seedling_irrigation:
 #                                type: number
@@ -538,7 +542,7 @@ parameters:
                 add:
             Sonata\AdminBundle\Form\FormMapper:
                 add:
-                    description: 
+                    description:
                         type: librinfo_tinymces
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]

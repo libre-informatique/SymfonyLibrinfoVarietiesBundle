@@ -4,35 +4,45 @@ namespace Librinfo\VarietiesBundle\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Librinfo\VarietiesBundle\Entity\SelectChoice;
 
 class ChoiceController extends Controller
 {
     /**
-     * 
+     * @todo Not used
+     *
      * @param String $fieldName the name of the field to get the choices for
      * @return JsonResponse
      */
     public function getChoicesAction($fieldName)
     {
-        $repo = $this->getDoctrine()->getRepository('LibrinfoVarietiesBundle:SelectChoice');
+        // TODO: this should be dynamic :
+        $repo = $this->getDoctrine()->getRepository('\Librinfo\VarietiesBundle\Entity\SelectChoice');
         $choices = $repo->findBy(array('label' => $fieldName));
-        
+
         return new JsonResponse(array('choices' => $choices));
     }
-    
+
     public function addChoiceAction(Request $request)
     {
         $manager = $this->getDoctrine()->getManager();
-        
-        $choice = new SelectChoice;
-        $choice->setLabel($request->get('name'));
-        $choice->setValue($request->get('value'));
+        $class = $request->get('class');
+        if ($class === null)
+            throw new \Exception('"class" parameter not sent');
+        $field = $request->get('field');
+        if ($field === null)
+            throw new \Exception('"field" parameter not sent');
+        $value = $request->get('value');
+        if ($value === null)
+            throw new \Exception('"value" parameter not sent');
+
+        $choice = new $class();
+        $choice->setLabel($field);
+        $choice->setValue($value);
         $manager->persist($choice);
         $manager->flush();
-        
+
         return new JsonResponse(array(
-            'name'  => $choice->getLabel(), 
+            'name'  => $choice->getLabel(),
             'value' => $choice->getValue(),
             'id'    => $choice->getId()
             )
