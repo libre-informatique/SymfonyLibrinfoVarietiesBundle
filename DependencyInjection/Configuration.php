@@ -37,6 +37,8 @@ class Configuration implements ConfigurationInterface
                                         ->booleanNode('required')->defaultFalse()->end()
                                         ->scalarNode('help')->defaultFalse()->end()
                                         ->scalarNode('label')->defaultNull()->end()
+                                        ->scalarNode('choices_field')->end()
+                                        ->scalarNode('choices_class')->end()
                                         ->booleanNode('multiple')->end()
                                         ->booleanNode('expanded')->end()
                                         ->arrayNode('choices')
