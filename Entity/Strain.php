@@ -79,7 +79,7 @@ class Strain extends SuperVariety
      */
     public function getLatinName()
     {
-        return $this->getVariety()->getLatinName();
+        return null != $this->getVariety() ? $this->getVariety()->getLatinName() : null;
     }
 
     /**
@@ -89,7 +89,7 @@ class Strain extends SuperVariety
      */
     public function getAlias()
     {
-        return $this->getVariety()->getAlias();
+        return null != $this->getVariety() ? $this->getVariety()->getAlias() : null;
     }
 
     /**
@@ -99,7 +99,7 @@ class Strain extends SuperVariety
      */
     public function getCode()
     {
-        return $this->getVariety()->getCode();
+        return null != $this->getVariety() ? $this->getVariety()->getCode() : null;
     }
 
     /**
@@ -109,7 +109,7 @@ class Strain extends SuperVariety
      */
     public function getLifeCycle()
     {
-        return $this->getVariety()->getLifeCycle();
+        return null != $this->getVariety() ? $this->getVariety()->getLifeCycle() : null;
     }
 
     /**
@@ -119,7 +119,7 @@ class Strain extends SuperVariety
      */
     public function getOfficial()
     {
-        return $this->getVariety()->getOfficial();
+        return null != $this->getVariety() ? $this->getVariety()->getOfficial() : null;
     }
 
     /**
@@ -129,7 +129,7 @@ class Strain extends SuperVariety
      */
     public function getOfficialName()
     {
-        return $this->getVariety()->getOfficialName();
+        return null != $this->getVariety() ? $this->getVariety()->getOfficialName() : null;
     }
 
     /**
@@ -139,7 +139,7 @@ class Strain extends SuperVariety
      */
     public function getOfficialDateIn()
     {
-        return $this->getVariety()->getOfficialDateIn();
+        return null != $this->getVariety() ? $this->getVariety()->getOfficialDateIn() : null;
     }
 
     /**
@@ -149,7 +149,7 @@ class Strain extends SuperVariety
      */
     public function getOfficialDateOut()
     {
-        return $this->getVariety()->getOfficialDateOut();
+        return null != $this->getVariety() ? $this->getVariety()->getOfficialDateOut() : null;
     }
 
     /**
@@ -159,7 +159,7 @@ class Strain extends SuperVariety
      */
     public function getOfficialMaintainer()
     {
-        return $this->getVariety()->getOfficialMaintainer();
+        return null != $this->getVariety() ? $this->getVariety()->getOfficialMaintainer() : null;
 
     }
 
@@ -170,7 +170,7 @@ class Strain extends SuperVariety
      */
     public function getLegalGerminationRate()
     {
-        return $this->getVariety()->getLegalGerminationRate();
+        return null != $this->getVariety() ? $this->getVariety()->getLegalGerminationRate() : null;
     }
 
     /**
@@ -180,7 +180,7 @@ class Strain extends SuperVariety
      */
     public function getRegulatoryStatus()
     {
-        return $this->getVariety()->getRegulatoryStatus();
+        return null != $this->getVariety() ? $this->getVariety()->getRegulatoryStatus() : null;
     }
 
     /**
@@ -190,7 +190,7 @@ class Strain extends SuperVariety
      */
     public function getGerminationRate()
     {
-        return $this->getVariety()->getGerminationRate();
+        return null != $this->getVariety() ? $this->getVariety()->getGerminationRate() : null;
     }
     
     /**
@@ -200,7 +200,7 @@ class Strain extends SuperVariety
      */
     public function getSpecies()
     {
-        return $this->getVariety()->getSpecies();
+        return null != $this->getVariety() ? $this->getVariety()->getSpecies() : null;
     }
     
     /**
@@ -210,7 +210,7 @@ class Strain extends SuperVariety
      */
     public function getPlantCategories()
     {
-        return $this->getVariety()->getPlantCategories();
+        return null != $this->getVariety() ? $this->getVariety()->getPlantCategories() : null;
     }
 
     /**
