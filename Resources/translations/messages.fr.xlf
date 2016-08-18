@@ -182,7 +182,11 @@
             <trans-unit id="librinfo.label.species_name">
                 <source>librinfo.label.species_name</source>
                 <target>Espèce</target>
-            </trans-unit>             
+            </trans-unit>
+            <trans-unit id="librinfo.label.transmitted_diseases">
+                <source>librinfo.label.transmitted_diseases</source>
+                <target>Maladies transmises par les semences</target>
+            </trans-unit>                 
             <trans-unit id="form_group_offical_catalogue">
                 <source>form_group_offical_catalogue</source>
                 <target>Catalogue officiel</target>
