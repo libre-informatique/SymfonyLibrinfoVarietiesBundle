@@ -1,22 +1,15 @@
 Librinfo\VarietiesBundle\Entity\SuperVariety:
     type: mappedSuperclass
     librinfo:
-        loggable: true
-        
+        loggable: true   
     fields:
-        latin_name:
-            type:     string(255)
+        #  conseils de sélection
+        selection_advice:
+            type: string(255)
             nullable: true
-        alias:
-            type:     string(255)
-            nullable: true
-        code:
-            type:     string(6)
-            # TODO: not nullable
-            nullable: true
-        # taux de germination AS (%)
-        germination_rate:
-            type:     integer
+        # critères de sélection
+        selection_criteria:
+            type: string(255)
             nullable: true
         # poids de mille graines - PMG (grammes)
         tkw:
@@ -57,4 +50,8 @@ Librinfo\VarietiesBundle\Entity\SuperVariety:
         # besoins semence de base pour produire 1kg (grammes)
         base_seed_per_kg:
             type:     integer
+            nullable: true
+        # maladies transmises
+        transmitted_diseases:
+            type: string(255)
             nullable: true

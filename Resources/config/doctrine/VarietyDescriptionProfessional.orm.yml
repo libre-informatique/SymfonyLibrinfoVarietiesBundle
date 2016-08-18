@@ -8,4 +8,11 @@ Librinfo\VarietiesBundle\Entity\VarietyDescriptionProfessional:
             joinColumn:
                 name: variety_id
             cascade: [ persist ]
-
+            nullable: true
+        strain:
+            targetEntity: Librinfo\VarietiesBundle\Entity\Strain
+            inversedBy: professional_descriptions
+            joinColumn:
+                name: strain_id
+            cascade: [ persist ]
+            nullable: true

@@ -10,7 +10,12 @@ class VarietyDescription extends GenericDescription
     /**
      * @var \Librinfo\VarietiesBundle\Entity\Variety
      */
-    private $variety;
+    protected $variety;
+    
+    /**
+     * @var \Librinfo\VarietiesBundle\Entity\Strain
+     */
+    protected $strain;
 
     /**
      * Set variety
@@ -19,7 +24,7 @@ class VarietyDescription extends GenericDescription
      *
      * @return VarietyDescription
      */
-    public function setVariety(\Librinfo\VarietiesBundle\Entity\Variety $variety = null)
+    public function setVariety($variety = null)
     {
         $this->variety = $variety;
 
@@ -34,6 +39,30 @@ class VarietyDescription extends GenericDescription
     public function getVariety()
     {
         return $this->variety;
+    }
+    
+    /**
+     * Set strain
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Strain $strain
+     *
+     * @return StrainDescription
+     */
+    public function setStrain($strain = null)
+    {
+        $this->strain = $strain;
+
+        return $this;
+    }
+
+    /**
+     * Get strain
+     *
+     * @return \Librinfo\VarietiesBundle\Entity\Strain
+     */
+    public function getStrain()
+    {
+        return $this->strain;
     }
 }
 

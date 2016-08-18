@@ -3,8 +3,17 @@
 Librinfo\VarietiesBundle\Entity\Variety:
     type: entity
     table: variety
-    
     fields:
+        latin_name:
+            type:     string(255)
+            nullable: true
+        alias:
+            type:     string(255)
+            nullable: true
+        code:
+            type:     string(6)
+            # TODO: not nullable
+            nullable: true
         # cycle végétatif
         life_cycle:
             type:     string(10)
@@ -37,32 +46,10 @@ Librinfo\VarietiesBundle\Entity\Variety:
         regulatory_status:
             type:     string(255)
             nullable: true
-        #  conseils de sélection
-        selection_advice:
-            type: string(255)
+        # taux de germination AS (%)
+        germination_rate:
+            type:     integer
             nullable: true
-        # critères de sélection
-        selection_criteria:
-            type: string(255)
-            nullable: true
-        # Caractéristiques particulières de la souche
-        strain_characteristics:
-            type: string(255)
-            nullable: true
-
-    manyToMany:
-        plant_categories:
-            targetEntity: Librinfo\VarietiesBundle\Entity\PlantCategory
-            inversedBy: varieties
-            joinTable:
-                name: librinfo_varieties_variety_category
-    manyToOne:
-        species:
-            targetEntity: Librinfo\VarietiesBundle\Entity\Species
-            inversedBy: varieties
-            joinColumn:
-                name: species_id
-            cascade: [ persist ]
     oneToMany:
         strains:
             targetEntity: Librinfo\VarietiesBundle\Entity\Strain
@@ -96,4 +83,17 @@ Librinfo\VarietiesBundle\Entity\Variety:
             targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionInner
             mappedBy: variety
             cascade: [ persist , remove]
+    manyToMany:
+        plant_categories:
+            targetEntity: Librinfo\VarietiesBundle\Entity\PlantCategory
+            inversedBy: varieties
+            joinTable:
+                name: librinfo_varieties_variety_category
+    manyToOne:
+        species:
+            targetEntity: Librinfo\VarietiesBundle\Entity\Species
+            inversedBy: varieties
+            joinColumn:
+                name: species_id
+            cascade: [ persist ]
         
