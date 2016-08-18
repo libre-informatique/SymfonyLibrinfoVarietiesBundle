@@ -339,7 +339,6 @@ parameters:
                                     width: 30
                             regulatory_status:
                                 type: librinfo_customchoice
-<<<<<<< Updated upstream
                                 expanded: false
                                 multiple: false
                                 choices_class: \Librinfo\VarietiesBundle\Entity\SelectChoice
@@ -348,22 +347,10 @@ parameters:
                                     class: inline-block
                             strain_characteristics: ~
                             description:
-=======
-                                #multiple: true
-                                #expanded: true
-                                attr:
-                                    class: inline-block
-                                required: false
-                            description: 
->>>>>>> Stashed changes
                                 type: librinfo_tinymce
                                 attr:
                                     class: new-line
                                     height: 200
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
                         form_group_offical_catalogue:
                             official: ~
                             official_name:
