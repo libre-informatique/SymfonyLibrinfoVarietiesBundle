@@ -7,7 +7,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Librinfo\VarietiesBundle\Entity\SelectChoice;
+use Librinfo\CoreBundle\Entity\SelectChoice;
 
 class VarietyDescriptionAdmin extends CoreAdmin
 {
@@ -54,33 +54,19 @@ class VarietyDescriptionAdmin extends CoreAdmin
         $fieldset = $this->subject->getFieldset();
         $field = $this->subject->getField();
         $config = empty($vd_config[$fieldset][$field]) ? '' : $vd_config[$fieldset][$field];
-
-        $type = isset($config['type']) ? $config['type'] : 'textarea'; // TODO: limit types ?
-
+        $type = isset($config['type']) ? $config['type'] : 'textarea'; 
+        $choiceType = 'librinfo_customchoice';
         $options = empty($config['options']) ? [] : $config['options'];
-
+        
         if (isset($options['choices']) && empty($options['choices']))
-        {
             unset($options['choices']);
-        } else if (isset($options['choices']) && $type == 'librinfo_customchoice')
-        {
-            $manager = $this->getConfigurationPool()->getContainer()->get('doctrine')->getManager();
-            $repo = $manager->getRepository('LibrinfoVarietiesBundle:SelectChoice');
-            $label = $fieldset . '_' . $field;
-            
-            foreach ($options['choices'] as $choice)
-            {
-                if ($repo->findBy(array('label' => $label, 'value' => $choice)) == null)
-                {
-                    $newChoice = new SelectChoice();
-                    $newChoice->setLabel($label);
-                    $newChoice->setValue($choice);
-
-                    $manager->persist($newChoice);
-                    $manager->flush();
-                }
-            }
-        }
+        
+        if (isset($options['choices_class']) && $type != $choiceType)
+            unset($options['choices_class']);
+        
+        if (isset($options['librinfo_choices']) && $type != $choiceType)
+            unset($options['librinfo_choices']);
+        
         if (!isset($options['label']) || !$options['label'])
             $options['label'] = sprintf("librinfo_description_%s_%s", $fieldset, $field);
 
