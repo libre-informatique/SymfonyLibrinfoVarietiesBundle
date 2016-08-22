@@ -511,10 +511,6 @@
                 <target>Conditions de germination (Lumière)</target>
             </trans-unit>
             <!-- amateur -->
-            <trans-unit id="librinfo.varieties.variety_description_production_admin.label">
-                <source>librinfo.varieties.variety_description_production_admin.label</source>
-                <target>Conseils jardiniers</target>
-            </trans-unit> 
             <trans-unit id="librinfo_description_amateur_manure_quantity">
                 <source>librinfo_description_amateur_manure_quantity</source>
                 <target>Quantité de fumure</target>
