@@ -28,11 +28,11 @@ Librinfo\VarietiesBundle\Entity\SuperVariety:
             type:     integer
             nullable: true
         # distance sur la ligne (cm)
-        ditance_on_line:
+        distance_on_line:
             type:     integer
             nullable: true
         # écartement des lignes (cm)
-        ditance_between_lines:
+        distance_between_lines:
             type:     integer
             nullable: true
         # densité au m²

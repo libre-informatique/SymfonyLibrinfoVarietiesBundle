@@ -509,9 +509,42 @@ parameters:
 #                                type: text
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
+                    species:
+                        admin_code: librinfo_varieties.admin.species
                     name: ~
                     latin_name: ~
+                    code: ~
                     alias: ~
+                    plant_categories: ~
+                    legal_germination_rate: ~
+                    germination_rate: ~
+                    tkw: ~
+                    seed_lifespan: ~
+                    raise_duration: ~
+                    transmitted_diseases: ~ 
+                    life_cycle: ~
+                    regulatory_status: ~
+                    description: ~
+                    official: ~
+                    official_name: ~
+                    official_date_in: ~
+                    official_date_out: ~
+                    official_maintainer: ~
+#                    professional_descriptions:
+#                    production_descriptions:
+#                    commercial_descriptions:
+#                    plant_descriptions:
+#                    culture_descriptions:
+#                    amateur_descriptions:
+#                    inner_descriptions:
+                    seedhead_yield: ~
+                    area_per_kg: ~
+                    seedheads_per_kg: ~
+                    base_seed_per_kg: ~
+                    distance_on_line: ~
+                    distance_between_lines: ~
+                    selection_advice: ~
+                    selection_criteria: ~  
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:

@@ -44,12 +44,12 @@ class SuperVariety
     /**
      * @var int
      */
-    private $ditance_on_line;
+    private $distance_on_line;
 
     /**
      * @var int
      */
-    private $ditance_between_lines;
+    private $distance_between_lines;
 
     /**
      * @var int
@@ -270,51 +270,51 @@ class SuperVariety
     }
 
     /**
-     * Set ditanceOnLine
+     * Set distanceOnLine
      *
-     * @param int $ditanceOnLine
+     * @param int $distanceOnLine
      *
      * @return SuperVariety
      */
-    public function setDitanceOnLine($ditanceOnLine)
+    public function setDistanceOnLine($distanceOnLine)
     {
-        $this->ditance_on_line = $ditanceOnLine;
+        $this->distance_on_line = $distanceOnLine;
 
         return $this;
     }
 
     /**
-     * Get ditanceOnLine
+     * Get distanceOnLine
      *
      * @return int
      */
-    public function getDitanceOnLine()
+    public function getDistanceOnLine()
     {
-        return $this->ditance_on_line;
+        return $this->distance_on_line;
     }
 
     /**
-     * Set ditanceBetweenLines
+     * Set distanceBetweenLines
      *
-     * @param int $ditanceBetweenLines
+     * @param int $distanceBetweenLines
      *
      * @return SuperVariety
      */
-    public function setDitanceBetweenLines($ditanceBetweenLines)
+    public function setDistanceBetweenLines($distanceBetweenLines)
     {
-        $this->ditance_between_lines = $ditanceBetweenLines;
+        $this->distance_between_lines = $distanceBetweenLines;
 
         return $this;
     }
 
     /**
-     * Get ditanceBetweenLines
+     * Get distanceBetweenLines
      *
      * @return int
      */
-    public function getDitanceBetweenLines()
+    public function getDistanceBetweenLines()
     {
-        return $this->ditance_between_lines;
+        return $this->distance_between_lines;
     }
 
     /**
