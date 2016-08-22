@@ -464,7 +464,7 @@
             </trans-unit> 
             <trans-unit id="librinfo.help.yield">
                 <source>librinfo.help.yield</source>
-                <target>par m2</target>
+                <target>Poids des légumes par m2 (en kg)</target>
             </trans-unit> 
             <trans-unit id="librinfo.help.yield_rating">
                 <source>librinfo.help.yield_rating</source>
@@ -519,10 +519,6 @@
                 <source>librinfo_description_amateur_manure_quantity</source>
                 <target>Quantité de fumure</target>
             </trans-unit> 
-            <trans-unit id="librinfo_description_amateur_plant_hotbed">
-                <source>librinfo_description_amateur_plant_hotbed</source>
-                <target>Couche chaude (repiquage)</target>
-            </trans-unit>  
             <trans-unit id="librinfo_description_amateur_possible_sowing_periods">
                 <source>librinfo_description_amateur_possible_sowing_periods</source>
                 <target>Périodes de semis possibles</target>
@@ -635,9 +631,9 @@
                 <source>librinfo_description_amateur_transplant_hotbed</source>
                 <target>Couche chaude (repiqage)</target>
             </trans-unit>
-            <trans-unit id="librinfo_description_amateur_plant_transplant_hotbed">
-                <source>librinfo_description_amateur_plant_transplant_hotbed</source>
-                <target>Couche chaude (plants)</target>
+            <trans-unit id="librinfo_description_amateur_plant_hotbed">
+                <source>librinfo_description_amateur_plant_hotbed</source>
+                <target>Couche chaude (plante)</target>
             </trans-unit>
             <trans-unit id="librinfo_description_amateur_seedling_irrigation_quantity">
                 <source>librinfo_description_amateur_seedling_irrigation_quantity</source>
