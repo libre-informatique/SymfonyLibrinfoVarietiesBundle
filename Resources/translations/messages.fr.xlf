@@ -462,14 +462,6 @@
                 <source>librinfo_description_professional_yield</source>
                 <target>Rendement</target>
             </trans-unit> 
-            <trans-unit id="librinfo.help.yield">
-                <source>librinfo.help.yield</source>
-                <target>Poids des légumes par m2 (en kg)</target>
-            </trans-unit> 
-            <trans-unit id="librinfo.help.yield_rating">
-                <source>librinfo.help.yield_rating</source>
-                <target></target>
-            </trans-unit> 
             <trans-unit id="librinfo_description_professional_biodynamics">
                 <source>librinfo_description_professional_biodynamics</source>
                 <target>Biodynamie</target>
@@ -959,6 +951,14 @@
                 <source>librinfo.help.seedling_irrigation_quantity</source>
                 <target> </target>
             </trans-unit> 
+            <trans-unit id="librinfo.help.yield">
+                <source>librinfo.help.yield</source>
+                <target>Poids des légumes par m2 (en kg)</target>
+            </trans-unit> 
+            <trans-unit id="librinfo.help.yield_rating">
+                <source>librinfo.help.yield_rating</source>
+                <target></target>
+            </trans-unit> 
             <trans-unit id="librinfo.help.seedling_irrigation_frequency">
                 <source>librinfo.help.seedling_irrigation_frequency</source>
                 <target> </target>
@@ -1121,11 +1121,11 @@
             </trans-unit>         
             <trans-unit id="librinfo.help.sowing_date">
                 <source>librinfo.help.sowing_date</source>
-                <target> </target>
+                <target>Nombre de semaines</target>
             </trans-unit>         
             <trans-unit id="librinfo.help.transplant_date">
                 <source>librinfo.help.transplant_date</source>
-                <target> </target>
+                <target>Nombre de semaines</target>
             </trans-unit>  
             <trans-unit id="librinfo.help.manure_quantity">
                 <source>librinfo.help.manure_quantity</source>
@@ -1173,7 +1173,7 @@
             </trans-unit>
             <trans-unit id="librinfo.help.cutting_date">
                 <source>librinfo.help.cutting_date</source>
-                <target> </target>
+                <target>Nombre de semaines</target>
             </trans-unit>
             <trans-unit id="librinfo.help.seedling_hotbed">
                 <source>librinfo.help.seedling_hotbed</source>
