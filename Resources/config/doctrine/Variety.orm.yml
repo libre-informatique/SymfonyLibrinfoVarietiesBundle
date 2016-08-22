@@ -54,7 +54,7 @@ Librinfo\VarietiesBundle\Entity\Variety:
         strains:
             targetEntity: Librinfo\VarietiesBundle\Entity\Strain
             mappedBy: variety
-            cascade: [ persist ]
+            cascade: [ persist, remove ]
         professional_descriptions:
             targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionProfessional
             mappedBy: variety
