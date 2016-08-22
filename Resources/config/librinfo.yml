@@ -339,13 +339,14 @@ parameters:
                                     width: 30
                             regulatory_status:
                                 type: librinfo_customchoice
-                                expanded: false
-                                multiple: false
-                                choices_class: \Librinfo\VarietiesBundle\Entity\SelectChoice
+                                expanded: true
+                                multiple: true
                                 choices_field: regulatory_status
+                                librinfo_choices:
+                                   - Contrôlé
+                                   - Non contrôlé
                                 attr:
                                     class: inline-block
-                            strain_characteristics: ~
                             description:
                                 type: librinfo_tinymce
                                 attr:
@@ -554,7 +555,11 @@ parameters:
                 add:
                     form_group_general:
                         '':
-                            strain_characteristics: ~
+                            strain_characteristics:
+                                type: text
+                                attr:
+                                    class: new-line
+                                    width: 50
                             variety: 
                                 type: sonata_type_model
                                 attr:
@@ -656,6 +661,7 @@ parameters:
                                 disabled: true
                                 required: false
                                 type: librinfo_customchoice
+                                choices_field: regulatory_status
                                 #multiple: true
                                 #expanded: true
                                 attr:
