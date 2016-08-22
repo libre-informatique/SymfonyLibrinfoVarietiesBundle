@@ -259,20 +259,20 @@
                 <source>librinfo.help.base_seed_per_kg</source>
                 <target>en grammes</target>
             </trans-unit>                    
-            <trans-unit id="librinfo.label.ditance_on_line">
-                <source>librinfo.label.ditance_on_line</source>
+            <trans-unit id="librinfo.label.distance_on_line">
+                <source>librinfo.label.distance_on_line</source>
                 <target>Distance sur la ligne</target>
             </trans-unit>                    
-            <trans-unit id="librinfo.help.ditance_on_line">
-                <source>librinfo.help.ditance_on_line</source>
+            <trans-unit id="librinfo.help.distance_on_line">
+                <source>librinfo.help.distance_on_line</source>
                 <target>en cm</target>
             </trans-unit>                    
-            <trans-unit id="librinfo.label.ditance_between_lines">
-                <source>librinfo.label.ditance_between_lines</source>
+            <trans-unit id="librinfo.label.distance_between_lines">
+                <source>librinfo.label.distance_between_lines</source>
                 <target>Écartement des lignes</target>
             </trans-unit>                    
-            <trans-unit id="librinfo.help.ditance_between_lines">
-                <source>librinfo.help.ditance_between_lines</source>
+            <trans-unit id="librinfo.help.distance_between_lines">
+                <source>librinfo.help.distance_between_lines</source>
                 <target>en cm</target>
             </trans-unit>                    
             <trans-unit id="librinfo.label.plant_density">
@@ -354,6 +354,10 @@
              
 <!-- VARIETY DESCRIPTIONS -->
              <!-- professional -->
+             <trans-unit id="librinfo.varieties.variety_description_professional_admin.label">
+                <source>librinfo.varieties.variety_description_professional_admin.label</source>
+                <target>Conseils pros</target>
+            </trans-unit> 
             <trans-unit id="librinfo_description_professional_possible_sowing_periods">
                 <source>librinfo_description_professional_possible_sowing_periods</source>
                 <target>Périodes de semis possibles</target>
@@ -507,6 +511,10 @@
                 <target>Conditions de germination (Lumière)</target>
             </trans-unit>
             <!-- amateur -->
+            <trans-unit id="librinfo.varieties.variety_description_production_admin.label">
+                <source>librinfo.varieties.variety_description_production_admin.label</source>
+                <target>Conseils jardiniers</target>
+            </trans-unit> 
             <trans-unit id="librinfo_description_amateur_manure_quantity">
                 <source>librinfo_description_amateur_manure_quantity</source>
                 <target>Quantité de fumure</target>
@@ -656,6 +664,10 @@
                 <source>form_group_plant</source>
                 <target>Caractéristiques de la plante</target>
             </trans-unit>
+            <trans-unit id="librinfo.varieties.variety_description_plant_admin.label">
+                <source>librinfo.varieties.variety_description_plant_admin.label</source>
+                <target>Caractéristiques de la plante</target>
+            </trans-unit>
             <trans-unit id="form_tab_plant">
                 <source>form_tab_plant</source>
                 <target>Plante</target>
@@ -682,6 +694,10 @@
                 <source>form_group_culture</source>
                 <target>Culture</target>
             </trans-unit>
+            <trans-unit id="librinfo.varieties.variety_description_culture_admin.label">
+                <source>librinfo.varieties.variety_description_culture_admin.label</source>
+                <target>Culture</target>
+            </trans-unit>
             <trans-unit id="form_tab_culture">
                 <source>form_tab_culture</source>
                 <target>Culture</target>
@@ -706,6 +722,10 @@
             <!-- commercial  -->
             <trans-unit id="form_tab_commercial">
                 <source>form_tab_commercial</source>
+                <target>Commercial</target>
+            </trans-unit>
+            <trans-unit id="librinfo.varieties.variety_description_commercial_admin.label">
+                <source>librinfo.varieties.variety_description_commercial_admin.label</source>
                 <target>Commercial</target>
             </trans-unit>
             <trans-unit id="form_group_commercial">
@@ -800,6 +820,10 @@
             <!-- production -->
             <trans-unit id="form_tab_production">
                 <source>form_tab_production</source>
+                <target>Mise en production</target>
+            </trans-unit> 
+            <trans-unit id="librinfo.varieties.variety_description_production_admin.label">
+                <source>librinfo.varieties.variety_description_production_admin.label</source>
                 <target>Mise en production</target>
             </trans-unit> 
             <trans-unit id="form_group_production">
