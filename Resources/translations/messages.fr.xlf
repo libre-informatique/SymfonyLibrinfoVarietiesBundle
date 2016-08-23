@@ -354,6 +354,10 @@
              
 <!-- VARIETY DESCRIPTIONS -->
              <!-- professional -->
+             <trans-unit id="librinfo.label.professional_descriptions">
+                <source>librinfo.label.professional_descriptions</source>
+                <target>Conseils de culture Professionels</target>
+            </trans-unit>
              <trans-unit id="librinfo.varieties.variety_description_professional_admin.label">
                 <source>librinfo.varieties.variety_description_professional_admin.label</source>
                 <target>Conseils pros</target>
@@ -510,7 +514,12 @@
                 <source>librinfo_description_professional_germination_light</source>
                 <target>Conditions de germination (Lumière)</target>
             </trans-unit>
+            
             <!-- amateur -->
+            <trans-unit id="librinfo.label.amateur_descriptions">
+                <source>librinfo.label.amateur_descriptions</source>
+                <target>Conseils de culture Amateurs</target>
+            </trans-unit> 
             <trans-unit id="librinfo_description_amateur_manure_quantity">
                 <source>librinfo_description_amateur_manure_quantity</source>
                 <target>Quantité de fumure</target>
@@ -656,7 +665,11 @@
                 <target>Conditions de germination (Lumière)</target>
             </trans-unit>
             <!-- plant  -->
-             <trans-unit id="form_group_plant">
+            <trans-unit id="librinfo.label.plant_descriptions">
+                <source>librinfo.label.plant_descriptions</source>
+                <target>Caractéristiques de la plante</target>
+            </trans-unit>
+            <trans-unit id="form_group_plant">
                 <source>form_group_plant</source>
                 <target>Caractéristiques de la plante</target>
             </trans-unit>
@@ -686,6 +699,10 @@
             </trans-unit>
             
             <!-- culture  -->
+            <trans-unit id="librinfo.label.culture_descriptions">
+                <source>librinfo.label.culture_descriptions</source>
+                <target>Culture</target>
+            </trans-unit>
             <trans-unit id="form_group_culture">
                 <source>form_group_culture</source>
                 <target>Culture</target>
@@ -716,6 +733,10 @@
             </trans-unit>  
             
             <!-- commercial  -->
+            <trans-unit id="librinfo.label.commercial_descriptions">
+                <source>librinfo.label.commercial_descriptions</source>
+                <target>Offre commerciale</target>
+            </trans-unit>
             <trans-unit id="form_tab_commercial">
                 <source>form_tab_commercial</source>
                 <target>Commercial</target>
@@ -814,6 +835,10 @@
             </trans-unit>
          
             <!-- production -->
+            <trans-unit id="librinfo.label.production_descriptions">
+                <source>librinfo.label.production_descriptions</source>
+                <target>Mise en production</target>
+            </trans-unit> 
             <trans-unit id="form_tab_production">
                 <source>form_tab_production</source>
                 <target>Mise en production</target>
@@ -965,6 +990,11 @@
             <trans-unit id="librinfo_description_production_transplant_hotbed">
                 <source>librinfo_description_production_transplant_hotbed</source>
                 <target>Couche chaude (repiquage)</target>
+            </trans-unit>
+        <!-- INNER -->
+            <trans-unit id="librinfo.label.inner_descriptions">
+                <source>librinfo.label.inner_descriptions</source>
+                <target>Descriptions personnelles</target>
             </trans-unit>
 <!--  VARIETY DESCRIPTION HELP -->
             <trans-unit id="librinfo.help.seedling_irrigation_quantity">
@@ -1226,7 +1256,257 @@
             <trans-unit id="librinfo.help.description">
                 <source>librinfo.help.description</source>
                 <target> </target>
-            </trans-unit>                   
+            </trans-unit> 
+     <!-- Variety description Filters -->   
+            <trans-unit id="Field">
+                <source>Field</source>
+                <target>Champ</target>
+            </trans-unit> 
+            <trans-unit id="Value">
+                <source>Value</source>
+                <target>Valeur</target>
+            </trans-unit> 
+           
+           <trans-unit id="treatments">
+                <source>treatments</source>
+                <target>Traitements</target>
+            </trans-unit> 
+            <trans-unit id="advised_outcome">
+                <source>advised_outcome</source>
+                <target>Débouchées conseillées</target>
+            </trans-unit> 
+            <trans-unit id="germination_light">
+                <source>germination_light</source>
+                <target>Lumière de germination</target>
+            </trans-unit> 
+            <trans-unit id="possible_sowing_periods">
+                <source>possible_sowing_periods</source>
+                <target>Périodes de semis possibles</target>
+            </trans-unit> 
+            <trans-unit id="substratum">
+                <source>substratum</source>
+                <target>Substrat</target>
+            </trans-unit> 
+            <trans-unit id="seedling_hotbed">
+                <source>seedling_hotbed</source>
+                <target>Couche chaude (semis)</target>
+            </trans-unit> 
+            <trans-unit id="tutoring">
+                <source>tutoring</source>
+                <target>Tuteurage</target>
+            </trans-unit> 
+            <trans-unit id="sowing_density">
+                <source>sowing_density</source>
+                <target>Densité de semis</target>
+            </trans-unit> 
+            <trans-unit id="plant_hotbed">
+                <source>plant_hotbed</source>
+                <target>Couche chaude (plante)</target>
+            </trans-unit> 
+            <trans-unit id="on_line_distance">
+                <source>on_line_distance</source>
+                <target>Distance sur ligne</target>
+            </trans-unit> 
+            <trans-unit id="cutting_date">
+                <source>cutting_date</source>
+                <target>Date de bouturage</target>
+            </trans-unit> 
+            <trans-unit id="seed_storage">
+                <source>seed_storage</source>
+                <target>Stockage optimal (semence)</target>
+            </trans-unit> 
+            <trans-unit id="transplant_hotbed">
+                <source>transplant_hotbed</source>
+                <target>Couche chaude (repiquage)</target>
+            </trans-unit> 
+            <trans-unit id="germination_temperature">
+                <source>germination_temperature</source>
+                <target>Température de germination</target>
+            </trans-unit> 
+            <trans-unit id="harvest_storage">
+                <source>harvest_storage</source>
+                <target>Stockage optimal (récolte)</target>
+            </trans-unit> 
+            <trans-unit id="exposure">
+                <source>exposure</source>
+                <target>Exposition</target>
+            </trans-unit> 
+            <trans-unit id="soil">
+                <source>soil</source>
+                <target>Sol</target>
+            </trans-unit> 
+            <trans-unit id="transplant_irrigation_quantity">
+                <source>transplant_irrigation_quantity</source>
+                <target>Irrigation stade repiquage (Quantité)</target>
+            </trans-unit> 
+            <trans-unit id="yield">
+                <source>yield</source>
+                <target>Rendement</target>
+            </trans-unit> 
+            <trans-unit id="seedling_irrigation_frequency">
+                <source>seedling_irrigation_frequency</source>
+                <target>Irrigation stade semis (Fréquence)</target>
+            </trans-unit> 
+            <trans-unit id="transplant">
+                <source>transplant</source>
+                <target>Repiquage</target>
+            </trans-unit> 
+            <trans-unit id="seedling_irrigation_quantity">
+                <source>seedling_irrigation_quantity</source>
+                <target>Irrigation stade semis (Quantité)</target>
+            </trans-unit>
+            <trans-unit id="manure">
+                <source>manure</source>
+                <target>Fumure</target>
+            </trans-unit> 
+            <trans-unit id="transplant_irrigation_frequency">
+                <source>transplant_irrigation_frequency</source>
+                <target>Irrigation stade repiquage (Fréquence)</target>
+            </trans-unit> 
+            <trans-unit id="biodynamics">
+                <source>biodynamics</source>
+                <target>Biodynamie</target>
+            </trans-unit> 
+            <trans-unit id="between_distance">
+                <source>between_distance</source>
+                <target>Distance entre les lignes</target>
+            </trans-unit> 
+            <trans-unit id="manure_quantity">
+                <source>manure_quantity</source>
+                <target>Quantité fumure</target>
+            </trans-unit> 
+            <trans-unit id="cuttings_period">
+                <source>cuttings_period</source>
+                <target>Période de bouturage</target>
+            </trans-unit> 
+            <trans-unit id="sowing_date">
+                <source>sowing_date</source>
+                <target>Date de semis</target>
+            </trans-unit> 
+            <trans-unit id="transplant_date">
+                <source>transplant_date</source>
+                <target>Date de repiquage</target>
+            </trans-unit> 
+            <trans-unit id="possible_outcome">
+                <source>possible_outcome</source>
+                <target>Débouchées possibles</target>
+            </trans-unit> 
+            <trans-unit id="main_usages">
+                <source>main_usages</source>
+                <target>Usages principaux</target>
+            </trans-unit> 
+            <trans-unit id="targeted_audience">
+                <source>targeted_audience</source>
+                <target>Public visé</target>
+            </trans-unit> 
+            <trans-unit id="min_harvest_span">
+                <source>min_harvest_span</source>
+                <target>Etalement min. de la récolte</target>
+            </trans-unit> 
+            <trans-unit id="cultivation_ease">
+                <source>cultivation_ease</source>
+                <target>Facilité de culture</target>
+            </trans-unit> 
+            <trans-unit id="rusticicty">
+                <source>rusticicty</source>
+                <target>Rusticité</target>
+            </trans-unit> 
+            <trans-unit id="max_harvest_span">
+                <source>max_harvest_span</source>
+                <target>Etalement max. de la récolte</target>
+            </trans-unit> 
+            <trans-unit id="pot_cultivation_ease">
+                <source>pot_cultivation_ease</source>
+                <target>Culture en pot</target>
+            </trans-unit> 
+            <trans-unit id="nutrition_rating">
+                <source>nutrition_rating</source>
+                <target>Qualité nutritive</target>
+            </trans-unit> 
+            <trans-unit id="inner_commment">
+                <source>inner_commment</source>
+                <target>Commentaire spécifique</target>
+            </trans-unit> 
+            <trans-unit id="taste_rating">
+                <source>taste_rating</source>
+                <target>Qualité gustative</target>
+            </trans-unit> 
+            <trans-unit id="texture">
+                <source>texture</source>
+                <target>Texture</target>
+            </trans-unit> 
+            <trans-unit id="grade">
+                <source>grade</source>
+                <target>Calibre</target>
+            </trans-unit> 
+            <trans-unit id="secondary_color">
+                <source>secondary_color</source>
+                <target>Couleur secondaire</target>
+            </trans-unit> 
+            <trans-unit id="prefered_zone">
+                <source>prefered_zone</source>
+                <target>Zone de culture préférée</target>
+            </trans-unit> 
+            <trans-unit id="yield_rating">
+                <source>yield_rating</source>
+                <target>Rendement</target>
+            </trans-unit> 
+            <trans-unit id="taste">
+                <source>taste</source>
+                <target>Qualités gustatives</target>
+            </trans-unit> 
+            <trans-unit id="usages">
+                <source>usages</source>
+                <target>Usages conseillés</target>
+            </trans-unit> 
+            <trans-unit id="nutrients">
+                <source>nutrients</source>
+                <target>Nutriments</target>
+            </trans-unit> 
+            <trans-unit id="plant_type">
+                <source>plant_type</source>
+                <target>Type de plante</target>
+            </trans-unit> 
+            <trans-unit id="precocity">
+                <source>precocity</source>
+                <target>Précocité</target>
+            </trans-unit> 
+            <trans-unit id="main_color">
+                <source>main_color</source>
+                <target>Couleur principale</target>
+            </trans-unit> 
+            <trans-unit id="foliage_type">
+                <source>foliage_type</source>
+                <target>Type de feuillage</target>
+            </trans-unit> 
+            <trans-unit id="foliage_color">
+                <source>foliage_color</source>
+                <target>Couleur du feuillage</target>
+            </trans-unit> 
+            <trans-unit id="required_size">
+                <source>required_size</source>
+                <target>Taille nécessaire</target>
+            </trans-unit> 
+            <trans-unit id="development">
+                <source>development</source>
+                <target>Développement</target>
+            </trans-unit> 
+            <trans-unit id="description">
+                <source>description</source>
+                <target>Description</target>
+            </trans-unit> 
+            <trans-unit id="location">
+                <source>location</source>
+                <target>Localisation</target>
+            </trans-unit> 
+            <trans-unit id="strain_origin">
+                <source>strain_origin</source>
+                <target>Origine de la souche</target>
+            </trans-unit> 
+            <trans-unit id="several_strains">
+                <source>several_strains</source>
+                <target>Plusieurs souches disponibles</target>
+            </trans-unit> 
         </body>
     </file>
 </xliff>
