@@ -16,3 +16,4 @@ Librinfo\VarietiesBundle\Entity\VarietyDescription:
         culture: VarietyDescriptionCulture
         inner: VarietyDescriptionInner
     table: variety_description
+    repositoryClass: Librinfo\VarietiesBundle\Entity\Repository\VarietyDescriptionRepository

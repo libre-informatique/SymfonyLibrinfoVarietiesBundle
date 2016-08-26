@@ -339,8 +339,6 @@ parameters:
                                     width: 30
                             regulatory_status:
                                 type: librinfo_customchoice
-                                expanded: true
-                                multiple: true
                                 choices_field: regulatory_status
                                 librinfo_choices:
                                    - Contrôlé
@@ -471,12 +469,12 @@ parameters:
                                     class: inline-block
                                 help: librinfo.help.base_seed_per_kg
                         form_group_density:
-                            ditance_on_line:
-                                help: librinfo.help.ditance_on_line
+                            distance_on_line:
+                                help: librinfo.help.distance_on_line
                                 attr:
                                     class: inline-block
-                            ditance_between_lines:
-                                help: librinfo.help.ditance_between_lines
+                            distance_between_lines:
+                                help: librinfo.help.distance_between_lines
                                 attr:
                                     class: inline-block
                         form_group_selection:
@@ -498,15 +496,6 @@ parameters:
                             - form_tab_professionals
                             - form_tab_amateurs
                             - form_group_specific
-#                    customfields:
-#                        professional:
-#                            possible_sowing_periods:
-#                                type: text
-#                            seedling_irrigation:
-#                                type: number
-#                        amateur:
-#                            cutting_period:
-#                                type: text
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
                     species:
@@ -530,13 +519,6 @@ parameters:
                     official_date_in: ~
                     official_date_out: ~
                     official_maintainer: ~
-#                    professional_descriptions:
-#                    production_descriptions:
-#                    commercial_descriptions:
-#                    plant_descriptions:
-#                    culture_descriptions:
-#                    amateur_descriptions:
-#                    inner_descriptions:
                     seedhead_yield: ~
                     area_per_kg: ~
                     seedheads_per_kg: ~
@@ -545,6 +527,27 @@ parameters:
                     distance_between_lines: ~
                     selection_advice: ~
                     selection_criteria: ~  
+                    professional_descriptions:
+                        label: librinfo.label.professional_descriptions
+                        type: doctrine_orm_librinfo_variety_description
+                    amateur_descriptions: 
+                        type: doctrine_orm_librinfo_variety_description
+                        label: librinfo.label.amateur_descriptions
+                    production_descriptions:
+                        type: doctrine_orm_librinfo_variety_description
+                        label: librinfo.label.production_descriptions
+                    commercial_descriptions:
+                        type: doctrine_orm_librinfo_variety_description
+                        label: librinfo.label.commercial_descriptions
+                    plant_descriptions:
+                        type: doctrine_orm_librinfo_variety_description
+                        label: librinfo.label.plant_descriptions
+                    culture_descriptions: 
+                        type: doctrine_orm_librinfo_variety_description
+                        label: librinfo.label.culture_descriptions
+                    inner_descriptions: 
+                        type: doctrine_orm_librinfo_variety_description
+                        label: librinfo.label.inner_descriptions
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:
@@ -840,12 +843,12 @@ parameters:
                                     class: inline-block
                                 help: librinfo.help.base_seed_per_kg
                         form_group_density:         
-                            ditance_on_line:
-                                help: librinfo.help.ditance_on_line
+                            distance_on_line:
+                                help: librinfo.help.distance_on_line
                                 attr:
                                     class: inline-block
-                            ditance_between_lines:
-                                help: librinfo.help.ditance_between_lines
+                            distance_between_lines:
+                                help: librinfo.help.distance_between_lines
                                 attr:
                                     class: inline-block
                         form_group_selection:

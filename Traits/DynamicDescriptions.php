@@ -7,8 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Sonata\AdminBundle\Form\FormMapper;
 
 trait DynamicDescriptions
-{
-    
+{   
     /**
      * @param FormMapper $mapper
      */
@@ -45,7 +44,9 @@ trait DynamicDescriptions
 
                 // Create missing VarietyDescriptions (described in configuration and not present in the Variety)
                 foreach ($config[$fieldset] as $field => $settings)
-                {
+                {  
+//                    dump($field);
+//                dump($settings);
                     $exists = $subject->$getter()->exists(function($key, $element) use ($field) {
                         return $element->getField() == $field;
                     });

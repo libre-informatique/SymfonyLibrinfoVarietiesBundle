@@ -125,6 +125,8 @@ class Variety extends SuperVariety
      * @var \Doctrine\Common\Collections\Collection
      */
     private $inner_descriptions;
+    
+    private $variety_descriptions;
 
     /**
      * Constructor
@@ -140,6 +142,12 @@ class Variety extends SuperVariety
         $this->plant_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
         $this->culture_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
         $this->inner_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    //Workaround for sonata filters
+    public function getVarietyDescriptions()
+    {
+        
     }
 
     /**
