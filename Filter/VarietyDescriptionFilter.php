@@ -30,19 +30,31 @@ class VarietyDescriptionFilter extends Filter
             return;
         }
 
+        $operator = '=';
+        $value = $data['value']['Value'];
         $name = $this->getName();
-
+           
         $queryBuilder->entityJoin(array(
             $name => array(
                 'fieldName' => $name
             ))
         );
-
-        $this->applyWhere($queryBuilder, sprintf('s_%s.field = :fieldName', $name));
-        $queryBuilder->setParameter('fieldName', $data['value']['Field']);
-
-        $this->applyWhere($queryBuilder, sprintf('s_%s.value = :value', $name));
-        $queryBuilder->setParameter('value', $data['value']['Value']);
+               
+        if($data['type'] == 1)
+        {
+            $operator = 'LIKE';
+            $value = '%' . $value . '%';
+        }else if($data['type'] == 2)
+        {
+            $operator = 'NOT LIKE';
+            $value = '%' . $value . '%';
+        }
+        
+        $this->applyWhere($queryBuilder, sprintf('s_%s.field = :field', $name));
+        $queryBuilder->setParameter('field', $data['value']['Field']);
+        
+        $this->applyWhere($queryBuilder, sprintf('s_%s.value %s :value', $name, $operator));
+        $queryBuilder->setParameter('value', $value);
     }
 
     /**
