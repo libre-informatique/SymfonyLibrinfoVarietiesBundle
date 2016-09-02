@@ -19,7 +19,7 @@ class VarietyAdminConcrete extends VarietyAdmin
         $this->configFormHandlesRelations($mapper);
         $this->configureDynamicDescriptions($mapper);  
     }
-    
+      
     public function getFormTheme()
     {
         return array_merge(

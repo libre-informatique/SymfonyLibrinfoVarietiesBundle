@@ -32,8 +32,9 @@ class VarietyDescriptionFilterType extends BaseAbstractType
             'fieldset' => $fieldSet,
             'required' => false
         );
+        
         $builder->add('Field', 'librinfo_variety_description', array_merge($librinfoOptions, $options['field_options']));
-        $builder->add('Value', $options['field_type'], array_merge(array('required' => false), $options['field_options']));
+        $builder->add('Value', 'text', array_merge(array('required' => false), $options['field_options']));
     }
 
     /**
@@ -44,10 +45,10 @@ class VarietyDescriptionFilterType extends BaseAbstractType
         $resolver->setDefaults([
             'placeholder' => '',
             'field_options' => array(),
-            'field_type' => 'text'
         ]);
         
-        $resolver->setDefined('fieldset' );
+        $resolver->setDefined('fieldset');
+        $resolver->setDefined('field_type');
 
     }
 

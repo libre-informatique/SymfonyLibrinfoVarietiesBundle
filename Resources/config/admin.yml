@@ -52,13 +52,15 @@ services:
 
     librinfo_varieties.admin.variety:
         class: Librinfo\VarietiesBundle\Admin\VarietyAdminConcrete
-        arguments: [~, Librinfo\VarietiesBundle\Entity\Variety, SonataAdminBundle:CRUD]
+        arguments: [~, Librinfo\VarietiesBundle\Entity\Variety, LibrinfoVarietiesBundle:VarietyCRUD]
         tags:
             - name: sonata.admin
               manager_type: orm
               group: admin
               label: librinfo.varieties.variety_admin.label
               label_translator_strategy: librinfo_core.label.strategy.librinfo
+        calls: 
+            - [ setTemplate, [ list, LibrinfoVarietiesBundle:CRUD:list.html.twig ] ] 
 
     librinfo_varieties.admin.strain:
         class: Librinfo\VarietiesBundle\Admin\StrainAdminConcrete

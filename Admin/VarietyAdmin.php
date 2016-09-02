@@ -7,9 +7,16 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\AdminBundle\Route\RouteCollection;
 
 class VarietyAdmin extends CoreAdmin
 {
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        parent::configureRoutes($collection);
+        $collection->add('getFilterWidget', 'getFilterWidget/{fieldset}/{field}');
+    }
+    
     /**
      * @param DatagridMapper $datagridMapper
      */

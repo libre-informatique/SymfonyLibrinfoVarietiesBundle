@@ -1,0 +1,5 @@
+{% extends 'SonataAdminBundle:CRUD:base_list.html.twig' %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/librinfovarieties/js/descriptionFilters.js') }}"></script>
+{% endblock %}
