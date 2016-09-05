@@ -3,6 +3,8 @@
 Librinfo\VarietiesBundle\Entity\Variety:
     type: entity
     table: variety
+    librinfo:
+        loggable: true   
     fields:
         latin_name:
             type:     string(255)
@@ -50,11 +52,75 @@ Librinfo\VarietiesBundle\Entity\Variety:
         germination_rate:
             type:     integer
             nullable: true
+         #  conseils de sélection
+        selection_advice:
+            type: string(255)
+            nullable: true
+        # critères de sélection
+        selection_criteria:
+            type: string(255)
+            nullable: true
+        # poids de mille graines - PMG (grammes)
+        tkw:
+            type:     float
+            nullable: true
+        # durée de vie théorique de la graine (années)
+        seed_lifespan:
+            type:     integer
+            nullable: true
+        # durée de levée dans les conditions naturelles (jours)
+        raise_duration:
+            type:     integer
+            nullable: true
+        # rendement par porte-graines (nombre de graines ou poids ?)
+        seedhead_yield:
+            type:     integer
+            nullable: true
+        # distance sur la ligne (cm)
+        ditance_on_line:
+            type:     integer
+            nullable: true
+        # écartement des lignes (cm)
+        ditance_between_lines:
+            type:     integer
+            nullable: true
+        # densité au m²
+        plant_density:
+            type:     integer
+            nullable: true
+        # surface pour produire 1kg graines (m²)
+        area_per_kg:
+            type:     integer
+            nullable: true
+        # nombre de porte-graines pour produire 1kg graines
+        seedheads_per_kg:
+            type:     integer
+            nullable: true
+        # besoins semence de base pour produire 1kg (grammes)
+        base_seed_per_kg:
+            type:     integer
+            nullable: true
+        # maladies transmises
+        transmitted_diseases:
+            type: string(255)
+            nullable: true
+        # Caractéristiques particulières de la souche
+        strain_characteristics:
+            type: string(255)
+            nullable: true
+#    manyToOne:
+#        variety:
+#            targetEntity: Librinfo\VarietiesBundle\Entity\Variety
+#            inversedBy: strains
+#            joinColumn:
+#                name: variety_id
+#            cascade: [ persist ]
+#    oneToMany:
+#        strains:
+#            targetEntity: Librinfo\VarietiesBundle\Entity\Strain
+#            mappedBy: variety
+#            cascade: [ persist ]
     oneToMany:
-        strains:
-            targetEntity: Librinfo\VarietiesBundle\Entity\Strain
-            mappedBy: variety
-            cascade: [ persist, remove ]
         professional_descriptions:
             targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionProfessional
             mappedBy: variety

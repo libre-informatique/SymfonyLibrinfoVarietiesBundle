@@ -8,9 +8,3 @@ Librinfo\VarietiesBundle\Entity\VarietyDescriptionPlant:
             joinColumn:
                 name: variety_id
             cascade: [ persist ]
-        strain:
-            targetEntity: Librinfo\VarietiesBundle\Entity\Strain
-            inversedBy: plant_descriptions
-            joinColumn:
-                name: strain_id
-            cascade: [ persist ]

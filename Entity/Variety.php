@@ -5,14 +5,16 @@ namespace Librinfo\VarietiesBundle\Entity;
 use Librinfo\DoctrineBundle\Entity\Traits\Nameable;
 use Librinfo\UserBundle\Entity\Traits\Traceable;
 use Librinfo\DoctrineBundle\Entity\Traits\Descriptible;
+use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
 
 /**
  * Variety
  */
-class Variety extends SuperVariety
+class Variety
 {
 
-    use Nameable,
+    use BaseEntity,
+        Nameable,
         Traceable,
         Descriptible;
 
@@ -75,6 +77,81 @@ class Variety extends SuperVariety
      * @var int
      */
     private $germination_rate;
+    
+    /**
+     * @var string
+     */
+    private $selection_advice;
+
+    /**
+     * @var string
+     */
+    private $selection_criteria;
+
+    /**
+     * @var float
+     */
+    private $tkw;
+
+    /**
+     * @var int
+     */
+    private $seed_lifespan;
+
+    /**
+     * @var int
+     */
+    private $raise_duration;
+
+    /**
+     * @var int
+     */
+    private $seedhead_yield;
+
+    /**
+     * @var int
+     */
+    private $ditance_on_line;
+
+    /**
+     * @var int
+     */
+    private $ditance_between_lines;
+
+    /**
+     * @var int
+     */
+    private $plant_density;
+
+    /**
+     * @var int
+     */
+    private $area_per_kg;
+
+    /**
+     * @var int
+     */
+    private $seedheads_per_kg;
+
+    /**
+     * @var int
+     */
+    private $base_seed_per_kg;
+
+    /**
+     * @var string
+     */
+    private $transmitted_diseases;
+
+     /**
+     * @var string
+     */
+    private $strain_characteristics;
+
+    /**
+     * @var \Librinfo\VarietiesBundle\Entity\Variety
+     */
+    private $variety;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -133,7 +210,7 @@ class Variety extends SuperVariety
      */
     public function __construct()
     {
-        $this->strains = new \Doctrine\Common\Collections\ArrayCollection();
+        //$this->strains = new \Doctrine\Common\Collections\ArrayCollection();
         $this->plant_categories = new \Doctrine\Common\Collections\ArrayCollection();
         $this->professional_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
         $this->amateur_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
@@ -534,6 +611,366 @@ class Variety extends SuperVariety
         return $this->plant_categories;
     }
 
+    /**
+     * Set selectionAdvice
+     *
+     * @param string $selectionAdvice
+     *
+     * @return SuperVariety
+     */
+    public function setSelectionAdvice($selectionAdvice)
+    {
+        $this->selection_advice = $selectionAdvice;
+
+        return $this;
+    }
+
+    /**
+     * Get selectionAdvice
+     *
+     * @return string
+     */
+    public function getSelectionAdvice()
+    {
+        return $this->selection_advice;
+    }
+
+    /**
+     * Set selectionCriteria
+     *
+     * @param string $selectionCriteria
+     *
+     * @return SuperVariety
+     */
+    public function setSelectionCriteria($selectionCriteria)
+    {
+        $this->selection_criteria = $selectionCriteria;
+
+        return $this;
+    }
+
+    /**
+     * Get selectionCriteria
+     *
+     * @return string
+     */
+    public function getSelectionCriteria()
+    {
+        return $this->selection_criteria;
+    }
+
+    /**
+     * Set tkw
+     *
+     * @param float $tkw
+     *
+     * @return SuperVariety
+     */
+    public function setTkw($tkw)
+    {
+        $this->tkw = $tkw;
+
+        return $this;
+    }
+
+    /**
+     * Get tkw
+     *
+     * @return float
+     */
+    public function getTkw()
+    {
+        return $this->tkw;
+    }
+
+    /**
+     * Set seedLifespan
+     *
+     * @param int $seedLifespan
+     *
+     * @return SuperVariety
+     */
+    public function setSeedLifespan($seedLifespan)
+    {
+        $this->seed_lifespan = $seedLifespan;
+
+        return $this;
+    }
+
+    /**
+     * Get seedLifespan
+     *
+     * @return int
+     */
+    public function getSeedLifespan()
+    {
+        return $this->seed_lifespan;
+    }
+
+    /**
+     * Set raiseDuration
+     *
+     * @param int $raiseDuration
+     *
+     * @return SuperVariety
+     */
+    public function setRaiseDuration($raiseDuration)
+    {
+        $this->raise_duration = $raiseDuration;
+
+        return $this;
+    }
+
+    /**
+     * Get raiseDuration
+     *
+     * @return int
+     */
+    public function getRaiseDuration()
+    {
+        return $this->raise_duration;
+    }
+
+    /**
+     * Set seedheadYield
+     *
+     * @param int $seedheadYield
+     *
+     * @return SuperVariety
+     */
+    public function setSeedheadYield($seedheadYield)
+    {
+        $this->seedhead_yield = $seedheadYield;
+
+        return $this;
+    }
+
+    /**
+     * Get seedheadYield
+     *
+     * @return int
+     */
+    public function getSeedheadYield()
+    {
+        return $this->seedhead_yield;
+    }
+
+    /**
+     * Set ditanceOnLine
+     *
+     * @param int $ditanceOnLine
+     *
+     * @return SuperVariety
+     */
+    public function setDitanceOnLine($ditanceOnLine)
+    {
+        $this->ditance_on_line = $ditanceOnLine;
+
+        return $this;
+    }
+
+    /**
+     * Get ditanceOnLine
+     *
+     * @return int
+     */
+    public function getDitanceOnLine()
+    {
+        return $this->ditance_on_line;
+    }
+
+    /**
+     * Set ditanceBetweenLines
+     *
+     * @param int $ditanceBetweenLines
+     *
+     * @return SuperVariety
+     */
+    public function setDitanceBetweenLines($ditanceBetweenLines)
+    {
+        $this->ditance_between_lines = $ditanceBetweenLines;
+
+        return $this;
+    }
+
+    /**
+     * Get ditanceBetweenLines
+     *
+     * @return int
+     */
+    public function getDitanceBetweenLines()
+    {
+        return $this->ditance_between_lines;
+    }
+
+    /**
+     * Set plantDensity
+     *
+     * @param int $plantDensity
+     *
+     * @return SuperVariety
+     */
+    public function setPlantDensity($plantDensity)
+    {
+        $this->plant_density = $plantDensity;
+
+        return $this;
+    }
+
+    /**
+     * Get plantDensity
+     *
+     * @return int
+     */
+    public function getPlantDensity()
+    {
+        return $this->plant_density;
+    }
+
+    /**
+     * Set areaPerKg
+     *
+     * @param int $areaPerKg
+     *
+     * @return SuperVariety
+     */
+    public function setAreaPerKg($areaPerKg)
+    {
+        $this->area_per_kg = $areaPerKg;
+
+        return $this;
+    }
+
+    /**
+     * Get areaPerKg
+     *
+     * @return int
+     */
+    public function getAreaPerKg()
+    {
+        return $this->area_per_kg;
+    }
+
+    /**
+     * Set seedheadsPerKg
+     *
+     * @param int $seedheadsPerKg
+     *
+     * @return SuperVariety
+     */
+    public function setSeedheadsPerKg($seedheadsPerKg)
+    {
+        $this->seedheads_per_kg = $seedheadsPerKg;
+
+        return $this;
+    }
+
+    /**
+     * Get seedheadsPerKg
+     *
+     * @return int
+     */
+    public function getSeedheadsPerKg()
+    {
+        return $this->seedheads_per_kg;
+    }
+
+    /**
+     * Set baseSeedPerKg
+     *
+     * @param int $baseSeedPerKg
+     *
+     * @return SuperVariety
+     */
+    public function setBaseSeedPerKg($baseSeedPerKg)
+    {
+        $this->base_seed_per_kg = $baseSeedPerKg;
+
+        return $this;
+    }
+
+    /**
+     * Get baseSeedPerKg
+     *
+     * @return int
+     */
+    public function getBaseSeedPerKg()
+    {
+        return $this->base_seed_per_kg;
+    }
+
+    /**
+     * Set transmittedDiseases
+     *
+     * @param \strin $transmittedDiseases
+     *
+     * @return SuperVariety
+     */
+    public function setTransmittedDiseases( $transmittedDiseases)
+    {
+        $this->transmitted_diseases = $transmittedDiseases;
+
+        return $this;
+    }
+
+    /**
+     * Get transmittedDiseases
+     *
+     * @return \strin
+     */
+    public function getTransmittedDiseases()
+    {
+        return $this->transmitted_diseases;
+    }
+    
+    /**
+     * Set strainCharacteristics
+     *
+     * @param string $strainCharacteristics
+     *
+     * @return Strain
+     */
+    public function setStrainCharacteristics($strainCharacteristics)
+    {
+        $this->strain_characteristics = $strainCharacteristics;
+
+        return $this;
+    }
+
+    /**
+     * Get strainCharacteristics
+     *
+     * @return string
+     */
+    public function getStrainCharacteristics()
+    {
+        return $this->strain_characteristics;
+    }
+
+    /**
+     * Set variety
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Variety $variety
+     *
+     * @return Strain
+     */
+    public function setVariety(\Librinfo\VarietiesBundle\Entity\Variety $variety = null)
+    {
+        $this->variety = $variety;
+
+        return $this;
+    }
+
+    /**
+     * Get variety
+     *
+     * @return \Librinfo\VarietiesBundle\Entity\Variety
+     */
+    public function getVariety()
+    {
+        return $this->variety;
+    }
+    
     /**
      * Add professionalDescription
      *
