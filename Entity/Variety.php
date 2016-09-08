@@ -2,6 +2,7 @@
 
 namespace Librinfo\VarietiesBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Librinfo\DoctrineBundle\Entity\Traits\Nameable;
 use Librinfo\UserBundle\Entity\Traits\Traceable;
 use Librinfo\DoctrineBundle\Entity\Traits\Descriptible;
@@ -13,10 +14,13 @@ use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
 class Variety
 {
 
+    use Nameable {
+        getName as getNameTrait;
+    }
+
     use BaseEntity,
-        Nameable,
-        Traceable,
-        Descriptible;
+    Traceable,
+    Descriptible;
 
     /**
      * @var string
@@ -77,7 +81,7 @@ class Variety
      * @var int
      */
     private $germination_rate;
-    
+
     /**
      * @var string
      */
@@ -111,12 +115,12 @@ class Variety
     /**
      * @var int
      */
-    private $ditance_on_line;
+    private $distance_on_line;
 
     /**
      * @var int
      */
-    private $ditance_between_lines;
+    private $distance_between_lines;
 
     /**
      * @var int
@@ -143,20 +147,25 @@ class Variety
      */
     private $transmitted_diseases;
 
-     /**
+    /**
      * @var string
      */
     private $strain_characteristics;
 
     /**
-     * @var \Librinfo\VarietiesBundle\Entity\Variety
+     * @var bool
      */
-    private $variety;
+    private $isStrain;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $strains;
+    private $children;
+
+    /**
+     * @var \Librinfo\VarietiesBundle\Entity\Variety
+     */
+    private $parent;
 
     /**
      * @var \Librinfo\VarietiesBundle\Entity\Species
@@ -202,29 +211,55 @@ class Variety
      * @var \Doctrine\Common\Collections\Collection
      */
     private $inner_descriptions;
-    
-    private $variety_descriptions;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        //$this->strains = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->plant_categories = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->professional_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->amateur_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->production_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->commercial_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->plant_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->culture_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->inner_descriptions = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->children = new ArrayCollection();
+        $this->plant_categories = new ArrayCollection();
+        $this->professional_descriptions = new ArrayCollection();
+        $this->amateur_descriptions = new ArrayCollection();
+        $this->production_descriptions = new ArrayCollection();
+        $this->commercial_descriptions = new ArrayCollection();
+        $this->plant_descriptions = new ArrayCollection();
+        $this->culture_descriptions = new ArrayCollection();
+        $this->inner_descriptions = new ArrayCollection();
     }
     
-    //Workaround for sonata filters
-    public function getVarietyDescriptions()
+    public function __clone()
     {
+        $this->id = null;
         
+        $this->children = new ArrayCollection();
+        $this->plant_categories = new ArrayCollection();
+        $this->professional_descriptions = new ArrayCollection();
+        $this->amateur_descriptions = new ArrayCollection();
+        $this->production_descriptions = new ArrayCollection();
+        $this->commercial_descriptions = new ArrayCollection();
+        $this->plant_descriptions = new ArrayCollection();
+        $this->culture_descriptions = new ArrayCollection();
+        $this->inner_descriptions = new ArrayCollection();
+    }
+
+    public function getName()
+    {
+
+        if ($this->hasParent() && null == $this->name)
+            return $this->getParent()->getName();
+
+        return $this->getNameTrait();
+    }
+
+    public function hasParent()
+    {
+        return null != $this->getParent();
+    }
+    
+    public function getSeveralStrains()
+    {
+        return count($this->children) > 1;
     }
 
     /**
@@ -248,7 +283,37 @@ class Variety
      */
     public function getLatinName()
     {
+        if ($this->hasParent() && !$this->latin_name)
+            return $this->getParent()->getLatinName();
+
         return $this->latin_name;
+    }
+
+    /**
+     * Set isStrain
+     *
+     * @param string $isStrain
+     *
+     * @return Variety
+     */
+    public function setIsStrain($isStrain)
+    {
+        $this->isStrain = $isStrain;
+
+        return $this;
+    }
+
+    /**
+     * Get isStrain
+     *
+     * @return string
+     */
+    public function getIsStrain()
+    {
+        if ($this->hasParent() && !$this->isStrain)
+            return $this->getParent()->getIsStrain();
+
+        return $this->isStrain;
     }
 
     /**
@@ -272,6 +337,9 @@ class Variety
      */
     public function getAlias()
     {
+        if ($this->hasParent() && !$this->alias)
+            return $this->getParent()->getAlias();
+
         return $this->alias;
     }
 
@@ -516,39 +584,63 @@ class Variety
     }
 
     /**
-     * Add strain
+     * Set parent
      *
-     * @param \Librinfo\VarietiesBundle\Entity\Strain $strain
+     * @param \Librinfo\VarietiesBundle\Entity\Variety $parent
      *
      * @return Variety
      */
-    public function addStrain(\Librinfo\VarietiesBundle\Entity\Strain $strain)
+    public function setParent(\Librinfo\VarietiesBundle\Entity\Variety $parent = null)
     {
-        $this->strains[] = $strain;
+        $this->parent = $parent;
 
         return $this;
     }
 
     /**
-     * Remove strain
+     * Get parent
      *
-     * @param \Librinfo\VarietiesBundle\Entity\Strain $strain
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return \Librinfo\VarietiesBundle\Entity\Variety
      */
-    public function removeStrain(\Librinfo\VarietiesBundle\Entity\Strain $strain)
+    public function getParent()
     {
-        return $this->strains->removeElement($strain);
+        return $this->parent;
     }
 
     /**
-     * Get strains
+     * Add child
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Variety $child
+     *
+     * @return Variety
+     */
+    public function addChild(\Librinfo\VarietiesBundle\Entity\Variety $child)
+    {
+        $this->children[] = $child;
+
+        return $this;
+    }
+
+    /**
+     * Remove child
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\Variety $child
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeChild(\Librinfo\VarietiesBundle\Entity\Variety $child)
+    {
+        return $this->children->removeElement($child);
+    }
+
+    /**
+     * Get children
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getStrains()
+    public function getChildren()
     {
-        return $this->strains;
+        return $this->children;
     }
 
     /**
@@ -572,6 +664,9 @@ class Variety
      */
     public function getSpecies()
     {
+        if ($this->hasParent() && !$this->species)
+            return $this->getParent()->getSpecies();
+
         return $this->species;
     }
 
@@ -756,51 +851,51 @@ class Variety
     }
 
     /**
-     * Set ditanceOnLine
+     * Set distanceOnLine
      *
-     * @param int $ditanceOnLine
+     * @param int $distanceOnLine
      *
      * @return SuperVariety
      */
-    public function setDitanceOnLine($ditanceOnLine)
+    public function setDistanceOnLine($distanceOnLine)
     {
-        $this->ditance_on_line = $ditanceOnLine;
+        $this->distance_on_line = $distanceOnLine;
 
         return $this;
     }
 
     /**
-     * Get ditanceOnLine
+     * Get distanceOnLine
      *
      * @return int
      */
-    public function getDitanceOnLine()
+    public function getDistanceOnLine()
     {
-        return $this->ditance_on_line;
+        return $this->distance_on_line;
     }
 
     /**
-     * Set ditanceBetweenLines
+     * Set distanceBetweenLines
      *
-     * @param int $ditanceBetweenLines
+     * @param int $distanceBetweenLines
      *
      * @return SuperVariety
      */
-    public function setDitanceBetweenLines($ditanceBetweenLines)
+    public function setDistanceBetweenLines($distanceBetweenLines)
     {
-        $this->ditance_between_lines = $ditanceBetweenLines;
+        $this->distance_between_lines = $distanceBetweenLines;
 
         return $this;
     }
 
     /**
-     * Get ditanceBetweenLines
+     * Get distanceBetweenLines
      *
      * @return int
      */
-    public function getDitanceBetweenLines()
+    public function getDistanceBetweenLines()
     {
-        return $this->ditance_between_lines;
+        return $this->distance_between_lines;
     }
 
     /**
@@ -906,7 +1001,7 @@ class Variety
      *
      * @return SuperVariety
      */
-    public function setTransmittedDiseases( $transmittedDiseases)
+    public function setTransmittedDiseases($transmittedDiseases)
     {
         $this->transmitted_diseases = $transmittedDiseases;
 
@@ -922,7 +1017,7 @@ class Variety
     {
         return $this->transmitted_diseases;
     }
-    
+
     /**
      * Set strainCharacteristics
      *
@@ -970,7 +1065,7 @@ class Variety
     {
         return $this->variety;
     }
-    
+
     /**
      * Add professionalDescription
      *
