@@ -264,6 +264,7 @@ parameters:
                                 type: trans
                                 catalogue: varieties
                             regulatory_status: ~
+                            children: ~
                     form_group_technical:
                         '':
                             tkw: ~
@@ -271,6 +272,8 @@ parameters:
                 add:
                     form_group_general:
                         '':
+                            isStrain:
+                                type: checkbox
                             species:
                                 type: sonata_type_model
                                 attr:
@@ -278,6 +281,11 @@ parameters:
                                     width: 30
                                 _options:
                                     admin_code: librinfo_varieties.admin.species
+                            parent:
+                                type: sonata_type_model
+                                attr:
+                                    class: new-line
+                                    width: 50
                             name:
                                 attr:
                                     class: inline-block
@@ -338,6 +346,7 @@ parameters:
                                     class: new-line
                                     width: 30
                             regulatory_status:
+                                required: false
                                 type: librinfo_customchoice
                                 choices_field: regulatory_status
                                 librinfo_choices:
@@ -346,6 +355,7 @@ parameters:
                                 attr:
                                     class: inline-block
                             description:
+                                required: false
                                 type: librinfo_tinymce
                                 attr:
                                     class: new-line
@@ -454,26 +464,34 @@ parameters:
                         '':
                             seedhead_yield:
                                 help: librinfo.help.seedhead_yield
+                                required: false
                                 attr:
                                     class: inline-block
                             area_per_kg:
+                                required: false
                                 help: librinfo.help.area_per_kg
                                 attr:
                                     class: inline-block
                             seedheads_per_kg:
+                                required: false
                                 attr:
                                     class: inline-block
                                 help: librinfo.help.seedheads_per_kg
                             base_seed_per_kg:
+                                required: false
                                 attr:
                                     class: inline-block
                                 help: librinfo.help.base_seed_per_kg
                         form_group_density:
                             distance_on_line:
+                                required: false
+                                type: integer
                                 help: librinfo.help.distance_on_line
                                 attr:
                                     class: inline-block
                             distance_between_lines:
+                                required: false
+                                type: integer
                                 help: librinfo.help.distance_between_lines
                                 attr:
                                     class: inline-block
@@ -555,6 +573,22 @@ parameters:
                     alias: ~
                     speciesName: ~
                     description: ~
+                    is_strain:
+                        type: boolean
+                    several_strains:
+                        type: boolean
+                    _actions:
+                        type: actions
+                        label: Action
+                        actions:
+                            show: ~
+                            edit: ~
+                            delete: ~
+                            duplicate:
+                                template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
+                                route: duplicate
+                            strain:
+                                template: LibrinfoVarietiesBundle:CRUD:list__action_strain.html.twig
                     _options:
                         fieldsOrder:
                             - name
