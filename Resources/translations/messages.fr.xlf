@@ -151,6 +151,18 @@
                 <source>form_group_selection</source>
                 <target>Sélection</target>
             </trans-unit> 
+            <trans-unit id="librinfo.label.parent">
+                <source>librinfo.label.parent</source>
+                <target>Variété</target>
+            </trans-unit> 
+            <trans-unit id="librinfo.label.children">
+                <source>librinfo.label.children</source>
+                <target> </target>
+            </trans-unit> 
+            <trans-unit id="form_tab_strains">
+                <source>form_tab_strains</source>
+                <target>Souches</target>
+            </trans-unit> 
             <trans-unit id="librinfo.label.selection_criteria">
                 <source>librinfo.label.selection_criteria</source>
                 <target>Critères de sélection</target>
@@ -1513,6 +1525,24 @@
             <trans-unit id="several_strains">
                 <source>several_strains</source>
                 <target>Plusieurs souches disponibles</target>
+            </trans-unit> 
+            <trans-unit id="librinfo.label.is_strain">
+                <source>librinfo.label.is_strain</source>
+                <target>Souche</target>
+            </trans-unit>
+            <trans-unit id="librinfo.label.several_strains">
+                <source>librinfo.label.several_strains</source>
+                <target>Plusieurs souches</target>
+            </trans-unit>
+            
+        <!-- List actions -->
+            <trans-unit id="Create strain">
+                <source>Create strain</source>
+                <target>Créer une souche</target>
+            </trans-unit> 
+            <trans-unit id="action_strain">
+                <source>action_strain</source>
+                <target>Souche</target>
             </trans-unit> 
         </body>
     </file>

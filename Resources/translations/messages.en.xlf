@@ -126,7 +126,7 @@
             <trans-unit id="librinfo.link.variety_create">
                 <source>librinfo.link.variety_create</source>
                 <target>New variety</target>
-            </trans-unit>       
+            </trans-unit> 
             <trans-unit id="librinfo.label.tkw">
                 <source>librinfo.label.tkw</source>
                 <target>Thousand kernel weight</target>
