@@ -2,21 +2,14 @@
 
 namespace Librinfo\VarietiesBundle\Admin;
 
-use Librinfo\CoreBundle\Admin\CoreAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Sonata\AdminBundle\Route\RouteCollection;
+use Librinfo\CoreBundle\Admin\CoreAdmin;
 
 class VarietyAdmin extends CoreAdmin
 {
-    protected function configureRoutes(RouteCollection $collection)
-    {
-        parent::configureRoutes($collection);
-        $collection->add('getFilterWidget', 'getFilterWidget/{fieldset}/{field}');
-    }
-    
     /**
      * @param DatagridMapper $datagridMapper
      */
@@ -26,22 +19,35 @@ class VarietyAdmin extends CoreAdmin
             ->add('latin_name')
             ->add('alias')
             ->add('code')
-            ->add('strain')
+            ->add('life_cycle')
             ->add('official')
             ->add('official_name')
             ->add('official_date_in')
             ->add('official_date_out')
-            ->add('maintainer')
+            ->add('official_maintainer')
             ->add('legal_germination_rate')
+            ->add('regulatory_status')
             ->add('germination_rate')
+            ->add('selection_advice')
+            ->add('selection_criteria')
             ->add('tkw')
             ->add('seed_lifespan')
             ->add('raise_duration')
+            ->add('seedhead_yield')
+            ->add('distance_on_line')
+            ->add('distance_between_lines')
+            ->add('plant_density')
+            ->add('area_per_kg')
+            ->add('seedheads_per_kg')
+            ->add('base_seed_per_kg')
+            ->add('transmitted_diseases')
+            ->add('strain_characteristics')
+            ->add('isStrain')
+            ->add('name')
             ->add('description')
+            ->add('id')
             ->add('createdAt')
             ->add('updatedAt')
-            ->add('name')
-            ->add('id')
         ;
     }
 
@@ -54,27 +60,43 @@ class VarietyAdmin extends CoreAdmin
             ->add('latin_name')
             ->add('alias')
             ->add('code')
-            ->add('strain')
+            ->add('life_cycle')
             ->add('official')
             ->add('official_name')
             ->add('official_date_in')
             ->add('official_date_out')
-            ->add('maintainer')
+            ->add('official_maintainer')
             ->add('legal_germination_rate')
+            ->add('regulatory_status')
             ->add('germination_rate')
+            ->add('selection_advice')
+            ->add('selection_criteria')
             ->add('tkw')
             ->add('seed_lifespan')
             ->add('raise_duration')
+            ->add('seedhead_yield')
+            ->add('distance_on_line')
+            ->add('distance_between_lines')
+            ->add('plant_density')
+            ->add('area_per_kg')
+            ->add('seedheads_per_kg')
+            ->add('base_seed_per_kg')
+            ->add('transmitted_diseases')
+            ->add('strain_characteristics')
+            ->add('isStrain')
+            ->add('name')
             ->add('description')
+            ->add('id')
             ->add('createdAt')
             ->add('updatedAt')
-            ->add('name')
-            ->add('id')
-            ->add('_action', 'actions', array(
+            ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
                     'edit' => array(),
                     'delete' => array(),
+                    'duplicate' => array(
+                        'template' => 'LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig'
+                    )
                 )
             ))
         ;
@@ -89,22 +111,35 @@ class VarietyAdmin extends CoreAdmin
             ->add('latin_name')
             ->add('alias')
             ->add('code')
-            ->add('strain')
+            ->add('life_cycle')
             ->add('official')
             ->add('official_name')
             ->add('official_date_in')
             ->add('official_date_out')
-            ->add('maintainer')
+            ->add('official_maintainer')
             ->add('legal_germination_rate')
+            ->add('regulatory_status')
             ->add('germination_rate')
+            ->add('selection_advice')
+            ->add('selection_criteria')
             ->add('tkw')
             ->add('seed_lifespan')
             ->add('raise_duration')
+            ->add('seedhead_yield')
+            ->add('distance_on_line')
+            ->add('distance_between_lines')
+            ->add('plant_density')
+            ->add('area_per_kg')
+            ->add('seedheads_per_kg')
+            ->add('base_seed_per_kg')
+            ->add('transmitted_diseases')
+            ->add('strain_characteristics')
+            ->add('isStrain')
+            ->add('name')
             ->add('description')
+            ->add('id')
             ->add('createdAt')
             ->add('updatedAt')
-            ->add('name')
-            ->add('id')
         ;
     }
 
@@ -117,22 +152,35 @@ class VarietyAdmin extends CoreAdmin
             ->add('latin_name')
             ->add('alias')
             ->add('code')
-            ->add('strain')
+            ->add('life_cycle')
             ->add('official')
             ->add('official_name')
             ->add('official_date_in')
             ->add('official_date_out')
-            ->add('maintainer')
+            ->add('official_maintainer')
             ->add('legal_germination_rate')
+            ->add('regulatory_status')
             ->add('germination_rate')
+            ->add('selection_advice')
+            ->add('selection_criteria')
             ->add('tkw')
             ->add('seed_lifespan')
             ->add('raise_duration')
+            ->add('seedhead_yield')
+            ->add('distance_on_line')
+            ->add('distance_between_lines')
+            ->add('plant_density')
+            ->add('area_per_kg')
+            ->add('seedheads_per_kg')
+            ->add('base_seed_per_kg')
+            ->add('transmitted_diseases')
+            ->add('strain_characteristics')
+            ->add('isStrain')
+            ->add('name')
             ->add('description')
+            ->add('id')
             ->add('createdAt')
             ->add('updatedAt')
-            ->add('name')
-            ->add('id')
         ;
     }
 }
