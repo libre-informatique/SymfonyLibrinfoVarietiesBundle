@@ -3,7 +3,6 @@
 namespace Librinfo\VarietiesBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Knp\DoctrineBehaviors\Model\Tree\NodeInterface;
 use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
 use Librinfo\DoctrineBundle\Entity\Traits\Nameable;
@@ -25,7 +24,7 @@ class PlantCategory implements NodeInterface
     private $code;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var \Doctrine\Common\Collections\ArrayCollection
      */
     private $varieties;
 
