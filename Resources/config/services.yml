@@ -26,9 +26,13 @@ services:
         tags:
             - { name: form.type, alias: librinfo_variety_description_filter }
         arguments: [ @doctrine.orm.entity_manager ]
+    librinfo_varieties.form.type.variety_code:
+        class: Librinfo\VarietiesBundle\Form\Type\VarietyCodeType
+        tags:
+            - { name: form.type, alias: librinfo_varietycode }
 # filters
     librinfo_varieties.filter.type.variety_description_filter:
         class: Librinfo\VarietiesBundle\Filter\VarietyDescriptionFilter
         tags:
             - { name: sonata.admin.filter.type, alias: doctrine_orm_librinfo_variety_description }
-    
+            

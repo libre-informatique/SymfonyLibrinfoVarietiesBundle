@@ -221,8 +221,14 @@ parameters:
                                 required: false
                                 _options:
                                     admin_code: librinfo_varieties.admin.species_embedded
+                            code:
+                                type: text
+                                required: true
                             life_cycle:
                                 type: librinfo_varieties_lifecycle
+                                required: false
+                            description:
+                                type: librinfo_tinymce
                                 required: false
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
@@ -273,19 +279,26 @@ parameters:
                     form_group_general:
                         '':
                             isStrain:
+                                required: false
                                 type: checkbox
+                                attr:
+                                    strain_field: true
+                                    strain_disabled: true
                             species:
                                 type: sonata_type_model
                                 attr:
                                     class: new-line
                                     width: 30
+                                    strain_disabled: true
                                 _options:
                                     admin_code: librinfo_varieties.admin.species
                             parent:
                                 type: sonata_type_model
                                 attr:
                                     class: new-line
-                                    width: 50
+                                    width: 30
+                                    strain_field: true
+                                    strain_disabled: true
                             name:
                                 attr:
                                     class: inline-block
@@ -295,15 +308,19 @@ parameters:
                                 attr:
                                     class: inline-block
                                     width: 30
-                            code:
-                                attr:
-                                    class: inline-block
+                                    strain_disabled: true
                             alias:
                                 type: text
                                 required: false
                                 attr:
-                                    class: new-line
+                                    class: inline-block
                                     width: 50
+                            code:
+                                type: librinfo_varietycode
+                                object_type: variety
+                                attr:
+                                    class: new-line
+                                    width: 30
                             plant_categories:
                                 query_builder: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete::getAllWithoutRootQB
                                 attr:

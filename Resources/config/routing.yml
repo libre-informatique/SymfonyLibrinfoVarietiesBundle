@@ -1,0 +1,3 @@
+librinfo_varieties_generate_code:
+    path:     librinfo/varieties/generateCode/{type}
+    defaults: { _controller: LibrinfoVarietiesBundle:VarietyCode:generateCode }

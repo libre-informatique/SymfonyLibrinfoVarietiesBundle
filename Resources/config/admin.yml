@@ -61,6 +61,7 @@ services:
               label_translator_strategy: librinfo_core.label.strategy.librinfo
         calls: 
             - [ setTemplate, [ list, LibrinfoVarietiesBundle:CRUD:list.html.twig ] ] 
+            - [ setTemplate, [ edit, LibrinfoVarietiesBundle:CRUD:edit.html.twig ] ] 
 
     librinfo_varieties.admin.plant_category:
         class: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete

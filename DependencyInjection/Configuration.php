@@ -25,9 +25,6 @@ class Configuration implements ConfigurationInterface
         // more information on that topic.
         $rootNode
             ->children()
-                ->arrayNode('strain_disabled_fields')
-                    ->prototype('scalar')->end()
-                ->end()
                 ->arrayNode('variety_descriptions')
                     ->useAttributeAsKey('name')
                     ->prototype('array')

@@ -8,17 +8,24 @@ use Librinfo\CoreBundle\Controller\CRUDController;
 
 class VarietyCRUDController extends CRUDController
 {
-
+    /**
+     * Creates a strain from a variety and passes it to create action
+     * 
+     * @return Response
+     */
     public function strainAction()
     {
         $id = $this->getRequest()->get($this->admin->getIdParameter());
-        $object = clone $this->admin->getObject($id);
-        $object->setIsStrain(true);
+        $object = $this->admin->getObject($id);
+        $strain = clone $this->admin->getObject($id);
+        $strain->setIsStrain(true);
+        $strain->setParent($object);
         
-        return $this->createAction($object);
+        return $this->createAction($strain);
     }
     
     /**
+     * Get field widget for filter form
      *
      * @param String $fieldName the name of the field to get the form widget for
      * @return JsonResponse
@@ -78,16 +85,6 @@ class VarietyCRUDController extends CRUDController
         return $this->render('LibrinfoVarietiesBundle:Form:filter_widget.html.twig', array(
                     'form' => $view
                         ), null);
-    }
-
-    protected function preCreate(Request $request, $object)
-    {
-        if ( $this->isXmlHttpRequest() )
-        {
-            $variety = $this->admin->getObject($request->get('parentId'));
-            $object->setParent($variety);
-            $object->setIsStrain(true);
-        }
     }
 
 }

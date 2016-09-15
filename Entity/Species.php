@@ -27,6 +27,11 @@ class Species
      * @var string
      */
     private $alias;
+    
+    /**
+     * @var string
+     */
+    private $code;
 
     /**
      * @var string
@@ -110,6 +115,30 @@ class Species
     public function getAlias()
     {
         return $this->alias;
+    }
+    
+    /**
+     * Set code
+     *
+     * @param string $code
+     *
+     * @return Species
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+
+        return $this;
+    }
+
+    /**
+     * Get code
+     *
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
     }
 
     /**
