@@ -147,6 +147,10 @@
                 <source>Varieties</source>
                 <target>Variétés</target>
             </trans-unit> 
+            <trans-unit id="librinfo.label.generate_variety_code">
+                <source>librinfo.label.generate_variety_code</source>
+                <target>Générer le code</target>
+            </trans-unit> 
             <trans-unit id="form_group_selection">
                 <source>form_group_selection</source>
                 <target>Sélection</target>
