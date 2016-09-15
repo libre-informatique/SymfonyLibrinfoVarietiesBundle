@@ -17,9 +17,9 @@ class VarietyCodeController extends Controller
     {
         $manager = $this->get('doctrine')->getManager();
         $repo = $manager->getRepository($type == 'strain' ? 'LibrinfoVarietiesBundle:Variety' : 'LibrinfoVarietiesBundle:Species');
-        dump($repo);
+ 
         $object = $repo->find($request->get('id'));
-        dump($object);
+ 
         return new JsonResponse(['code' => $object->getCode()], 200);
     }
     

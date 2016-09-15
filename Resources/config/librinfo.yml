@@ -317,7 +317,6 @@ parameters:
                                     width: 50
                             code:
                                 type: librinfo_varietycode
-                                object_type: variety
                                 attr:
                                     class: new-line
                                     width: 30
