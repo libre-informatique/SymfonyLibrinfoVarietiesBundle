@@ -2,6 +2,8 @@
 
 namespace Librinfo\VarietiesBundle\Entity;
 
+use AppBundle\Entity\Extension\VarietyExtension;
+use Librinfo\OuterExtensionBundle\Entity\Traits\OuterExtensible;
 use Doctrine\Common\Collections\ArrayCollection;
 use Librinfo\DoctrineBundle\Entity\Traits\Nameable;
 use Librinfo\UserBundle\Entity\Traits\Traceable;
@@ -19,8 +21,10 @@ class Variety
     }
 
     use BaseEntity,
-    Traceable,
-    Descriptible;
+        OuterExtensible,
+        VarietyExtension,
+        Traceable,
+        Descriptible;
 
     /**
      * @var string
@@ -226,12 +230,13 @@ class Variety
         $this->plant_descriptions = new ArrayCollection();
         $this->culture_descriptions = new ArrayCollection();
         $this->inner_descriptions = new ArrayCollection();
+        $this->initExternallyLinkedClasses();
     }
-    
+
     public function __clone()
     {
         $this->id = null;
-        
+
         $this->children = new ArrayCollection();
         $this->plant_categories = new ArrayCollection();
         $this->professional_descriptions = new ArrayCollection();
@@ -256,7 +261,7 @@ class Variety
     {
         return null != $this->getParent();
     }
-    
+
     public function getSeveralStrains()
     {
         return count($this->children) > 1;
