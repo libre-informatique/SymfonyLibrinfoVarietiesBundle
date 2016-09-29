@@ -216,10 +216,7 @@ class Variety
      */
     private $inner_descriptions;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
+    public function initCollections()
     {
         $this->children = new ArrayCollection();
         $this->plant_categories = new ArrayCollection();
@@ -230,22 +227,20 @@ class Variety
         $this->plant_descriptions = new ArrayCollection();
         $this->culture_descriptions = new ArrayCollection();
         $this->inner_descriptions = new ArrayCollection();
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->initCollections();
         $this->initOuterExtendedClasses();
     }
 
     public function __clone()
     {
         $this->id = null;
-
-        $this->children = new ArrayCollection();
-        $this->plant_categories = new ArrayCollection();
-        $this->professional_descriptions = new ArrayCollection();
-        $this->amateur_descriptions = new ArrayCollection();
-        $this->production_descriptions = new ArrayCollection();
-        $this->commercial_descriptions = new ArrayCollection();
-        $this->plant_descriptions = new ArrayCollection();
-        $this->culture_descriptions = new ArrayCollection();
-        $this->inner_descriptions = new ArrayCollection();
+        $this->initCollections();
     }
 
     public function getName()
@@ -1132,9 +1127,9 @@ class Variety
     /**
      * Add amateurDescription
      *
-     * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionAmateur $amateurDescription
+     * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionAmateur amateurDescription
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function addAmateurDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescriptionAmateur $amateurDescription)
     {
@@ -1166,13 +1161,12 @@ class Variety
     }
 
     /**
-     * Get amateurDescriptions
-     *
+     * alias for getAmateurDescriptions()
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getAmateur_descriptions()
     {
-        return $this->amateur_descriptions;
+        return $this->getAmateurDescriptions();
     }
 
     /**
@@ -1182,6 +1176,8 @@ class Variety
      */
     public function setAmateurDescriptions($descriptions)
     {
+        foreach ($descriptions as $description)
+            $description->setVariety($this);
         $this->amateur_descriptions = $descriptions;
         return $this;
     }
