@@ -60,13 +60,30 @@ class VarietyAdminConcrete extends VarietyAdmin
  
     }
     
+    /**
+     * Configure Show view fields
+     * 
+     * @param ShowMapper $mapper
+     */
+    protected function configureShowFields(ShowMapper $mapper)
+    {
+        // call to aliased trait method
+        $this->configShowHandlesRelations($mapper);
+        
+        //Remove parent field if object is a strain
+        if( $this->getSubject() )
+            if( $this->getSubject()->getIsStrain() )
+                $mapper->remove('parent');
+    }
+    
     //prevent primary key loop
     public function prePersist($variety)
     {
         parent::prePersist($variety);
         
-        if($variety->getParent()->getId() == $variety->getId())
-            $variety->setId(NULL);
+        if( $variety->getParent() )
+            if( $variety->getParent()->getId() == $variety->getId() )
+            $variety->setParent(NULL);
     }
     
 }

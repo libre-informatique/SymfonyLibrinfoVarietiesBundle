@@ -28,7 +28,7 @@
                 $('*[strain_disabled]').prop('disabled', false);
             });
         {% else %}    
-            $('*[strain_field]').parents('.form-group').hide();
+            $('*[strain_field]').parents('.form-group').prop('disabled', true).hide();
         {% endif %}
         });
     </script>
