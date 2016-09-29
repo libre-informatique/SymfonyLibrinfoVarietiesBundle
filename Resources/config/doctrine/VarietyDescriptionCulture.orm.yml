@@ -7,4 +7,3 @@ Librinfo\VarietiesBundle\Entity\VarietyDescriptionCulture:
             inversedBy: culture_descriptions
             joinColumn:
                 name: variety_id
-            cascade: [ persist ]

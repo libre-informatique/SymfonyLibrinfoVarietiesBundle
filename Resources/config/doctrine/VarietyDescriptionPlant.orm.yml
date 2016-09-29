@@ -7,4 +7,3 @@ Librinfo\VarietiesBundle\Entity\VarietyDescriptionPlant:
             inversedBy: plant_descriptions
             joinColumn:
                 name: variety_id
-            cascade: [ persist ]
