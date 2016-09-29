@@ -7,7 +7,6 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Librinfo\CoreBundle\Entity\SelectChoice;
 
 class VarietyDescriptionAdmin extends CoreAdmin
 {
@@ -18,7 +17,7 @@ class VarietyDescriptionAdmin extends CoreAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('group')
+            ->add('fieldset')
             ->add('field')
             ->add('value')
             ->add('id')
@@ -31,7 +30,7 @@ class VarietyDescriptionAdmin extends CoreAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('group')
+            ->add('fieldset')
             ->add('field')
             ->add('value')
             ->add('id')
@@ -46,48 +45,25 @@ class VarietyDescriptionAdmin extends CoreAdmin
     }
 
     /**
-     * @param FormMapper $formMapper
-     */
-    protected function configureFormFields(FormMapper $formMapper)
-    {
-        $vd_config = $this->getConfigurationPool()->getContainer()->getParameter('librinfo_varieties')['variety_descriptions'];
-        $fieldset = $this->subject->getFieldset();
-        $field = $this->subject->getField();
-        $config = empty($vd_config[$fieldset][$field]) ? '' : $vd_config[$fieldset][$field];
-        $type = isset($config['type']) ? $config['type'] : 'textarea'; 
-        $choiceType = 'librinfo_customchoice';
-        $options = empty($config['options']) ? [] : $config['options'];
-        
-        if (isset($options['choices']) && empty($options['choices']))
-            unset($options['choices']);
-        
-        if (isset($options['choices_class']) && $type != $choiceType)
-            unset($options['choices_class']);
-        
-        if (isset($options['librinfo_choices']) && $type != $choiceType)
-            unset($options['librinfo_choices']);
-        
-        if (!isset($options['label']) || !$options['label'])
-            $options['label'] = sprintf("librinfo_description_%s_%s", $fieldset, $field);
-
-        if (!isset($options['help']) || !$options['help'])
-            $options['help'] = sprintf("librinfo.help.%s", $field);
-
-        $formMapper
-            ->add('fieldset', 'hidden')
-            ->add('field', 'hidden')
-            ->add('id', 'hidden')
-            ->add('value', $type, $options)
-        ;
-    }
-
-    /**
      * @param ShowMapper $showMapper
      */
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('group')
+            ->add('fieldset')
+            ->add('field')
+            ->add('value')
+            ->add('id')
+        ;
+    }
+    
+    /**
+     * @param ShowMapper $showMapper
+     */
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->add('fieldset')
             ->add('field')
             ->add('value')
             ->add('id')
