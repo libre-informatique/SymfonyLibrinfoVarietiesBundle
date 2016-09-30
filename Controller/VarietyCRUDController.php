@@ -18,8 +18,28 @@ class VarietyCRUDController extends CRUDController
         $id = $this->getRequest()->get($this->admin->getIdParameter());
         $object = $this->admin->getObject($id);
         $strain = clone $this->admin->getObject($id);
+        
         $strain->setIsStrain(true);
         $strain->setParent($object);
+        
+        $fieldSets = ['Professional', 'Amateur', 'Production', 'Commercial', 'Plant', 'Culture', 'Inner'];
+        
+        foreach($fieldSets as $label)
+        {
+            $getter = 'get' . $label . 'Descriptions';
+            $adder = 'add' . $label . 'Description';
+            $collection = $object->$getter();
+            $collection->initialize();
+            
+            foreach($collection as $desc)
+            {
+                $new = clone $desc;
+                $strain->$adder($new);
+            }
+        }
+        
+        foreach($object->getPlantCategories() as $cat)
+            $strain->addPlantCategory($cat);
         
         return $this->createAction($strain);
     }
