@@ -705,6 +705,15 @@ class Variety
     {
         return $this->plant_categories;
     }
+    
+    /**
+     * Set plantCategories
+     *
+     */
+    public function setPlantCategories($plant_categories)
+    {
+        $this->plant_categories = $plant_categories;
+    }
 
     /**
      * Set selectionAdvice
