@@ -263,142 +263,52 @@ parameters:
                 add:
                     form_group_general:
                         '':
-                            isStrain:
-                                required: false
-                                type: boolean
-                                attr:
-                                    strain_field: true
-                                    strain_disabled: true
                             species:
-                                type: sonata_type_model
-                                attr:
-                                    class: new-line
-                                    width: 30
-                                    strain_disabled: true
                                 admin_code: librinfo_varieties.admin.species
-                            parent:
-                                type: sonata_type_model
-                                attr:
-                                    class: new-line
-                                    width: 30
-                                    strain_field: true
-                                    strain_disabled: true
-                            name:
-                                attr:
-                                    class: inline-block
-
-                            latin_name:
-                                type: text
-                                attr:
-                                    class: inline-block
-                                    width: 30
-                                    strain_disabled: true
-                            alias:
-                                type: text
-                                required: false
-                                attr:
-                                    class: inline-block
-                                    width: 50
-                            code:
-                                type: librinfo_varietycode
-                                attr:
-                                    class: new-line
-                                    width: 30
+                            parent: ~
+                            name: ~
+                            latin_name: ~
+                            alias: ~
+                            code: ~
                             plant_categories:
                                 query_builder: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete::getAllWithoutRootQB
-                                attr:
-                                    class: new-line
-                                    width: 50
-                                _options:
-                                    btn_add: true
-                            legal_germination_rate:
-                                help: librinfo.help.legal_germination_rate
-                                attr:
-                                    class: inline-block
-                            germination_rate:
-                                help: librinfo.help.germination_rate
-                                attr:
-                                    class: inline-block
-                            tkw:
-                                help: librinfo.help.tkw
-                                attr:
-                                    class: new-line
-                                    width: 30
-                            seed_lifespan:
-                                help: librinfo.help.seed_lifespan
-                                attr:
-                                    class: inline-block
-                            raise_duration:
-                                help: librinfo.help.raise_duration
-                                attr:
-                                    class: inline-block
-                            transmitted_diseases: 
-                                required: false
-                                type: text
-                                attr:
-                                    class: new-line
-                                    width: 50
-                            life_cycle:
-                                type: librinfo_varieties_lifecycle
-                                required: false
-                                attr:
-                                    class: new-line
-                                    width: 30
-                            regulatory_status:
-                                required: false
-                                type: librinfo_customchoice
-                                choices_field: regulatory_status
-                                librinfo_choices:
-                                   - Contrôlé
-                                   - Non contrôlé
-                                attr:
-                                    class: inline-block
-                            description:
-                                required: false
-                                type: librinfo_tinymce
-                                attr:
-                                    class: new-line
-                                    height: 200
+                            several_strains: ~
+                            legal_germination_rate: ~
+                            germination_rate: ~
+                            tkw: ~
+                            seed_lifespan: ~
+                            raise_duration: ~
+                            transmitted_diseases: ~
+                            life_cycle: ~
+                            regulatory_status: ~
                         form_group_offical_catalogue:
                             official: ~
-                            official_name:
-                                attr:
-                                    class: new-line
-                                    width: 30
-                            official_date_in:
-                                type: sonata_type_date_picker
-                                required: false
-                                attr:
-                                    class: inline-block
-                            official_date_out:
-                                type: sonata_type_date_picker
-                                required: false
-                                attr:
-                                    class: inline-block
-                            official_maintainer:
-                                attr:
-                                    class: new-line
-                                    width: 30
+                            official_name: ~
+                            official_date_in: ~
+                            official_date_out: ~
+                            official_maintainer: ~
+                    form_tab_seeds_production:
+                        '':
+                            seedhead_yield: ~
+                            area_per_kg: ~
+                            seedheads_per_kg: ~
+                            base_seed_per_kg: ~
+                        form_group_density:
+                            distance_on_line: ~
+                            distance_between_lines: ~
+                        form_group_selection:
+                            selection_advice: ~
+                            selection_criteria: ~
                     form_tab_inner:
                         form_group_inner:
                     form_tab_professionals:
                         form_group_professionals:
-                            professional_descriptions:
-                                type: sonata_type_collection
-                                by_reference: true
-                                required: true
-                                btn_add: false
-                                label: false
-                                type_options:
-                                    required: false
-                                    delete: false
-                                    btn_add: false
-                                    label: false
+                            professional_descriptions: ~
                     form_tab_production:
                         form_group_production:
                             production_descriptions:
                                 type: sonata_type_collection
-                                by_reference: true
+                                by_reference: false
                                 required: true
                                 btn_add: false
                                 label: false
@@ -411,7 +321,7 @@ parameters:
                         form_group_commercial:
                             commercial_descriptions:
                                 type: sonata_type_collection
-                                by_reference: true
+                                by_reference: false
                                 required: true
                                 btn_add: false
                                 label: false
@@ -424,7 +334,7 @@ parameters:
                         form_group_plant:
                             plant_descriptions:
                                 type: sonata_type_collection
-                                by_reference: true
+                                by_reference: false
                                 required: true
                                 btn_add: false
                                 label: false
@@ -437,7 +347,7 @@ parameters:
                         form_group_culture:
                             culture_descriptions:
                                 type: sonata_type_collection
-                                by_reference: true
+                                by_reference: false
                                 required: true
                                 btn_add: false
                                 label: false
@@ -450,7 +360,7 @@ parameters:
                         form_group_amateurs:
                             amateur_descriptions:
                                 type: sonata_type_collection
-                                by_reference: true
+                                by_reference: false
                                 required: true
                                 btn_add: false
                                 label: false
@@ -459,48 +369,9 @@ parameters:
                                     delete: false
                                     btn_add: false
                                     label: false
-                    form_tab_seeds_production:
+                    form_tab_strains:
                         '':
-                            seedhead_yield:
-                                help: librinfo.help.seedhead_yield
-                                required: false
-                                attr:
-                                    class: inline-block
-                            area_per_kg:
-                                required: false
-                                help: librinfo.help.area_per_kg
-                                attr:
-                                    class: inline-block
-                            seedheads_per_kg:
-                                required: false
-                                attr:
-                                    class: inline-block
-                                help: librinfo.help.seedheads_per_kg
-                            base_seed_per_kg:
-                                required: false
-                                attr:
-                                    class: inline-block
-                                help: librinfo.help.base_seed_per_kg
-                        form_group_density:
-                            distance_on_line:
-                                required: false
-                                type: integer
-                                help: librinfo.help.distance_on_line
-                                attr:
-                                    class: inline-block
-                            distance_between_lines:
-                                required: false
-                                type: integer
-                                help: librinfo.help.distance_between_lines
-                                attr:
-                                    class: inline-block
-                        form_group_selection:
-                            selection_advice:
-                                type: textarea
-                                required: false
-                            selection_criteria:
-                                type: textarea
-                                required: false
+                            children: ~
                     _options:
                         tabsOrder:
                             - form_group_general
@@ -512,6 +383,7 @@ parameters:
                             - form_tab_production
                             - form_tab_professionals
                             - form_tab_amateurs
+                            - form_tab_strains
                             - form_group_specific
             Sonata\AdminBundle\Form\FormMapper:
                 add:

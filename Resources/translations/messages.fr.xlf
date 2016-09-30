@@ -1548,6 +1548,12 @@
                 <source>action_strain</source>
                 <target>Souche</target>
             </trans-unit> 
+            
+        <!-- SHOW -->
+            <trans-unit id="Strain">
+                <source>Strain</source>
+                <target>Souche</target>
+            </trans-unit> 
         </body>
     </file>
 </xliff>

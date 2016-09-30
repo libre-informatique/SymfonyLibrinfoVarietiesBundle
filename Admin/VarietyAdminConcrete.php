@@ -2,7 +2,6 @@
 
 namespace Librinfo\VarietiesBundle\Admin;
 
-use Symfony\Component\Form\FormEvents;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
@@ -16,7 +15,6 @@ class VarietyAdminConcrete extends VarietyAdmin
         configureFormFields as configFormHandlesRelations;
         configureShowFields as configShowHandlesRelations;
     }
-
     use DynamicDescriptions;
 
     /**
@@ -40,24 +38,6 @@ class VarietyAdminConcrete extends VarietyAdmin
         //calls to methods of traits
         $this->configFormHandlesRelations($mapper);
         $this->configureDynamicDescriptions($mapper);
-        
-        // $this into a variable to use it in closure
-        $admin = $this;
-        
-        //Form event listener to remove children form tab if object is a strain
-        $mapper->getFormBuilder()->addEventListener(FormEvents::POST_SET_DATA, function ($event) use ($admin, $mapper) {
-            $subject = $admin->getSubject($event->getData());
-            $form = $event->getForm();
-
-            if ( $subject->getIsStrain() )
-            {
-                $tabs = $mapper->getAdmin()->getFormTabs();
-                unset($tabs['form_tab_strains']);
-                $mapper->getAdmin()->setFormTabs($tabs);
-                $form->remove('children');
-            }
-        });
- 
     }
     
     /**
@@ -70,9 +50,17 @@ class VarietyAdminConcrete extends VarietyAdmin
         // call to aliased trait method
         $this->configShowHandlesRelations($mapper);
         
-        //Remove parent field if object is a strain
+        //Removal of Variety/Strain specific fields
         if( $this->getSubject() )
             if( $this->getSubject()->getIsStrain() )
+            {
+                $tabs = $mapper->getadmin()->getShowTabs();
+                unset($tabs['form_tab_strains']);
+                $mapper->getAdmin()->setShowTabs($tabs);
+                $mapper->remove('children');
+                $mapper->remove('several_strains');
+            }
+            else
                 $mapper->remove('parent');
     }
     
