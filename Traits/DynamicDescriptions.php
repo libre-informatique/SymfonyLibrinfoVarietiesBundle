@@ -62,11 +62,11 @@ trait DynamicDescriptions
                 $i = 0;
                 foreach ($config[$fieldset] as $field => $settings)
                     $order[$field] = $i++;
-                $iterator = $subject->$getter()->getIterator();
-                $iterator->uasort(function ($a, $b) use ($order) {
+                $array = iterator_to_array($subject->$getter()->getIterator());
+                usort($array, function ($a, $b) use ($order) {
                     return ( $order[$a->getField()] < $order[$b->getField()] ) ? -1 : 1;
                 });
-                $subject->$setter(new ArrayCollection(iterator_to_array($iterator)));
+                $subject->$setter(new ArrayCollection($array));
             }
         }
         );
