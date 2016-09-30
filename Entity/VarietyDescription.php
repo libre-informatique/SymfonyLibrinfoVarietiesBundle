@@ -36,5 +36,11 @@ class VarietyDescription extends GenericDescription
     {
         return $this->variety;
     }
+    
+    public function __clone()
+    {
+        $this->id = null;
+        $this->setVariety(null);
+    }
 
 }
