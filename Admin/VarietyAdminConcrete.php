@@ -15,6 +15,7 @@ class VarietyAdminConcrete extends VarietyAdmin
         configureFormFields as configFormHandlesRelations;
         configureShowFields as configShowHandlesRelations;
     }
+
     use DynamicDescriptions;
 
     /**
@@ -39,7 +40,7 @@ class VarietyAdminConcrete extends VarietyAdmin
         $this->configFormHandlesRelations($mapper);
         $this->configureDynamicDescriptions($mapper);
     }
-    
+
     /**
      * Configure Show view fields
      * 
@@ -49,29 +50,29 @@ class VarietyAdminConcrete extends VarietyAdmin
     {
         // call to aliased trait method
         $this->configShowHandlesRelations($mapper);
-        
+        $this->configureShowDescriptions($mapper);
+ 
         //Removal of Variety/Strain specific fields
-        if( $this->getSubject() )
-            if( $this->getSubject()->getIsStrain() )
+        if ( $this->getSubject() )
+            if ( $this->getSubject()->getIsStrain() )
             {
                 $tabs = $mapper->getadmin()->getShowTabs();
                 unset($tabs['form_tab_strains']);
                 $mapper->getAdmin()->setShowTabs($tabs);
                 $mapper->remove('children');
                 $mapper->remove('several_strains');
-            }
-            else
+            } else
                 $mapper->remove('parent');
     }
-    
+
     //prevent primary key loop
     public function prePersist($variety)
     {
         parent::prePersist($variety);
-        
-        if( $variety->getParent() )
-            if( $variety->getParent()->getId() == $variety->getId() )
-            $variety->setParent(NULL);
+
+        if ( $variety->getParent() )
+            if ( $variety->getParent()->getId() == $variety->getId() )
+                $variety->setParent(NULL);
     }
-    
+
 }

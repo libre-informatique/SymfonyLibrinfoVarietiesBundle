@@ -42,5 +42,5 @@ class VarietyDescription extends GenericDescription
         $this->id = null;
         $this->setVariety(null);
     }
-
+    
 }

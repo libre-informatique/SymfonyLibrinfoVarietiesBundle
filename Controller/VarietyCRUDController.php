@@ -23,7 +23,7 @@ class VarietyCRUDController extends CRUDController
         $strain->setParent($object);
         
         $fieldSets = ['Professional', 'Amateur', 'Production', 'Commercial', 'Plant', 'Culture', 'Inner'];
-        
+   
         foreach($fieldSets as $label)
         {
             $getter = 'get' . $label . 'Descriptions';

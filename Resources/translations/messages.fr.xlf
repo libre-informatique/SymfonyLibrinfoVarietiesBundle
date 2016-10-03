@@ -347,20 +347,20 @@
                 <source>perennial</source>
                 <target>Plante vivace</target>
             </trans-unit>                    
-            <trans-unit id="form_tab_professionals">
-                <source>form_tab_professionals</source>
+            <trans-unit id="form_tab_professional">
+                <source>form_tab_professional</source>
                 <target>Conseils Pro</target>
             </trans-unit>                    
-            <trans-unit id="form_group_professionals">
-                <source>form_group_professionals</source>
+            <trans-unit id="form_group_professional">
+                <source>form_group_professional</source>
                 <target>Conseils de culture pour les professionnels</target>
             </trans-unit>                    
-            <trans-unit id="form_tab_amateurs">
-                <source>form_tab_amateurs</source>
+            <trans-unit id="form_tab_amateur">
+                <source>form_tab_amateur</source>
                 <target>Conseils Jardiniers</target>
             </trans-unit>                    
-            <trans-unit id="form_group_amateurs">
-                <source>form_group_amateurs</source>
+            <trans-unit id="form_group_amateur">
+                <source>form_group_amateur</source>
                 <target>Conseils de culture pour les jardiniers amateurs</target>
             </trans-unit>
             <trans-unit id="form_group_density">

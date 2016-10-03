@@ -20,11 +20,11 @@ class Variety
         getName as getNameTrait;
     }
 
-    use BaseEntity,
-        OuterExtensible,
-        VarietyExtension,
-        Traceable,
-        Descriptible;
+use BaseEntity,
+    OuterExtensible,
+    VarietyExtension,
+    Traceable,
+    Descriptible;
 
     /**
      * @var string
@@ -228,6 +228,7 @@ class Variety
         $this->culture_descriptions = new ArrayCollection();
         $this->inner_descriptions = new ArrayCollection();
     }
+
     /**
      * Constructor
      */
@@ -237,16 +238,26 @@ class Variety
         $this->initOuterExtendedClasses();
     }
 
+    // implementation of __clone for duplication
     public function __clone()
     {
         $this->id = null;
         $this->initCollections();
     }
 
+    //Enable direct access to the value of a specific VarietyDescription
+    public function __call($name, $unusedArg)
+    {
+        $name = explode('||', $name);
+        $getter = 'get' . ucfirst($name[0]) . '_descriptions';
+        foreach( $this->$getter() as $desc)
+            if( $desc->getField() == $name[1] )
+                return $desc->getValue();
+    }
+
     public function getName()
     {
-
-        if ($this->hasParent() && null == $this->name)
+        if ( $this->hasParent() && null == $this->name )
             return $this->getParent()->getName();
 
         return $this->getNameTrait();
@@ -283,7 +294,7 @@ class Variety
      */
     public function getLatinName()
     {
-        if ($this->hasParent() && !$this->latin_name)
+        if ( $this->hasParent() && !$this->latin_name )
             return $this->getParent()->getLatinName();
 
         return $this->latin_name;
@@ -310,7 +321,7 @@ class Variety
      */
     public function getIsStrain()
     {
-        if ($this->hasParent() && !$this->isStrain)
+        if ( $this->hasParent() && !$this->isStrain )
             return $this->getParent()->getIsStrain();
 
         return $this->isStrain;
@@ -337,7 +348,7 @@ class Variety
      */
     public function getAlias()
     {
-        if ($this->hasParent() && !$this->alias)
+        if ( $this->hasParent() && !$this->alias )
             return $this->getParent()->getAlias();
 
         return $this->alias;
@@ -664,7 +675,7 @@ class Variety
      */
     public function getSpecies()
     {
-        if ($this->hasParent() && !$this->species)
+        if ( $this->hasParent() && !$this->species )
             return $this->getParent()->getSpecies();
 
         return $this->species;
@@ -705,7 +716,7 @@ class Variety
     {
         return $this->plant_categories;
     }
-    
+
     /**
      * Set plantCategories
      *
@@ -1127,7 +1138,7 @@ class Variety
      */
     public function setProfessionalDescriptions($descriptions)
     {
-        foreach ($descriptions as $description)
+        foreach ( $descriptions as $description )
             $description->setVariety($this);
         $this->professional_descriptions = $descriptions;
         return $this;
@@ -1185,7 +1196,7 @@ class Variety
      */
     public function setAmateurDescriptions($descriptions)
     {
-        foreach ($descriptions as $description)
+        foreach ( $descriptions as $description )
             $description->setVariety($this);
         $this->amateur_descriptions = $descriptions;
         return $this;
@@ -1243,7 +1254,7 @@ class Variety
      */
     public function setProductionDescriptions($descriptions)
     {
-        foreach ($descriptions as $description)
+        foreach ( $descriptions as $description )
             $description->setVariety($this);
         $this->production_descriptions = $descriptions;
         return $this;
@@ -1301,7 +1312,7 @@ class Variety
      */
     public function setCommercialDescriptions($descriptions)
     {
-        foreach ($descriptions as $description)
+        foreach ( $descriptions as $description )
             $description->setVariety($this);
         $this->commercial_descriptions = $descriptions;
         return $this;
@@ -1359,7 +1370,7 @@ class Variety
      */
     public function setPlantDescriptions($descriptions)
     {
-        foreach ($descriptions as $description)
+        foreach ( $descriptions as $description )
             $description->setVariety($this);
         $this->plant_descriptions = $descriptions;
         return $this;
@@ -1417,7 +1428,7 @@ class Variety
      */
     public function setCultureDescriptions($descriptions)
     {
-        foreach ($descriptions as $description)
+        foreach ( $descriptions as $description )
             $description->setVariety($this);
         $this->culture_descriptions = $descriptions;
         return $this;
