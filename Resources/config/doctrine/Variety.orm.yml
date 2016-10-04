@@ -3,7 +3,7 @@ Librinfo\VarietiesBundle\Entity\Variety:
     type: entity
     table: variety
     librinfo:
-        loggable: true   
+        loggable: true
     fields:
         latin_name:
             type:     string(255)
@@ -158,4 +158,7 @@ Librinfo\VarietiesBundle\Entity\Variety:
             joinColumn:
                 name: species_id
             cascade: [ persist ]
-        
+
+    uniqueConstraints:
+        variety_name_idx:
+            columns: [ name ]

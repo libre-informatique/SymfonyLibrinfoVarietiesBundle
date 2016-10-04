@@ -39,3 +39,7 @@ Librinfo\VarietiesBundle\Entity\Species:
             targetEntity: Librinfo\VarietiesBundle\Entity\Species
             mappedBy: parent_species
             cascade: [ persist ]
+
+    uniqueConstraints:
+        species_name_idx:
+            columns: [ name ]

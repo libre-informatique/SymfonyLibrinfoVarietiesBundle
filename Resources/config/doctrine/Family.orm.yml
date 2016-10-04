@@ -16,3 +16,7 @@ Librinfo\VarietiesBundle\Entity\Family:
             targetEntity: Librinfo\VarietiesBundle\Entity\Genus
             mappedBy: family
             cascade: [ persist ]
+
+    uniqueConstraints:
+        family_name_idx:
+            columns: [ name ]
