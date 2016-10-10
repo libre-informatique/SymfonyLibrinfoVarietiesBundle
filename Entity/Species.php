@@ -27,7 +27,7 @@ class Species
      * @var string
      */
     private $alias;
-    
+
     /**
      * @var string
      */
@@ -116,7 +116,7 @@ class Species
     {
         return $this->alias;
     }
-    
+
     /**
      * Set code
      *
@@ -261,6 +261,16 @@ class Species
         return $this->subspecieses;
     }
 
+    /**
+     * Has sub-specieses
+     *
+     * @return boolean
+     */
+    public function hasSubspecieses()
+    {
+        return count($this->subspecieses) > 0;
+    }
+
 
     /**
      * Set parentSpecies
@@ -284,6 +294,27 @@ class Species
     public function getParentSpecies()
     {
         return $this->parent_species;
+    }
+
+    /**
+     * Has parent species
+     *
+     * @return boolean
+     */
+    public function hasParentSpecies()
+    {
+        return $this->parent_species != null;
+    }
+
+    /**
+     * Check if a species has a grand parent
+     * This should never happen (used for validation methods)
+     *
+     * @return boolean
+     */
+    public function hasGrandParentSpecies()
+    {
+        return $this->parent_species != null && $this->parent_species->getParentSpecies() != null;
     }
 }
 

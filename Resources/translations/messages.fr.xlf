@@ -125,6 +125,14 @@
                 <source>librinfo.help.tkw</source>
                 <target>en grammes</target>
             </trans-unit>
+            <trans-unit id="librinfo.label.subspecieses">
+                <source>librinfo.label.subspecieses</source>
+                <target>Sous-espèces</target>
+            </trans-unit>
+            <trans-unit id="librinfo.label.varieties">
+                <source>librinfo.label.varieties</source>
+                <target>Variétés</target>
+            </trans-unit>
 <!-- STRAIN -->
             <trans-unit id="Strains">
                 <source>Strains</source>

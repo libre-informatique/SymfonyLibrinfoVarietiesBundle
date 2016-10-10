@@ -43,3 +43,5 @@ Librinfo\VarietiesBundle\Entity\Species:
     uniqueConstraints:
         species_name_idx:
             columns: [ name ]
+        species_code_idx:
+            columns: [ code ]

@@ -78,7 +78,7 @@ trait DynamicDescriptions
             $tabs = $showMapper->getAdmin()->getShowTabs();
             $descs = $subject->$getter();
 
-            $this->sortDescriptions($config, $fieldset, $subject, $getter, $setter);
+            #$this->sortDescriptions($config, $fieldset, $subject, $getter, $setter);
 
             $showMapper->remove($fieldset . '_descriptions');
             unset($tabs['form_tab_' . $fieldset]);

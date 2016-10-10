@@ -18,6 +18,10 @@ class SpeciesEmbeddedAdmin extends CoreAdmin
      */
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
+        $datagridMapper
+            ->add('name')
+            ->add('code')
+        ;
     }
 
     /**

@@ -56,6 +56,8 @@ parameters:
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:
+                    name:
+                        identifier: true
                     latin_name: ~
                     alias: ~
                     description: ~
@@ -130,6 +132,8 @@ parameters:
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:
+                    name:
+                        identifier: true
                     latin_name: ~
                     alias: ~
                     family: ~
@@ -186,15 +190,15 @@ parameters:
                 add:
                     form_group_general:
                         '':
-                            latin_name:
-                                type: text
-                                required: false
-                            alias:
-                                type: text
-                                required: false
+                            code: ~
+                            latin_name: ~
+                            alias: ~
                             genus:
                                 admin_code: librinfo_varieties.admin.genus
-                                required: true
+                            parent_species:
+                                admin_code: librinfo_varieties.admin.species_embedded
+                            subspecieses:
+                                admin_code: librinfo_varieties.admin.species_embedded
                             life_cycle:
                                 type: trans
                                 catalogue: varieties
@@ -203,6 +207,9 @@ parameters:
                 add:
                     form_group_general:
                         '':
+                            code:
+                                type: text
+                                required: true
                             latin_name:
                                 type: text
                                 required: false
@@ -215,15 +222,12 @@ parameters:
                                     admin_code: librinfo_varieties.admin.genus
                             parent_species:
                                 type: sonata_type_model_autocomplete
-                                route: { name: searchable_admin_retrieve_autocomplete_items }
+                                #route: { name: searchable_admin_retrieve_autocomplete_items }
                                 by_reference: false
-                                property: name # not used but required
+                                property: name
                                 required: false
                                 _options:
                                     admin_code: librinfo_varieties.admin.species_embedded
-                            code:
-                                type: text
-                                required: true
                             life_cycle:
                                 type: librinfo_varieties_lifecycle
                                 required: false
@@ -233,11 +237,14 @@ parameters:
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:
+                    code:
+                        identifier: true
                     latin_name: ~
                     alias: ~
                     description: ~
                     _options:
                         fieldsOrder:
+                            - code
                             - name
                             - latin_name
                             - alias
@@ -249,7 +256,11 @@ parameters:
                         xml: csv
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
+                    code: ~
                     name: ~
+                    latin_name: ~
+                    alias: ~
+                    description: ~
 
 
 
@@ -282,9 +293,9 @@ parameters:
                             transmitted_diseases: ~
                             life_cycle: ~
                             regulatory_status: ~
-                            description: 
+                            description:
                                 template: LibrinfoCoreBundle:CRUD:show_field_tinymce.html.twig
-                                
+
                         form_group_offical_catalogue:
                             official: ~
                             official_name: ~
@@ -417,7 +428,7 @@ parameters:
                                 help: librinfo.help.raise_duration
                                 attr:
                                     class: inline-block
-                            transmitted_diseases: 
+                            transmitted_diseases:
                                 required: false
                                 type: text
                                 attr:
@@ -612,7 +623,7 @@ parameters:
                     tkw: ~
                     seed_lifespan: ~
                     raise_duration: ~
-                    transmitted_diseases: ~ 
+                    transmitted_diseases: ~
                     life_cycle: ~
                     regulatory_status: ~
                     description: ~
@@ -628,11 +639,11 @@ parameters:
                     distance_on_line: ~
                     distance_between_lines: ~
                     selection_advice: ~
-                    selection_criteria: ~  
+                    selection_criteria: ~
                     professional_descriptions:
                         label: librinfo.label.professional_descriptions
                         type: doctrine_orm_librinfo_variety_description
-                    amateur_descriptions: 
+                    amateur_descriptions:
                         type: doctrine_orm_librinfo_variety_description
                         label: librinfo.label.amateur_descriptions
                     production_descriptions:
@@ -644,10 +655,10 @@ parameters:
                     plant_descriptions:
                         type: doctrine_orm_librinfo_variety_description
                         label: librinfo.label.plant_descriptions
-                    culture_descriptions: 
+                    culture_descriptions:
                         type: doctrine_orm_librinfo_variety_description
                         label: librinfo.label.culture_descriptions
-                    inner_descriptions: 
+                    inner_descriptions:
                         type: doctrine_orm_librinfo_variety_description
                         label: librinfo.label.inner_descriptions
             Sonata\AdminBundle\Datagrid\ListMapper:

@@ -4,6 +4,7 @@ namespace Librinfo\VarietiesBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Loader;
 use Librinfo\CoreBundle\DependencyInjection\LibrinfoCoreExtension;
 
@@ -28,6 +29,16 @@ class LibrinfoVarietiesExtension extends LibrinfoCoreExtension
 
         $container->setParameter('librinfo_varieties', $config);
 
+        $container->setParameter('librinfo_varieties.code_generator.species',
+            $container->getParameter('librinfo_varieties')['code_generator']['species']
+        );
+
+//        $generatorClass = $container->getParameter('librinfo_varieties')['code_generator']['species'];
+//        $definition = new Definition($generatorClass, [$generatorClass, $container->getDefinition('doctrine.orm.default_entity_manager')]);
+//        $definition->setFactory(['Librinfo\CoreBundle\CodeGenerator\CodeGeneratorFactory', 'create']);
+//        $container->setDefinition('librinfo_varieties.code_generator.species', $definition);
+
+
         if ($container->getParameter('kernel.environment') == 'test')
         {
             $loader->load('datafixtures.yml');
@@ -35,4 +46,5 @@ class LibrinfoVarietiesExtension extends LibrinfoCoreExtension
 
         $this->mergeParameter('librinfo', $container, __DIR__ . '/../Resources/config');
     }
+
 }

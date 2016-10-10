@@ -36,3 +36,15 @@ services:
         tags:
             - { name: sonata.admin.filter.type, alias: doctrine_orm_librinfo_variety_description }
 
+# ENTITY CODE GENERATORS
+
+    # service class will be overridden by the factory
+    librinfo_varieties.code_generator.species:
+        class: Librinfo\VarietiesBundle\CodeGenerator\SpeciesCodeGenerator
+        factory:   ['@librinfo_core.code_generator_factory', create]
+        arguments: ['%librinfo_varieties.code_generator.species%', '@doctrine.orm.entity_manager']
+
+#librinfo_varieties.variety_code_generator:
+#    class: Librinfo\VarietiesBundle\CodeGenerator\CodeGeneratorService
+#    arguments: [ %librinfo_varieties.code_generator.variety%, @doctrine.orm.entity_manager ]
+

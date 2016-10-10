@@ -25,6 +25,13 @@ class Configuration implements ConfigurationInterface
         // more information on that topic.
         $rootNode
             ->children()
+                ->arrayNode('code_generator')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('species')->defaultValue('Librinfo\VarietiesBundle\CodeGenerator\SpeciesCodeGenerator')->end()
+                        ->scalarNode('variety')->defaultValue('Librinfo\VarietiesBundle\CodeGenerator\VarietyCodeGenerator')->end()
+                    ->end()
+                ->end()
                 ->arrayNode('variety_descriptions')
                     ->useAttributeAsKey('name')
                     ->prototype('array')
@@ -60,7 +67,7 @@ class Configuration implements ConfigurationInterface
                                     ->end()
                                     ->addDefaultsIfNotSet()
                                 ->end()
-                            ->end() 
+                            ->end()
                         ->end()
                     ->end()
                 ->end()
