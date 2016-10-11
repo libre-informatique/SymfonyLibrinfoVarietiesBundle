@@ -12,6 +12,10 @@
                 <source>This code is already used by another species.</source>
                 <target>Ce code est déjà utilisé par une autre espèce.</target>
             </trans-unit>
+            <trans-unit id="librinfo.error.species_code_wrong_format">
+                <source>Wrong species code format</source>
+                <target>Mauvais format pour le code espèce</target>
+            </trans-unit>
             
         </body>
     </file>
