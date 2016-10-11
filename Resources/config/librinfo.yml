@@ -208,8 +208,11 @@ parameters:
                     form_group_general:
                         '':
                             code:
-                                type: text
+                                type: librinfo_entitycode
                                 required: true
+                                attr:
+                                    class: new-line
+                                    width: 30
                             latin_name:
                                 type: text
                                 required: false
@@ -276,6 +279,7 @@ parameters:
                     form_group_general:
                         '':
                             name: ~
+                            code: ~
                             species:
                                 admin_code: librinfo_varieties.admin.species
                             parent: ~
@@ -614,6 +618,7 @@ parameters:
                     species:
                         admin_code: librinfo_varieties.admin.species
                     name: ~
+                    code: ~
                     latin_name: ~
                     code: ~
                     alias: ~
@@ -664,6 +669,11 @@ parameters:
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:
+                    name:
+                        identifier: true
+                    code:
+                        identifier: true
+                        template: LibrinfoVarietiesBundle:VarietyAdmin:list_field_code.html.twig
                     latin_name: ~
                     is_strain:
                         type: boolean
@@ -683,9 +693,10 @@ parameters:
                                 template: LibrinfoVarietiesBundle:CRUD:list__action_strain.html.twig
                     _options:
                         fieldsOrder:
-                            - is_strain
+                            - code
                             - name
                             - latin_name
+                            - is_strain
                             - several_strains
                     _export_format:
                         csv: [name, latinName, alias, speciesName, description, createdAt, updatedAt]

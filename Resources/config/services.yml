@@ -43,6 +43,8 @@ services:
         class: Librinfo\VarietiesBundle\CodeGenerator\SpeciesCodeGenerator
         factory:   ['@librinfo_core.code_generator_factory', create]
         arguments: ['%librinfo_varieties.code_generator.species%', '@doctrine.orm.entity_manager']
+        tags:
+            - { name: librinfo.entity_code_generator }
 
 #librinfo_varieties.variety_code_generator:
 #    class: Librinfo\VarietiesBundle\CodeGenerator\CodeGeneratorService
