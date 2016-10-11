@@ -4,7 +4,6 @@ namespace Librinfo\VarietiesBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
-use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Loader;
 use Librinfo\CoreBundle\DependencyInjection\LibrinfoCoreExtension;
 
@@ -29,15 +28,13 @@ class LibrinfoVarietiesExtension extends LibrinfoCoreExtension
 
         $container->setParameter('librinfo_varieties', $config);
 
+        // Entity code generators
         $container->setParameter('librinfo_varieties.code_generator.species',
             $container->getParameter('librinfo_varieties')['code_generator']['species']
         );
-
-//        $generatorClass = $container->getParameter('librinfo_varieties')['code_generator']['species'];
-//        $definition = new Definition($generatorClass, [$generatorClass, $container->getDefinition('doctrine.orm.default_entity_manager')]);
-//        $definition->setFactory(['Librinfo\CoreBundle\CodeGenerator\CodeGeneratorFactory', 'create']);
-//        $container->setDefinition('librinfo_varieties.code_generator.species', $definition);
-
+        $container->setParameter('librinfo_varieties.code_generator.variety',
+            $container->getParameter('librinfo_varieties')['code_generator']['variety']
+        );
 
         if ($container->getParameter('kernel.environment') == 'test')
         {

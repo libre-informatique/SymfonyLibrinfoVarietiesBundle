@@ -20,7 +20,7 @@ class VarietyAdminConcrete extends VarietyAdmin
 
     /**
      * Configure routes for list actions
-     * 
+     *
      * @param RouteCollection $collection
      */
     protected function configureRoutes(RouteCollection $collection)
@@ -30,9 +30,9 @@ class VarietyAdminConcrete extends VarietyAdmin
     }
 
     /**
-     * Configure create/edit form fields 
-     * 
-     * @param FormMapper 
+     * Configure create/edit form fields
+     *
+     * @param FormMapper
      */
     protected function configureFormFields(FormMapper $mapper)
     {
@@ -43,7 +43,7 @@ class VarietyAdminConcrete extends VarietyAdmin
 
     /**
      * Configure Show view fields
-     * 
+     *
      * @param ShowMapper $mapper
      */
     protected function configureShowFields(ShowMapper $mapper)
@@ -51,7 +51,7 @@ class VarietyAdminConcrete extends VarietyAdmin
         // call to aliased trait method
         $this->configShowHandlesRelations($mapper);
         $this->configureShowDescriptions($mapper);
- 
+
         //Removal of Variety/Strain specific fields
         if ( $this->getSubject() )
             if ( $this->getSubject()->getIsStrain() )

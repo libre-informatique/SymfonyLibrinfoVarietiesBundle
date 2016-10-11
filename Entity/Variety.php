@@ -321,8 +321,8 @@ use BaseEntity,
      */
     public function getIsStrain()
     {
-        if ( $this->hasParent() && !$this->isStrain )
-            return $this->getParent()->getIsStrain();
+//        if ( $this->hasParent() && !$this->isStrain )
+//            return $this->getParent()->getIsStrain();
 
         return $this->isStrain;
     }

@@ -1,7 +1,4 @@
 services:
-#    librinfo_varieties.example:
-#        class: Librinfo\VarietiesBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
 
 #    librinfo_varieties.plant_category.listener:
 #        class: Librinfo\VarietiesBundle\EventListener\PlantCategoryListener
@@ -16,21 +13,26 @@ services:
         class: Librinfo\VarietiesBundle\Form\Type\LifeCycleType
         tags:
             - { name: form.type, alias: librinfo_varieties_lifecycle }
+
     librinfo_varieties.form.type.variety_description:
         class: Librinfo\VarietiesBundle\Form\Type\VarietyDescriptionType
         tags:
             - { name: form.type, alias: librinfo_variety_description }
         arguments: [ @doctrine.orm.entity_manager ]
+
     librinfo_varieties.form.type.variety_description_filter:
         class: Librinfo\VarietiesBundle\Form\Type\VarietyDescriptionFilterType
         tags:
             - { name: form.type, alias: librinfo_variety_description_filter }
         arguments: [ @doctrine.orm.entity_manager ]
+
     librinfo_varieties.form.type.variety_code:
         class: Librinfo\VarietiesBundle\Form\Type\VarietyCodeType
         tags:
             - { name: form.type, alias: librinfo_varietycode }
-# filters
+
+# FILTERS
+
     librinfo_varieties.filter.type.variety_description_filter:
         class: Librinfo\VarietiesBundle\Filter\VarietyDescriptionFilter
         tags:
@@ -38,7 +40,6 @@ services:
 
 # ENTITY CODE GENERATORS
 
-    # service class will be overridden by the factory
     librinfo_varieties.code_generator.species:
         class: Librinfo\VarietiesBundle\CodeGenerator\SpeciesCodeGenerator
         factory:   ['@librinfo_core.code_generator_factory', create]
@@ -46,7 +47,10 @@ services:
         tags:
             - { name: librinfo.entity_code_generator }
 
-#librinfo_varieties.variety_code_generator:
-#    class: Librinfo\VarietiesBundle\CodeGenerator\CodeGeneratorService
-#    arguments: [ %librinfo_varieties.code_generator.variety%, @doctrine.orm.entity_manager ]
+    librinfo_varieties.code_generator.variety:
+        class: Librinfo\VarietiesBundle\CodeGenerator\VarietyCodeGenerator
+        factory:   ['@librinfo_core.code_generator_factory', create]
+        arguments: ['%librinfo_varieties.code_generator.variety%', '@doctrine.orm.entity_manager']
+        tags:
+            - { name: librinfo.entity_code_generator }
 

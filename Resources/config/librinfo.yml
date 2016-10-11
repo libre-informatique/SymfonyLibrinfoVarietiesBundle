@@ -211,7 +211,6 @@ parameters:
                                 type: librinfo_entitycode
                                 required: true
                                 attr:
-                                    class: new-line
                                     width: 30
                             latin_name:
                                 type: text
@@ -398,7 +397,8 @@ parameters:
                                     class: inline-block
                                     width: 50
                             code:
-                                type: librinfo_varietycode
+                                type: librinfo_entitycode
+                                required: true
                                 attr:
                                     class: new-line
                                     width: 30
