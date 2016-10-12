@@ -132,4 +132,9 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
         return $result == null;
     }
 
+    public static function getHelp()
+    {
+        return "3 chars (A-Z and/or 0-9) + 2 chars (a-z and/or 0-9) for the strain";
+    }
+
 }

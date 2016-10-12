@@ -96,4 +96,9 @@ class SpeciesCodeGenerator implements CodeGeneratorInterface
         return $result == null;
     }
 
+    public static function getHelp()
+    {
+        return "3 chars (digits and upper case letters)";
+    }
+
 }

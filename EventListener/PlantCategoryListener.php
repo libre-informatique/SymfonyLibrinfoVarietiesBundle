@@ -33,16 +33,13 @@ class PlantCategoryListener implements LoggerAwareInterface, EventSubscriber
 
     public function prePersist(LifecycleEventArgs $eventArgs)
     {
-        dump('PlantCategoryListener#prePersist', $eventArgs);
     }
 
     public function preUpdate(LifecycleEventArgs $eventArgs)
     {
-        dump('PlantCategoryListener#preUpdate', $eventArgs);
     }
 
     public function preFlush(PreFlushEventArgs $eventArgs)
     {
-        dump('PlantCategoryListener#preFlush', $eventArgs);
     }
 }
