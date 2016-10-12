@@ -14,8 +14,8 @@ class SpeciesCodeGenerator implements CodeGeneratorInterface
      */
     private static $em;
 
-    public static $entityClass = 'Librinfo\VarietiesBundle\Entity\Species';
-    public static $entityField = 'code';
+    const ENTITY_CLASS = 'Librinfo\VarietiesBundle\Entity\Species';
+    const ENTITY_FIELD = 'code';
 
     public static function setEntityManager(EntityManager $em)
     {

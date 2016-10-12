@@ -14,8 +14,8 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
      */
     private static $em;
 
-    public static $entityClass = 'Librinfo\VarietiesBundle\Entity\Variety';
-    public static $entityField = 'code';
+    const ENTITY_CLASS = 'Librinfo\VarietiesBundle\Entity\Variety';
+    const ENTITY_FIELD = 'code';
 
     public static function setEntityManager(EntityManager $em)
     {
