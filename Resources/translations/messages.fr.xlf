@@ -374,7 +374,15 @@
             <trans-unit id="form_group_density">
                 <source>form_group_density</source>
                 <target>Densité au m2</target>
-            </trans-unit>                     
+            </trans-unit>     
+            <trans-unit id="form_tab_images">
+                <source>form_tab_images</source>
+                <target>Images</target>
+            </trans-unit>
+            <trans-unit id="librinfo.label.images">
+                <source>librinfo.label.images</source>
+                <target>Images</target>
+            </trans-unit>                         
              
 <!-- VARIETY DESCRIPTIONS -->
              <!-- professional -->

@@ -142,6 +142,11 @@ Librinfo\VarietiesBundle\Entity\Variety:
             targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionInner
             mappedBy: variety
             cascade: [ persist , remove]
+        images:
+            targetEntity: \Librinfo\MediaBundle\Entity\File
+            mappedBy: variety
+            cascade: [persist, remove]
+            orphanRemoval:  true
     manyToMany:
         plant_categories:
             targetEntity: Librinfo\VarietiesBundle\Entity\PlantCategory

@@ -4,9 +4,9 @@ namespace Librinfo\VarietiesBundle\Controller;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Librinfo\CoreBundle\Controller\CRUDController;
+use Librinfo\MediaBundle\Controller\CRUDController as BaseCRUDController;
 
-class VarietyCRUDController extends CRUDController
+class VarietyCRUDController extends BaseCRUDController
 {
     /**
      * Creates a strain from a variety and passes it to create action
