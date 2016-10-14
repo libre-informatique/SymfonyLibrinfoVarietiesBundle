@@ -340,6 +340,10 @@ parameters:
                     form_tab_strains:
                         '':
                             children: ~
+                    form_tab_images:
+                        '':
+                            images:
+                                template: LibrinfoMediaBundle:CRUD:show_images.html.twig
                     _options:
                         tabsOrder:
                             - form_group_general
@@ -627,6 +631,7 @@ parameters:
                     latin_name: ~
                     code: ~
                     alias: ~
+                    parent: ~
                     plant_categories: ~
                     legal_germination_rate: ~
                     germination_rate: ~
