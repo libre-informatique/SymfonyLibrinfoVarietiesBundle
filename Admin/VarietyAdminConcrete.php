@@ -27,6 +27,7 @@ class VarietyAdminConcrete extends VarietyAdmin
     {
         parent::configureRoutes($collection);
         $collection->add('strain');
+        $collection->add('getFilterWidget', 'getFilterWidget/{fieldset}/{field}');
     }
 
     /**
