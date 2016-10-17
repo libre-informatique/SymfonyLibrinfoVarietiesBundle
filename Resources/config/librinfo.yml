@@ -608,7 +608,7 @@ parameters:
                     form_tab_images:
                         '':
                             images:
-                                type: dropzone
+                                type: Librinfo\MediaBundle\Form\Type\DropzoneType
                                 required: false
                     _options:
                         tabsOrder:
