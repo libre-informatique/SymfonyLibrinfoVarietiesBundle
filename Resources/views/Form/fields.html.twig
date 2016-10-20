@@ -1,0 +1,16 @@
+{% extends 'LibrinfoCoreBundle:Admin/Form:fields.html.twig' %}
+
+{% block data %}
+    var data = $(this).closest('form').serializeArray();
+   
+    {% if sonata_admin.admin.subject.isStrain %}
+        $('*[strain_disabled]').each(function(){ 
+            var tmp = {};
+            console.log($(this).val());
+            tmp['name'] = $(this).prop('name');
+            tmp['value'] = $(this).val();
+            data.unshift(tmp); 
+        });
+    {% endif %}
+{% endblock %}
+    

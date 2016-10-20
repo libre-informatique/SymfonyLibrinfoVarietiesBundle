@@ -27,7 +27,6 @@ trait HasVariety
      */
     public function setVariety($variety)
     {
-        dump($variety);
         $this->variety = $variety;
         return $this;
     }

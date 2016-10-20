@@ -28,7 +28,7 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
      * @throws InvalidEntityCodeException
      */
     public static function generate($variety)
-    {
+    {   
         if (!$variety->getSpecies())
             throw new InvalidEntityCodeException('librinfo.error.missing_species');
         if (!$variety->getSpecies()->getCode())
