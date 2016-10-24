@@ -26,7 +26,7 @@ class VarietyAdminConcrete extends VarietyAdmin
     protected function configureRoutes(RouteCollection $collection)
     {
         parent::configureRoutes($collection);
-        $collection->add('strain');
+        $collection->add('strain', $this->getRouterIdParameter().'/strain');
         $collection->add('getFilterWidget', 'getFilterWidget/{fieldset}/{field}');
     }
 
