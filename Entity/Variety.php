@@ -15,16 +15,15 @@ use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
  */
 class Variety
 {
-
     use Nameable {
         getName as getNameTrait;
     }
 
-use BaseEntity,
-    OuterExtensible,
-    VarietyExtension,
-    Traceable,
-    Descriptible;
+    use BaseEntity,
+        OuterExtensible,
+        VarietyExtension,
+        Traceable,
+        Descriptible;
 
     /**
      * @var string
@@ -321,9 +320,6 @@ use BaseEntity,
      */
     public function getIsStrain()
     {
-//        if ( $this->hasParent() && !$this->isStrain )
-//            return $this->getParent()->getIsStrain();
-
         return $this->isStrain;
     }
 
@@ -399,6 +395,9 @@ use BaseEntity,
      */
     public function getLifeCycle()
     {
+        if ( $this->hasParent() && !$this->life_cycle )
+            return $this->getParent()->getLifeCycle();
+        
         return $this->life_cycle;
     }
 
