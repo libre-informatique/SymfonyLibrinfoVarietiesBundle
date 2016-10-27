@@ -7,13 +7,13 @@ Librinfo\VarietiesBundle\Entity\VarietyDescription:
         name: fieldset
         type: string
     discriminatorMap:
-        variety: VarietyDescription
-        professional: VarietyDescriptionProfessional
-        amateur: VarietyDescriptionAmateur
-        production: VarietyDescriptionProduction
-        commercial: VarietyDescriptionCommercial
-        plant: VarietyDescriptionPlant
-        culture: VarietyDescriptionCulture
-        inner: VarietyDescriptionInner
+        variety: Librinfo\VarietiesBundle\Entity\VarietyDescription
+        professional: Librinfo\VarietiesBundle\Entity\VarietyDescriptionProfessional
+        amateur: Librinfo\VarietiesBundle\Entity\VarietyDescriptionAmateur
+        production: Librinfo\VarietiesBundle\Entity\VarietyDescriptionProduction
+        commercial: Librinfo\VarietiesBundle\Entity\VarietyDescriptionCommercial
+        plant: Librinfo\VarietiesBundle\Entity\VarietyDescriptionPlant
+        culture: Librinfo\VarietiesBundle\Entity\VarietyDescriptionCulture
+        inner: Librinfo\VarietiesBundle\Entity\VarietyDescriptionInner
     table: variety_description
     repositoryClass: Librinfo\VarietiesBundle\Entity\Repository\VarietyDescriptionRepository

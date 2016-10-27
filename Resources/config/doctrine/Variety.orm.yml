@@ -153,6 +153,12 @@ Librinfo\VarietiesBundle\Entity\Variety:
             inversedBy: varieties
             joinTable:
                 name: librinfo_varieties_variety_category
+                joinColumns:
+                    plant_category_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    variety_id:
+                        referencedColumnName: id
     manyToOne:
         parent:
             targetEntity: Variety
