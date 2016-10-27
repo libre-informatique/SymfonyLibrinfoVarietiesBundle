@@ -696,9 +696,8 @@ parameters:
                             show: ~
                             edit: ~
                             delete: ~
-                            duplicate:
+                            duplicate: 
                                 template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
-                                route: duplicate
                             strain:
                                 template: LibrinfoVarietiesBundle:CRUD:list__action_strain.html.twig
                     _options:
