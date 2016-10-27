@@ -114,6 +114,7 @@ Librinfo\VarietiesBundle\Entity\Variety:
         children:
             targetEntity: Variety
             mappedBy: parent
+            cascade: [persist, remove]
         professional_descriptions:
             targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionProfessional
             mappedBy: variety
