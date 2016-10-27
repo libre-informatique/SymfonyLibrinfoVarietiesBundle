@@ -9,6 +9,27 @@ use Librinfo\MediaBundle\Controller\CRUDController as BaseCRUDController;
 class VarietyCRUDController extends BaseCRUDController
 {
     /**
+     * Duplicate action
+     *
+     * @return response
+     */
+    public function duplicateAction()
+    {
+        $id = $this->getRequest()->get($this->admin->getIdParameter());
+        $object = $this->admin->getObject($id);
+        $new = clone $object;
+                
+        $this->duplicateFiles($object, $new);
+        
+        $preResponse = $this->preDuplicate($new);
+        if ($preResponse !== null) {
+            return $preResponse;
+        }
+
+        return $this->createAction($new);
+    }
+    
+    /**
      * Creates a strain from a variety and passes it to create action
      * 
      * @return Response
@@ -17,7 +38,7 @@ class VarietyCRUDController extends BaseCRUDController
     {
         $id = $this->getRequest()->get($this->admin->getIdParameter());
         $object = $this->admin->getObject($id);
-        $strain = clone $this->admin->getObject($id);
+        $strain = clone $object;
         
         $strain->setIsStrain(true);
         $strain->setParent($object);
@@ -37,6 +58,8 @@ class VarietyCRUDController extends BaseCRUDController
                 $strain->$adder($new);
             }
         }
+        
+        $this->duplicateFiles($object, $strain);
         
         foreach($object->getPlantCategories() as $cat)
             $strain->addPlantCategory($cat);
@@ -105,6 +128,16 @@ class VarietyCRUDController extends BaseCRUDController
         return $this->render('LibrinfoVarietiesBundle:Form:filter_widget.html.twig', array(
                     'form' => $view
                         ), null);
+    }
+    
+    protected function duplicateFiles($object, $clone)
+    {
+        foreach($object->getImages() as $image)
+        {
+            $new = clone $image;
+            $new->setVariety(null);
+            $clone->addImage($new);
+        }
     }
 
 }
