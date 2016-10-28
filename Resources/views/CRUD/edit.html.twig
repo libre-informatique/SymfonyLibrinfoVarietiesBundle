@@ -1,6 +1,14 @@
 
 {% extends 'LibrinfoMediaBundle:CRUD:edit.html.twig' %}
 
+{% block navbar_title %}
+    {% if action == 'edit' %}
+        {% include 'LibrinfoVarietiesBundle:CRUD:navbar_title.html.twig' %}
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
 {% block sonata_form_actions %}
     {{ parent() }}
     {% if admin.id(object) is not null %}

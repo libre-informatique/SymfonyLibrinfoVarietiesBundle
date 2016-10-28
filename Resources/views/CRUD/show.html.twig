@@ -1,9 +1,5 @@
 {% extends 'LibrinfoCoreBundle:CRUD:base_show.html.twig' %}
 
 {% block navbar_title %}
-    {% if object.isStrain == true %}
-        {{ 'Strain'|trans() }}: {{ admin.toString(object)|truncate(15) }}
-    {% else %}
-        {{ admin.label|trans() }}: {{ admin.toString(object)|truncate(15) }}
-    {% endif %}
+    {% include 'LibrinfoVarietiesBundle:CRUD:navbar_title.html.twig' %}
 {% endblock %}
