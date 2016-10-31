@@ -26,6 +26,11 @@ class PlantCategory implements NodeInterface
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      */
+    private $species;
+    
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     */
     private $varieties;
 
     /**
@@ -33,6 +38,7 @@ class PlantCategory implements NodeInterface
      */
     public function __construct()
     {
+        $this->species = new ArrayCollection();
         $this->varieties = new ArrayCollection();
     }
 
@@ -94,6 +100,42 @@ class PlantCategory implements NodeInterface
     public function getVarieties()
     {
         return $this->varieties;
+    }
+    
+    /**
+     * Add species
+     *
+     * @param \Librinfo\SpeciesBundle\Entity\Species $species
+     *
+     * @return PlantCategory
+     */
+    public function addSpecies(\Librinfo\SpeciesBundle\Entity\Species $species)
+    {
+        $this->species[] = $species;
+
+        return $this;
+    }
+
+    /**
+     * Remove species
+     *
+     * @param \Librinfo\SpeciesBundle\Entity\Species $species
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeSpecies(\Librinfo\SpeciesBundle\Entity\Species $species)
+    {
+        return $this->species->removeElement($species);
+    }
+
+    /**
+     * Get species
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSpecies()
+    {
+        return $this->species;
     }
 
     public function setChildNodeOf(NodeInterface $node)

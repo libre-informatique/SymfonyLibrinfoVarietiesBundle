@@ -398,6 +398,9 @@ class Variety
         if ( $this->hasParent() && !$this->life_cycle )
             return $this->getParent()->getLifeCycle();
         
+       if( !$this->life_cycle && $this->getSpecies() )
+           return $this->getSpecies()->getLifeCycle();
+        
         return $this->life_cycle;
     }
 
@@ -542,6 +545,9 @@ class Variety
      */
     public function getLegalGerminationRate()
     {
+        if( !$this->legal_germination_rate && $this->getSpecies() )
+           return $this->getSpecies()->getLegalGerminationRate();
+        
         return $this->legal_germination_rate;
     }
 
@@ -713,6 +719,9 @@ class Variety
      */
     public function getPlantCategories()
     {
+        if( !$this->plant_categories && $this->getSpecies() )
+           return $this->getSpecies()->getPlantCategories();
+        
         return $this->plant_categories;
     }
 
@@ -794,6 +803,9 @@ class Variety
      */
     public function getTkw()
     {
+        if( !$this->tkw && $this->getSpecies() )
+           return $this->getSpecies()->getTkw();
+        
         return $this->tkw;
     }
 
@@ -818,6 +830,9 @@ class Variety
      */
     public function getSeedLifespan()
     {
+        if( !$this->seed_lifespan && $this->getSpecies() )
+           return $this->getSpecies()->getSeedLifeSpan();
+        
         return $this->seed_lifespan;
     }
 
@@ -842,6 +857,9 @@ class Variety
      */
     public function getRaiseDuration()
     {
+        if( !$this->raise_duration && $this->getSpecies() )
+           return $this->getSpecies()->getRaiseDuration();
+        
         return $this->raise_duration;
     }
 

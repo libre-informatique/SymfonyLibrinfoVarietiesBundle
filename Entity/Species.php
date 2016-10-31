@@ -2,6 +2,7 @@
 
 namespace Librinfo\VarietiesBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
 use Librinfo\DoctrineBundle\Entity\Traits\Nameable;
 use Librinfo\UserBundle\Entity\Traits\Traceable;
@@ -37,6 +38,27 @@ class Species
      * @var string
      */
     private $life_cycle;
+    
+    /**
+     * @var integer
+     */
+    private $legal_germination_rate;
+
+    /**
+     * @var integer
+     */
+    private $seed_lifespan;
+
+    /**
+     * @var integer
+     */
+    private $raise_duration;
+
+    /**
+     * @var float
+     */
+    private $tkw;
+
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -58,15 +80,30 @@ class Species
      */
     private $subspecieses;
 
-
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $plant_categories;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->varieties = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->subspecieses = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->initCollections();
+    }
+    
+    public function __clone()
+    {
+        $this->id = null;
+        $this->initCollections();
+    }
+    
+    public function initCollections()
+    {
+        $this->varieties = new ArrayCollection();
+        $this->subspecieses = new ArrayCollection();
+        $this->plant_categories = new ArrayCollection();
     }
 
     /**
@@ -163,6 +200,98 @@ class Species
     public function getLifeCycle()
     {
         return $this->life_cycle;
+    }
+    
+        /**
+     * Set legal_germination_rate
+     *
+     * @param integer $legalGerminationRate
+     * @return Species
+     */
+    public function setLegalGerminationRate($legalGerminationRate)
+    {
+        $this->legal_germination_rate = $legalGerminationRate;
+
+        return $this;
+    }
+
+    /**
+     * Get legal_germination_rate
+     *
+     * @return integer 
+     */
+    public function getLegalGerminationRate()
+    {
+        return $this->legal_germination_rate;
+    }
+
+    /**
+     * Set seed_lifespan
+     *
+     * @param integer $seedLifespan
+     * @return Species
+     */
+    public function setSeedLifespan($seedLifespan)
+    {
+        $this->seed_lifespan = $seedLifespan;
+
+        return $this;
+    }
+
+    /**
+     * Get seed_lifespan
+     *
+     * @return integer 
+     */
+    public function getSeedLifespan()
+    {
+        return $this->seed_lifespan;
+    }
+
+    /**
+     * Set raise_duration
+     *
+     * @param integer $raiseDuration
+     * @return Species
+     */
+    public function setRaiseDuration($raiseDuration)
+    {
+        $this->raise_duration = $raiseDuration;
+
+        return $this;
+    }
+
+    /**
+     * Get raise_duration
+     *
+     * @return integer 
+     */
+    public function getRaiseDuration()
+    {
+        return $this->raise_duration;
+    }
+
+    /**
+     * Set tkw
+     *
+     * @param float $tkw
+     * @return Species
+     */
+    public function setTkw($tkw)
+    {
+        $this->tkw = $tkw;
+
+        return $this;
+    }
+
+    /**
+     * Get tkw
+     *
+     * @return float 
+     */
+    public function getTkw()
+    {
+        return $this->tkw;
     }
 
     /**
@@ -315,6 +444,51 @@ class Species
     public function hasGrandParentSpecies()
     {
         return $this->parent_species != null && $this->parent_species->getParentSpecies() != null;
+    }
+    
+    /**
+     * Add plantCategory
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\PlantCategory $plantCategory
+     *
+     * @return Variety
+     */
+    public function addPlantCategory(\Librinfo\VarietiesBundle\Entity\PlantCategory $plantCategory)
+    {
+        $this->plant_categories[] = $plantCategory;
+
+        return $this;
+    }
+
+    /**
+     * Remove plantCategory
+     *
+     * @param \Librinfo\VarietiesBundle\Entity\PlantCategory $plantCategory
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removePlantCategory(\Librinfo\VarietiesBundle\Entity\PlantCategory $plantCategory)
+    {
+        return $this->plant_categories->removeElement($plantCategory);
+    }
+
+    /**
+     * Get plantCategories
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPlantCategories()
+    {
+        return $this->plant_categories;
+    }
+
+    /**
+     * Set plantCategories
+     *
+     */
+    public function setPlantCategories($plant_categories)
+    {
+        $this->plant_categories = $plant_categories;
     }
 }
 

@@ -38,6 +38,17 @@ class Family
      */
     public function __construct()
     {
+        $this->initCollections();
+    }
+    
+    public function __clone()
+    {
+        $this->id = null;
+        $this->initCollections();
+    }
+    
+    public function initCollections()
+    {
         $this->genuses = new \Doctrine\Common\Collections\ArrayCollection();
     }
 

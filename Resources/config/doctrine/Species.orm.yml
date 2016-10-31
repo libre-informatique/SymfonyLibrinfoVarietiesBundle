@@ -15,7 +15,30 @@ Librinfo\VarietiesBundle\Entity\Species:
         life_cycle:
             type:     string(10)
             nullable: true
-
+        legal_germination_rate:
+            type:     integer
+            nullable: true
+        seed_lifespan:
+            type:     integer
+            nullable: true
+        raise_duration:
+            type:     integer
+            nullable: true
+        tkw:
+            type:     float
+            nullable: true
+    manyToMany:
+        plant_categories:
+            targetEntity: Librinfo\VarietiesBundle\Entity\PlantCategory
+            inversedBy: species
+            joinTable:
+                name: librinfo_varieties_species_category
+                joinColumns:
+                    plant_category_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    species_id:
+                        referencedColumnName: id
     manyToOne:
         genus:
             targetEntity: Librinfo\VarietiesBundle\Entity\Genus

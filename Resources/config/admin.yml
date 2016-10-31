@@ -9,6 +9,8 @@ services:
               group: admin
               label: librinfo.varieties.family_admin.label
               label_translator_strategy: librinfo_core.label.strategy.librinfo
+        calls: 
+            - [ setTemplate, [ edit, LibrinfoVarietiesBundle:CRUD:family_edit.html.twig ] ]
 
     librinfo_varieties.admin.genus:
         class: Librinfo\VarietiesBundle\Admin\GenusAdminConcrete
@@ -19,6 +21,8 @@ services:
               group: admin
               label: librinfo.varieties.genus_admin.label
               label_translator_strategy: librinfo_core.label.strategy.librinfo
+        calls: 
+            - [ setTemplate, [ edit, LibrinfoVarietiesBundle:CRUD:genus_edit.html.twig ] ]
 
     librinfo_varieties.admin.genus_embedded:
         class: Librinfo\VarietiesBundle\Admin\GenusEmbeddedAdmin
@@ -39,6 +43,8 @@ services:
               group: admin
               label: librinfo.varieties.species_admin.label
               label_translator_strategy: librinfo_core.label.strategy.librinfo
+        calls: 
+            - [ setTemplate, [ edit, LibrinfoVarietiesBundle:CRUD:species_edit.html.twig ] ]
 
     librinfo_varieties.admin.species_embedded:
         class: Librinfo\VarietiesBundle\Admin\SpeciesEmbeddedAdmin
@@ -61,7 +67,7 @@ services:
               label_translator_strategy: librinfo_core.label.strategy.librinfo
         calls: 
             - [ setTemplate, [ list, LibrinfoVarietiesBundle:CRUD:list.html.twig ] ] 
-            - [ setTemplate, [ edit, LibrinfoVarietiesBundle:CRUD:edit.html.twig ] ]
+            - [ setTemplate, [ edit, LibrinfoVarietiesBundle:CRUD:variety_edit.html.twig ] ]
             - [ setTemplate, [ show, LibrinfoVarietiesBundle:CRUD:show.html.twig ] ] 
 
     librinfo_varieties.admin.plant_category:
@@ -73,6 +79,8 @@ services:
               group: admin
               label: librinfo.varieties.plant_category_admin.label
               label_translator_strategy: librinfo_core.label.strategy.librinfo
+        calls: 
+            - [ setTemplate, [ edit, LibrinfoVarietiesBundle:CRUD:plant_category_edit.html.twig ] ]
 
     librinfo_varieties.admin.variety_description_inner:
         class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdminConcrete

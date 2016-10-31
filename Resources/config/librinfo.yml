@@ -34,6 +34,12 @@ parameters:
                             alias:
                                 type: text
                                 required: false
+                            description:
+                                required: false
+                                type: librinfo_tinymce
+                                attr:
+                                    class: new-line
+                                    height: 200
                     form_group_genuses:
                         '':
                             genuses:
@@ -72,8 +78,15 @@ parameters:
                         xls: csv
                         json: csv
                         xml: csv
-#            Sonata\AdminBundle\Datagrid\DatagridMapper:
-#                add:
+                    _actions:
+                        type: actions
+                        label: Action
+                        actions:
+                            show: ~
+                            edit: ~
+                            delete: ~
+                            duplicate: 
+                                template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
 
 
 ##########
@@ -111,6 +124,12 @@ parameters:
                                 required: false
                             family:
                                 type: sonata_type_model
+                            description:
+                                required: false
+                                type: librinfo_tinymce
+                                attr:
+                                    class: new-line
+                                    height: 200
                     form_group_specieses:
                         '':
                             specieses:
@@ -150,6 +169,15 @@ parameters:
                         xls: csv
                         json: csv
                         xml: csv
+                    _actions:
+                        type: actions
+                        label: Action
+                        actions:
+                            show: ~
+                            edit: ~
+                            delete: ~
+                            duplicate: 
+                                template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
                     name: ~
@@ -176,10 +204,15 @@ parameters:
                                 required: true
                                 label: librinfo.label.parent_category
                                 max_node_level: 2
+                            description:
+                                required: false
+                                type: librinfo_tinymce
+                                attr:
+                                    class: new-line
+                                    height: 200
             Sonata\AdminBundle\Datagrid\ListMapper:
                 add:
                     name: ~
-
 
 ##########
 # SPECIES
@@ -190,7 +223,7 @@ parameters:
                 add:
                     form_group_general:
                         '':
-                            code: ~
+                            
                             latin_name: ~
                             alias: ~
                             genus:
@@ -203,39 +236,84 @@ parameters:
                                 type: trans
                                 catalogue: varieties
                             varieties: ~
+                            legal_germination_rate: ~
+                            seed_lifespan: ~
+                            raise_duration: ~
+                            tkw: ~
             Sonata\AdminBundle\Form\FormMapper:
                 add:
                     form_group_general:
                         '':
-                            code:
-                                type: librinfo_entitycode
-                                required: true
-                                attr:
-                                    width: 30
-                            latin_name:
-                                type: text
-                                required: false
-                            alias:
-                                type: text
-                                required: false
                             genus:
                                 type: sonata_type_model
                                 _options:
                                     admin_code: librinfo_varieties.admin.genus
+                                attr:
+                                    class: new-line
+                                    width: 30
                             parent_species:
                                 type: sonata_type_model_autocomplete
-                                #route: { name: searchable_admin_retrieve_autocomplete_items }
                                 by_reference: false
                                 property: name
                                 required: false
                                 _options:
                                     admin_code: librinfo_varieties.admin.species_embedded
+                                attr:
+                                    class: new-line
+                                    width: 30
+                            name:
+                                attr:
+                                    class: inline-block
+                            latin_name:
+                                type: text
+                                required: false
+                                attr:
+                                    class: inline-block
+                                    width: 30    
+                            alias:
+                                type: text
+                                required: false
+                                attr:
+                                    class: inline-block
+                                    width: 50
+                            code:
+                                type: librinfo_entitycode
+                                required: true
+                                attr:
+                                    class: new-line
+                                    width: 30
+                            plant_categories:
+                                required: false
+                                query_builder: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete::getAllWithoutRootQB
+                                multiple: true
+                                attr:
+                                    class: new-line
+                                    width: 50
+                                _options:
+                                    btn_add: true
+                            legal_germination_rate:
+                                attr:
+                                    class: inline-block
+                            raise_duration:
+                                attr:
+                                    class: inline-block
+                            tkw:
+                                help: librinfo.help.tkw
+                                attr:
+                                    class: new-line
+                                    width: 30
                             life_cycle:
                                 type: librinfo_varieties_lifecycle
                                 required: false
+                                attr:
+                                    class: new-line
+                                    width: 50
                             description:
-                                type: librinfo_tinymce
                                 required: false
+                                type: librinfo_tinymce
+                                attr:
+                                    class: new-line
+                                    height: 200
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:
@@ -243,19 +321,26 @@ parameters:
                         identifier: true
                     latin_name: ~
                     alias: ~
-                    description: ~
                     _options:
                         fieldsOrder:
                             - code
                             - name
                             - latin_name
                             - alias
-                            - description
                     _export_format:
                         csv: [name, latinName, alias, description, createdAt, updatedAt]
                         xls: csv
                         json: csv
                         xml: csv
+                    _actions:
+                        type: actions
+                        label: Action
+                        actions:
+                            show: ~
+                            edit: ~
+                            delete: ~
+                            duplicate: 
+                                template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
                     code: ~
