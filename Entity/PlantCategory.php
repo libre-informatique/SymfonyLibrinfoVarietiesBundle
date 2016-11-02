@@ -3,7 +3,7 @@
 namespace Librinfo\VarietiesBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Knp\DoctrineBehaviors\Model\Tree\NodeInterface;
+use Librinfo\DoctrineBundle\Entity\Traits\Tree\NodeInterface;
 use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
 use Librinfo\DoctrineBundle\Entity\Traits\Nameable;
 use Librinfo\DoctrineBundle\Entity\Traits\Treeable;
