@@ -241,6 +241,7 @@ class Variety
     public function __clone()
     {
         $this->id = null;
+        $this->code = null;
         $this->initCollections();
     }
 
