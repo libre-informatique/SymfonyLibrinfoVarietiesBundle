@@ -28,6 +28,8 @@ class VarietyAdminConcrete extends VarietyAdmin
         parent::configureRoutes($collection);
         $collection->add('strain', $this->getRouterIdParameter().'/strain');
         $collection->add('getFilterWidget', 'getFilterWidget/{fieldset}/{field}');
+        $collection->add('hierarchy', 'hierarchy/{id}');
+        
     }
 
     /**
@@ -74,6 +76,19 @@ class VarietyAdminConcrete extends VarietyAdmin
         if ( $variety->getParent() )
             if ( $variety->getParent()->getId() == $variety->getId() )
                 $variety->setParent(NULL);
+            
+//        $config = $this->getConfigurationPool()->getContainer()->getParameter('librinfo_varieties')['variety_descriptions'];
+//        
+//        foreach($config as $fieldset => $field){
+//            $getter = 'get' . ucfirst($fieldset) . 'Descriptions';
+//            $setter = 'set' . ucfirst($fieldset) . 'Descriptions';
+//            
+//            $descs = $variety->$getter();
+//            
+//            foreach($descs as $key =>$desc)
+//                if($desc->getValue() == null || $desc->getValue() == '' || $desc->getValue() == 0)
+//                    unset($descs[$key]);
+//        }
     }
 
 }

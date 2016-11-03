@@ -25,15 +25,25 @@ parameters:
                         tabsOrder: [form_group_general, form_group_genuses, form_group_specifics]
 
             Sonata\AdminBundle\Form\FormMapper:
+                remove: [name]
                 add:
                     form_group_general:
                         '':
+                            name:
+                                type: text
+                                attr:
+                                    class: inline-block
                             latin_name:
                                 type: text
                                 required: false
+                                attr: 
+                                    class: inline-block
                             alias:
                                 type: text
                                 required: false
+                                attr:
+                                    class: new-line
+                                    width: 50
                             description:
                                 required: false
                                 type: librinfo_tinymce
@@ -66,13 +76,11 @@ parameters:
                         identifier: true
                     latin_name: ~
                     alias: ~
-                    description: ~
                     _options:
                         fieldsOrder:
                             - name
                             - latin_name
                             - alias
-                            - description
                     _export_format:
                         csv: [name, latinName, alias, description, createdAt, updatedAt]
                         xls: csv
@@ -116,14 +124,26 @@ parameters:
                 add:
                     form_group_general:
                         '':
+                            family:
+                                type: sonata_type_model
+                                attr:
+                                    class: new-line
+                                    width: 30
+                            name:
+                                type: text
+                                attr:
+                                    class: inline-block
                             latin_name:
                                 type: text
                                 required: false
+                                attr:
+                                    class: inline-block
                             alias:
                                 type: text
                                 required: false
-                            family:
-                                type: sonata_type_model
+                                attr:
+                                    class: new-line
+                                    width: 50
                             description:
                                 required: false
                                 type: librinfo_tinymce
@@ -454,10 +474,12 @@ parameters:
                                     strain_disabled: true
                             species:
                                 type: sonata_type_model
+                                placeholder: ''
                                 attr:
                                     class: new-line
                                     width: 30
                                     strain_disabled: true
+                                    inherit: source
                                 _options:
                                     admin_code: librinfo_varieties.admin.species
                             parent:
@@ -478,13 +500,14 @@ parameters:
                                 attr:
                                     class: inline-block
                                     width: 30
-                                    strain_disabled: true
+                                    inherit: target
                             alias:
                                 type: text
                                 required: false
                                 attr:
                                     class: inline-block
                                     width: 50
+                                    inherit: target
                             code:
                                 type: librinfo_entitycode
                                 required: true
@@ -498,12 +521,14 @@ parameters:
                                 attr:
                                     class: new-line
                                     width: 50
+                                    inherit: target
                                 _options:
                                     btn_add: true
                             legal_germination_rate:
                                 help: librinfo.help.legal_germination_rate
                                 attr:
                                     class: inline-block
+                                    inherit: target
                             germination_rate:
                                 help: librinfo.help.germination_rate
                                 attr:
@@ -513,14 +538,17 @@ parameters:
                                 attr:
                                     class: new-line
                                     width: 30
+                                    inherit: target
                             seed_lifespan:
                                 help: librinfo.help.seed_lifespan
                                 attr:
                                     class: inline-block
+                                    inherit: target
                             raise_duration:
                                 help: librinfo.help.raise_duration
                                 attr:
                                     class: inline-block
+                                    inherit: target
                             transmitted_diseases:
                                 required: false
                                 type: text
@@ -533,6 +561,7 @@ parameters:
                                 attr:
                                     class: new-line
                                     width: 30
+                                    inherit: target
                             regulatory_status:
                                 required: false
                                 type: librinfo_customchoice

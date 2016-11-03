@@ -8,6 +8,16 @@ use Librinfo\MediaBundle\Controller\CRUDController as BaseCRUDController;
 
 class VarietyCRUDController extends BaseCRUDController
 {
+    public function hierarchyAction($id)
+    {
+        $species = $this->get('doctrine')
+                ->getRepository('LibrinfoVarietiesBundle:Species')
+                ->find($id)
+            ;
+        
+        return new JsonResponse($species);
+    }
+    
     /**
      * Duplicate action
      *

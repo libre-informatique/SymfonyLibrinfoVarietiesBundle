@@ -7,16 +7,18 @@ use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
 use Librinfo\DoctrineBundle\Entity\Traits\Nameable;
 use Librinfo\UserBundle\Entity\Traits\Traceable;
 use Librinfo\DoctrineBundle\Entity\Traits\Descriptible;
+use Librinfo\DoctrineBundle\Entity\Traits\Jsonable;
 
 /**
  * Species
  */
-class Species
+class Species implements \JsonSerializable
 {
     use BaseEntity,
         Nameable,
         Traceable,
-        Descriptible
+        Descriptible,
+        Jsonable
     ;
 
     /**
