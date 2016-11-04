@@ -33,8 +33,6 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
             throw new InvalidEntityCodeException('librinfo.error.missing_variety_name');
         if ($variety->getIsStrain() && !$variety->getParent())
             throw new InvalidEntityCodeException('librinfo.error.missing_strain_parent');
-        if ($variety->getIsStrain() && !$variety->getParent()->getCode())
-            throw new InvalidEntityCodeException('librinfo.error.missing_strain_parent_code');
 
         if ($variety->getIsStrain()) {
             // Prepend with parent name
