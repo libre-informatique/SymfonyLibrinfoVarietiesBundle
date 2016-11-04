@@ -1570,6 +1570,23 @@
                 <source>Strain</source>
                 <target>Souche</target>
             </trans-unit> 
+        
+        <!-- Variety code exceptions -->
+            <trans-unit id="librinfo.error.missing_variety_name">
+                <source>librinfo.error.missing_variety_name</source>
+                <target>Veuillez renseigner le nom de la variété/souche</target>
+            </trans-unit> 
+            <trans-unit id="librinfo.error.missing_strain_parent">
+                <source>librinfo.error.missing_strain_parent</source>
+                <target>Veuillez renseigner la variété parente de la souche</target>
+            </trans-unit> 
+        
+        <!-- Species code exceptions -->
+            <trans-unit id="librinfo.error.missing_species_name">
+                <source>librinfo.error.missing_species_name</source>
+                <target>Veuillez renseigner le nom de l'espèce</target>
+            </trans-unit> 
+            
         </body>
     </file>
 </xliff>
