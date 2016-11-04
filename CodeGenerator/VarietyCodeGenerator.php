@@ -29,18 +29,12 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
      */
     public static function generate($variety)
     {   
-        if (!$variety->getSpecies())
-            throw new InvalidEntityCodeException('librinfo.error.missing_species');
-        if (!$variety->getSpecies()->getCode())
-            throw new InvalidEntityCodeException('librinfo.error.missing_species_code');
         if (!$variety->getName())
             throw new InvalidEntityCodeException('librinfo.error.missing_variety_name');
         if ($variety->getIsStrain() && !$variety->getParent())
             throw new InvalidEntityCodeException('librinfo.error.missing_strain_parent');
         if ($variety->getIsStrain() && !$variety->getParent()->getCode())
             throw new InvalidEntityCodeException('librinfo.error.missing_strain_parent_code');
-
-        $species = $variety->getSpecies();
 
         if ($variety->getIsStrain()) {
             // Prepend with parent name

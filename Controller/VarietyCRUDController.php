@@ -140,6 +140,62 @@ class VarietyCRUDController extends BaseCRUDController
                         ), null);
     }
     
+    /**
+     * Generate Entity Code action.
+     *
+     * @param int|string|null $id
+     *
+     * @return JsonResponse
+     */
+    public function generateEntityCodeAction($id = null)
+    {
+        $request = $this->getRequest();
+
+        $id = $request->get($this->admin->getIdParameter());
+        if ($id) {
+            $subject = $this->admin->getObject($id);
+            if (!$subject) {
+                $error = sprintf('unable to find the object with id : %s', $id);
+                return new JsonResponse(['error' => $error]);
+            }
+            try {
+                $this->admin->checkAccess('edit', $subject); // TODO: is it necessary ? (we are not editing the entity)
+            } catch (Exception $exc) {
+                $error = $exc->getMessage();
+                return new JsonResponse(['error' => $error]);
+            }
+        }
+        else
+            $subject = $this->admin->getNewInstance();
+
+        $this->admin->setSubject($subject);
+
+        $form = $this->admin->getForm();
+        $form->setData($subject);
+        $data = $request->request->get($form->getName());
+   
+        // prevent 'false' being interpreted as true
+        if( $data['isStrain'] == 'false' )
+            $data['isStrain'] = false;
+        
+        $form->submit($data);
+        $entity = $form->getData();
+        $field = $request->query->get('field', 'code');
+        $registry = $this->get('librinfo_core.code_generators');
+        $generator = $registry::getCodeGenerator(get_class($entity), $field);
+        try {
+            $code = $generator::generate($entity);
+            return new JsonResponse(['code' => $code]);
+        } catch (InvalidEntityCodeException $exc) {
+            $error = $this->get('translator')->trans($exc->getMessage());
+            return new JsonResponse(['error' => $error, 'generator' => get_class($generator)]);
+        } catch (\Exception $exc) {
+            $error = $exc->getMessage();
+            return new JsonResponse(['error' => $error, 'generator' => get_class($generator)]);
+        }
+
+    }
+    
     protected function duplicateFiles($object, $clone)
     {
         foreach($object->getImages() as $image)

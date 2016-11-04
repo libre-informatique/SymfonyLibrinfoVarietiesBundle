@@ -1,19 +1,23 @@
 {% extends 'LibrinfoCoreBundle:Admin/Form:fields.html.twig' %}
 
 {% block data %}
+
     {% if sonata_admin.admin.classnameLabel == 'Variety' %}
-        var data = $(this).closest('form').serializeArray();
 
-        {% if sonata_admin.admin.subject.isStrain %}
-            $('*[strain_disabled]').each(function(){ 
-                var tmp = {};
-
-                tmp['name'] = $(this).prop('name');
-                tmp['value'] = $(this).val();
-
-                data.unshift(tmp); 
-            });
-        {% endif %}
+        var data = [
+           {
+            name:  '{{ uniqid }}[name]',
+            value: $('#{{ uniqid }}_name').val()
+           },
+           {
+            name:  '{{ uniqid }}[parent]',
+            value: $('#{{ uniqid }}_parent').val()
+           },
+           {
+            name:  '{{ uniqid }}[isStrain]',
+            value: $('#{{ uniqid }}_isStrain').prop('checked')
+           }
+        ];
     {% else %}
         {{ parent() }}
     {% endif %}
