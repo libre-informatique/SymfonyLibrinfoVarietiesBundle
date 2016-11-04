@@ -4,6 +4,7 @@ namespace Librinfo\VarietiesBundle\Controller;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Librinfo\CoreBundle\Exception\InvalidEntityCodeException;
 use Librinfo\MediaBundle\Controller\CRUDController as BaseCRUDController;
 
 class VarietyCRUDController extends BaseCRUDController
