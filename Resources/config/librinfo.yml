@@ -36,7 +36,7 @@ parameters:
                             latin_name:
                                 type: text
                                 required: false
-                                attr: 
+                                attr:
                                     class: inline-block
                             alias:
                                 type: text
@@ -93,7 +93,7 @@ parameters:
                             show: ~
                             edit: ~
                             delete: ~
-                            duplicate: 
+                            duplicate:
                                 template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
 
 
@@ -196,7 +196,7 @@ parameters:
                             show: ~
                             edit: ~
                             delete: ~
-                            duplicate: 
+                            duplicate:
                                 template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
@@ -243,7 +243,7 @@ parameters:
                 add:
                     form_group_general:
                         '':
-                            
+
                             latin_name: ~
                             alias: ~
                             genus:
@@ -289,7 +289,7 @@ parameters:
                                 required: false
                                 attr:
                                     class: inline-block
-                                    width: 30    
+                                    width: 30
                             alias:
                                 type: text
                                 required: false
@@ -359,7 +359,7 @@ parameters:
                             show: ~
                             edit: ~
                             delete: ~
-                            duplicate: 
+                            duplicate:
                                 template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
@@ -386,7 +386,8 @@ parameters:
                             code: ~
                             species:
                                 admin_code: librinfo_varieties.admin.species
-                            parent: ~
+                            parent:
+                                admin_code: librinfo_varieties.admin.variety
                             latin_name: ~
                             alias: ~
                             code: ~
@@ -444,7 +445,8 @@ parameters:
                             amateur_descriptions: ~
                     form_tab_strains:
                         '':
-                            children: ~
+                            children:
+                                admin_code: librinfo_varieties.admin.variety
                     form_tab_images:
                         '':
                             images:
@@ -491,6 +493,8 @@ parameters:
                                     width: 30
                                     strain_field: true
                                     strain_disabled: true
+                                _options:
+                                    admin_code: librinfo_varieties.admin.variety
                             name:
                                 attr:
                                     class: inline-block
@@ -745,7 +749,8 @@ parameters:
                     latin_name: ~
                     code: ~
                     alias: ~
-                    parent: ~
+                    parent:
+                        admin_code: librinfo_varieties.admin.variety
                     plant_categories: ~
                     legal_germination_rate: ~
                     germination_rate: ~
@@ -810,7 +815,7 @@ parameters:
                             show: ~
                             edit: ~
                             delete: ~
-                            duplicate: 
+                            duplicate:
                                 template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
                             strain:
                                 template: LibrinfoVarietiesBundle:CRUD:list__action_strain.html.twig
