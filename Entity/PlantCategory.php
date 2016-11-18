@@ -6,18 +6,19 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Librinfo\DoctrineBundle\Entity\Traits\Tree\NodeInterface;
 use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
 use Librinfo\DoctrineBundle\Entity\Traits\Nameable;
-use Librinfo\DoctrineBundle\Entity\Traits\Treeable;
+use Librinfo\BaseEntitiesBundle\Entity\Traits\NestedTreeable;
 
 /**
  * PlantCategory
  */
-class PlantCategory implements NodeInterface
+class PlantCategory //implements NodeInterface
 {
     use BaseEntity,
-        Treeable,
-        Nameable
-    ;
-
+        Nameable,
+        NestedTreeable {
+            initCollections as initChildren;
+        }
+    
     /**
      * @var string
      */
@@ -38,6 +39,7 @@ class PlantCategory implements NodeInterface
      */
     public function __construct()
     {
+        $this->initChildren();
         $this->species = new ArrayCollection();
         $this->varieties = new ArrayCollection();
     }
@@ -105,11 +107,11 @@ class PlantCategory implements NodeInterface
     /**
      * Add species
      *
-     * @param \Librinfo\SpeciesBundle\Entity\Species $species
+     * @param \Librinfo\VarietiesBundle\Entity\Species $species
      *
      * @return PlantCategory
      */
-    public function addSpecies(\Librinfo\SpeciesBundle\Entity\Species $species)
+    public function addSpecies(\Librinfo\VarietiesBundle\Entity\Species $species)
     {
         $this->species[] = $species;
 
@@ -119,11 +121,11 @@ class PlantCategory implements NodeInterface
     /**
      * Remove species
      *
-     * @param \Librinfo\SpeciesBundle\Entity\Species $species
+     * @param \Librinfo\VarietiesBundle\Entity\Species $species
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeSpecies(\Librinfo\SpeciesBundle\Entity\Species $species)
+    public function removeSpecies(\Librinfo\VarietiesBundle\Entity\Species $species)
     {
         return $this->species->removeElement($species);
     }
@@ -157,16 +159,6 @@ class PlantCategory implements NodeInterface
             $child->setChildNodeOf($this);
         }
 
-        return $this;
-    }
-
-    public function setParentNode(NodeInterface $node = null)
-    {
-        $this->parentNode = $node;
-        if ($node !== null)
-        {
-            $this->setChildNodeOf($this->parentNode);
-        }
         return $this;
     }
 }

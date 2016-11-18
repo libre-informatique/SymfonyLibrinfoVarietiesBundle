@@ -2,13 +2,13 @@
 
 namespace Librinfo\VarietiesBundle\Admin;
 
-use Librinfo\BaseEntitiesBundle\Admin\TreeableAdmin;
+use Librinfo\CoreBundle\Admin\CoreAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-class PlantCategoryAdmin extends TreeableAdmin
+class PlantCategoryAdmin extends CoreAdmin
 {
     /**
      * @param DatagridMapper $datagridMapper
@@ -17,8 +17,8 @@ class PlantCategoryAdmin extends TreeableAdmin
     {
         $datagridMapper
             ->add('code')
-            ->add('materializedPath')
-            ->add('sortMaterializedPath')
+//            ->add('materializedPath')
+//            ->add('sortMaterializedPath')
             ->add('name')
             ->add('id')
         ;
@@ -31,8 +31,8 @@ class PlantCategoryAdmin extends TreeableAdmin
     {
         $listMapper
             ->add('code')
-            ->add('materializedPath')
-            ->add('sortMaterializedPath')
+//            ->add('materializedPath')
+//            ->add('sortMaterializedPath')
             ->add('name')
             ->add('id')
             ->add('_action', 'actions', array(
@@ -52,8 +52,8 @@ class PlantCategoryAdmin extends TreeableAdmin
     {
         $formMapper
             ->add('code')
-            ->add('materializedPath')
-            ->add('sortMaterializedPath')
+//            ->add('materializedPath')
+//            ->add('sortMaterializedPath')
             ->add('name')
             ->add('id')
         ;
@@ -66,8 +66,8 @@ class PlantCategoryAdmin extends TreeableAdmin
     {
         $showMapper
             ->add('code')
-            ->add('materializedPath')
-            ->add('sortMaterializedPath')
+//            ->add('materializedPath')
+//            ->add('sortMaterializedPath')
             ->add('name')
             ->add('id')
         ;
