@@ -75,7 +75,7 @@
                 <source>librinfo.varieties.plant_category_admin.label</source>
                 <target>Catégorie de variété</target>
             </trans-unit> 
-            <trans-unit id="librinfo.link.plant_category_list">
+            <trans-unit id="librinfo.link.plantcategory_list">
                 <source>librinfo.link.plant_category_list</source>
                 <target>Liste des catégories de plantes</target>
             </trans-unit>            
@@ -87,10 +87,10 @@
                 <source>librinfo.label.code</source>
                 <target>Code</target>
             </trans-unit>                      
-            <trans-unit id="librinfo.label.parent_category">
-                <source>librinfo.label.parent_category</source>
+            <trans-unit id="librinfo.label.tree_parent">
+                <source>librinfo.label.tree_parent</source>
                 <target>Catégorie parente</target>
-            </trans-unit>                      
+            </trans-unit>                           
             
 <!-- SPECIES -->
             <trans-unit id="librinfo.varieties.species_admin.label">

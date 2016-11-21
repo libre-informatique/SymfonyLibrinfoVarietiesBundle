@@ -211,6 +211,7 @@ parameters:
             Sonata\AdminBundle\Show\ShowMapper:
                 _copy: Sonata\AdminBundle\Form\FormMapper
             Sonata\AdminBundle\Form\FormMapper:
+                remove: [name]
                 add:
                     form_group_general:
                         '':
@@ -218,21 +219,15 @@ parameters:
                                 type: text
                             code:
                                 type: text
-                            parentNode:
-                                type: librinfo_baseentities_treeable
-                                class: Librinfo\VarietiesBundle\Entity\PlantCategory
-                                required: true
-                                label: librinfo.label.parent_category
-                                max_node_level: 2
-                            description:
+                            treeParent:
                                 required: false
-                                type: librinfo_tinymce
-                                attr:
-                                    class: new-line
-                                    height: 200
+                                type: sonata_type_model
+                                placeholder: ''
             Sonata\AdminBundle\Datagrid\ListMapper:
                 add:
-                    name: ~
+                    name:
+                        identifier: true
+                        template: LibrinfoBaseEntitiesBundle:CRUD:list_field_treeable.html.twig
 
 ##########
 # SPECIES
