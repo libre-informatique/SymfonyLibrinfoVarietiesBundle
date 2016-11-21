@@ -372,6 +372,7 @@ parameters:
 
         Librinfo\VarietiesBundle\Entity\Variety:
             Sonata\AdminBundle\Show\ShowMapper:
+                titleTemplate: LibrinfoVarietiesBundle:VarietyAdmin:show_title.html.twig
                 forceTabs: true
                 remove: [description]
                 add:
@@ -460,6 +461,7 @@ parameters:
                             - form_tab_strains
                             - form_group_specific
             Sonata\AdminBundle\Form\FormMapper:
+                titleTemplate: LibrinfoVarietiesBundle:VarietyAdmin:edit_title.html.twig
                 add:
                     form_group_general:
                         '':
