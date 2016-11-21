@@ -220,8 +220,9 @@ parameters:
                             code:
                                 type: text
                             treeParent:
+                                type: librinfo_nested_treeable
+                                class: Librinfo\VarietiesBundle\Entity\PlantCategory
                                 required: false
-                                type: sonata_type_model
                                 placeholder: ''
             Sonata\AdminBundle\Datagrid\ListMapper:
                 add:
@@ -298,8 +299,9 @@ parameters:
                                     class: new-line
                                     width: 30
                             plant_categories:
+                                type: librinfo_nested_treeable
+                                class: Librinfo\VarietiesBundle\Entity\PlantCategory
                                 required: false
-                                query_builder: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete::getAllWithoutRootQB
                                 multiple: true
                                 attr:
                                     class: new-line
@@ -387,8 +389,7 @@ parameters:
                             latin_name: ~
                             alias: ~
                             code: ~
-                            plant_categories:
-                                query_builder: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete::getAllWithoutRootQB
+                            plant_categories: ~
                             several_strains: ~
                             legal_germination_rate: ~
                             germination_rate: ~
@@ -516,8 +517,9 @@ parameters:
                                     class: new-line
                                     width: 30
                             plant_categories:
+                                type: librinfo_nested_treeable
+                                class: Librinfo\VarietiesBundle\Entity\PlantCategory
                                 required: false
-                                query_builder: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete::getAllWithoutRootQB
                                 multiple: true
                                 attr:
                                     class: new-line
