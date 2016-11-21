@@ -1,6 +1,6 @@
 <?php
 
-namespace Librinfo\VarietiesBundle\Entity\Traits;
+namespace Librinfo\VarietiesBundle\Entity\OuterExtension;
 
 trait HasVariety
 {
