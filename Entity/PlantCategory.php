@@ -15,9 +15,8 @@ class PlantCategory //implements NodeInterface
 {
     use BaseEntity,
         Nameable,
-        NestedTreeable {
-            initCollections as initChildren;
-        }
+        NestedTreeable
+        ;
     
     /**
      * @var string
@@ -39,7 +38,8 @@ class PlantCategory //implements NodeInterface
      */
     public function __construct()
     {
-        $this->initChildren();
+        //init NesteTreeable trreeChildren Collection
+        $this->initCollections();
         $this->species = new ArrayCollection();
         $this->varieties = new ArrayCollection();
     }
