@@ -1,13 +1,4 @@
-
 {% extends 'LibrinfoMediaBundle:CRUD:edit.html.twig' %}
-
-{% block navbar_title %}
-    {% if action == 'edit' %}
-        {% include 'LibrinfoVarietiesBundle:CRUD:navbar_title.html.twig' %}
-    {% else %}
-        {{ parent() }}
-    {% endif %}
-{% endblock %}
 
 {% block sonata_form_actions %}
     {{ parent() }}
@@ -24,14 +15,14 @@
     {% include 'LibrinfoCoreBundle:Admin/Form:tinymce_init.html.twig' %}
     <script>
         $(document).ready(function () {
-        
+
         {% if object.isStrain %}
             $('*[strain_disabled]').prop('disabled', true);
 
             $('form:not(.sidebar-form)').on('submit', function(){
                 $('*[strain_disabled]').prop('disabled', false);
             });
-        {% else %}    
+        {% else %}
             $('*[strain_field]').parents('.form-group').prop('disabled', true).hide();
         {% endif %}
         });
