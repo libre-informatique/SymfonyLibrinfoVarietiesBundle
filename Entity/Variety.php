@@ -2,7 +2,7 @@
 
 namespace Librinfo\VarietiesBundle\Entity;
 
-use AppBundle\Entity\Extension\VarietyExtension;
+use AppBundle\Entity\OuterExtension\LibrinfoVarietiesBundle\VarietyExtension;
 use Librinfo\OuterExtensionBundle\Entity\Traits\OuterExtensible;
 use Doctrine\Common\Collections\ArrayCollection;
 use Librinfo\DoctrineBundle\Entity\Traits\Nameable;
