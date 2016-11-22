@@ -251,7 +251,8 @@ parameters:
                             life_cycle:
                                 type: trans
                                 catalogue: varieties
-                            varieties: ~
+                            varieties:
+                                admin_code: librinfo_varieties.admin.variety
                             legal_germination_rate: ~
                             seed_lifespan: ~
                             raise_duration: ~
