@@ -41,7 +41,7 @@ class LibrinfoVarietiesExtension extends LibrinfoCoreExtension
             $loader->load('datafixtures.yml');
         }
 
-        $this->mergeParameter('librinfo', $container, __DIR__ . '/../Resources/config');
+        $this->mergeParameter('blast', $container, __DIR__ . '/../Resources/config');
     }
 
 }
