@@ -2,7 +2,7 @@
 Librinfo\VarietiesBundle\Entity\Variety:
     type: entity
     table: variety
-    librinfo:
+    blast:
         loggable: true
     fields:
         latin_name:
