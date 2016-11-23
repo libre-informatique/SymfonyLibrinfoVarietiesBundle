@@ -3,11 +3,11 @@
 namespace Librinfo\VarietiesBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
-use Librinfo\DoctrineBundle\Entity\Traits\Nameable;
+use Librinfo\BaseEntitiesBundle\Entity\Traits\BaseEntity;
+use Librinfo\BaseEntitiesBundle\Entity\Traits\Nameable;
 use Librinfo\UserBundle\Entity\Traits\Traceable;
-use Librinfo\DoctrineBundle\Entity\Traits\Descriptible;
-use Librinfo\DoctrineBundle\Entity\Traits\Jsonable;
+use Librinfo\BaseEntitiesBundle\Entity\Traits\Descriptible;
+use Librinfo\BaseEntitiesBundle\Entity\Traits\Jsonable;
 
 /**
  * Species

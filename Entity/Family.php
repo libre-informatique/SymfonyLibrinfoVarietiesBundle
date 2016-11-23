@@ -2,10 +2,10 @@
 
 namespace Librinfo\VarietiesBundle\Entity;
 
-use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
-use Librinfo\DoctrineBundle\Entity\Traits\Nameable;
+use Librinfo\BaseEntitiesBundle\Entity\Traits\BaseEntity;
+use Librinfo\BaseEntitiesBundle\Entity\Traits\Nameable;
+use Librinfo\BaseEntitiesBundle\Entity\Traits\Descriptible;
 use Librinfo\UserBundle\Entity\Traits\Traceable;
-use Librinfo\DoctrineBundle\Entity\Traits\Descriptible;
 
 /**
  * Family
