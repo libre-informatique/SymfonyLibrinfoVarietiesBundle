@@ -3,7 +3,7 @@
 namespace Librinfo\VarietiesBundle\Entity;
 
 use AppBundle\Entity\OuterExtension\LibrinfoVarietiesBundle\VarietyExtension;
-use Librinfo\OuterExtensionBundle\Entity\Traits\OuterExtensible;
+use Blast\OuterExtensionBundle\Entity\Traits\OuterExtensible;
 use Doctrine\Common\Collections\ArrayCollection;
 use Librinfo\BaseEntitiesBundle\Entity\Traits\Nameable;
 use Librinfo\UserBundle\Entity\Traits\Traceable;

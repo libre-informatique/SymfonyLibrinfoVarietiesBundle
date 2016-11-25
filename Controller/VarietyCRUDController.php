@@ -182,7 +182,7 @@ class VarietyCRUDController extends BaseCRUDController
         $form->submit($data);
         $entity = $form->getData();
         $field = $request->query->get('field', 'code');
-        $registry = $this->get('librinfo_core.code_generators');
+        $registry = $this->get('blast_core.code_generators');
         $generator = $registry::getCodeGenerator(get_class($entity), $field);
         try {
             $code = $generator::generate($entity);
