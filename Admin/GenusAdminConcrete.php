@@ -2,7 +2,7 @@
 
 namespace Librinfo\VarietiesBundle\Admin;
 
-use Librinfo\CoreBundle\Admin\Traits\EmbeddedAdmin;
+use Blast\CoreBundle\Admin\Traits\EmbeddedAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
 
 class GenusAdminConcrete extends GenusAdmin

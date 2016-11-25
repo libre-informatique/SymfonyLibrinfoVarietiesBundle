@@ -6,7 +6,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Librinfo\CoreBundle\Admin\CoreAdmin;
+use Blast\CoreBundle\Admin\CoreAdmin;
 
 class VarietyAdmin extends CoreAdmin
 {
@@ -95,7 +95,7 @@ class VarietyAdmin extends CoreAdmin
                     'edit' => array(),
                     'delete' => array(),
                     'duplicate' => array(
-                        'template' => 'LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig'
+                        'template' => 'BlastCoreBundle:CRUD:list__action_duplicate.html.twig'
                     )
                 )
             ))

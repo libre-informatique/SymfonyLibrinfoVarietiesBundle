@@ -3,9 +3,9 @@
 namespace Librinfo\VarietiesBundle\CodeGenerator;
 
 use Doctrine\ORM\EntityManager;
-use Librinfo\CoreBundle\CodeGenerator\CodeGeneratorInterface;
+use Blast\CoreBundle\CodeGenerator\CodeGeneratorInterface;
 use Librinfo\VarietiesBundle\Entity\Species;
-use Librinfo\CoreBundle\Exception\InvalidEntityCodeException;
+use Blast\CoreBundle\Exception\InvalidEntityCodeException;
 
 class SpeciesCodeGenerator implements CodeGeneratorInterface
 {

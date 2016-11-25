@@ -94,7 +94,7 @@ parameters:
                             edit: ~
                             delete: ~
                             duplicate:
-                                template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
+                                template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
 
 
 ##########
@@ -197,7 +197,7 @@ parameters:
                             edit: ~
                             delete: ~
                             duplicate:
-                                template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
+                                template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
                     name: ~
@@ -358,7 +358,7 @@ parameters:
                             edit: ~
                             delete: ~
                             duplicate:
-                                template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
+                                template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
                     code: ~
@@ -401,7 +401,7 @@ parameters:
                             life_cycle: ~
                             regulatory_status: ~
                             description:
-                                template: LibrinfoCoreBundle:CRUD:show_field_tinymce.html.twig
+                                template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
 
                         form_group_offical_catalogue:
                             official: ~
@@ -816,7 +816,7 @@ parameters:
                             edit: ~
                             delete: ~
                             duplicate:
-                                template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
+                                template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
                             strain:
                                 template: LibrinfoVarietiesBundle:CRUD:list__action_strain.html.twig
                     _options:

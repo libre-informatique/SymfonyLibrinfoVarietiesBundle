@@ -3,7 +3,7 @@
 namespace Librinfo\VarietiesBundle\Admin;
 
 use Sonata\AdminBundle\Form\FormMapper;
-use Librinfo\CoreBundle\Admin\Traits\EmbeddedAdmin;
+use Blast\CoreBundle\Admin\Traits\EmbeddedAdmin;
 
 class VarietyDescriptionAdminConcrete extends VarietyDescriptionAdmin
 {

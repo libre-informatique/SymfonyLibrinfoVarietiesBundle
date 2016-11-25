@@ -2,7 +2,7 @@
 
 namespace Librinfo\VarietiesBundle\Admin;
 
-use Librinfo\CoreBundle\Admin\Traits\HandlesRelationsAdmin;
+use Blast\CoreBundle\Admin\Traits\HandlesRelationsAdmin;
 
 class FamilyAdminConcrete extends FamilyAdmin
 {

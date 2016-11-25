@@ -5,7 +5,7 @@ namespace Librinfo\VarietiesBundle\DependencyInjection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader;
-use Librinfo\CoreBundle\DependencyInjection\LibrinfoCoreExtension;
+use Blast\CoreBundle\DependencyInjection\LibrinfoCoreExtension;
 
 /**
  * This is the class that loads and manages your bundle configuration

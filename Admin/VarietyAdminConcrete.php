@@ -5,7 +5,7 @@ namespace Librinfo\VarietiesBundle\Admin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
-use Librinfo\CoreBundle\Admin\Traits\HandlesRelationsAdmin;
+use Blast\CoreBundle\Admin\Traits\HandlesRelationsAdmin;
 use Librinfo\VarietiesBundle\Traits\DynamicDescriptions;
 
 class VarietyAdminConcrete extends VarietyAdmin
@@ -29,7 +29,6 @@ class VarietyAdminConcrete extends VarietyAdmin
         $collection->add('strain', $this->getRouterIdParameter().'/strain');
         $collection->add('getFilterWidget', 'getFilterWidget/{fieldset}/{field}');
         $collection->add('hierarchy', 'hierarchy/{id}');
-        
     }
 
     /**
