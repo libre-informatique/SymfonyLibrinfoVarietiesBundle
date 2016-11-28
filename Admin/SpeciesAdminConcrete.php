@@ -2,7 +2,7 @@
 
 namespace Librinfo\VarietiesBundle\Admin;
 
-use Librinfo\CoreBundle\Admin\Traits\EmbeddedAdmin;
+use Blast\CoreBundle\Admin\Traits\EmbeddedAdmin;
 use Librinfo\VarietiesBundle\Entity\Species;
 use Sonata\CoreBundle\Validator\ErrorElement;
 

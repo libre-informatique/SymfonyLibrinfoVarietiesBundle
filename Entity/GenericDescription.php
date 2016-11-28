@@ -2,7 +2,7 @@
 
 namespace Librinfo\VarietiesBundle\Entity;
 
-use Librinfo\DoctrineBundle\Entity\Traits\BaseEntity;
+use Librinfo\BaseEntitiesBundle\Entity\Traits\BaseEntity;
 
 /**
  * GenericDescription

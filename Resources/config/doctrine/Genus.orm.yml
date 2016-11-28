@@ -1,7 +1,7 @@
 Librinfo\VarietiesBundle\Entity\Genus:
     type: entity
     table: genus
-    librinfo:
+    blast:
         loggable: true
     fields:
         latin_name:

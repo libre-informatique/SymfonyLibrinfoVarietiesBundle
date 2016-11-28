@@ -37,15 +37,15 @@ services:
 
     librinfo_varieties.code_generator.species:
         class: Librinfo\VarietiesBundle\CodeGenerator\SpeciesCodeGenerator
-        factory:   ['@librinfo_core.code_generator_factory', create]
+        factory:   ['@blast_core.code_generator_factory', create]
         arguments: ['%librinfo_varieties.code_generator.species%', '@doctrine.orm.entity_manager']
         tags:
-            - { name: librinfo.entity_code_generator }
+            - { name: blast.entity_code_generator }
 
     librinfo_varieties.code_generator.variety:
         class: Librinfo\VarietiesBundle\CodeGenerator\VarietyCodeGenerator
-        factory:   ['@librinfo_core.code_generator_factory', create]
+        factory:   ['@blast_core.code_generator_factory', create]
         arguments: ['%librinfo_varieties.code_generator.variety%', '@doctrine.orm.entity_manager']
         tags:
-            - { name: librinfo.entity_code_generator }
+            - { name: blast.entity_code_generator }
 

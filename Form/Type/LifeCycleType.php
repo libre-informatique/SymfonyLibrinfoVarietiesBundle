@@ -3,7 +3,7 @@
 namespace Librinfo\VarietiesBundle\Form\Type;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Librinfo\CoreBundle\Form\AbstractType as BaseAbstractType;
+use Blast\CoreBundle\Form\AbstractType as BaseAbstractType;
 use Librinfo\VarietiesBundle\Entity\LifeCycle;
 
 class LifeCycleType extends BaseAbstractType
