@@ -23,6 +23,10 @@ parameters:
                             updatedBy: ~
                     _options:
                         tabsOrder: [form_group_general, form_group_genuses, form_group_specifics]
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
 
             Sonata\AdminBundle\Form\FormMapper:
                 remove: [name]
@@ -68,6 +72,10 @@ parameters:
                                     admin_code: librinfo_varieties.admin.genus_embedded
                     _options:
                         tabsOrder: [form_group_general, form_group_genuses]
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
 
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
@@ -95,7 +103,10 @@ parameters:
                             delete: ~
                             duplicate:
                                 template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
-
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
 
 ##########
 # GENUS
@@ -120,6 +131,11 @@ parameters:
                             updatedBy: ~
                     _options:
                         tabsOrder: [form_group_general, form_group_specieses, form_group_specifics]
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
+
             Sonata\AdminBundle\Form\FormMapper:
                 add:
                     form_group_general:
@@ -168,6 +184,11 @@ parameters:
                                     admin_code: librinfo_varieties.admin.species_embedded
                     _options:
                         tabsOrder: [form_group_general, form_group_specieses]
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
+
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:
@@ -198,6 +219,11 @@ parameters:
                             delete: ~
                             duplicate:
                                 template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
+
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
                     name: ~
@@ -210,6 +236,12 @@ parameters:
         Librinfo\VarietiesBundle\Entity\PlantCategory:
             Sonata\AdminBundle\Show\ShowMapper:
                 _copy: Sonata\AdminBundle\Form\FormMapper
+                add:
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
+
             Sonata\AdminBundle\Form\FormMapper:
                 remove: [name]
                 add:
@@ -224,11 +256,20 @@ parameters:
                                 class: Librinfo\VarietiesBundle\Entity\PlantCategory
                                 required: false
                                 placeholder: ''
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
+
             Sonata\AdminBundle\Datagrid\ListMapper:
                 add:
                     name:
                         identifier: true
                         template: LibrinfoBaseEntitiesBundle:CRUD:list_field_treeable.html.twig
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
 
 ##########
 # SPECIES
@@ -257,6 +298,11 @@ parameters:
                             seed_lifespan: ~
                             raise_duration: ~
                             tkw: ~
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
+
             Sonata\AdminBundle\Form\FormMapper:
                 add:
                     form_group_general:
@@ -332,10 +378,17 @@ parameters:
                                 attr:
                                     class: new-line
                                     height: 200
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
+
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [createdAt]
                 add:
                     code:
+                        identifier: true
+                    name:
                         identifier: true
                     latin_name: ~
                     alias: ~
@@ -359,6 +412,11 @@ parameters:
                             delete: ~
                             duplicate:
                                 template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
+
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
                     code: ~
