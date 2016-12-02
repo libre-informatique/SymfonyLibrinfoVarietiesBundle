@@ -94,6 +94,9 @@ parameters:
                         xls: csv
                         json: csv
                         xml: csv
+                    _list_action:
+                        test:
+                            action: duplicate
                     _actions:
                         type: actions
                         label: Action
@@ -265,7 +268,7 @@ parameters:
                 add:
                     name:
                         identifier: true
-                        template: LibrinfoBaseEntitiesBundle:CRUD:list_field_treeable.html.twig
+                        template: BlastBaseEntitiesBundle:CRUD:list_field_treeable.html.twig
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
