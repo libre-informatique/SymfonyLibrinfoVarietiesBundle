@@ -5,10 +5,10 @@ namespace Librinfo\VarietiesBundle\Entity;
 use AppBundle\Entity\OuterExtension\LibrinfoVarietiesBundle\VarietyExtension;
 use Blast\OuterExtensionBundle\Entity\Traits\OuterExtensible;
 use Doctrine\Common\Collections\ArrayCollection;
-use Librinfo\BaseEntitiesBundle\Entity\Traits\Nameable;
+use Blast\BaseEntitiesBundle\Entity\Traits\Nameable;
 use Librinfo\UserBundle\Entity\Traits\Traceable;
-use Librinfo\BaseEntitiesBundle\Entity\Traits\Descriptible;
-use Librinfo\BaseEntitiesBundle\Entity\Traits\BaseEntity;
+use Blast\BaseEntitiesBundle\Entity\Traits\Descriptible;
+use Blast\BaseEntitiesBundle\Entity\Traits\BaseEntity;
 
 /**
  * Variety

@@ -2,9 +2,9 @@
 
 namespace Librinfo\VarietiesBundle\Entity;
 
-use Librinfo\BaseEntitiesBundle\Entity\Traits\BaseEntity;
-use Librinfo\BaseEntitiesBundle\Entity\Traits\Nameable;
-use Librinfo\BaseEntitiesBundle\Entity\Traits\Descriptible;
+use Blast\BaseEntitiesBundle\Entity\Traits\BaseEntity;
+use Blast\BaseEntitiesBundle\Entity\Traits\Nameable;
+use Blast\BaseEntitiesBundle\Entity\Traits\Descriptible;
 use Librinfo\UserBundle\Entity\Traits\Traceable;
 
 /**

@@ -3,10 +3,10 @@
 namespace Librinfo\VarietiesBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Librinfo\BaseEntitiesBundle\Entity\Traits\Tree\NodeInterface;
-use Librinfo\BaseEntitiesBundle\Entity\Traits\BaseEntity;
-use Librinfo\BaseEntitiesBundle\Entity\Traits\Nameable;
-use Librinfo\BaseEntitiesBundle\Entity\Traits\NestedTreeable;
+use Blast\BaseEntitiesBundle\Entity\Traits\Tree\NodeInterface;
+use Blast\BaseEntitiesBundle\Entity\Traits\BaseEntity;
+use Blast\BaseEntitiesBundle\Entity\Traits\Nameable;
+use Blast\BaseEntitiesBundle\Entity\Traits\NestedTreeable;
 
 /**
  * PlantCategory
