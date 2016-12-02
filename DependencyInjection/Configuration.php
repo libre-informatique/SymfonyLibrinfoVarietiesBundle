@@ -51,7 +51,7 @@ class Configuration implements ConfigurationInterface
                                         ->arrayNode('choices')
                                           ->prototype('scalar')->end()
                                         ->end()
-                                        ->arrayNode('librinfo_choices')
+                                        ->arrayNode('blast_choices')
                                           ->prototype('scalar')->end()
                                         ->end()
                                         ->arrayNode('attr')

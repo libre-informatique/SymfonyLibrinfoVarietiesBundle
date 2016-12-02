@@ -92,11 +92,11 @@ class VarietyCRUDController extends BaseCRUDController
 
         $config = $this->admin->getConfigurationPool()->getContainer()->getParameter('librinfo_varieties');
         $fieldConfig = $config['variety_descriptions'][$fieldSet][$field];
-        $choiceType = 'librinfo_customchoice';
+        $choiceType = 'blast_custom_choice';
         $options = $fieldConfig['options'];
         $type = $fieldConfig['type'] != 'textarea' ? $fieldConfig['type'] : 'text';
 
-        if ( $type == 'librinfo_customcheckbox' )
+        if ( $type == 'blast_custom_checkbox' )
         {
             $type = 'choice';
             $options = array_merge($options, array(
@@ -115,7 +115,7 @@ class VarietyCRUDController extends BaseCRUDController
                 unset($options['multiple']);
         }
 
-        if ( $type == 'librinfo_tinymce' )
+        if ( $type == 'blast_tinymce' )
             $type = 'text';
 
         if ( isset($options['choices']) && empty($options['choices']) )
@@ -124,8 +124,8 @@ class VarietyCRUDController extends BaseCRUDController
         if ( isset($options['choices_class']) && $type != $choiceType )
             unset($options['choices_class']);
 
-        if ( isset($options['librinfo_choices']) && $type != $choiceType )
-            unset($options['librinfo_choices']);
+        if ( isset($options['blast_choices']) && $type != $choiceType )
+            unset($options['blast_choices']);
 
         if ( isset($options['help']) )
             unset($options['help']);

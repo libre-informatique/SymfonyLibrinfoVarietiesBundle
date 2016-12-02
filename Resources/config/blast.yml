@@ -50,7 +50,7 @@ parameters:
                                     width: 50
                             description:
                                 required: false
-                                type: librinfo_tinymce
+                                type: blast_tinymce
                                 attr:
                                     class: new-line
                                     height: 200
@@ -165,7 +165,7 @@ parameters:
                                     width: 50
                             description:
                                 required: false
-                                type: librinfo_tinymce
+                                type: blast_tinymce
                                 attr:
                                     class: new-line
                                     height: 200
@@ -377,7 +377,7 @@ parameters:
                                     width: 50
                             description:
                                 required: false
-                                type: librinfo_tinymce
+                                type: blast_tinymce
                                 attr:
                                     class: new-line
                                     height: 200
@@ -629,16 +629,16 @@ parameters:
                                     inherit: target
                             regulatory_status:
                                 required: false
-                                type: librinfo_customchoice
+                                type: blast_custom_choice
                                 choices_field: regulatory_status
-                                librinfo_choices:
+                                blast_choices:
                                    - Contrôlé
                                    - Non contrôlé
                                 attr:
                                     class: inline-block
                             description:
                                 required: false
-                                type: librinfo_tinymce
+                                type: blast_tinymce
                                 attr:
                                     class: new-line
                                     height: 200
