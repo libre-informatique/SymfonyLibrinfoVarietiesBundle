@@ -45,7 +45,7 @@ class Configuration implements ConfigurationInterface
                                         ->scalarNode('label')->defaultNull()->end()
                                         ->scalarNode('choices_field')->end()
                                         ->scalarNode('template')->end()
-                                        ->scalarNode('choices_class')->defaultValue('\Blast\CoreBundle\Entity\SelectChoice')->end()
+                                        ->scalarNode('choices_class')->defaultValue('\Blast\UtilsBundle\Entity\SelectChoice')->end()
                                         ->booleanNode('multiple')->end()
                                         ->booleanNode('expanded')->end()
                                         ->arrayNode('choices')

@@ -153,6 +153,6 @@ services:
 
     librinfo_varieties.admin.select_choice:
         class: Librinfo\VarietiesBundle\Admin\SelectChoiceAdminConcrete
-        arguments: [~, Blast\CoreBundle\Entity\SelectChoice, BlastCoreBundle:CRUD]
+        arguments: [~, Blast\UtilsBundle\Entity\SelectChoice, BlastCoreBundle:CRUD]
         tags:
             - { name: sonata.admin, manager_type: orm, group: admin, label: SelectChoice }
