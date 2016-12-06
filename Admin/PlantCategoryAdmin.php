@@ -17,8 +17,6 @@ class PlantCategoryAdmin extends CoreAdmin
     {
         $datagridMapper
             ->add('code')
-//            ->add('materializedPath')
-//            ->add('sortMaterializedPath')
             ->add('name')
             ->add('id')
         ;
@@ -31,8 +29,6 @@ class PlantCategoryAdmin extends CoreAdmin
     {
         $listMapper
             ->add('code')
-//            ->add('materializedPath')
-//            ->add('sortMaterializedPath')
             ->add('name')
             ->add('id')
             ->add('_action', 'actions', array(
@@ -52,8 +48,6 @@ class PlantCategoryAdmin extends CoreAdmin
     {
         $formMapper
             ->add('code')
-//            ->add('materializedPath')
-//            ->add('sortMaterializedPath')
             ->add('name')
             ->add('id')
         ;
@@ -66,8 +60,6 @@ class PlantCategoryAdmin extends CoreAdmin
     {
         $showMapper
             ->add('code')
-//            ->add('materializedPath')
-//            ->add('sortMaterializedPath')
             ->add('name')
             ->add('id')
         ;
