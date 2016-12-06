@@ -94,9 +94,6 @@ parameters:
                         xls: csv
                         json: csv
                         xml: csv
-                    _actions:                     
-                        duplicate:
-                            template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
@@ -204,9 +201,6 @@ parameters:
                         xls: csv
                         json: csv
                         xml: csv
-                    _actions:
-                        duplicate:
-                            template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
@@ -391,9 +385,6 @@ parameters:
                         xls: csv
                         json: csv
                         xml: csv
-                    _actions:
-                        duplicate:
-                            template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
