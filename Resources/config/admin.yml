@@ -79,7 +79,7 @@ services:
               label: librinfo.varieties.plant_category_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
         calls:
-            - [ setTemplate, [ edit, LibrinfoVarietiesBundle:CRUD:plant_category_edit.html.twig ] ]
+            - [ setTemplate, [ edit, LibrinfoVarietiesBundle:PlantCategoryAdmin:plant_category_edit.html.twig ] ]
 
     librinfo_varieties.admin.variety_description_inner:
         class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdminConcrete
