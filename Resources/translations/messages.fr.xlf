@@ -76,9 +76,9 @@
                 <target>Catégorie de variété</target>
             </trans-unit> 
             <trans-unit id="librinfo.link.plantcategory_list">
-                <source>librinfo.link.plant_category_list</source>
+                <source>librinfo.link.plantcategory_list</source>
                 <target>Liste des catégories de plantes</target>
-            </trans-unit>            
+            </trans-unit>             
             <trans-unit id="librinfo.link.plant_category_create">
                 <source>librinfo.link.plant_category_create</source>
                 <target>Nouvelle catégorie de plantes</target>
