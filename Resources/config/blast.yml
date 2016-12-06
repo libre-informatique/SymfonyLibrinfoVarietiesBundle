@@ -22,14 +22,15 @@ parameters:
                             createdBy: ~
                             updatedBy: ~
                     _options:
-                        tabsOrder: [form_group_general, form_group_genuses, form_group_specifics]
+                        tabsOrder: [form_group_general, form_group_specifics]
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
                           class: framacalc
 
             Sonata\AdminBundle\Form\FormMapper:
-                remove: [name]
+                remove: 
+                   name: ~
                 add:
                     form_group_general:
                         '':
@@ -70,6 +71,8 @@ parameters:
                                     inline: table
                                     allow_delete: false
                                     admin_code: librinfo_varieties.admin.genus_embedded
+                            _options:
+                                translation_domain: ''
                     _options:
                         tabsOrder: [form_group_general, form_group_genuses]
                     _helper_links:
@@ -78,34 +81,22 @@ parameters:
                           class: framacalc
 
             Sonata\AdminBundle\Datagrid\ListMapper:
-                remove: [createdAt]
+                remove:
+                    name: ~
+                    createdAt: ~
                 add:
                     name:
                         identifier: true
                     latin_name: ~
                     alias: ~
-                    _options:
-                        fieldsOrder:
-                            - name
-                            - latin_name
-                            - alias
-                    _export_format:
+                    _export_formats:
                         csv: [name, latinName, alias, description, createdAt, updatedAt]
                         xls: csv
                         json: csv
                         xml: csv
-                    _list_action:
-                        test:
-                            action: duplicate
-                    _actions:
-                        type: actions
-                        label: Action
-                        actions:
-                            show: ~
-                            edit: ~
-                            delete: ~
-                            duplicate:
-                                template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
+                    _actions:                     
+                        duplicate:
+                            template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
@@ -208,20 +199,14 @@ parameters:
                             - alias
                             - family
                             - description
-                    _export_format:
+                    _export_formats:
                         csv: [name, latinName, alias, family, description, createdAt, updatedAt]
                         xls: csv
                         json: csv
                         xml: csv
                     _actions:
-                        type: actions
-                        label: Action
-                        actions:
-                            show: ~
-                            edit: ~
-                            delete: ~
-                            duplicate:
-                                template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
+                        duplicate:
+                            template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
@@ -401,20 +386,14 @@ parameters:
                             - name
                             - latin_name
                             - alias
-                    _export_format:
+                    _export_formats:
                         csv: [name, latinName, alias, description, createdAt, updatedAt]
                         xls: csv
                         json: csv
                         xml: csv
                     _actions:
-                        type: actions
-                        label: Action
-                        actions:
-                            show: ~
-                            edit: ~
-                            delete: ~
-                            duplicate:
-                                template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
+                        duplicate:
+                            template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
@@ -857,7 +836,9 @@ parameters:
                         type: doctrine_orm_librinfo_variety_description
                         label: librinfo.label.inner_descriptions
             Sonata\AdminBundle\Datagrid\ListMapper:
-                remove: [createdAt]
+                remove:
+                    name: ~
+                    createdAt: ~
                 add:
                     name:
                         identifier: true
@@ -870,16 +851,8 @@ parameters:
                     several_strains:
                         type: boolean
                     _actions:
-                        type: actions
-                        label: Action
-                        actions:
-                            show: ~
-                            edit: ~
-                            delete: ~
-                            duplicate:
-                                template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
-                            strain:
-                                template: LibrinfoVarietiesBundle:CRUD:list__action_strain.html.twig
+                        strain:
+                            template: LibrinfoVarietiesBundle:CRUD:list__action_strain.html.twig
                     _options:
                         fieldsOrder:
                             - code
@@ -887,8 +860,8 @@ parameters:
                             - latin_name
                             - is_strain
                             - several_strains
-                    _export_format:
-                        csv: [name, latinName, alias, speciesName, description, createdAt, updatedAt]
+                    _export_formats:
+                        csv: [name, latinName, alias, species.name, description, createdAt, updatedAt]
                         xls: csv
                         json: csv
                         xml: csv
