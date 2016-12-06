@@ -6,7 +6,10 @@ parameters:
 
         Librinfo\VarietiesBundle\Entity\Family:
             Sonata\AdminBundle\Show\ShowMapper:
-                remove: [description, createdAt, updatedAt]
+                remove: 
+                    description: ~
+                    createdAt: ~
+                    updatedAt: ~
                 add:
                     form_group_general:
                         '':
@@ -181,7 +184,8 @@ parameters:
                           class: framacalc
 
             Sonata\AdminBundle\Datagrid\ListMapper:
-                remove: [createdAt]
+                remove: 
+                    createdAt: ~
                 add:
                     name:
                         identifier: true
@@ -225,7 +229,8 @@ parameters:
                           class: framacalc
 
             Sonata\AdminBundle\Form\FormMapper:
-                remove: [name]
+                remove:
+                    name: ~
                 add:
                     form_group_general:
                         '':
@@ -234,7 +239,7 @@ parameters:
                             code:
                                 type: text
                             treeParent:
-                                type: librinfo_nested_treeable
+                                type: blast_nested_treeable
                                 class: Librinfo\VarietiesBundle\Entity\PlantCategory
                                 required: false
                                 placeholder: ''
@@ -244,6 +249,8 @@ parameters:
                           class: framacalc
 
             Sonata\AdminBundle\Datagrid\ListMapper:
+                remove:
+                    name: ~
                 add:
                     name:
                         identifier: true
@@ -366,7 +373,8 @@ parameters:
                           class: framacalc
 
             Sonata\AdminBundle\Datagrid\ListMapper:
-                remove: [createdAt]
+                remove: 
+                    createdAt: ~
                 add:
                     code:
                         identifier: true
@@ -408,7 +416,8 @@ parameters:
             Sonata\AdminBundle\Show\ShowMapper:
                 titleTemplate: LibrinfoVarietiesBundle:VarietyAdmin:show_title.html.twig
                 forceTabs: true
-                remove: [description]
+                remove: 
+                    description: ~
                 add:
                     form_group_general:
                         '':
