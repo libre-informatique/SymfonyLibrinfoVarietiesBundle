@@ -6,7 +6,7 @@ parameters:
 
         Librinfo\VarietiesBundle\Entity\Family:
             Sonata\AdminBundle\Show\ShowMapper:
-                remove: 
+                remove:
                     description: ~
                     createdAt: ~
                     updatedAt: ~
@@ -32,7 +32,7 @@ parameters:
                           class: framacalc
 
             Sonata\AdminBundle\Form\FormMapper:
-                remove: 
+                remove:
                    name: ~
                 add:
                     form_group_general:
@@ -184,7 +184,7 @@ parameters:
                           class: framacalc
 
             Sonata\AdminBundle\Datagrid\ListMapper:
-                remove: 
+                remove:
                     createdAt: ~
                 add:
                     name:
@@ -373,7 +373,7 @@ parameters:
                           class: framacalc
 
             Sonata\AdminBundle\Datagrid\ListMapper:
-                remove: 
+                remove:
                     createdAt: ~
                 add:
                     code:
@@ -416,7 +416,7 @@ parameters:
             Sonata\AdminBundle\Show\ShowMapper:
                 titleTemplate: LibrinfoVarietiesBundle:VarietyAdmin:show_title.html.twig
                 forceTabs: true
-                remove: 
+                remove:
                     description: ~
                 add:
                     form_group_general:
@@ -797,23 +797,29 @@ parameters:
                     tkw: ~
                     seed_lifespan: ~
                     raise_duration: ~
-                    transmitted_diseases: ~
-                    life_cycle: ~
-                    regulatory_status: ~
+                    transmitted_diseases:
+                        global_search: false
+                    life_cycle:
+                        global_search: false
+                    regulatory_status:
+                        global_search: false
                     description: ~
                     official: ~
                     official_name: ~
                     official_date_in: ~
                     official_date_out: ~
-                    official_maintainer: ~
+                    official_maintainer:
+                        global_search: false
                     seedhead_yield: ~
                     area_per_kg: ~
                     seedheads_per_kg: ~
                     base_seed_per_kg: ~
                     distance_on_line: ~
                     distance_between_lines: ~
-                    selection_advice: ~
-                    selection_criteria: ~
+                    selection_advice:
+                        global_search: false
+                    selection_criteria:
+                        global_search: false
                     professional_descriptions:
                         label: librinfo.label.professional_descriptions
                         type: doctrine_orm_librinfo_variety_description
