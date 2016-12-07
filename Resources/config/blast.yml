@@ -335,7 +335,7 @@ parameters:
                                     class: new-line
                                     width: 30
                             plant_categories:
-                                type: librinfo_nested_treeable
+                                type: blast_nested_treeable
                                 class: Librinfo\VarietiesBundle\Entity\PlantCategory
                                 required: false
                                 multiple: true
@@ -558,7 +558,7 @@ parameters:
                                     class: new-line
                                     width: 30
                             plant_categories:
-                                type: librinfo_nested_treeable
+                                type: blast_nested_treeable
                                 class: Librinfo\VarietiesBundle\Entity\PlantCategory
                                 required: false
                                 multiple: true
