@@ -22,7 +22,7 @@
 'form_group_specieses': 'Espèces'
 'librinfo.label.specieses': 'Espèces'
 'librinfo.varieties.plant_category_admin.label': 'Catégorie de variété'
-'librinfo.link.plantcategory_list': 'Liste des catégories de plantes'
+'librinfo.link.plant_category_list': 'Liste des catégories de plantes'
 'librinfo.link.plant_category_create': 'Nouvelle catégorie de plantes'
 'librinfo.label.code': 'Code'
 'librinfo.label.tree_parent': 'Catégorie parente'
