@@ -20,27 +20,6 @@ class VarietyCRUDController extends BaseCRUDController
     }
     
     /**
-     * Duplicate action
-     *
-     * @return response
-     */
-    public function duplicateAction()
-    {
-        $id = $this->getRequest()->get($this->admin->getIdParameter());
-        $object = $this->admin->getObject($id);
-        $new = clone $object;
-                
-        $this->duplicateFiles($object, $new);
-        
-        $preResponse = $this->preDuplicate($new);
-        if ($preResponse !== null) {
-            return $preResponse;
-        }
-
-        return $this->createAction($new);
-    }
-    
-    /**
      * Creates a strain from a variety and passes it to create action
      * 
      * @return Response
@@ -196,15 +175,4 @@ class VarietyCRUDController extends BaseCRUDController
         }
 
     }
-    
-    protected function duplicateFiles($object, $clone)
-    {
-        foreach($object->getImages() as $image)
-        {
-            $new = clone $image;
-            $new->setVariety(null);
-            $clone->addImage($new);
-        }
-    }
-
 }
