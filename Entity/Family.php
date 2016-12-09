@@ -1,11 +1,21 @@
 <?php
 
+/*
+ * Copyright (C) 2015-2016 Libre Informatique
+ *
+ * This file is licenced under the GNU GPL v3.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Librinfo\VarietiesBundle\Entity;
 
+use AppBundle\Entity\OuterExtension\LibrinfoVarietiesBundle\FamilyExtension;
 use Blast\BaseEntitiesBundle\Entity\Traits\BaseEntity;
-use Blast\BaseEntitiesBundle\Entity\Traits\Nameable;
 use Blast\BaseEntitiesBundle\Entity\Traits\Descriptible;
-use Librinfo\UserBundle\Entity\Traits\Traceable;
+use Blast\BaseEntitiesBundle\Entity\Traits\Nameable;
+use Blast\BaseEntitiesBundle\Entity\Traits\Timestampable;
+use Blast\OuterExtensionBundle\Entity\Traits\OuterExtensible;
 
 /**
  * Family
@@ -14,8 +24,10 @@ class Family
 {
     use BaseEntity,
         Nameable,
-        Traceable,
-        Descriptible
+        Timestampable,
+        Descriptible,
+        OuterExtensible,
+        FamilyExtension
     ;
 
     /**
@@ -40,13 +52,13 @@ class Family
     {
         $this->initCollections();
     }
-    
+
     public function __clone()
     {
         $this->id = null;
         $this->initCollections();
     }
-    
+
     public function initCollections()
     {
         $this->genuses = new \Doctrine\Common\Collections\ArrayCollection();

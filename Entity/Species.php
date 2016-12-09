@@ -1,13 +1,23 @@
 <?php
 
+/*
+ * Copyright (C) 2015-2016 Libre Informatique
+ *
+ * This file is licenced under the GNU GPL v3.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Librinfo\VarietiesBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
+use AppBundle\Entity\OuterExtension\LibrinfoVarietiesBundle\SpeciesExtension;
 use Blast\BaseEntitiesBundle\Entity\Traits\BaseEntity;
-use Blast\BaseEntitiesBundle\Entity\Traits\Nameable;
-use Librinfo\UserBundle\Entity\Traits\Traceable;
 use Blast\BaseEntitiesBundle\Entity\Traits\Descriptible;
 use Blast\BaseEntitiesBundle\Entity\Traits\Jsonable;
+use Blast\BaseEntitiesBundle\Entity\Traits\Nameable;
+use Blast\BaseEntitiesBundle\Entity\Traits\Timestampable;
+use Blast\OuterExtensionBundle\Entity\Traits\OuterExtensible;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Species
@@ -16,9 +26,11 @@ class Species implements \JsonSerializable
 {
     use BaseEntity,
         Nameable,
-        Traceable,
+        Timestampable,
         Descriptible,
-        Jsonable
+        Jsonable,
+        OuterExtensible,
+        SpeciesExtension
     ;
 
     /**
@@ -40,7 +52,7 @@ class Species implements \JsonSerializable
      * @var string
      */
     private $life_cycle;
-    
+
     /**
      * @var integer
      */
@@ -94,13 +106,13 @@ class Species implements \JsonSerializable
     {
         $this->initCollections();
     }
-    
+
     public function __clone()
     {
         $this->id = null;
         $this->initCollections();
     }
-    
+
     public function initCollections()
     {
         $this->varieties = new ArrayCollection();
@@ -203,7 +215,7 @@ class Species implements \JsonSerializable
     {
         return $this->life_cycle;
     }
-    
+
         /**
      * Set legal_germination_rate
      *
@@ -220,7 +232,7 @@ class Species implements \JsonSerializable
     /**
      * Get legal_germination_rate
      *
-     * @return integer 
+     * @return integer
      */
     public function getLegalGerminationRate()
     {
@@ -243,7 +255,7 @@ class Species implements \JsonSerializable
     /**
      * Get seed_lifespan
      *
-     * @return integer 
+     * @return integer
      */
     public function getSeedLifespan()
     {
@@ -266,7 +278,7 @@ class Species implements \JsonSerializable
     /**
      * Get raise_duration
      *
-     * @return integer 
+     * @return integer
      */
     public function getRaiseDuration()
     {
@@ -289,7 +301,7 @@ class Species implements \JsonSerializable
     /**
      * Get tkw
      *
-     * @return float 
+     * @return float
      */
     public function getTkw()
     {
@@ -447,7 +459,7 @@ class Species implements \JsonSerializable
     {
         return $this->parent_species != null && $this->parent_species->getParentSpecies() != null;
     }
-    
+
     /**
      * Add plantCategory
      *

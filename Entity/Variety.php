@@ -1,14 +1,22 @@
 <?php
 
+/*
+ * Copyright (C) 2015-2016 Libre Informatique
+ *
+ * This file is licenced under the GNU GPL v3.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Librinfo\VarietiesBundle\Entity;
 
 use AppBundle\Entity\OuterExtension\LibrinfoVarietiesBundle\VarietyExtension;
+use Blast\BaseEntitiesBundle\Entity\Traits\BaseEntity;
+use Blast\BaseEntitiesBundle\Entity\Traits\Descriptible;
+use Blast\BaseEntitiesBundle\Entity\Traits\Nameable;
+use Blast\BaseEntitiesBundle\Entity\Traits\Timestampable;
 use Blast\OuterExtensionBundle\Entity\Traits\OuterExtensible;
 use Doctrine\Common\Collections\ArrayCollection;
-use Blast\BaseEntitiesBundle\Entity\Traits\Nameable;
-use Librinfo\UserBundle\Entity\Traits\Traceable;
-use Blast\BaseEntitiesBundle\Entity\Traits\Descriptible;
-use Blast\BaseEntitiesBundle\Entity\Traits\BaseEntity;
 
 /**
  * Variety
@@ -22,7 +30,7 @@ class Variety
     use BaseEntity,
         OuterExtensible,
         VarietyExtension,
-        Traceable,
+        Timestampable,
         Descriptible;
 
     /**
@@ -398,10 +406,10 @@ class Variety
     {
         if ( $this->hasParent() && !$this->life_cycle )
             return $this->getParent()->getLifeCycle();
-        
+
        if( !$this->life_cycle && $this->getSpecies() )
            return $this->getSpecies()->getLifeCycle();
-        
+
         return $this->life_cycle;
     }
 
@@ -548,7 +556,7 @@ class Variety
     {
         if( !$this->legal_germination_rate && $this->getSpecies() )
            return $this->getSpecies()->getLegalGerminationRate();
-        
+
         return $this->legal_germination_rate;
     }
 
@@ -722,7 +730,7 @@ class Variety
     {
         if( !$this->plant_categories && $this->getSpecies() )
            return $this->getSpecies()->getPlantCategories();
-        
+
         return $this->plant_categories;
     }
 
@@ -806,7 +814,7 @@ class Variety
     {
         if( !$this->tkw && $this->getSpecies() )
            return $this->getSpecies()->getTkw();
-        
+
         return $this->tkw;
     }
 
@@ -833,7 +841,7 @@ class Variety
     {
         if( !$this->seed_lifespan && $this->getSpecies() )
            return $this->getSpecies()->getSeedLifeSpan();
-        
+
         return $this->seed_lifespan;
     }
 
@@ -860,7 +868,7 @@ class Variety
     {
         if( !$this->raise_duration && $this->getSpecies() )
            return $this->getSpecies()->getRaiseDuration();
-        
+
         return $this->raise_duration;
     }
 

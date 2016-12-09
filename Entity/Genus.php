@@ -1,11 +1,21 @@
 <?php
 
+/*
+ * Copyright (C) 2015-2016 Libre Informatique
+ *
+ * This file is licenced under the GNU GPL v3.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Librinfo\VarietiesBundle\Entity;
 
+use AppBundle\Entity\OuterExtension\LibrinfoVarietiesBundle\GenusExtension;
 use Blast\BaseEntitiesBundle\Entity\Traits\BaseEntity;
-use Blast\BaseEntitiesBundle\Entity\Traits\Nameable;
 use Blast\BaseEntitiesBundle\Entity\Traits\Descriptible;
-use Librinfo\UserBundle\Entity\Traits\Traceable;
+use Blast\BaseEntitiesBundle\Entity\Traits\Nameable;
+use Blast\BaseEntitiesBundle\Entity\Traits\Timestampable;
+use Blast\OuterExtensionBundle\Entity\Traits\OuterExtensible;
 
 /**
  * Genus
@@ -14,8 +24,10 @@ class Genus
 {
     use BaseEntity,
         Nameable,
-        Traceable,
-        Descriptible
+        Timestampable,
+        Descriptible,
+        OuterExtensible,
+        GenusExtension
     ;
 
     /**
@@ -45,13 +57,13 @@ class Genus
     {
         $this->initCollections();
     }
-    
+
     public function __clone()
     {
         $this->id = null;
         $this->initCollections();
     }
-    
+
     public function initCollections()
     {
         $this->specieses = new \Doctrine\Common\Collections\ArrayCollection();
