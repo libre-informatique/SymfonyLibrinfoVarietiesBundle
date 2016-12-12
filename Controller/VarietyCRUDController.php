@@ -116,8 +116,10 @@ class VarietyCRUDController extends BaseCRUDController
         ;
 
         return $this->render('LibrinfoVarietiesBundle:Form:filter_widget.html.twig', array(
-                    'form' => $view
-                        ), null);
+                'form' => $view
+            ), 
+            null
+        );
     }
     
     /**
@@ -132,16 +134,22 @@ class VarietyCRUDController extends BaseCRUDController
         $request = $this->getRequest();
 
         $id = $request->get($this->admin->getIdParameter());
-        if ($id) {
+        
+        if ( $id ) 
+        {
             $subject = $this->admin->getObject($id);
-            if (!$subject) {
+            if ( !$subject ) 
+            {
                 $error = sprintf('unable to find the object with id : %s', $id);
+                
                 return new JsonResponse(['error' => $error]);
             }
+            
             try {
                 $this->admin->checkAccess('edit', $subject); // TODO: is it necessary ? (we are not editing the entity)
             } catch (Exception $exc) {
                 $error = $exc->getMessage();
+                
                 return new JsonResponse(['error' => $error]);
             }
         }
@@ -163,14 +171,18 @@ class VarietyCRUDController extends BaseCRUDController
         $field = $request->query->get('field', 'code');
         $registry = $this->get('blast_core.code_generators');
         $generator = $registry::getCodeGenerator(get_class($entity), $field);
+        
         try {
             $code = $generator::generate($entity);
+            
             return new JsonResponse(['code' => $code]);
         } catch (InvalidEntityCodeException $exc) {
             $error = $this->get('translator')->trans($exc->getMessage());
+            
             return new JsonResponse(['error' => $error, 'generator' => get_class($generator)]);
         } catch (\Exception $exc) {
             $error = $exc->getMessage();
+            
             return new JsonResponse(['error' => $error, 'generator' => get_class($generator)]);
         }
 
