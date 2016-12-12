@@ -102,6 +102,11 @@ class Variety
      * @var string
      */
     private $selection_criteria;
+    
+    /**
+     * @var string
+     */
+    private $misc_advice;
 
     /**
      * @var float
@@ -258,6 +263,7 @@ class Variety
     {
         $name = explode('||', $name);
         $getter = 'get' . ucfirst($name[0]) . '_descriptions';
+        
         foreach( $this->$getter() as $desc)
             if( $desc->getField() == $name[1] )
                 return $desc->getValue();
@@ -748,7 +754,7 @@ class Variety
      *
      * @param string $selectionAdvice
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function setSelectionAdvice($selectionAdvice)
     {
@@ -772,7 +778,7 @@ class Variety
      *
      * @param string $selectionCriteria
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function setSelectionCriteria($selectionCriteria)
     {
@@ -790,13 +796,37 @@ class Variety
     {
         return $this->selection_criteria;
     }
+    
+    /**
+     * Set miscAdvice
+     *
+     * @param string $miscAdvice
+     *
+     * @return Variety
+     */
+    public function setMiscAdvice($miscAdvice)
+    {
+        $this->misc_advice = $miscAdvice;
+
+        return $this;
+    }
+
+    /**
+     * Get miscAdvice
+     *
+     * @return string
+     */
+    public function getMiscAdvice()
+    {
+        return $this->misc_advice;
+    }
 
     /**
      * Set tkw
      *
      * @param float $tkw
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function setTkw($tkw)
     {
@@ -823,7 +853,7 @@ class Variety
      *
      * @param int $seedLifespan
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function setSeedLifespan($seedLifespan)
     {
@@ -850,7 +880,7 @@ class Variety
      *
      * @param int $raiseDuration
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function setRaiseDuration($raiseDuration)
     {
@@ -877,7 +907,7 @@ class Variety
      *
      * @param int $seedheadYield
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function setSeedheadYield($seedheadYield)
     {
@@ -901,7 +931,7 @@ class Variety
      *
      * @param int $distanceOnLine
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function setDistanceOnLine($distanceOnLine)
     {
@@ -925,7 +955,7 @@ class Variety
      *
      * @param int $distanceBetweenLines
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function setDistanceBetweenLines($distanceBetweenLines)
     {
@@ -949,7 +979,7 @@ class Variety
      *
      * @param int $plantDensity
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function setPlantDensity($plantDensity)
     {
@@ -973,7 +1003,7 @@ class Variety
      *
      * @param int $areaPerKg
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function setAreaPerKg($areaPerKg)
     {
@@ -997,7 +1027,7 @@ class Variety
      *
      * @param int $seedheadsPerKg
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function setSeedheadsPerKg($seedheadsPerKg)
     {
@@ -1021,7 +1051,7 @@ class Variety
      *
      * @param int $baseSeedPerKg
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function setBaseSeedPerKg($baseSeedPerKg)
     {
@@ -1045,7 +1075,7 @@ class Variety
      *
      * @param \strin $transmittedDiseases
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function setTransmittedDiseases($transmittedDiseases)
     {
@@ -1117,7 +1147,7 @@ class Variety
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionProfessional $professionalDescription
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function addProfessionalDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescriptionProfessional $professionalDescription)
     {
@@ -1233,7 +1263,7 @@ class Variety
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionProduction $productionDescription
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function addProductionDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescriptionProduction $productionDescription)
     {
@@ -1291,7 +1321,7 @@ class Variety
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionCommercial $commercialDescription
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function addCommercialDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescriptionCommercial $commercialDescription)
     {
@@ -1349,7 +1379,7 @@ class Variety
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionPlant $plantDescription
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function addPlantDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescriptionPlant $plantDescription)
     {
@@ -1407,7 +1437,7 @@ class Variety
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionCulture $cultureDescription
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function addCultureDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescriptionCulture $cultureDescription)
     {
@@ -1465,7 +1495,7 @@ class Variety
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionInner $innerDescription
      *
-     * @return SuperVariety
+     * @return Variety
      */
     public function addInnerDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescriptionInner $innerDescription)
     {

@@ -57,7 +57,11 @@ Librinfo\VarietiesBundle\Entity\Variety:
             nullable: true
         # critères de sélection
         selection_criteria:
-            type: string(255)
+            type: string
+            nullable: true
+        # conseils de production, extraction
+        misc_advice:
+            type: string
             nullable: true
         # poids de mille graines - PMG (grammes)
         tkw:

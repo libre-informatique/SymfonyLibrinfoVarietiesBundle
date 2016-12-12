@@ -339,10 +339,14 @@
                 <source>librinfo.label.regulatory_status</source>
                 <target>Statut réglementaire</target>
             </trans-unit>    
+            <trans-unit id="librinfo.label.misc_advice">
+                <source>librinfo.label.misc_advice</source>
+                <target>Conseils de production, extraction</target>
+            </trans-unit>
             <trans-unit id="librinfo.label.strain_characteristics">
                 <source>librinfo.label.strain_characteristics</source>
                 <target>Charactéristiques de la souche</target>
-            </trans-unit>                      
+            </trans-unit>         
             <trans-unit id="annual">
                 <source>annual</source>
                 <target>Plante annuelle</target>
