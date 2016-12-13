@@ -115,7 +115,9 @@ class VarietyCRUDController extends BaseCRUDController
                 ->createView()
         ;
 
-        return $this->render('LibrinfoVarietiesBundle:Form:filter_widget.html.twig', array(
+        return $this->render(
+            'LibrinfoVarietiesBundle:Form:filter_widget.html.twig', 
+            array(
                 'form' => $view
             ), 
             null
@@ -186,5 +188,22 @@ class VarietyCRUDController extends BaseCRUDController
             return new JsonResponse(['error' => $error, 'generator' => get_class($generator)]);
         }
 
+    }
+    
+    protected function duplicateFiles($object, $clone)
+    {
+        $manager = $this->getDoctrine()->getManager();
+        $rc = new \ReflectionClass($object);
+        $setter = 'set' . $rc->getShortName();
+        
+        foreach($object->getImages() as $image)
+        {
+            $new = clone $image;
+            $new->$setter(null);
+            $manager->persist($new);
+            $clone->addImage($new);
+        }
+        
+        $manager->flush();
     }
 }

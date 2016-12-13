@@ -239,6 +239,7 @@ class Variety
         $this->plant_descriptions = new ArrayCollection();
         $this->culture_descriptions = new ArrayCollection();
         $this->inner_descriptions = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     /**
