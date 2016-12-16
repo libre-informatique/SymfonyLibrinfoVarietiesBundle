@@ -7,12 +7,14 @@ parameters:
         Librinfo\VarietiesBundle\Entity\Family:
             Sonata\AdminBundle\Show\ShowMapper:
                 remove:
+                    name: ~
                     description: ~
                     createdAt: ~
                     updatedAt: ~
                 add:
                     form_group_general:
                         '':
+                            name: ~
                             latin_name: ~
                             alias: ~
                             description: ~
@@ -38,11 +40,13 @@ parameters:
                     form_group_general:
                         '':
                             name:
-                                type: text
+                                type: blast_unique_field
+                                return_link: true
                                 attr:
                                     class: inline-block
                             latin_name:
-                                type: text
+                                type: blast_unique_field
+                                return_link: true
                                 required: false
                                 attr:
                                     class: inline-block
@@ -140,11 +144,13 @@ parameters:
                                     class: new-line
                                     width: 30
                             name:
-                                type: text
+                                type: blast_unique_field
+                                return_link: true
                                 attr:
                                     class: inline-block
                             latin_name:
-                                type: text
+                                type: blast_unique_field
+                                return_link: true
                                 required: false
                                 attr:
                                     class: inline-block
@@ -235,7 +241,7 @@ parameters:
                     form_group_general:
                         '':
                             name:
-                                type: text
+                                type: blast_unique_field
                             code:
                                 type: text
                             treeParent:
@@ -314,10 +320,13 @@ parameters:
                                     class: new-line
                                     width: 30
                             name:
+                                type: blast_unique_field
+                                return_link: true
                                 attr:
                                     class: inline-block
                             latin_name:
-                                type: text
+                                type: blast_unique_field
+                                return_link: true
                                 required: false
                                 attr:
                                     class: inline-block
@@ -536,11 +545,13 @@ parameters:
                                     admin_code: librinfo_varieties.admin.variety
                             name:
                                 type: blast_unique_field
+                                return_link: true
                                 attr:
                                     class: inline-block
 
                             latin_name:
-                                type: text
+                                type: blast_unique_field
+                                return_link: true
                                 attr:
                                     class: inline-block
                                     width: 30
