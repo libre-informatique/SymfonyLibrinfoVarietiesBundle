@@ -535,6 +535,7 @@ parameters:
                                 _options:
                                     admin_code: librinfo_varieties.admin.variety
                             name:
+                                type: blast_unique_field
                                 attr:
                                     class: inline-block
 
