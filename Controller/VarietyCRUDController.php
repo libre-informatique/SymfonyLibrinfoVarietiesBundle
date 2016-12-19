@@ -3,6 +3,7 @@
 namespace Librinfo\VarietiesBundle\Controller;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Blast\CoreBundle\Exception\InvalidEntityCodeException;
 use Librinfo\MediaBundle\Controller\CRUDController as BaseCRUDController;
@@ -16,6 +17,19 @@ class VarietyCRUDController extends BaseCRUDController
                 ->find($id)
             ;
         
+        $serializer = $this->container->get('jms_serializer');
+        $species = $serializer->toArray($species);
+        
+        if( isset($species['plant_categories']) )
+        {
+            $cats = [];
+            
+            foreach($species['plant_categories'] as $key => $cat)
+                $cats[] = $cat['id']; 
+            
+            $species['plant_categories'] = $cats;
+        }  
+
         return new JsonResponse($species);
     }
     
