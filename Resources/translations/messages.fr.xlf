@@ -133,6 +133,10 @@
                 <source>librinfo.label.varieties</source>
                 <target>Variétés</target>
             </trans-unit>
+            <trans-unit id="Species">
+                <source>Species</source>
+                <target>Espèce</target>
+            </trans-unit>  
 <!-- STRAIN -->
             <trans-unit id="Strains">
                 <source>Strains</source>
@@ -154,6 +158,10 @@
             <trans-unit id="Varieties">
                 <source>Varieties</source>
                 <target>Variétés</target>
+            </trans-unit> 
+            <trans-unit id="Variety">
+                <source>Variety</source>
+                <target>Variété</target>
             </trans-unit> 
             <trans-unit id="librinfo.label.generate_variety_code">
                 <source>librinfo.label.generate_variety_code</source>

@@ -3,11 +3,11 @@
 
     {% if object.isStrain %}
         <a class="navbar-brand" href="{{ speciesAdminLibrinfo.generateObjectUrl('edit', object.species) }}">
-            {{ admin.toString(object.species) }}
+            {{ 'Species'|trans() }} : {{ admin.toString(object.species) }}
         </a>
         <span class="navbar-brand">/</span>
         <a class="navbar-brand" href="{{ admin.generateObjectUrl('edit', object.parent) }}">
-            {{ admin.toString(object.parent) }}
+            {{ admin.label|trans() }} : {{ admin.toString(object.parent) }}
         </a>
         <span class="navbar-brand">/</span>
         <a class="navbar-brand" href="{{ admin.generateObjectUrl('edit', object) }}">
@@ -15,7 +15,7 @@
         </a>
     {% else %}
         <a class="navbar-brand" href="{{ speciesAdminLibrinfo.generateObjectUrl('edit', object.species) }}">
-            {{ admin.toString(object.species) }}
+            {{ 'Species'|trans() }} : {{ admin.toString(object.species) }}
         </a>
         <span class="navbar-brand">/</span>
         <a class="navbar-brand" href="{{ admin.generateObjectUrl('edit', object) }}">
