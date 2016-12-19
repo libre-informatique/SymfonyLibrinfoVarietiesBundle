@@ -72,7 +72,11 @@ class Species implements \JsonSerializable
      * @var float
      */
     private $tkw;
-
+    
+    /**
+     * @var string
+     */
+    private $regulatory_status;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -306,6 +310,30 @@ class Species implements \JsonSerializable
     public function getTkw()
     {
         return $this->tkw;
+    }
+    
+    /**
+     * Set regulatoryStatus
+     *
+     * @param string $regulatoryStatus
+     *
+     * @return Variety
+     */
+    public function setRegulatoryStatus($regulatoryStatus)
+    {
+        $this->regulatory_status = $regulatoryStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get regulatoryStatus
+     *
+     * @return string
+     */
+    public function getRegulatoryStatus()
+    {
+        return $this->regulatory_status;
     }
 
     /**

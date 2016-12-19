@@ -289,6 +289,7 @@ parameters:
                                 catalogue: varieties
                             varieties:
                                 admin_code: librinfo_varieties.admin.variety
+                            regulatory_status: ~
                             legal_germination_rate: ~
                             seed_lifespan: ~
                             raise_duration: ~
@@ -353,6 +354,15 @@ parameters:
                                     width: 50
                                 _options:
                                     btn_add: true
+                            regulatory_status:
+                                required: false
+                                type: blast_custom_choice
+                                choices_field: regulatory_status
+                                blast_choices:
+                                   - Contrôlé
+                                   - Non contrôlé
+                                attr:
+                                    class: inline-block
                             legal_germination_rate:
                                 attr:
                                     class: inline-block
@@ -627,6 +637,7 @@ parameters:
                                    - Non contrôlé
                                 attr:
                                     class: inline-block
+                                    inherit: target
                             description:
                                 required: false
                                 type: blast_tinymce
