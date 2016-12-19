@@ -7,16 +7,18 @@ use Blast\BaseEntitiesBundle\Entity\Traits\Tree\NodeInterface;
 use Blast\BaseEntitiesBundle\Entity\Traits\BaseEntity;
 use Blast\BaseEntitiesBundle\Entity\Traits\Nameable;
 use Blast\BaseEntitiesBundle\Entity\Traits\NestedTreeable;
+use Blast\BaseEntitiesBundle\Entity\Traits\Jsonable;
 
 /**
  * PlantCategory
  */
-class PlantCategory //implements NodeInterface
+class PlantCategory implements \JsonSerializable
 {
     use BaseEntity,
         Nameable,
-        NestedTreeable
-        ;
+        NestedTreeable,
+        Jsonable
+    ;
     
     /**
      * @var string
