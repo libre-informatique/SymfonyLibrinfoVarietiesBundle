@@ -78,8 +78,6 @@ parameters:
                                     inline: table
                                     allow_delete: false
                                     admin_code: librinfo_varieties.admin.genus_embedded
-                            _options:
-                                translation_domain: ''
                     _options:
                         tabsOrder: [form_group_general, form_group_genuses]
                     _helper_links:
