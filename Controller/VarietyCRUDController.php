@@ -204,20 +204,4 @@ class VarietyCRUDController extends BaseCRUDController
 
     }
     
-    protected function duplicateFiles($object, $clone)
-    {
-        $manager = $this->getDoctrine()->getManager();
-        $rc = new \ReflectionClass($object);
-        $setter = 'set' . $rc->getShortName();
-        
-        foreach($object->getImages() as $image)
-        {
-            $new = clone $image;
-            $new->$setter(null);
-            $manager->persist($new);
-            $clone->addImage($new);
-        }
-        
-        $manager->flush();
-    }
 }

@@ -257,6 +257,7 @@ class Variety
         $this->id = null;
         $this->code = null;
         $this->initCollections();
+        $this->initOuterExtendedClasses();
     }
 
     //Enable direct access to the value of a specific VarietyDescription

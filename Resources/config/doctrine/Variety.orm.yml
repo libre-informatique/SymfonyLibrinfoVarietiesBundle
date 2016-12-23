@@ -147,11 +147,6 @@ Librinfo\VarietiesBundle\Entity\Variety:
             targetEntity: Librinfo\VarietiesBundle\Entity\VarietyDescriptionInner
             mappedBy: variety
             cascade: [ persist , remove]
-        images:
-            targetEntity: \Librinfo\MediaBundle\Entity\File
-            mappedBy: variety
-            cascade: [persist, remove]
-            orphanRemoval:  true
     manyToMany:
         plant_categories:
             targetEntity: Librinfo\VarietiesBundle\Entity\PlantCategory
@@ -164,6 +159,20 @@ Librinfo\VarietiesBundle\Entity\Variety:
                 inverseJoinColumns:
                     variety_id:
                         referencedColumnName: id
+        images:
+            targetEntity: \Librinfo\MediaBundle\Entity\File
+            joinTable:
+                name: librinfo_variety_file
+                joinColumns:
+                    variety_id:
+                        referencedColumnName: id
+                        onDelete: CASCADE
+                inverseJoinColumns:
+                    file_id:
+                        referencedColumnName: id
+                        onDelete: CASCADE
+                        unique: true
+            cascade: [persist, remove]
     manyToOne:
         parent:
             targetEntity: Variety
