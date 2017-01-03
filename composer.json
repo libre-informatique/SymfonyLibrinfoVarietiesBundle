@@ -7,6 +7,7 @@
         "symfony/symfony": "2.8.*",
         "blast-project/core-bundle": "dev-master",
         "blast-project/base-entities-bundle": "dev-master",
+        "blast-project/utils-bundle": "dev-master",
         "libre-informatique/media-bundle": "dev-master"
     },
     "license": "GPL-3.0",
