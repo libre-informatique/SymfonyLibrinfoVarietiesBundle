@@ -2,82 +2,37 @@
 
 namespace Librinfo\VarietiesBundle\Admin;
 
+use Sonata\CoreBundle\Validator\ErrorElement;
 use Blast\CoreBundle\Admin\CoreAdmin;
-use Sonata\AdminBundle\Datagrid\DatagridMapper;
-use Sonata\AdminBundle\Datagrid\ListMapper;
-use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\AdminBundle\Show\ShowMapper;
+use Librinfo\VarietiesBundle\Entity\Species;
+
 
 class SpeciesAdmin extends CoreAdmin
 {
     /**
-     * @param DatagridMapper $datagridMapper
+     * @param ErrorElement $errorElement
+     * @param mixed        $object
+     * @deprecated this feature cannot be stable, use a custom validator,
+     *             the feature will be removed with Symfony 2.2
      */
-    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    public function validate(ErrorElement $errorElement, $object)
     {
-        $datagridMapper
-            ->add('latin_name')
-            ->add('alias')
-            ->add('description')
-            ->add('createdAt')
-            ->add('updatedAt')
-            ->add('name')
-            ->add('id')
-        ;
+        $this->validateSpeciesCode($errorElement, $object);
     }
 
     /**
-     * @param ListMapper $listMapper
+     * Species code validator
+     *
+     * @param ErrorElement $errorElement
+     * @param Species $object
      */
-    protected function configureListFields(ListMapper $listMapper)
+    public function validateSpeciesCode(ErrorElement $errorElement, $object)
     {
-        $listMapper
-            ->add('latin_name')
-            ->add('alias')
-            ->add('description')
-            ->add('createdAt')
-            ->add('updatedAt')
-            ->add('name')
-            ->add('id')
-            ->add('_action', 'actions', array(
-                'actions' => array(
-                    'show' => array(),
-                    'edit' => array(),
-                    'delete' => array(),
-                )
-            ))
-        ;
-    }
-
-    /**
-     * @param FormMapper $formMapper
-     */
-    protected function configureFormFields(FormMapper $formMapper)
-    {
-        $formMapper
-            ->add('latin_name')
-            ->add('alias')
-            ->add('description')
-            ->add('createdAt')
-            ->add('updatedAt')
-            ->add('name')
-            ->add('id')
-        ;
-    }
-
-    /**
-     * @param ShowMapper $showMapper
-     */
-    protected function configureShowFields(ShowMapper $showMapper)
-    {
-        $showMapper
-            ->add('latin_name')
-            ->add('alias')
-            ->add('description')
-            ->add('createdAt')
-            ->add('updatedAt')
-            ->add('name')
-            ->add('id')
-        ;
+        $generator = $this->getConfigurationPool()->getContainer()->get('librinfo_varieties.code_generator.species');
+        if (!$generator->validate($object->getCode()))
+            $errorElement
+                ->with('code')
+                    ->addViolation('Wrong species code format')
+                ->end();
     }
 }

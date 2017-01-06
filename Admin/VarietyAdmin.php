@@ -2,185 +2,92 @@
 
 namespace Librinfo\VarietiesBundle\Admin;
 
-use Sonata\AdminBundle\Datagrid\DatagridMapper;
-use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\AdminBundle\Route\RouteCollection;
 use Blast\CoreBundle\Admin\CoreAdmin;
+use Blast\CoreBundle\Admin\Traits\HandlesRelationsAdmin;
+use Librinfo\VarietiesBundle\Traits\DynamicDescriptions;
+
 
 class VarietyAdmin extends CoreAdmin
 {
+   use HandlesRelationsAdmin {
+        configureFormFields as configFormHandlesRelations;
+        configureShowFields as configShowHandlesRelations;
+    }
+
+    use DynamicDescriptions;
+
     /**
-     * @param DatagridMapper $datagridMapper
+     * Configure routes for list actions
+     *
+     * @param RouteCollection $collection
      */
-    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    protected function configureRoutes(RouteCollection $collection)
     {
-        $datagridMapper
-            ->add('latin_name')
-            ->add('alias')
-            ->add('code')
-            ->add('life_cycle')
-            ->add('official')
-            ->add('official_name')
-            ->add('official_date_in')
-            ->add('official_date_out')
-            ->add('official_maintainer')
-            ->add('legal_germination_rate')
-            ->add('regulatory_status')
-            ->add('germination_rate')
-            ->add('selection_advice')
-            ->add('selection_criteria')
-            ->add('tkw')
-            ->add('seed_lifespan')
-            ->add('raise_duration')
-            ->add('seedhead_yield')
-            ->add('distance_on_line')
-            ->add('distance_between_lines')
-            ->add('plant_density')
-            ->add('area_per_kg')
-            ->add('seedheads_per_kg')
-            ->add('base_seed_per_kg')
-            ->add('transmitted_diseases')
-            ->add('strain_characteristics')
-            ->add('isStrain')
-            ->add('name')
-            ->add('description')
-            ->add('id')
-            ->add('createdAt')
-            ->add('updatedAt')
-        ;
+        parent::configureRoutes($collection);
+        $collection->add('strain', $this->getRouterIdParameter().'/strain');
+        $collection->add('getFilterWidget', 'getFilterWidget/{fieldset}/{field}');
+        $collection->add('hierarchy', 'hierarchy/{id}');
     }
 
     /**
-     * @param ListMapper $listMapper
+     * Configure create/edit form fields
+     *
+     * @param FormMapper
      */
-    protected function configureListFields(ListMapper $listMapper)
+    protected function configureFormFields(FormMapper $mapper)
     {
-        $listMapper
-            ->add('latin_name')
-            ->add('alias')
-            ->add('code')
-            ->add('life_cycle')
-            ->add('official')
-            ->add('official_name')
-            ->add('official_date_in')
-            ->add('official_date_out')
-            ->add('official_maintainer')
-            ->add('legal_germination_rate')
-            ->add('regulatory_status')
-            ->add('germination_rate')
-            ->add('selection_advice')
-            ->add('selection_criteria')
-            ->add('tkw')
-            ->add('seed_lifespan')
-            ->add('raise_duration')
-            ->add('seedhead_yield')
-            ->add('distance_on_line')
-            ->add('distance_between_lines')
-            ->add('plant_density')
-            ->add('area_per_kg')
-            ->add('seedheads_per_kg')
-            ->add('base_seed_per_kg')
-            ->add('transmitted_diseases')
-            ->add('strain_characteristics')
-            ->add('isStrain')
-            ->add('name')
-            ->add('description')
-            ->add('id')
-            ->add('createdAt')
-            ->add('updatedAt')
-            ->add('_action', null, array(
-                'actions' => array(
-                    'show' => array(),
-                    'edit' => array(),
-                    'delete' => array(),
-                    'duplicate' => array(
-                        'template' => 'BlastCoreBundle:CRUD:list__action_duplicate.html.twig'
-                    )
-                )
-            ))
-        ;
+        //calls to methods of traits
+        $this->configFormHandlesRelations($mapper);
+        $this->configureDynamicDescriptions($mapper);
     }
 
     /**
-     * @param FormMapper $formMapper
+     * Configure Show view fields
+     *
+     * @param ShowMapper $mapper
      */
-    protected function configureFormFields(FormMapper $formMapper)
+    protected function configureShowFields(ShowMapper $mapper)
     {
-        $formMapper
-            ->add('latin_name')
-            ->add('alias')
-            ->add('code')
-            ->add('life_cycle')
-            ->add('official')
-            ->add('official_name')
-            ->add('official_date_in')
-            ->add('official_date_out')
-            ->add('official_maintainer')
-            ->add('legal_germination_rate')
-            ->add('regulatory_status')
-            ->add('germination_rate')
-            ->add('selection_advice')
-            ->add('selection_criteria')
-            ->add('tkw')
-            ->add('seed_lifespan')
-            ->add('raise_duration')
-            ->add('seedhead_yield')
-            ->add('distance_on_line')
-            ->add('distance_between_lines')
-            ->add('plant_density')
-            ->add('area_per_kg')
-            ->add('seedheads_per_kg')
-            ->add('base_seed_per_kg')
-            ->add('transmitted_diseases')
-            ->add('strain_characteristics')
-            ->add('isStrain')
-            ->add('name')
-            ->add('description')
-            ->add('id')
-            ->add('createdAt')
-            ->add('updatedAt')
-        ;
+        // call to aliased trait method
+        $this->configShowHandlesRelations($mapper);
+        $this->configureShowDescriptions($mapper);
+
+        //Removal of Variety/Strain specific fields
+        if ( $this->getSubject() )
+            if ( $this->getSubject()->getIsStrain() )
+            {
+                $tabs = $mapper->getadmin()->getShowTabs();
+                unset($tabs['form_tab_strains']);
+                $mapper->getAdmin()->setShowTabs($tabs);
+                $mapper->remove('children');
+                $mapper->remove('several_strains');
+            } else
+                $mapper->remove('parent');
     }
 
-    /**
-     * @param ShowMapper $showMapper
-     */
-    protected function configureShowFields(ShowMapper $showMapper)
+    //prevent primary key loop
+    public function prePersist($variety)
     {
-        $showMapper
-            ->add('latin_name')
-            ->add('alias')
-            ->add('code')
-            ->add('life_cycle')
-            ->add('official')
-            ->add('official_name')
-            ->add('official_date_in')
-            ->add('official_date_out')
-            ->add('official_maintainer')
-            ->add('legal_germination_rate')
-            ->add('regulatory_status')
-            ->add('germination_rate')
-            ->add('selection_advice')
-            ->add('selection_criteria')
-            ->add('tkw')
-            ->add('seed_lifespan')
-            ->add('raise_duration')
-            ->add('seedhead_yield')
-            ->add('distance_on_line')
-            ->add('distance_between_lines')
-            ->add('plant_density')
-            ->add('area_per_kg')
-            ->add('seedheads_per_kg')
-            ->add('base_seed_per_kg')
-            ->add('transmitted_diseases')
-            ->add('strain_characteristics')
-            ->add('isStrain')
-            ->add('name')
-            ->add('description')
-            ->add('id')
-            ->add('createdAt')
-            ->add('updatedAt')
-        ;
+        parent::prePersist($variety);
+
+        if ( $variety->getParent() )
+            if ( $variety->getParent()->getId() == $variety->getId() )
+                $variety->setParent(NULL);
+            
+//        $config = $this->getConfigurationPool()->getContainer()->getParameter('librinfo_varieties')['variety_descriptions'];
+//        
+//        foreach($config as $fieldset => $field){
+//            $getter = 'get' . ucfirst($fieldset) . 'Descriptions';
+//            $setter = 'set' . ucfirst($fieldset) . 'Descriptions';
+//            
+//            $descs = $variety->$getter();
+//            
+//            foreach($descs as $key =>$desc)
+//                if($desc->getValue() == null || $desc->getValue() == '' || $desc->getValue() == 0)
+//                    unset($descs[$key]);
+//        }
     }
 }

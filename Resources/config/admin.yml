@@ -1,7 +1,7 @@
 services:
 
     librinfo_varieties.admin.family:
-        class: Librinfo\VarietiesBundle\Admin\FamilyAdminConcrete
+        class: Librinfo\VarietiesBundle\Admin\FamilyAdmin
         arguments: [~, Librinfo\VarietiesBundle\Entity\Family, BlastCoreBundle:CRUD]
         tags:
             - name: sonata.admin
@@ -13,7 +13,7 @@ services:
             - [ setTemplate, [ edit, LibrinfoVarietiesBundle:FamilyAdmin:family_edit.html.twig ] ]
 
     librinfo_varieties.admin.genus:
-        class: Librinfo\VarietiesBundle\Admin\GenusAdminConcrete
+        class: Librinfo\VarietiesBundle\Admin\GenusAdmin
         arguments: [~, Librinfo\VarietiesBundle\Entity\Genus, BlastCoreBundle:CRUD]
         tags:
             - name: sonata.admin
@@ -35,7 +35,7 @@ services:
               label_translator_strategy: blast_core.label.strategy.librinfo
 
     librinfo_varieties.admin.species:
-        class: Librinfo\VarietiesBundle\Admin\SpeciesAdminConcrete
+        class: Librinfo\VarietiesBundle\Admin\SpeciesAdmin
         arguments: [~, Librinfo\VarietiesBundle\Entity\Species, BlastCoreBundle:CRUD]
         tags:
             - name: sonata.admin
@@ -57,7 +57,7 @@ services:
               label_translator_strategy: blast_core.label.strategy.librinfo
 
     librinfo_varieties.admin.variety:
-        class: Librinfo\VarietiesBundle\Admin\VarietyAdminConcrete
+        class: Librinfo\VarietiesBundle\Admin\VarietyAdmin
         arguments: [~, Librinfo\VarietiesBundle\Entity\Variety, LibrinfoVarietiesBundle:VarietyCRUD]
         tags:
             - name: sonata.admin
@@ -70,7 +70,7 @@ services:
             - [ setTemplate, [ edit, LibrinfoVarietiesBundle:VarietyAdmin:edit.html.twig ] ]
 
     librinfo_varieties.admin.plant_category:
-        class: Librinfo\VarietiesBundle\Admin\PlantCategoryAdminConcrete
+        class: Librinfo\VarietiesBundle\Admin\PlantCategoryAdmin
         arguments: [~, Librinfo\VarietiesBundle\Entity\PlantCategory, BlastCoreBundle:CRUD]
         tags:
             - name: sonata.admin
@@ -82,7 +82,7 @@ services:
             - [ setTemplate, [ edit, LibrinfoVarietiesBundle:PlantCategoryAdmin:plant_category_edit.html.twig ] ]
 
     librinfo_varieties.admin.variety_description_inner:
-        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdminConcrete
+        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdmin
         arguments: [~, Librinfo\VarietiesBundle\Entity\VarietyDescriptionInner, BlastCoreBundle:CRUD]
         tags:
             - name: sonata.admin
@@ -92,7 +92,7 @@ services:
               label_translator_strategy: blast_core.label.strategy.librinfo
 
     librinfo_varieties.admin.variety_description_professional:
-        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdminConcrete
+        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdmin
         arguments: [~, Librinfo\VarietiesBundle\Entity\VarietyDescriptionProfessional, BlastCoreBundle:CRUD]
         tags:
             - name: sonata.admin
@@ -102,7 +102,7 @@ services:
               label_translator_strategy: blast_core.label.strategy.librinfo
 
     librinfo_varieties.admin.variety_description_amateur:
-        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdminConcrete
+        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdmin
         arguments: [~, Librinfo\VarietiesBundle\Entity\VarietyDescriptionAmateur, BlastCoreBundle:CRUD]
         tags:
             - name: sonata.admin
@@ -112,7 +112,7 @@ services:
               label_translator_strategy: blast_core.label.strategy.librinfo
 
     librinfo_varieties.admin.variety_description_production:
-        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdminConcrete
+        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdmin
         arguments: [~, Librinfo\VarietiesBundle\Entity\VarietyDescriptionProduction, BlastCoreBundle:CRUD]
         tags:
             - name: sonata.admin
@@ -122,7 +122,7 @@ services:
               label_translator_strategy: blast_core.label.strategy.librinfo
 
     librinfo_varieties.admin.variety_description_commercial:
-        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdminConcrete
+        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdmin
         arguments: [~, Librinfo\VarietiesBundle\Entity\VarietyDescriptionCommercial, BlastCoreBundle:CRUD]
         tags:
             - name: sonata.admin
@@ -132,7 +132,7 @@ services:
               label_translator_strategy: blast_core.label.strategy.librinfo
 
     librinfo_varieties.admin.variety_description_plant:
-        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdminConcrete
+        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdmin
         arguments: [~, Librinfo\VarietiesBundle\Entity\VarietyDescriptionPlant, BlastCoreBundle:CRUD]
         tags:
             - name: sonata.admin
@@ -142,7 +142,7 @@ services:
               label_translator_strategy: blast_core.label.strategy.librinfo
 
     librinfo_varieties.admin.variety_description_culture:
-        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdminConcrete
+        class: Librinfo\VarietiesBundle\Admin\VarietyDescriptionAdmin
         arguments: [~, Librinfo\VarietiesBundle\Entity\VarietyDescriptionCulture, BlastCoreBundle:CRUD]
         tags:
             - name: sonata.admin
@@ -150,9 +150,3 @@ services:
               group: admin
               label: librinfo.varieties.variety_description_culture_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
-
-    librinfo_varieties.admin.select_choice:
-        class: Librinfo\VarietiesBundle\Admin\SelectChoiceAdminConcrete
-        arguments: [~, Blast\UtilsBundle\Entity\SelectChoice, BlastCoreBundle:CRUD]
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: SelectChoice }

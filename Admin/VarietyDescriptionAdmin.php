@@ -2,72 +2,47 @@
 
 namespace Librinfo\VarietiesBundle\Admin;
 
-use Blast\CoreBundle\Admin\CoreAdmin;
-use Sonata\AdminBundle\Datagrid\DatagridMapper;
-use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\AdminBundle\Show\ShowMapper;
+use Blast\CoreBundle\Admin\CoreAdmin;
+use Blast\CoreBundle\Admin\Traits\EmbeddedAdmin;
 
 class VarietyDescriptionAdmin extends CoreAdmin
 {
-
-    /**
-     * @param DatagridMapper $datagridMapper
-     */
-    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
-    {
-        $datagridMapper
-            ->add('fieldset')
-            ->add('field')
-            ->add('value')
-            ->add('id')
-        ;
-    }
-
-    /**
-     * @param ListMapper $listMapper
-     */
-    protected function configureListFields(ListMapper $listMapper)
-    {
-        $listMapper
-            ->add('fieldset')
-            ->add('field')
-            ->add('value')
-            ->add('id')
-            ->add('_action', 'actions', array(
-                'actions' => array(
-                    'show' => array(),
-                    'edit' => array(),
-                    'delete' => array(),
-                )
-            ))
-        ;
-    }
-
-    /**
-     * @param ShowMapper $showMapper
-     */
-    protected function configureShowFields(ShowMapper $showMapper)
-    {
-        $showMapper
-            ->add('fieldset')
-            ->add('field')
-            ->add('value')
-            ->add('id')
-        ;
-    }
+    use EmbeddedAdmin;
     
     /**
-     * @param ShowMapper $showMapper
+     * @param FormMapper $formMapper
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $vd_config = $this->getConfigurationPool()->getContainer()->getParameter('librinfo_varieties')['variety_descriptions'];
+        $fieldset = $this->subject->getFieldset();
+        $field = $this->subject->getField();
+        $config = empty($vd_config[$fieldset][$field]) ? '' : $vd_config[$fieldset][$field];
+        $type = isset($config['type']) ? $config['type'] : 'textarea'; 
+        $choiceType = 'blast_custom_choice';
+        $options = empty($config['options']) ? [] : $config['options'];
+        
+        if (isset($options['choices']) && empty($options['choices']))
+            unset($options['choices']);
+        
+        if (isset($options['choices_class']) && $type != $choiceType)
+            unset($options['choices_class']);
+        
+        if (isset($options['blast_choices']) && $type != $choiceType)
+            unset($options['blast_choices']);
+        
+        if (!isset($options['label']) || !$options['label'])
+            $options['label'] = sprintf("librinfo_description_%s_%s", $fieldset, $field);
+
+        if (!isset($options['help']) || !$options['help'])
+            $options['help'] = sprintf("librinfo.help.%s", $field);
+
         $formMapper
-            ->add('fieldset')
-            ->add('field')
-            ->add('value')
-            ->add('id')
+            ->add('fieldset', 'hidden')
+            ->add('field', 'hidden')
+            ->add('id', 'hidden')
+            ->add('value', $type, $options)
         ;
     }
-
 }
