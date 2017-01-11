@@ -873,6 +873,7 @@ parameters:
                 add:
                     name:
                         identifier: true
+                        template: LibrinfoVarietiesBundle:VarietyAdmin:list_field_name.html.twig
                     code:
                         identifier: true
                         template: LibrinfoVarietiesBundle:VarietyAdmin:list_field_code.html.twig
