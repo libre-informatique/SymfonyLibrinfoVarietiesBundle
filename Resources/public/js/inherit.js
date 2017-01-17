@@ -1,8 +1,9 @@
-$(document).ready(function(){
 
+var inherit = function(){
+    
     $('*[inherit="source"]').change(function(){
         
-        $.get('hierarchy/' + $(this).val(), function(data){
+        $.get('/libio/variety/hierarchy/' + $(this).val(), function(data){
             
             $('*[inherit="target"]').each(function(key, input){
                 var id = $(input).prop('id');
@@ -15,5 +16,7 @@ $(document).ready(function(){
             });
         });
     });
-    
-});
+};
+
+$(document).ready(inherit);
+$(document).on('sonata-admin-setup-list-modal sonata-admin-append-form-element', inherit);
