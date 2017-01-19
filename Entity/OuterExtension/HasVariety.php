@@ -10,6 +10,8 @@
 
 namespace Librinfo\VarietiesBundle\Entity\OuterExtension;
 
+use Librinfo\VarietiesBundle\Entity\Variety;
+
 trait HasVariety
 {
     /**
@@ -30,8 +32,8 @@ trait HasVariety
     /**
      * Set variety
      *
-     * @param object $variety
-     * @return Object
+     * @param Variety $variety
+     * @return self
      */
     public function setVariety($variety)
     {
