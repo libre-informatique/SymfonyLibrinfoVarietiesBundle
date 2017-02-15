@@ -33,6 +33,17 @@ class VarietyAdmin extends CoreAdmin
     }
 
     /**
+     * @return array
+     */
+    public function getFormTheme()
+    {
+        return array_merge(
+            parent::getFormTheme(),
+            array('LibrinfoVarietiesBundle:VarietyAdmin:form_theme.html.twig')
+        );
+    }
+
+    /**
      * Configure create/edit form fields
      *
      * @param FormMapper
@@ -76,15 +87,15 @@ class VarietyAdmin extends CoreAdmin
         if ( $variety->getParent() )
             if ( $variety->getParent()->getId() == $variety->getId() )
                 $variety->setParent(NULL);
-            
+
 //        $config = $this->getConfigurationPool()->getContainer()->getParameter('librinfo_varieties')['variety_descriptions'];
-//        
+//
 //        foreach($config as $fieldset => $field){
 //            $getter = 'get' . ucfirst($fieldset) . 'Descriptions';
 //            $setter = 'set' . ucfirst($fieldset) . 'Descriptions';
-//            
+//
 //            $descs = $variety->$getter();
-//            
+//
 //            foreach($descs as $key =>$desc)
 //                if($desc->getValue() == null || $desc->getValue() == '' || $desc->getValue() == 0)
 //                    unset($descs[$key]);
