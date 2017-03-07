@@ -18,13 +18,13 @@ services:
         class: Librinfo\VarietiesBundle\Form\Type\VarietyDescriptionType
         tags:
             - { name: form.type, alias: librinfo_variety_description }
-        arguments: [ @doctrine.orm.entity_manager ]
+        arguments: [ '@doctrine.orm.entity_manager' ]
 
     librinfo_varieties.form.type.variety_description_filter:
         class: Librinfo\VarietiesBundle\Form\Type\VarietyDescriptionFilterType
         tags:
             - { name: form.type, alias: librinfo_variety_description_filter }
-        arguments: [ @doctrine.orm.entity_manager ]
+        arguments: [ '@doctrine.orm.entity_manager' ]
 
 # FILTERS
 
