@@ -1,10 +1,9 @@
 <?php
 
 /*
- * This file is part of the Blast Project package.
+ * Copyright (C) 2015-2017 Libre Informatique
  *
- * (c) Libre Informatique
- *
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
@@ -12,6 +11,7 @@
 namespace Librinfo\VarietiesBundle\Filter;
 
 use Doctrine\ORM\QueryBuilder;
+use Librinfo\VarietiesBundle\Form\Type\VarietyDescriptionFilterType;
 use Sonata\AdminBundle\Datagrid\ProxyQueryInterface;
 use Sonata\DoctrineORMAdminBundle\Filter\Filter;
 
@@ -33,13 +33,13 @@ class VarietyDescriptionFilter extends Filter
         $operator = '=';
         $value = $data['value']['Value'];
         $name = $this->getName();
-           
+
         $queryBuilder->entityJoin(array(
             $name => array(
                 'fieldName' => $name
             ))
         );
-               
+
         if($data['type'] == 1)
         {
             $operator = 'LIKE';
@@ -49,10 +49,10 @@ class VarietyDescriptionFilter extends Filter
             $operator = 'NOT LIKE';
             $value = '%' . $value . '%';
         }
-        
+
         $this->applyWhere($queryBuilder, sprintf('s_%s.field = :field', $name));
         $queryBuilder->setParameter('field', $data['value']['Field']);
-        
+
         $this->applyWhere($queryBuilder, sprintf('s_%s.value %s :value', $name, $operator));
         $queryBuilder->setParameter('value', $value);
     }
@@ -74,7 +74,7 @@ class VarietyDescriptionFilter extends Filter
     {
         return array('sonata_type_filter_default', array(
                 'operator_type' => 'sonata_type_equal',
-                'field_type' => 'librinfo_variety_description_filter',
+                'field_type' => VarietyDescriptionFilterType::class,
                 'field_options' => array_merge($this->getDefaultOptions(), $this->getFieldOptions()),
                 'label' => $this->getLabel(),
         ));
