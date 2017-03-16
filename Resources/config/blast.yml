@@ -40,12 +40,12 @@ parameters:
                     form_group_general:
                         '':
                             name:
-                                type: blast_unique_field
+                                type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
                                 attr:
                                     class: inline-block
                             latin_name:
-                                type: blast_unique_field
+                                type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
                                 required: false
                                 attr:
@@ -58,7 +58,7 @@ parameters:
                                     width: 50
                             description:
                                 required: false
-                                type: blast_tinymce
+                                type: Blast\UtilsBundle\Form\Type\TinyMceType
                                 attr:
                                     class: new-line
                                     height: 200
@@ -142,12 +142,12 @@ parameters:
                                     class: new-line
                                     width: 30
                             name:
-                                type: blast_unique_field
+                                type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
                                 attr:
                                     class: inline-block
                             latin_name:
-                                type: blast_unique_field
+                                type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
                                 required: false
                                 attr:
@@ -160,7 +160,7 @@ parameters:
                                     width: 50
                             description:
                                 required: false
-                                type: blast_tinymce
+                                type: Blast\UtilsBundle\Form\Type\TinyMceType
                                 attr:
                                     class: new-line
                                     height: 200
@@ -239,11 +239,11 @@ parameters:
                     form_group_general:
                         '':
                             name:
-                                type: blast_unique_field
+                                type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                             code:
                                 type: text
                             treeParent:
-                                type: blast_nested_treeable
+                                type: Blast\BaseEntitiesBundle\Form\Type\NestedTreeableType
                                 class: Librinfo\VarietiesBundle\Entity\PlantCategory
                                 required: false
                                 placeholder: ''
@@ -319,12 +319,12 @@ parameters:
                                     class: new-line
                                     width: 30
                             name:
-                                type: blast_unique_field
+                                type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
                                 attr:
                                     class: inline-block
                             latin_name:
-                                type: blast_unique_field
+                                type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
                                 required: false
                                 attr:
@@ -337,13 +337,13 @@ parameters:
                                     class: inline-block
                                     width: 50
                             code:
-                                type: librinfo_entitycode
+                                type: Blast\CoreBundle\Form\Type\EntityCodeType
                                 required: true
                                 attr:
                                     class: new-line
                                     width: 30
                             plant_categories:
-                                type: blast_nested_treeable
+                                type: Blast\BaseEntitiesBundle\Form\Type\NestedTreeableType
                                 class: Librinfo\VarietiesBundle\Entity\PlantCategory
                                 required: false
                                 multiple: true
@@ -354,7 +354,7 @@ parameters:
                                     btn_add: true
                             regulatory_status:
                                 required: false
-                                type: blast_custom_choice
+                                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                                 choices_field: regulatory_status
                                 blast_choices:
                                    - Contrôlé
@@ -373,14 +373,14 @@ parameters:
                                     class: new-line
                                     width: 30
                             life_cycle:
-                                type: librinfo_varieties_lifecycle
+                                type: Librinfo\VarietiesBundle\Form\Type\LifeCycleType
                                 required: false
                                 attr:
                                     class: new-line
                                     width: 50
                             description:
                                 required: false
-                                type: blast_tinymce
+                                type: Blast\UtilsBundle\Form\Type\TinyMceType
                                 attr:
                                     class: new-line
                                     height: 200
@@ -552,13 +552,13 @@ parameters:
                                 _options:
                                     admin_code: librinfo_varieties.admin.variety
                             name:
-                                type: blast_unique_field
+                                type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
                                 attr:
                                     class: inline-block
 
                             latin_name:
-                                type: blast_unique_field
+                                type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
                                 attr:
                                     class: inline-block
@@ -572,13 +572,13 @@ parameters:
                                     width: 50
                                     inherit: target
                             code:
-                                type: librinfo_entitycode
+                                type: Blast\CoreBundle\Form\Type\EntityCodeType
                                 required: true
                                 attr:
                                     class: new-line
                                     width: 30
                             plant_categories:
-                                type: blast_nested_treeable
+                                type: Blast\BaseEntitiesBundle\Form\Type\NestedTreeableType
                                 class: Librinfo\VarietiesBundle\Entity\PlantCategory
                                 required: false
                                 multiple: true
@@ -620,7 +620,7 @@ parameters:
                                     class: new-line
                                     width: 50
                             life_cycle:
-                                type: librinfo_varieties_lifecycle
+                                type: Librinfo\VarietiesBundle\Form\Type\LifeCycleType
                                 required: false
                                 attr:
                                     class: new-line
@@ -628,7 +628,7 @@ parameters:
                                     inherit: target
                             regulatory_status:
                                 required: false
-                                type: blast_custom_choice
+                                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                                 choices_field: regulatory_status
                                 blast_choices:
                                    - Contrôlé
@@ -638,7 +638,7 @@ parameters:
                                     inherit: target
                             description:
                                 required: false
-                                type: blast_tinymce
+                                type: Blast\UtilsBundle\Form\Type\TinyMceType
                                 attr:
                                     class: new-line
                                     height: 200
