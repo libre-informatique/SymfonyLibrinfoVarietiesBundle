@@ -5,10 +5,10 @@
     "require": {
         "php": "^5.6|^7.0",
         "symfony/symfony": "3.2.*",
-        "blast-project/core-bundle": "dev-sf3.2",
-        "blast-project/base-entities-bundle": "dev-sf3.2",
-        "blast-project/utils-bundle": "dev-sf3.2",
-        "libre-informatique/media-bundle": "dev-sf3.2"
+        "blast-project/core-bundle": "dev-master",
+        "blast-project/base-entities-bundle": "dev-master",
+        "blast-project/utils-bundle": "dev-master",
+        "libre-informatique/media-bundle": "dev-master"
     },
     "license": "GPL-3.0",
     "keywords": [
