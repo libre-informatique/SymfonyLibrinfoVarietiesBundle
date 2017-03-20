@@ -187,5 +187,3 @@ Librinfo\VarietiesBundle\Entity\Variety:
     uniqueConstraints:
         variety_name_idx:
             columns: [ name ]
-        variety_name_idx:
-            columns: [ name ]
