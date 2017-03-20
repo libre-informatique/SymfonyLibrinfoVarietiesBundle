@@ -310,7 +310,6 @@ parameters:
                                     width: 30
                             parent_species:
                                 type: sonata_type_model_autocomplete
-                                by_reference: false
                                 property: name
                                 required: false
                                 _options:
