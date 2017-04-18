@@ -28,11 +28,15 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
      * @throws InvalidEntityCodeException
      */
     public static function generate($variety)
-    {   
+    {
         if (!$variety->getName())
             throw new InvalidEntityCodeException('librinfo.error.missing_variety_name');
         if ($variety->getIsStrain() && !$variety->getParent())
             throw new InvalidEntityCodeException('librinfo.error.missing_strain_parent');
+        if (!$variety->getSpecies())
+            throw new InvalidEntityCodeException('librinfo.error.missing_species');
+
+        $name = preg_replace('/^'.$variety->getSpecies()->getName().' /', '', $variety->getName());
 
         if ($variety->getIsStrain()) {
             // Prepend with parent name
@@ -40,7 +44,7 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
             // Unaccent, remove marks and punctuation, lower case
             $translit = transliterator_transliterate(
                 'Any-Latin; Latin-ASCII; [:Nonspacing Mark:] Remove; [:Punctuation:] Remove; Lower();',
-                $variety->getName()
+                $name
             );
             $length = 2;
             $pad = 'x';
@@ -50,7 +54,7 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
             // Unaccent, remove marks and punctuation, upper case
             $translit = transliterator_transliterate(
                 'Any-Latin; Latin-ASCII; [:Nonspacing Mark:] Remove; [:Punctuation:] Remove; Upper();',
-                $variety->getName()
+                $name
             );
             $length = 3;
             $pad = 'X';
