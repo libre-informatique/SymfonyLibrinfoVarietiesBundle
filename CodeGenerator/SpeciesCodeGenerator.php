@@ -24,10 +24,11 @@ class SpeciesCodeGenerator implements CodeGeneratorInterface
 
     /**
      * @param  Species $species
+     * @param array|null $existingCodes   if null, existing codes will be fetched from database
      * @return string
      * @throws InvalidSpeciesCodeException
      */
-    public static function generate($species)
+    public static function generate($species, $existingCodes = null)
     {
         if (!$species->getName())
             throw new InvalidEntityCodeException('librinfo.error.missing_species_name');
@@ -42,20 +43,20 @@ class SpeciesCodeGenerator implements CodeGeneratorInterface
 
         // 3 first chars (right padded with "X" if necessary)
         $code = str_pad(substr($cleaned, 0, 3), 3, 'X');
-        if (self::isCodeUnique($code, $species->getId()))
+        if (self::isCodeUnique($code, $species->getId(), $existingCodes))
             return $code;
 
         // XX1 ... XX9
         for($i = 1; $i < 10; $i++) {
             $code = sprintf('%s%d', substr($code, 0, 2), $i);
-            if (self::isCodeUnique($code, $species->getId()))
+            if (self::isCodeUnique($code, $species->getId(), $existingCodes))
                 return $code;
         }
 
         // X01 ... X99
         for($i = 1; $i < 100; $i++) {
             $code = sprintf('%s%02d', substr($code, 0, 1), $i);
-            if (self::isCodeUnique($code, $species->getId()))
+            if (self::isCodeUnique($code, $species->getId(), $existingCodes))
                 return $code;
         }
 
@@ -63,7 +64,7 @@ class SpeciesCodeGenerator implements CodeGeneratorInterface
         // TODO: find a better solution !!
         for($i = 1; $i < 1000; $i++) {
             $code = sprintf('%03d', $i);
-            if (self::isCodeUnique($code, $species->getId()))
+            if (self::isCodeUnique($code, $species->getId(), $existingCodes))
                 return $code;
         }
         return '';
@@ -84,10 +85,14 @@ class SpeciesCodeGenerator implements CodeGeneratorInterface
     /**
      * @param string $code
      * @param guid $speciesId
+     * @param array|null $existingCodes   if null, existing codes will be fetched from database
      * @return boolean
      */
-    private static function isCodeUnique($code, $speciesId)
+    private static function isCodeUnique($code, $speciesId, $existingCodes = null)
     {
+        if (null !== $existingCodes)
+            return !in_array($code, $existingCodes);
+
         $repo = self::$em->getRepository('Librinfo\VarietiesBundle\Entity\Species');
         $query = $repo->createQueryBuilder('s')->where('s.code = :code')->setParameter('code', $code);
         if ($speciesId)

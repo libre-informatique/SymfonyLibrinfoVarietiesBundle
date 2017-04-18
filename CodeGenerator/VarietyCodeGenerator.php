@@ -24,10 +24,11 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
 
     /**
      * @param  Variety $variety
+     * @param array|null $existingCodes   if null, existing codes will be fetched from database
      * @return string
      * @throws InvalidEntityCodeException
      */
-    public static function generate($variety)
+    public static function generate($variety, $existingCodes = null)
     {
         if (!$variety->getName())
             throw new InvalidEntityCodeException('librinfo.error.missing_variety_name');
@@ -66,20 +67,20 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
         // first chars of name, right padded with "X" if necessary
         $code = $prefix . str_pad(substr($cleaned, 0, $length), $length, $pad);
 
-        if (self::isCodeUnique($code, $variety))
+        if (self::isCodeUnique($code, $variety, $existingCodes))
             return $code;
 
         // XX1 ... XX9
         for($i = 1; $i < 10; $i++) {
             $code = $prefix . sprintf('%s%d', substr($code, 0, $length-1), $i);
-            if (self::isCodeUnique($code, $variety))
+            if (self::isCodeUnique($code, $variety, $existingCodes))
                 return $code;
         }
 
         // X01 ... X99
         for($i = 1; $i < 100; $i++) {
             $code = $prefix . sprintf('%s%02d', substr($code, 0, $length-2), $i);
-            if (self::isCodeUnique($code, $variety))
+            if (self::isCodeUnique($code, $variety, $existingCodes))
                 return $code;
         }
 
@@ -88,7 +89,7 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
         if (!$variety->getIsStrain())
             for($i = 1; $i < 1000; $i++) {
                 $code = sprintf('%03d', $i);
-                if (self::isCodeUnique($code, $variety))
+                if (self::isCodeUnique($code, $variety, $existingCodes))
                     return $code;
             }
         return '';
@@ -113,10 +114,18 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
     /**
      * @param string $code
      * @param Variety $variety
+     * @param array|null $existingCodes   if null, existing codes will be fetched from database
      * @return boolean
      */
-    private static function isCodeUnique($code, $variety)
+    private static function isCodeUnique($code, $variety, $existingCodes = null)
     {
+        if (null !== $existingCodes) {
+            $speciesId = $variety->getSpecies()->getId();
+            if (in_array(['species_id'=>$speciesId, 'code'=>$code], $existingCodes))
+                return false;
+            return true;
+        }
+        
         $repo = self::$em->getRepository('Librinfo\VarietiesBundle\Entity\Variety');
         $query = $repo->createQueryBuilder('v')
             ->where('v.code = :code')
