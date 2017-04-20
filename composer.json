@@ -37,11 +37,11 @@
     ],
     "autoload": {
         "psr-4": {
-            "Librinfo\\VarietiesBundle\\": ""
+            "Librinfo\\VarietiesBundle\\": "src/",
+            "Librinfo\\VarietiesBundle\\Tests\\": "tests/"
         }
     },
     "suggest": {
         "libre-informatique/crm-bundle": "Manage contacts, organisms and more..."
     }
 }
-
