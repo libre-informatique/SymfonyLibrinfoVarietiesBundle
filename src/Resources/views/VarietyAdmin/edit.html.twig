@@ -14,6 +14,9 @@
     {{ parent() }}
     {% include 'BlastUtilsBundle:Form:tinymce_init.html.twig' %}
     <script>
+        
+        {# TODO: Externalize this js script #}
+        
         $(document).ready(function () {
 
         {% if object.isStrain %}
