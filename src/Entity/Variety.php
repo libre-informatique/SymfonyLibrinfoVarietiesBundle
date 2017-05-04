@@ -17,12 +17,14 @@ use Blast\BaseEntitiesBundle\Entity\Traits\Nameable;
 use Blast\BaseEntitiesBundle\Entity\Traits\Timestampable;
 use Blast\OuterExtensionBundle\Entity\Traits\OuterExtensible;
 use Doctrine\Common\Collections\ArrayCollection;
+use Librinfo\MediaBundle\Entity\File;
 
 /**
  * Variety
  */
 class Variety
 {
+
     use Nameable {
         getName as getNameTrait;
     }
@@ -102,7 +104,7 @@ class Variety
      * @var string
      */
     private $selection_criteria;
-    
+
     /**
      * @var string
      */
@@ -265,15 +267,15 @@ class Variety
     {
         $name = explode('||', $name);
         $getter = 'get' . ucfirst($name[0]) . '_descriptions';
-        
-        foreach( $this->$getter() as $desc)
-            if( $desc->getField() == $name[1] )
+
+        foreach ($this->$getter() as $desc)
+            if ($desc->getField() == $name[1])
                 return $desc->getValue();
     }
 
     public function getName()
     {
-        if ( $this->hasParent() && null == $this->name )
+        if ($this->hasParent() && null == $this->name)
             return $this->getParent()->getName();
 
         return $this->getNameTrait();
@@ -310,7 +312,7 @@ class Variety
      */
     public function getLatinName()
     {
-        if ( $this->hasParent() && !$this->latin_name )
+        if ($this->hasParent() && !$this->latin_name)
             return $this->getParent()->getLatinName();
 
         return $this->latin_name;
@@ -361,7 +363,7 @@ class Variety
      */
     public function getAlias()
     {
-        if ( $this->hasParent() && !$this->alias )
+        if ($this->hasParent() && !$this->alias)
             return $this->getParent()->getAlias();
 
         return $this->alias;
@@ -412,11 +414,11 @@ class Variety
      */
     public function getLifeCycle()
     {
-        if ( $this->hasParent() && !$this->life_cycle )
+        if ($this->hasParent() && !$this->life_cycle)
             return $this->getParent()->getLifeCycle();
 
-       if( !$this->life_cycle && $this->getSpecies() )
-           return $this->getSpecies()->getLifeCycle();
+        if (!$this->life_cycle && $this->getSpecies())
+            return $this->getSpecies()->getLifeCycle();
 
         return $this->life_cycle;
     }
@@ -562,8 +564,8 @@ class Variety
      */
     public function getLegalGerminationRate()
     {
-        if( !$this->legal_germination_rate && $this->getSpecies() )
-           return $this->getSpecies()->getLegalGerminationRate();
+        if (!$this->legal_germination_rate && $this->getSpecies())
+            return $this->getSpecies()->getLegalGerminationRate();
 
         return $this->legal_germination_rate;
     }
@@ -697,7 +699,7 @@ class Variety
      */
     public function getSpecies()
     {
-        if ( $this->hasParent() && !$this->species )
+        if ($this->hasParent() && !$this->species)
             return $this->getParent()->getSpecies();
 
         return $this->species;
@@ -736,8 +738,8 @@ class Variety
      */
     public function getPlantCategories()
     {
-        if( !$this->plant_categories && $this->getSpecies() )
-           return $this->getSpecies()->getPlantCategories();
+        if (!$this->plant_categories && $this->getSpecies())
+            return $this->getSpecies()->getPlantCategories();
 
         return $this->plant_categories;
     }
@@ -798,7 +800,7 @@ class Variety
     {
         return $this->selection_criteria;
     }
-    
+
     /**
      * Set miscAdvice
      *
@@ -844,8 +846,8 @@ class Variety
      */
     public function getTkw()
     {
-        if( !$this->tkw && $this->getSpecies() )
-           return $this->getSpecies()->getTkw();
+        if (!$this->tkw && $this->getSpecies())
+            return $this->getSpecies()->getTkw();
 
         return $this->tkw;
     }
@@ -871,8 +873,8 @@ class Variety
      */
     public function getSeedLifespan()
     {
-        if( !$this->seed_lifespan && $this->getSpecies() )
-           return $this->getSpecies()->getSeedLifeSpan();
+        if (!$this->seed_lifespan && $this->getSpecies())
+            return $this->getSpecies()->getSeedLifeSpan();
 
         return $this->seed_lifespan;
     }
@@ -898,8 +900,8 @@ class Variety
      */
     public function getRaiseDuration()
     {
-        if( !$this->raise_duration && $this->getSpecies() )
-           return $this->getSpecies()->getRaiseDuration();
+        if (!$this->raise_duration && $this->getSpecies())
+            return $this->getSpecies()->getRaiseDuration();
 
         return $this->raise_duration;
     }
@@ -1196,7 +1198,7 @@ class Variety
      */
     public function setProfessionalDescriptions($descriptions)
     {
-        foreach ( $descriptions as $description )
+        foreach ($descriptions as $description)
             $description->setVariety($this);
         $this->professional_descriptions = $descriptions;
         return $this;
@@ -1254,7 +1256,7 @@ class Variety
      */
     public function setAmateurDescriptions($descriptions)
     {
-        foreach ( $descriptions as $description )
+        foreach ($descriptions as $description)
             $description->setVariety($this);
         $this->amateur_descriptions = $descriptions;
         return $this;
@@ -1312,7 +1314,7 @@ class Variety
      */
     public function setProductionDescriptions($descriptions)
     {
-        foreach ( $descriptions as $description )
+        foreach ($descriptions as $description)
             $description->setVariety($this);
         $this->production_descriptions = $descriptions;
         return $this;
@@ -1370,7 +1372,7 @@ class Variety
      */
     public function setCommercialDescriptions($descriptions)
     {
-        foreach ( $descriptions as $description )
+        foreach ($descriptions as $description)
             $description->setVariety($this);
         $this->commercial_descriptions = $descriptions;
         return $this;
@@ -1428,7 +1430,7 @@ class Variety
      */
     public function setPlantDescriptions($descriptions)
     {
-        foreach ( $descriptions as $description )
+        foreach ($descriptions as $description)
             $description->setVariety($this);
         $this->plant_descriptions = $descriptions;
         return $this;
@@ -1486,7 +1488,7 @@ class Variety
      */
     public function setCultureDescriptions($descriptions)
     {
-        foreach ( $descriptions as $description )
+        foreach ($descriptions as $description)
             $description->setVariety($this);
         $this->culture_descriptions = $descriptions;
         return $this;
@@ -1536,6 +1538,34 @@ class Variety
     public function setInnerDescriptions($descriptions)
     {
         $this->inner_descriptions = $descriptions;
+        return $this;
+    }
+
+    /**
+     * alias for LibrinfoMediaBundle/CRUDController::handleFiles()
+     *
+     * @param File $file
+     * @return Variety
+     */
+    public function addLibrinfoFile(File $file = null)
+    {
+        if (!$this->images->contains($file)) {
+            $this->images->add($file);
+        }
+        return $this;
+    }
+
+    /**
+     * alias for LibrinfoMediaBundle/CRUDController::handleFiles()
+     *
+     * @param File $file
+     * @return Variety
+     */
+    public function removeLibrinfoFile(File $file)
+    {
+        if ($this->images->contains($file)) {
+            $this->images->removeElement($file);
+        }
         return $this;
     }
 

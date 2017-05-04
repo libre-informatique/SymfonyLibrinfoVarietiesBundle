@@ -17,6 +17,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 
 class VarietyDescriptionAdmin extends CoreAdmin
 {
+
     use EmbeddedAdmin;
 
     /**
@@ -25,6 +26,11 @@ class VarietyDescriptionAdmin extends CoreAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $vd_config = $this->getConfigurationPool()->getContainer()->getParameter('librinfo_varieties')['variety_descriptions'];
+
+        if (!$this->subject) {
+            $this->subject = $this->formFieldDescriptions['fieldset']->getAdmin()->getSubject();
+        }
+
         $fieldset = $this->subject->getFieldset();
         $field = $this->subject->getField();
         $config = empty($vd_config[$fieldset][$field]) ? '' : $vd_config[$fieldset][$field];
@@ -47,6 +53,9 @@ class VarietyDescriptionAdmin extends CoreAdmin
         if (!isset($options['help']) || !$options['help'])
             $options['help'] = sprintf("librinfo.help.%s", $field);
 
+        if ($this->subject->getValue() === "")
+            $this->subject->setValue(null);
+
         $formMapper
             ->add('fieldset', 'hidden')
             ->add('field', 'hidden')
@@ -54,4 +63,5 @@ class VarietyDescriptionAdmin extends CoreAdmin
             ->add('value', $type, $options)
         ;
     }
+
 }
