@@ -3,14 +3,17 @@
     "type": "symfony-bundle",
     "description": "Plant taxonomy management : Family / Genus / Species / Subspecies / Variety",
     "require": {
-        "php": "^5.6|^7.0",
+	"php": ">=5.6",
         "symfony/symfony": "3.2.*",
-        "blast-project/core-bundle": "dev-master",
-        "blast-project/base-entities-bundle": "dev-master",
-        "blast-project/utils-bundle": "dev-master",
-        "libre-informatique/media-bundle": "dev-master"
+        "blast-project/core-bundle": "^0.4",
+        "blast-project/base-entities-bundle": "^0.4",
+        "blast-project/utils-bundle": "^0.4",
+        "libre-informatique/media-bundle": "^0.4"
     },
-    "license": "GPL-3.0",
+    "require-dev": {
+	"symfony/phpunit-bridge": "3.2.*"
+    },
+    "license": "LGPL-3.0",
     "keywords": [
         "e-venement",
         "libio",
