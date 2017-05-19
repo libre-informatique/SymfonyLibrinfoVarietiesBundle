@@ -1,3 +1,13 @@
+# SymfonyLibrinfoEmailBundle
+
+[![Travis](https://img.shields.io/travis/libre-informatique/EmailBundle.svg?style=flat-square)][travis]
+[![Coveralls](https://img.shields.io/coveralls/libre-informatique/EmailBundle.svg?style=flat-square)][coveralls]
+[![License](https://img.shields.io/github/license/libre-informatique/EmailBundle.svg?style=flat-square)][license]
+
+[![Latest Stable Version](https://poser.pugx.org/libre-informatique/email-bundle/v/stable)](https://packagist.org/packages/libre-informatique/email-bundle)
+[![Latest Unstable Version](https://poser.pugx.org/libre-informatique/email-bundle/v/unstable)](https://packagist.org/packages/libre-informatique/email-bundle)
+[![Total Downloads](https://poser.pugx.org/libre-informatique/email-bundle/downloads)](https://packagist.org/packages/libre-informatique/email-bundle)
+
 # Installation
 From a basic symfony project
 
