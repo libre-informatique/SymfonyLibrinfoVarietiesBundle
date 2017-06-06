@@ -11,7 +11,8 @@
         "libre-informatique/media-bundle": "^0.4"
     },
     "require-dev": {
-	"symfony/phpunit-bridge": "3.2.*"
+	"symfony/phpunit-bridge": "3.2.*",
+        "blast-project/outer-extension-bundle": "^0.4.2"
     },
     "license": "LGPL-3.0",
     "keywords": [
