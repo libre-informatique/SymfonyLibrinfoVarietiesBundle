@@ -229,6 +229,11 @@ class Variety
      * @var \Doctrine\Common\Collections\Collection
      */
     private $inner_descriptions;
+    
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $images;
 
     public function initCollections()
     {
@@ -1568,5 +1573,18 @@ class Variety
         }
         return $this;
     }
+    
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    public function setImages(ArrayCollection $images)
+    {
+        $this->images = $images;
+        return $this;
+    }
+
+
 
 }
