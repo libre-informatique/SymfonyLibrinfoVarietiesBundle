@@ -21,10 +21,16 @@ composer require libre-informatique/varieties-bundle
 composer require sonata-project/intl-bundle
 ```
 # Configuration
+add [variety.yml](https://github.com/libre-informatique/LISemSymfonyProject/blob/master/app/config/varieties.yml) in app\config
 
 app\config\config.yml
 
 ```yaml
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: varieties.yml }
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -132,6 +138,8 @@ _sonata_admin:
 blast_core:
     resource: "@BlastCoreBundle/Resources/config/routing.yml" 
     prefix:   /admin
+librinfo_media:
+    resource: "@LibrinfoMediaBundle/Resources/config/routing.yml"
 ```
 
 ```bash
@@ -158,5 +166,3 @@ generate database tables
 ```bash
 bin/console doctrine:schema:create
 ```
-
-
