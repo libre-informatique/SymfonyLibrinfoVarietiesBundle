@@ -95,7 +95,7 @@ class VarietyTest extends TestCase {
      * @todo   Implement test__clone().
      */
     public function test__clone() {
-        $this->object->__clone();
+        clone $this->object;
         $id = $this->object->getId();
         $code = $this->object->getCode();
         $this->assertNull($id);
