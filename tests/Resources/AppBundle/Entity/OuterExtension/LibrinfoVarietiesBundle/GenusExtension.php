@@ -12,6 +12,6 @@
 
 namespace AppBundle\Entity\OuterExtension\LibrinfoVarietiesBundle;
 
-trait SpeciesExtension
+trait GenusExtension
 {
 }
