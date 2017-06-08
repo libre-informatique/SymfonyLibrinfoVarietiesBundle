@@ -101,9 +101,10 @@ class VarietyTest extends TestCase
         $this->assertNull($clone->getId());
         $this->assertNull($clone->getCode());
         $this->assertInstanceOf(ArrayCollection::class, $clone->getChildren());
+        var_dump($clone->getId());
         //testing the original object after clonage
-        $this->assertEquals($this->object->getId(), 'testid');
-        $this->assertEquals($this->object->getCode(), 'testcode');
+        $this->assertEquals('testid', $this->object->getId());
+        $this->assertEquals('testcode', $this->object->getCode());
     }
 
     /**
@@ -129,9 +130,7 @@ class VarietyTest extends TestCase
 
         //testing return $this->getParent()->getName();
         $this->mockTraitNameable->setName(null);
-        $get2 = $this->object->getName();
-        $getname = $this->mockTraitNameable->getName();
-        $this->assertEquals($get2, $getname);
+        $this->assertEquals($this->object->getName(), $this->mockTraitNameable->getName());
     }
 
     /**
