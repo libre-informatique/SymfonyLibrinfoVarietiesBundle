@@ -1439,7 +1439,7 @@ class VarietyTest extends TestCase
                 'This test has not been implemented yet.'
         );
     }
-
+    
     /**
      * @covers \Librinfo\VarietiesBundle\Entity\Variety::getDescription
      *
@@ -1452,4 +1452,5 @@ class VarietyTest extends TestCase
                 'This test has not been implemented yet.'
         );
     }
+    
 }
