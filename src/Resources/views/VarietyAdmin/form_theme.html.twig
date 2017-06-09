@@ -15,6 +15,10 @@
            {
             name:  '{{ uniqid }}[isStrain]',
             value: $('#{{ uniqid }}_isStrain').prop('checked')
+           },
+           {
+            name:  '{{ uniqid }}[species]',
+            value: $('#{{ uniqid }}_species').val()
            }
         ];
     {% else %}
