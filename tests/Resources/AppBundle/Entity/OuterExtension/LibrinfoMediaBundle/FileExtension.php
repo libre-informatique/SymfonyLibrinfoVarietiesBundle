@@ -10,6 +10,8 @@
  * file that was distributed with this source code.
  */
 
-foreach (glob(__DIR__.'/AppBundle/Entity/OuterExtension/*/*.php') as $file) {
-    require_once $file;
+namespace AppBundle\Entity\OuterExtension\LibrinfoMediaBundle;
+
+trait FileExtension
+{
 }
