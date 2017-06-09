@@ -1452,5 +1452,4 @@ class VarietyTest extends TestCase
                 'This test has not been implemented yet.'
         );
     }
-    
 }
