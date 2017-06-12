@@ -29,6 +29,8 @@ trait DynamicDescriptions
                 $adder = 'add' . ucfirst($fieldset) . 'Description';
                 $constructor = '\Librinfo\VarietiesBundle\Entity\VarietyDescription' . ucfirst($fieldset);
 
+
+
                 // Hide VarietyDescriptions that are not found in configuration
                 foreach ( $subject->$getter() as $desc )
                 {

@@ -229,7 +229,7 @@ class Variety
      * @var \Doctrine\Common\Collections\Collection
      */
     private $inner_descriptions;
-    
+
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
@@ -1573,7 +1573,7 @@ class Variety
         }
         return $this;
     }
-    
+
     public function getImages()
     {
         return $this->images;
