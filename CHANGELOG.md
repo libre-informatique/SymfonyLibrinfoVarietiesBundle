@@ -1,5 +1,18 @@
 # Change Log
 
+## [0.4.3](https://github.com/libre-informatique/VarietiesBundle/tree/0.4.3) (2017-06-13)
+[Full Changelog](https://github.com/libre-informatique/VarietiesBundle/compare/0.4.2...0.4.3)
+
+**Merged pull requests:**
+
+- DevKit updates for VarietiesBundle [\#11](https://github.com/libre-informatique/VarietiesBundle/pull/11) ([BlastCI](https://github.com/BlastCI))
+- Add First Phpunit Test \(\#8\) [\#10](https://github.com/libre-informatique/VarietiesBundle/pull/10) ([FanchTheSystem](https://github.com/FanchTheSystem))
+- Phpunit [\#8](https://github.com/libre-informatique/VarietiesBundle/pull/8) ([erwanrolland](https://github.com/erwanrolland))
+- DevKit updates for VarietiesBundle [\#7](https://github.com/libre-informatique/VarietiesBundle/pull/7) ([BlastCI](https://github.com/BlastCI))
+- New README.md [\#6](https://github.com/libre-informatique/VarietiesBundle/pull/6) ([erwanrolland](https://github.com/erwanrolland))
+- DevKit updates for VarietiesBundle [\#5](https://github.com/libre-informatique/VarietiesBundle/pull/5) ([BlastCI](https://github.com/BlastCI))
+- DevKit updates for VarietiesBundle [\#3](https://github.com/libre-informatique/VarietiesBundle/pull/3) ([BlastCI](https://github.com/BlastCI))
+
 ## [0.4.2](https://github.com/libre-informatique/VarietiesBundle/tree/0.4.2) (2017-05-05)
 [Full Changelog](https://github.com/libre-informatique/VarietiesBundle/compare/0.2...0.4.2)
 
