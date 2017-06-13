@@ -5,6 +5,7 @@ namespace Librinfo\VarietiesBundle\Traits;
 use Symfony\Component\Form\FormEvents;
 use Doctrine\Common\Collections\ArrayCollection;
 use Sonata\AdminBundle\Form\FormMapper;
+use Librinfo\VarietiesBundle\EventListener\VarietyDescriptionsFormEventSubscriber;
 
 trait DynamicDescriptions
 {
@@ -18,50 +19,7 @@ trait DynamicDescriptions
         $config = $this->getConfigurationPool()->getContainer()->getParameter('librinfo_varieties')['variety_descriptions'];
         $admin = $this;
 
-        $formMapper->getFormBuilder()->addEventListener(FormEvents::PRE_SET_DATA, function ($event) use ($admin, $config) {
-            $subject = $admin->getSubject($event->getData());
-
-            foreach ( $config as $fieldset => $field )
-            {
-                $getter = 'get' . ucfirst($fieldset) . 'Descriptions';
-                $setter = 'set' . ucfirst($fieldset) . 'Descriptions';
-                $remover = 'remove' . ucfirst($fieldset) . 'Description';
-                $adder = 'add' . ucfirst($fieldset) . 'Description';
-                $constructor = '\Librinfo\VarietiesBundle\Entity\VarietyDescription' . ucfirst($fieldset);
-
-                // Hide VarietyDescriptions that are not found in configuration
-                foreach ( $subject->$getter() as $desc )
-                {
-                    $found = false;
-                    foreach ( $config[$fieldset] as $field => $settings )
-                        if ( $desc->getField() == $field )
-                        {
-                            $found = true;
-                            break;
-                        }
-                    if ( !$found )
-                        $subject->$remover($desc);
-                }
-
-                // Create missing VarietyDescriptions (described in configuration and not present in the Variety)
-                foreach ( $config[$fieldset] as $field => $settings )
-                {
-                    $exists = $subject->$getter()->exists(function($key, $element) use ($field) {
-                        return $element->getField() == $field;
-                    });
-                    if ( !$exists )
-                    {
-                        $desc = new $constructor();
-                        $desc->setFieldset($fieldset);
-                        $desc->setField($field);
-                        $subject->$adder($desc);
-                    }
-                }
-
-                $this->sortDescriptions($config, $fieldset, $subject, $getter, $setter);
-            }
-        }
-        );
+        $formMapper->getFormBuilder()->addEventSubscriber(new VarietyDescriptionsFormEventSubscriber($admin,$config));
     }
 
     protected function configureShowDescriptions($showMapper)
@@ -107,20 +65,6 @@ trait DynamicDescriptions
             //end group then tab
             $showMapper->end()->end();
         }
-    }
-
-    private function sortDescriptions($config, $fieldset, $subject, $getter, $setter)
-    {
-        // Sort VarietyDescriptions according to the configuration order
-        $order = [];
-        $i = 0;
-        foreach ( $config[$fieldset] as $field => $settings )
-            $order[$field] = $i++;
-        $array = iterator_to_array($subject->$getter()->getIterator());
-        usort($array, function ($a, $b) use ($order) {
-            return ( $order[$a->getField()] < $order[$b->getField()] ) ? -1 : 1;
-        });
-        $subject->$setter(new ArrayCollection($array));
     }
 
 }
