@@ -671,6 +671,7 @@ parameters:
                                 required: true
                                 btn_add: false
                                 label: false
+                                modifiable: false
                                 type_options:
                                     required: false
                                     delete: false
@@ -684,6 +685,7 @@ parameters:
                                 required: true
                                 btn_add: false
                                 label: false
+                                modifiable: false
                                 type_options:
                                     required: false
                                     delete: false
@@ -697,6 +699,7 @@ parameters:
                                 required: true
                                 btn_add: false
                                 label: false
+                                modifiable: false
                                 type_options:
                                     required: false
                                     delete: false
@@ -710,6 +713,7 @@ parameters:
                                 required: true
                                 btn_add: false
                                 label: false
+                                modifiable: false
                                 type_options:
                                     required: false
                                     delete: false
@@ -723,6 +727,7 @@ parameters:
                                 required: true
                                 btn_add: false
                                 label: false
+                                modifiable: false
                                 type_options:
                                     required: false
                                     delete: false
@@ -736,6 +741,7 @@ parameters:
                                 required: true
                                 btn_add: false
                                 label: false
+                                modifiable: false
                                 type_options:
                                     required: false
                                     delete: false
