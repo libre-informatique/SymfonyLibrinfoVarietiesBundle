@@ -31,6 +31,8 @@ class VarietyDescriptionAdmin extends CoreAdmin
             $this->subject = $this->formFieldDescriptions['fieldset']->getAdmin()->getSubject();
         }
 
+
+
         $fieldset = $this->subject->getFieldset();
         $field = $this->subject->getField();
         $config = empty($vd_config[$fieldset][$field]) ? '' : $vd_config[$fieldset][$field];
@@ -55,6 +57,8 @@ class VarietyDescriptionAdmin extends CoreAdmin
 
         if ($this->subject->getValue() === "")
             $this->subject->setValue(null);
+
+        //dump([$fieldset,$field,$type,$options]);
 
         $formMapper
             ->add('fieldset', 'hidden')
