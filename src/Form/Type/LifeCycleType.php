@@ -15,7 +15,7 @@ class LifeCycleType extends BaseAbstractType
     public function configureOptions(OptionsResolver $resolver) {
         $choices = [];
         foreach ( LifeCycle::values() as $lifecycle )
-            $choices[$lifecycle] = 'librinfo.label.life_cycle_' . $lifecycle;
+            $choices['librinfo.label.life_cycle_' . $lifecycle] = $lifecycle;
         $resolver->setDefaults([
             'multiple' => false,
             'expanded' => false,
