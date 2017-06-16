@@ -134,7 +134,7 @@ parameters:
 
             Sonata\AdminBundle\Form\FormMapper:
                 add:
-                    form_group_general:
+                    form_tab_general:
                         '':
                             family:
                                 type: sonata_type_model
@@ -164,7 +164,7 @@ parameters:
                                 attr:
                                     class: new-line
                                     height: 200
-                    form_group_specieses:
+                    form_tab_specieses:
                         '':
                             specieses:
                                 type: sonata_type_collection
@@ -177,11 +177,11 @@ parameters:
                                 label: false
                                 _options:
                                     edit: inline
-                                    inline: table
+                                    # inline: table
                                     allow_delete: false
                                     admin_code: librinfo_varieties.admin.species_embedded
                     _options:
-                        tabsOrder: [form_group_general, form_group_specieses]
+                        tabsOrder: [form_tab_general, form_tab_specieses]
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
@@ -299,7 +299,7 @@ parameters:
 
             Sonata\AdminBundle\Form\FormMapper:
                 add:
-                    form_group_general:
+                    form_tab_general:
                         '':
                             genus:
                                 type: sonata_type_model
@@ -314,6 +314,12 @@ parameters:
                                 required: false
                                 _options:
                                     admin_code: librinfo_varieties.admin.species_embedded
+                                attr:
+                                    class: new-line
+                                    width: 30
+                            code:
+                                type: Blast\CoreBundle\Form\Type\EntityCodeType
+                                required: true
                                 attr:
                                     class: new-line
                                     width: 30
@@ -335,12 +341,13 @@ parameters:
                                 attr:
                                     class: inline-block
                                     width: 50
-                            code:
-                                type: Blast\CoreBundle\Form\Type\EntityCodeType
-                                required: true
+                            description:
+                                required: false
+                                type: Blast\UtilsBundle\Form\Type\TinyMceType
                                 attr:
                                     class: new-line
-                                    width: 30
+                                    height: 200
+
                             plant_categories:
                                 type: Blast\BaseEntitiesBundle\Form\Type\NestedTreeableType
                                 class: Librinfo\VarietiesBundle\Entity\PlantCategory
@@ -377,12 +384,22 @@ parameters:
                                 attr:
                                     class: new-line
                                     width: 50
-                            description:
-                                required: false
-                                type: Blast\UtilsBundle\Form\Type\TinyMceType
-                                attr:
-                                    class: new-line
-                                    height: 200
+                            _options:
+                                fieldsOrder:
+                                    - description
+                                    - genus
+                                    - parent_species
+                                    - name
+                                    - latin_name
+                                    - alias
+                                    - code
+                                    - plant_categories
+                                    - regulatory_status
+                                    - legal_germination_rate
+                                    - raise_duration
+                                    - tkw
+                                    - life_cycle
+
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
@@ -421,6 +438,139 @@ parameters:
                     latin_name: ~
                     alias: ~
                     description: ~
+
+###################
+# SPECIES EMBEDDED
+###################
+
+        Librinfo\VarietiesBundle\Admin\SpeciesEmbeddedAdmin:
+            Sonata\AdminBundle\Show\ShowMapper:
+                add: ~
+            Sonata\AdminBundle\Form\FormMapper:
+                remove:
+                    createdBy: ~
+                    createdAt: ~
+                    updatedBy: ~
+                    updatedAt: ~
+                    genus: ~
+                    parent_species: ~
+                    code: ~
+                    name: ~
+                    latin_name: ~
+                    alias: ~
+                    description: ~
+                    plant_categories: ~
+                    regulatory_status: ~
+                    legal_germination_rate: ~
+                    raise_duration: ~
+                    tkw: ~
+                    life_cycle: ~
+                add:
+                    '':
+                        form_group_general:
+                            genus:
+                                type: sonata_type_model
+                                _options:
+                                    admin_code: librinfo_varieties.admin.genus
+                                attr:
+                                    class: new-line
+                                    width: 30
+                            parent_species:
+                                type: sonata_type_model_autocomplete
+                                property: name
+                                required: false
+                                _options:
+                                    admin_code: librinfo_varieties.admin.species_embedded
+                                attr:
+                                    class: new-line
+                                    width: 30
+                            code:
+                                type: Blast\CoreBundle\Form\Type\EntityCodeType
+                                required: true
+                                attr:
+                                    class: new-line
+                                    width: 30
+                            name:
+                                type: Blast\UtilsBundle\Form\Type\UniqueFieldType
+                                return_link: true
+                                attr:
+                                    class: inline-block
+                            latin_name:
+                                type: Blast\UtilsBundle\Form\Type\UniqueFieldType
+                                return_link: true
+                                required: false
+                                attr:
+                                    class: inline-block
+                                    width: 30
+                            alias:
+                                type: text
+                                required: false
+                                attr:
+                                    class: inline-block
+                                    width: 50
+                            description:
+                                required: false
+                                type: Blast\UtilsBundle\Form\Type\TinyMceType
+                                attr:
+                                    class: new-line
+                                    height: 200
+
+                            plant_categories:
+                                type: Blast\BaseEntitiesBundle\Form\Type\NestedTreeableType
+                                class: Librinfo\VarietiesBundle\Entity\PlantCategory
+                                required: false
+                                multiple: true
+                                attr:
+                                    class: new-line
+                                    width: 50
+                                _options:
+                                    btn_add: true
+                            regulatory_status:
+                                required: false
+                                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
+                                choices_field: regulatory_status
+                                blast_choices:
+                                   - Contrôlé
+                                   - Non contrôlé
+                                attr:
+                                    class: inline-block
+                            legal_germination_rate:
+                                attr:
+                                    class: inline-block
+                            raise_duration:
+                                attr:
+                                    class: inline-block
+                            tkw:
+                                help: librinfo.help.tkw
+                                attr:
+                                    class: new-line
+                                    width: 30
+                            life_cycle:
+                                type: Librinfo\VarietiesBundle\Form\Type\LifeCycleType
+                                required: false
+                                attr:
+                                    class: new-line
+                                    width: 50
+                            _options:
+                                fieldsOrder:
+                                    - genus
+                                    - parent_species
+                                    - name
+                                    - latin_name
+                                    - alias
+                                    - code
+                                    - description
+                                    - plant_categories
+                                    - regulatory_status
+                                    - legal_germination_rate
+                                    - raise_duration
+                                    - tkw
+                                    - life_cycle
+
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                add: ~
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add: ~
 
 
 
