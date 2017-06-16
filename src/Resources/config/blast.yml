@@ -270,8 +270,10 @@ parameters:
 
         Librinfo\VarietiesBundle\Entity\Species:
             Sonata\AdminBundle\Show\ShowMapper:
+                remove:
+                    description: ~
                 add:
-                    form_group_general:
+                    form_tab_general:
                         '':
 
                             latin_name: ~
@@ -287,6 +289,7 @@ parameters:
                                 catalogue: varieties
                             varieties:
                                 admin_code: librinfo_varieties.admin.variety
+                            description: ~
                             regulatory_status: ~
                             legal_germination_rate: ~
                             seed_lifespan: ~
@@ -657,7 +660,7 @@ parameters:
                                 template: LibrinfoMediaBundle:CRUD:show_images.html.twig
                     _options:
                         tabsOrder:
-                            - form_group_general
+                            - form_tab_general
                             - form_tab_seeds_production
                             - form_tab_inner
                             - form_tab_plant
