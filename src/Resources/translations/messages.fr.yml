@@ -1,392 +1,411 @@
+form_group_amateur: Conseils de culture pour les jardiniers amateurs
+form_group_commercial: Commercial
+form_group_culture: Culture
+form_group_density: Densité au m2
+form_group_genuses: Genres
+form_group_offical_catalogue: Catalogue officiel
+form_group_plant: Caractéristiques de la plante
+form_group_production: Mise en production
+form_group_professional: Conseils de culture pour les professionnels
+form_group_selection: Sélection
 
-'A species cannot be both a sub-species and a parent species': 'Une espèce ne peut être à la fois une sous-espèce et une espèce parente.'
-'This code is already used by another species.': 'Ce code est déjà utilisé par une autre espèce.'
-'Wrong species code format': 'Mauvais format pour le code espèce'
-'annual': 'Plante annuelle'
-'biennial': 'Plante bisannuelle'
-'perennial': 'Plante vivace'
-'Family': 'Famille'
-'librinfo.link.family_list': 'Liste des familles'
-'librinfo.link.family_create': 'Nouvelle famille'
-'librinfo.label.family': 'Famille'
-'librinfo.label.families': 'Familles'
-'librinfo.label.latin_name': 'Nom latin'
-'librinfo.label.alias': 'Synonymes'
-'librinfo.label.genuses': 'Genres'
-'form_group_genuses': 'Genres'
-'form_tab_seeds_production': 'Production de semences'
-'librinfo.varieties.family_admin.label': 'Famille'
-'librinfo.varieties.genus_admin.label': 'Genre'
-'librinfo.link.genus_list': 'Liste des genres'
-'librinfo.link.genus_create': 'Nouveau genre'
-'form_group_specieses': 'Espèces'
-'librinfo.label.specieses': 'Espèces'
-'librinfo.varieties.plant_category_admin.label': 'Catégorie de variété'
-'librinfo.link.plant_category_list': 'Liste des catégories de plantes'
-'librinfo.link.plant_category_create': 'Nouvelle catégorie de plantes'
-'librinfo.label.code': 'Code'
-'librinfo.label.tree_parent': 'Catégorie parente'
-'librinfo.varieties.species_admin.label': 'Espèce'
-'librinfo.link.species_list': 'Liste des espèces'
-'librinfo.link.species_create': 'Nouvelle espèce'
-'librinfo.label.genus': 'Genre'
-'librinfo.label.plant_category': 'Catégorie'
-'librinfo.label.parent_species': 'Est une sous-espèce de'
-'librinfo.label.tkw': 'Poids de mille graines'
-'librinfo.help.tkw': 'en grammes'
-'librinfo.label.subspecieses': 'Sous-espèces'
-'librinfo.label.varieties': 'Variétés'
-'Strains': 'Souches'
-'librinfo.varieties.strain_admin.label': 'Souche'
-'librinfo.link.strain_list': 'Liste des souches'
-'librinfo.link.strain_create': 'Nouvelle souche'
-'Varieties': 'Variétés'
-'librinfo.label.generate_variety_code': 'Générer le code'
-'form_group_selection': 'Sélection'
-'librinfo.label.parent': 'Variété'
-'librinfo.label.children': ' '
-'form_tab_strains': 'Souches'
-'librinfo.label.selection_criteria': 'Critères de sélection'
-'librinfo.label.selection_advice': 'Conseils de sélection'
-'librinfo.varieties.variety_admin.label': 'Variété'
-'librinfo.link.variety_list': 'Liste des variétés'
-'librinfo.link.variety_create': 'Nouvelle variété'
-'librinfo.label.species': 'Espèce'
-'librinfo.label.plant_categories': 'Catégories'
-'librinfo.label.species_name': 'Espèce'
-'librinfo.label.transmitted_diseases': 'Maladies transmises par les semences'
-'form_group_offical_catalogue': 'Catalogue officiel'
-'librinfo.label.official': 'Inscrit au catalogue officiel'
-'librinfo.label.official_name': 'Nom au catalogue officiel'
-'librinfo.label.official_date_in': 'Date d''inscription'
-'librinfo.label.official_date_out': 'Date de radiation'
-'librinfo.label.official_maintainer': 'Mainteneur'
-'librinfo.label.legal_germination_rate': 'Taux de germination légal'
-'librinfo.help.legal_germination_rate': '(si inscrit au catalogue) - en %'
-'librinfo.label.germination_rate': 'Taux de germination AS'
-'librinfo.help.germination_rate': 'en %'
-'librinfo.label.seed_lifespan': 'Durée de vie théorique de la graine'
-'librinfo.help.seed_lifespan': 'en années'
-'librinfo.label.raise_duration': 'Durée de levée dans les conditions naturelles'
-'librinfo.help.raise_duration': 'en jours'
-'librinfo.label.seedhead_yield': 'Rendement par porte-graines'
-'librinfo.help.seedhead_yield': 'en grammes'
-'librinfo.label.base_seed_per_kg': 'Besoins semence de base pour 1kg de graines'
-'librinfo.help.base_seed_per_kg': 'en grammes'
-'librinfo.label.distance_on_line': 'Distance sur la ligne'
-'librinfo.help.distance_on_line': 'en cm'
-'librinfo.label.distance_between_lines': 'Écartement des lignes'
-'librinfo.help.distance_between_lines': 'en cm'
-'librinfo.label.plant_density': 'Densité au m²'
-'librinfo.help.plant_density': 'unité : nombre de porte-graines ???'
-'librinfo.label.area_per_kg': 'Surface pour produire 1kg de graines'
-'librinfo.help.area_per_kg': 'en m²'
-'librinfo.label.seedheads_per_kg': 'Nombre de porte-graines par kg'
-'librinfo.label.life_cycle': 'Cycle végétatif'
-'librinfo.label.life_cycle_annual': 'Plante annuelle'
-'librinfo.label.life_cycle_biennial': 'Plante bisannuelle'
-'librinfo.label.life_cycle_perennial': 'Plante vivace'
-'librinfo.label.regulatory_status': 'Statut réglementaire'
-'librinfo.label.strain_characteristics': 'Charactéristiques de la souche'
-'form_tab_professional': 'Conseils Pro'
-'form_group_professional': 'Conseils de culture pour les professionnels'
-'form_tab_amateur': 'Conseils Jardiniers'
-'form_group_amateur': 'Conseils de culture pour les jardiniers amateurs'
-'form_group_density': 'Densité au m2'
-'form_tab_images': 'Images'
-'librinfo.label.images': 'Images'
-'librinfo.label.professional_descriptions': 'Conseils de culture Professionels'
-'librinfo.varieties.variety_description_professional_admin.label': 'Conseils pros'
-'librinfo_description_professional_possible_sowing_periods': 'Périodes de semis possibles'
-'librinfo_description_professional_manure_quantity': 'Quantité de fumure'
-'librinfo_description_professional_plant_hotbed': 'Couche chaude (plante)'
-'librinfo_description_professional_cutting_period': 'Période de bouturage'
-'librinfo_description_professional_sowing_date': 'Date de semis'
-'librinfo_description_professional_transplant_date': 'Date de repiquage'
-'librinfo_description_professional_cutting_date': 'Date de bouturage'
-'librinfo_description_professional_germination_conditions': 'Conditions de germination'
-'librinfo.varieties.variety_description_amateur_admin.label': 'Conseils Jardiniers'
-'librinfo_description_professional_seed_storage': 'Stockage optimal (semence)'
-'librinfo_description_professional_transplant': 'Repiquage'
-'librinfo_description_professional_sowing_density': 'Densité de semis'
-'librinfo_description_professional_on_line_distance': 'Distance sur ligne'
-'librinfo_description_professional_between_distance': 'Distance entre les lignes'
-'librinfo_description_professional_exposure': 'Exposition'
-'librinfo_description_professional_seedling_irrigation': 'Irrigation (stade semis)'
-'librinfo_description_professional_manure': 'Fumure'
-'librinfo_description_professional_cuttings_period': 'Période de bouturage'
-'librinfo_description_professional_transplant_irrigation': 'Irrigation (stade repiquage)'
-'librinfo_description_professional_transplant_manure_quantity': 'Quantité de fumure'
-'librinfo_description_professional_substratum': 'Substrat'
-'librinfo_description_professional_treatments': 'Traitements'
-'librinfo_description_professional_harvest_storage': 'Stockage optimal (récoltes)'
-'librinfo_description_professional_advised_outcome': 'Débouchées conseillées'
-'librinfo_description_professional_possible_outcome': 'Débouchées possibles'
-'librinfo_description_professional_soil': 'Sol'
-'librinfo_description_professional_yield': 'Rendement'
-'librinfo_description_professional_biodynamics': 'Biodynamie'
-'librinfo_description_professional_tutoring': 'Tuteurage'
-'librinfo_description_professional_seedling_hotbed': 'Couche chaude (semis)'
-'librinfo_description_professional_transplant_hotbed': 'Couche chaude (repiqage)'
-'librinfo_description_professional_plant_transplant_hotbed': 'Couche chaude (plants)'
-'librinfo_description_professional_seedling_irrigation_quantity': 'Irrigation stade semis (Quantité)'
-'librinfo_description_professional_seedling_irrigation_frequency': 'Irrigation stade semis (Fréquence)'
-'librinfo_description_professional_transplant_irrigation_quantity': 'Irrigation stade repiquage (Quantité)'
-'librinfo_description_professional_transplant_irrigation_frequency': 'Irrigation stade repiquage (Fréquence)'
-'librinfo_description_professional_germination_temperature': 'Conditions de germination (Température)'
-'librinfo_description_professional_germination_light': 'Conditions de germination (Lumière)'
-'librinfo.label.amateur_descriptions': 'Conseils de culture Amateurs'
-'librinfo_description_amateur_manure_quantity': 'Quantité de fumure'
-'librinfo_description_amateur_possible_sowing_periods': 'Périodes de semis possibles'
-'librinfo_description_amateur_cutting_period': 'Période de bouturage'
-'librinfo_description_amateur_sowing_date': 'Date de semis'
-'librinfo_description_amateur_transplant_date': 'Date de repiquage'
-'librinfo_description_amateur_cutting_date': 'Date de bouturage'
-'librinfo_description_amateur_germination_conditions': 'Conditions de germination'
-'librinfo_description_amateur_seed_storage': 'Stockage optimal (semence)'
-'librinfo_description_amateur_transplant': 'Repiquage'
-'librinfo_description_amateur_sowing_density': 'Densité de semis'
-'librinfo_description_amateur_on_line_distance': 'Distance sur ligne'
-'librinfo_description_amateur_between_distance': 'Distance entre les lignes'
-'librinfo_description_amateur_exposure': 'Exposition'
-'librinfo_description_amateur_seedling_irrigation': 'Irrigation (stade semis)'
-'librinfo_description_amateur_manure': 'Fumure'
-'librinfo_description_amateur_cuttings_period': 'Période de bouturage'
-'librinfo_description_amateur_transplant_irrigation': 'Irrigation (stade repiquage)'
-'librinfo_description_amateur_transplant_manure_quantity': 'Quantité de fumure'
-'librinfo_description_amateur_substratum': 'Substrat'
-'librinfo_description_amateur_treatments': 'Traitements'
-'librinfo_description_amateur_harvest_storage': 'Stockage optimal (récoltes)'
-'librinfo_description_amateur_advised_outcome': 'Débouchées conseillées'
-'librinfo_description_amateur_possible_outcome': 'Débouchées possibles'
-'librinfo_description_amateur_soil': 'Sol'
-'librinfo_description_amateur_yield': 'Rendement'
-'librinfo_description_amateur_biodynamics': 'Biodynamie'
-'librinfo_description_amateur_tutoring': 'Tuteurage'
-'librinfo_description_amateur_seedling_hotbed': 'Couche chaude (semis)'
-'librinfo_description_amateur_transplant_hotbed': 'Couche chaude (repiqage)'
-'librinfo_description_amateur_plant_hotbed': 'Couche chaude (plante)'
-'librinfo_description_amateur_seedling_irrigation_quantity': 'Irrigation stade semis (Quantité)'
-'librinfo_description_amateur_seedling_irrigation_frequency': 'Irrigation stade semis (Fréquence)'
-'librinfo_description_amateur_transplant_irrigation_quantity': 'Irrigation stade repiquage (Quantité)'
-'librinfo_description_amateur_transplant_irrigation_frequency': 'Irrigation stade repiquage (Fréquence)'
-'librinfo_description_amateur_germination_temperature': 'Conditions de germination (Température)'
-'librinfo_description_amateur_germination_light': 'Conditions de germination (Lumière)'
-'librinfo.label.plant_descriptions': 'Caractéristiques de la plante'
-'form_group_plant': 'Caractéristiques de la plante'
-'librinfo.varieties.variety_description_plant_admin.label': 'Caractéristiques de la plante'
-'form_tab_plant': 'Plante'
-'librinfo_description_plant_foliage_type': 'Type de feuillage'
-'librinfo_description_plant_foliage_color': 'Couleur du feuillage'
-'librinfo_description_plant_required_size': 'Taille nécessaire'
-'librinfo_description_plant_development': 'Développement'
-'librinfo.label.culture_descriptions': 'Culture'
-'form_group_culture': 'Culture'
-'librinfo.varieties.variety_description_culture_admin.label': 'Culture'
-'form_tab_culture': 'Culture'
-'librinfo_description_culture_location': 'Localisation'
-'librinfo_description_culture_strain_origin': 'Origine de la souche'
-'librinfo_description_culture_description': 'Description'
-'librinfo_description_culture_several_strains': 'Plusieurs souches disponibles'
-'librinfo.label.commercial_descriptions': 'Offre commerciale'
-'form_tab_commercial': 'Commercial'
-'librinfo.varieties.variety_description_commercial_admin.label': 'Commercial'
-'form_group_commercial': 'Commercial'
-'librinfo_description_commercial_taste_rating': 'Qualité goût'
-'librinfo_description_commercial_taste': 'Qualités gustatives'
-'librinfo_description_commercial_texture': 'Texture'
-'librinfo_description_commercial_nutrition_rating': 'Qualité nutritive'
-'librinfo_description_commercial_nutrients': 'Nutriments'
-'librinfo_description_commercial_main_color': 'Couleur principale'
-'librinfo_description_commercial_secondary_color': 'Couleur secondaire'
-'librinfo_description_commercial_yield_rating': 'Rendement'
-'librinfo_description_commercial_max_harvest_span': 'Etalement max. de la récolte'
-'librinfo_description_commercial_min_harvest_span': 'Etalement min. de la récolte'
-'librinfo_description_commercial_prefered_zone': 'Zone de culture préférée'
-'librinfo_description_commercial_grade': 'Calibre'
-'librinfo_description_commercial_main_usages': 'Usages principaux'
-'librinfo_description_commercial_usages': 'Usages conseillés'
-'librinfo_description_commercial_plant_type': 'Type de plante'
-'librinfo_description_commercial_targeted_audience': 'Public'
-'librinfo_description_commercial_precocity': 'Précocité'
-'librinfo_description_commercial_rusticicty': 'Rusticité'
-'librinfo_description_commercial_cultivation_ease': 'Facilité de culture'
-'librinfo_description_commercial_pot_cultivation_ease': 'Culture en pot'
-'librinfo_description_commercial_inner_commment': 'Commentaire (non mutualisé)'
-'librinfo.label.production_descriptions': 'Mise en production'
-'form_tab_production': 'Mise en production'
-'librinfo.varieties.variety_description_production_admin.label': 'Mise en production'
-'form_group_production': 'Mise en production'
-'librinfo_description_production_possible_sowing_periods': 'Périodes de semis possibles'
-'librinfo_description_production_cutting_period': 'Période de bouturage'
-'librinfo_description_production_sowing_date': 'Date de semis'
-'librinfo_description_production_transplant_date': 'Date de repiquage'
-'librinfo_description_production_cutting_date': 'Date de bouturage'
-'librinfo_description_production_germination_conditions': 'Conditions de germination'
-'librinfo_description_production_seed_storage': 'Stockage optimal (semence)'
-'librinfo_description_production_transplant': 'Repiquage'
-'librinfo_description_production_sowing_density': 'Densité de semis'
-'librinfo_description_production_on_line_distance': 'Distance sur ligne'
-'librinfo_description_production_between_distance': 'Distance entre les lignes'
-'librinfo_description_production_exposure': 'Exposition'
-'librinfo_description_production_seedling_irrigation': 'Irrigation (stade semis)'
-'librinfo_description_production_manure': 'Fumure'
-'librinfo_description_production_cuttings_period': 'Période de bouturage'
-'librinfo_description_production_transplant_irrigation': 'Irrigation (stade repiquage)'
-'librinfo_description_production_manure_quantity': 'Quantité de fumure'
-'librinfo_description_production_substratum': 'Substrat'
-'librinfo_description_production_treatments': 'Traitements'
-'librinfo_description_production_harvest_storage': 'Stockage optimal (récoltes)'
-'librinfo_description_production_advised_outcome': 'Débouchées conseillées'
-'librinfo_description_production_possible_outcome': 'Débouchées possibles'
-'librinfo_description_production_soil': 'Sol'
-'librinfo_description_production_yield': 'Rendement'
-'librinfo_description_production_biodynamics': 'Biodynamie'
-'librinfo_description_production_tutoring': 'Tuteurage'
-'librinfo_description_production_germination_temperature': 'Conditions de germination (Température)'
-'librinfo_description_production_germination_light': 'Conditions de germination (Lumière)'
-'librinfo_description_production_seedling_irrigation_quantity': 'Irrigation stade semis (Quantité)'
-'librinfo_description_production_seedling_irrigation_frequency': 'Irrigation stade semis (Fréquence)'
-'librinfo_description_production_seedling_hotbed': 'Couche chaude (semis)'
-'librinfo_description_production_plant_hotbed': 'Couche chaude (plante)'
-'librinfo_description_production_transplant_irrigation_quantity': 'Irrigation stade repiquage (Quantité)'
-'librinfo_description_production_transplant_irrigation_frequency': 'Irrigation stade repiquage (Fréquence)'
-'librinfo_description_production_transplant_hotbed': 'Couche chaude (repiquage)'
-'librinfo.label.inner_descriptions': 'Descriptions personnelles'
-'librinfo.help.seedling_irrigation_quantity': ' '
-'librinfo.help.yield': 'Poids des légumes par m2 (en kg)'
-'librinfo.help.yield_rating': ''
-'librinfo.help.seedling_irrigation_frequency': ' '
-'librinfo.help.transplant_irrigation_quantity': ' '
-'librinfo.help.transplant_irrigation_frequency': ' '
-'librinfo.help.plant_hotbed': ' '
-'librinfo.help.germination_light': ' '
-'librinfo.help.germination_temperature': ' '
-'librinfo.help.foliage_type': ' '
-'librinfo.help.foliage_color': ' '
-'librinfo.help.required_size': 'en cm'
-'librinfo.help.location': ' '
-'librinfo.help.taste_rating': ' '
-'librinfo.help.taste': ' '
-'librinfo.help.texture': ' '
-'librinfo.help.nutrition_rating': ' '
-'librinfo.help.nutrients': ' '
-'librinfo.help.main_color': ' '
-'librinfo.help.secondary_color': ' '
-'librinfo.help.max_harvest_span': 'en semaines'
-'librinfo.help.min_harvest_span': 'en semaines'
-'librinfo.help.prefered_zone': ' '
-'librinfo.help.grade': ' '
-'librinfo.help.main_usages': ' '
-'librinfo.help.usages': ' '
-'librinfo.help.plant_type': ' '
-'librinfo.help.targeted_audience': ' '
-'librinfo.help.precocity': ' '
-'librinfo.help.rusticicty': ' '
-'librinfo.help.cultivation_ease': ' '
-'librinfo.help.inner_commment': 'non mutualisé'
-'librinfo.help.possible_sowing_periods': ' '
-'librinfo.help.germination_conditions': ' '
-'librinfo.help.transplant': ' '
-'librinfo.help.sowing_density': 'nbre/m2'
-'librinfo.help.on_line_distance': 'en cm'
-'librinfo.help.between_distance': 'en cm'
-'librinfo.help.exposure': ' '
-'librinfo.help.seedling_irrigation': 'en cl'
-'librinfo.help.transplant_irrigation': 'en cl'
-'librinfo.help.manure': ' '
-'librinfo.help.cuttings_period': 'semaines après levée'
-'librinfo.help.sowing_date': 'Nombre de semaines'
-'librinfo.help.transplant_date': 'Nombre de semaines'
-'librinfo.help.manure_quantity': 'en grammes'
-'librinfo.help.substratum': ' '
-'librinfo.help.treatments': ' '
-'librinfo.help.seed_storage': ' '
-'librinfo.help.harvest_storage': ' '
-'librinfo.help.advised_outcome': ' '
-'librinfo.help.possible_outcome': ' '
-'librinfo.help.soil': ' '
-'librinfo.help.biodynamics': ' '
-'librinfo.help.tutoring': ' '
-'librinfo.help.pot_cultivation_ease': ' '
-'librinfo.help.cutting_date': 'Nombre de semaines'
-'librinfo.help.seedling_hotbed': ' '
-'librinfo.help.transplant_hotbed': ' '
-'librinfo.help.plant_transplant_hotbed': ' '
-'librinfo.help.development': ' '
-'librinfo.help.seedheads_per_kg': 'Unités '
-'librinfo.help.strain_origin': ' '
-'librinfo.help.several_strains': ' '
-'librinfo.help.description': ' '
-'Field': 'Champ'
-'Value': 'Valeur'
-'yes': 'oui'
-'no': 'non'
-'treatments': 'Traitements'
-'advised_outcome': 'Débouchées conseillées'
-'germination_light': 'Lumière de germination'
-'possible_sowing_periods': 'Périodes de semis possibles'
-'substratum': 'Substrat'
-'seedling_hotbed': 'Couche chaude (semis)'
-'tutoring': 'Tuteurage'
-'sowing_density': 'Densité de semis'
-'plant_hotbed': 'Couche chaude (plante)'
-'on_line_distance': 'Distance sur ligne'
-'cutting_date': 'Date de bouturage'
-'seed_storage': 'Stockage optimal (semence)'
-'transplant_hotbed': 'Couche chaude (repiquage)'
-'germination_temperature': 'Température de germination'
-'harvest_storage': 'Stockage optimal (récolte)'
-'exposure': 'Exposition'
-'soil': 'Sol'
-'transplant_irrigation_quantity': 'Irrigation stade repiquage (Quantité)'
-'yield': 'Rendement'
-'seedling_irrigation_frequency': 'Irrigation stade semis (Fréquence)'
-'transplant': 'Repiquage'
-'seedling_irrigation_quantity': 'Irrigation stade semis (Quantité)'
-'manure': 'Fumure'
-'transplant_irrigation_frequency': 'Irrigation stade repiquage (Fréquence)'
-'biodynamics': 'Biodynamie'
-'between_distance': 'Distance entre les lignes'
-'manure_quantity': 'Quantité fumure'
-'cuttings_period': 'Période de bouturage'
-'sowing_date': 'Date de semis'
-'transplant_date': 'Date de repiquage'
-'possible_outcome': 'Débouchées possibles'
-'main_usages': 'Usages principaux'
-'targeted_audience': 'Public visé'
-'min_harvest_span': 'Etalement min. de la récolte'
-'cultivation_ease': 'Facilité de culture'
-'rusticicty': 'Rusticité'
-'max_harvest_span': 'Etalement max. de la récolte'
-'pot_cultivation_ease': 'Culture en pot'
-'nutrition_rating': 'Qualité nutritive'
-'inner_commment': 'Commentaire spécifique'
-'taste_rating': 'Qualité gustative'
-'texture': 'Texture'
-'grade': 'Calibre'
-'secondary_color': 'Couleur secondaire'
-'prefered_zone': 'Zone de culture préférée'
-'yield_rating': 'Rendement'
-'taste': 'Qualités gustatives'
-'usages': 'Usages conseillés'
-'nutrients': 'Nutriments'
-'plant_type': 'Type de plante'
-'precocity': 'Précocité'
-'main_color': 'Couleur principale'
-'foliage_type': 'Type de feuillage'
-'foliage_color': 'Couleur du feuillage'
-'required_size': 'Taille nécessaire'
-'development': 'Développement'
-'description': 'Description'
-'location': 'Localisation'
-'strain_origin': 'Origine de la souche'
-'several_strains': 'Plusieurs souches disponibles'
-'librinfo.label.is_strain': 'Souche'
-'librinfo.label.several_strains': 'Plusieurs souches'
-'Create strain': 'Créer une souche'
-'action_strain': 'Souche'
-'Strain': 'Souche'
-'librinfo.error.missing_variety_name': 'Veuillez renseigner le nom de la variété/souche'
-'librinfo.error.missing_strain_parent': 'Veuillez renseigner la variété parente de la souche'
-'librinfo.error.missing_species_name': 'Veuillez renseigner le nom de l''espèce'
+form_tab_amateur: Conseils Jardiniers
+form_tab_commercial: Commercial
+form_tab_culture: Culture
+form_tab_images: Images
+form_tab_plant: Plante
+form_tab_production: Mise en production
+form_tab_professional: Conseils Pro
+form_tab_seeds_production: Production de semences
+form_tab_specieses: Espèces
+form_tab_strains: Souches
+
+librinfo_description_amateur_advised_outcome: Débouchées conseillées
+librinfo_description_amateur_between_distance: Distance entre les lignes
+librinfo_description_amateur_biodynamics: Biodynamie
+librinfo_description_amateur_cutting_date: Date de bouturage
+librinfo_description_amateur_cutting_period: Période de bouturage
+librinfo_description_amateur_cuttings_period: Période de bouturage
+librinfo_description_amateur_exposure: Exposition
+librinfo_description_amateur_germination_conditions: Conditions de germination
+librinfo_description_amateur_germination_light: Conditions de germination (Lumière)
+librinfo_description_amateur_germination_temperature: Conditions de germination (Température)
+librinfo_description_amateur_harvest_storage: Stockage optimal (récoltes)
+librinfo_description_amateur_manure_quantity: Quantité de fumure
+librinfo_description_amateur_manure: Fumure
+librinfo_description_amateur_on_line_distance: Distance sur ligne
+librinfo_description_amateur_plant_hotbed: Couche chaude (plante)
+librinfo_description_amateur_possible_outcome: Débouchées possibles
+librinfo_description_amateur_possible_sowing_periods: Périodes de semis possibles
+librinfo_description_amateur_seed_storage: Stockage optimal (semence)
+librinfo_description_amateur_seedling_hotbed: Couche chaude (semis)
+librinfo_description_amateur_seedling_irrigation_frequency: Irrigation stade semis (Fréquence)
+librinfo_description_amateur_seedling_irrigation_quantity: Irrigation stade semis (Quantité)
+librinfo_description_amateur_seedling_irrigation: Irrigation (stade semis)
+librinfo_description_amateur_soil: Sol
+librinfo_description_amateur_sowing_date: Date de semis
+librinfo_description_amateur_sowing_density: Densité de semis
+librinfo_description_amateur_substratum: Substrat
+librinfo_description_amateur_transplant_date: Date de repiquage
+librinfo_description_amateur_transplant_hotbed: Couche chaude (repiqage)
+librinfo_description_amateur_transplant_irrigation_frequency: Irrigation stade repiquage (Fréquence)
+librinfo_description_amateur_transplant_irrigation_quantity: Irrigation stade repiquage (Quantité)
+librinfo_description_amateur_transplant_irrigation: Irrigation (stade repiquage)
+librinfo_description_amateur_transplant_manure_quantity: Quantité de fumure
+librinfo_description_amateur_transplant: Repiquage
+librinfo_description_amateur_treatments: Traitements
+librinfo_description_amateur_tutoring: Tuteurage
+librinfo_description_amateur_yield: Rendement
+
+librinfo_description_commercial_cultivation_ease: Facilité de culture
+librinfo_description_commercial_grade: Calibre
+librinfo_description_commercial_inner_commment: Commentaire (non mutualisé)
+librinfo_description_commercial_main_color: Couleur principale
+librinfo_description_commercial_main_usages: Usages principaux
+librinfo_description_commercial_max_harvest_span: Etalement max. de la récolte
+librinfo_description_commercial_min_harvest_span: Etalement min. de la récolte
+librinfo_description_commercial_nutrients: Nutriments
+librinfo_description_commercial_nutrition_rating: Qualité nutritive
+librinfo_description_commercial_plant_type: Type de plante
+librinfo_description_commercial_pot_cultivation_ease: Culture en pot
+librinfo_description_commercial_precocity: Précocité
+librinfo_description_commercial_prefered_zone: Zone de culture préférée
+librinfo_description_commercial_rusticicty: Rusticité
+librinfo_description_commercial_secondary_color: Couleur secondaire
+librinfo_description_commercial_targeted_audience: Public
+librinfo_description_commercial_taste_rating: Qualité goût
+librinfo_description_commercial_taste: Qualités gustatives
+librinfo_description_commercial_texture: Texture
+librinfo_description_commercial_usages: Usages conseillés
+librinfo_description_commercial_yield_rating: Rendement
+
+librinfo_description_culture_description: Description
+librinfo_description_culture_location: Localisation
+librinfo_description_culture_several_strains: Plusieurs souches disponibles
+librinfo_description_culture_strain_origin: Origine de la souche
+
+librinfo_description_plant_development: Développement
+librinfo_description_plant_foliage_color: Couleur du feuillage
+librinfo_description_plant_foliage_type: Type de feuillage
+librinfo_description_plant_required_size: Taille nécessaire
+
+librinfo_description_production_advised_outcome: Débouchées conseillées
+librinfo_description_production_between_distance: Distance entre les lignes
+librinfo_description_production_biodynamics: Biodynamie
+librinfo_description_production_cutting_date: Date de bouturage
+librinfo_description_production_cutting_period: Période de bouturage
+librinfo_description_production_cuttings_period: Période de bouturage
+librinfo_description_production_exposure: Exposition
+librinfo_description_production_germination_conditions: Conditions de germination
+librinfo_description_production_germination_light: Conditions de germination (Lumière)
+librinfo_description_production_germination_temperature: Conditions de germination (Température)
+librinfo_description_production_harvest_storage: Stockage optimal (récoltes)
+librinfo_description_production_manure_quantity: Quantité de fumure
+librinfo_description_production_manure: Fumure
+librinfo_description_production_on_line_distance: Distance sur ligne
+librinfo_description_production_plant_hotbed: Couche chaude (plante)
+librinfo_description_production_possible_outcome: Débouchées possibles
+librinfo_description_production_possible_sowing_periods: Périodes de semis possibles
+librinfo_description_production_seed_storage: Stockage optimal (semence)
+librinfo_description_production_seedling_hotbed: Couche chaude (semis)
+librinfo_description_production_seedling_irrigation_frequency: Irrigation stade semis (Fréquence)
+librinfo_description_production_seedling_irrigation_quantity: Irrigation stade semis (Quantité)
+librinfo_description_production_seedling_irrigation: Irrigation (stade semis)
+librinfo_description_production_soil: Sol
+librinfo_description_production_sowing_date: Date de semis
+librinfo_description_production_sowing_density: Densité de semis
+librinfo_description_production_substratum: Substrat
+librinfo_description_production_transplant_date: Date de repiquage
+librinfo_description_production_transplant_hotbed: Couche chaude (repiquage)
+librinfo_description_production_transplant_irrigation_frequency: Irrigation stade repiquage (Fréquence)
+librinfo_description_production_transplant_irrigation_quantity: Irrigation stade repiquage (Quantité)
+librinfo_description_production_transplant_irrigation: Irrigation (stade repiquage)
+librinfo_description_production_transplant: Repiquage
+librinfo_description_production_treatments: Traitements
+librinfo_description_production_tutoring: Tuteurage
+librinfo_description_production_yield: Rendement
+
+librinfo_description_professional_advised_outcome: Débouchées conseillées
+librinfo_description_professional_between_distance: Distance entre les lignes
+librinfo_description_professional_biodynamics: Biodynamie
+librinfo_description_professional_cutting_date: Date de bouturage
+librinfo_description_professional_cutting_period: Période de bouturage
+librinfo_description_professional_cuttings_period: Période de bouturage
+librinfo_description_professional_exposure: Exposition
+librinfo_description_professional_germination_conditions: Conditions de germination
+librinfo_description_professional_germination_light: Conditions de germination (Lumière)
+librinfo_description_professional_germination_temperature: Conditions de germination (Température)
+librinfo_description_professional_harvest_storage: Stockage optimal (récoltes)
+librinfo_description_professional_manure_quantity: Quantité de fumure
+librinfo_description_professional_manure: Fumure
+librinfo_description_professional_on_line_distance: Distance sur ligne
+librinfo_description_professional_plant_hotbed: Couche chaude (plante)
+librinfo_description_professional_plant_transplant_hotbed: Couche chaude (plants)
+librinfo_description_professional_possible_outcome: Débouchées possibles
+librinfo_description_professional_possible_sowing_periods: Périodes de semis possibles
+librinfo_description_professional_seed_storage: Stockage optimal (semence)
+librinfo_description_professional_seedling_hotbed: Couche chaude (semis)
+librinfo_description_professional_seedling_irrigation_frequency: Irrigation stade semis (Fréquence)
+librinfo_description_professional_seedling_irrigation_quantity: Irrigation stade semis (Quantité)
+librinfo_description_professional_seedling_irrigation: Irrigation (stade semis)
+librinfo_description_professional_soil: Sol
+librinfo_description_professional_sowing_date: Date de semis
+librinfo_description_professional_sowing_density: Densité de semis
+librinfo_description_professional_substratum: Substrat
+librinfo_description_professional_transplant_date: Date de repiquage
+librinfo_description_professional_transplant_hotbed: Couche chaude (repiqage)
+librinfo_description_professional_transplant_irrigation_frequency: Irrigation stade repiquage (Fréquence)
+librinfo_description_professional_transplant_irrigation_quantity: Irrigation stade repiquage (Quantité)
+librinfo_description_professional_transplant_irrigation: Irrigation (stade repiquage)
+librinfo_description_professional_transplant_manure_quantity: Quantité de fumure
+librinfo_description_professional_transplant: Repiquage
+librinfo_description_professional_treatments: Traitements
+librinfo_description_professional_tutoring: Tuteurage
+librinfo_description_professional_yield: Rendement
+
+librinfo:
+    error:
+        missing_species_name: Veuillez renseigner le nom de l'espèce
+        missing_strain_parent: Veuillez renseigner la variété parente de la souche
+        missing_variety_name: Veuillez renseigner le nom de la variété/souche
+
+    help:
+        advised_outcome: ~
+        area_per_kg: en m²
+        base_seed_per_kg: en grammes
+        between_distance: en cm
+        biodynamics: ~
+        cultivation_ease: ~
+        cutting_date: Nombre de semaines
+        cuttings_period: semaines après levée
+        description: ~
+        development: ~
+        distance_between_lines: en cm
+        distance_on_line: en cm
+        exposure: ~
+        foliage_color: ~
+        foliage_type: ~
+        germination_conditions: ~
+        germination_light: ~
+        germination_rate: en %
+        germination_temperature: ~
+        grade: ~
+        harvest_storage: ~
+        inner_commment: non mutualisé
+        legal_germination_rate: (si inscrit au catalogue) - en %
+        location: ~
+        main_color: ~
+        main_usages: ~
+        manure_quantity: en grammes
+        manure: ~
+        max_harvest_span: en semaines
+        min_harvest_span: en semaines
+        nutrients: ~
+        nutrition_rating: ~
+        on_line_distance: en cm
+        plant_density: 'unité : nombre de porte-graines ???'
+        plant_hotbed: ~
+        plant_transplant_hotbed: ~
+        plant_type: ~
+        possible_outcome: ~
+        possible_sowing_periods: ~
+        pot_cultivation_ease: ~
+        precocity: ~
+        prefered_zone: ~
+        raise_duration: en jours
+        required_size: en cm
+        rusticicty: ~
+        secondary_color: ~
+        seed_lifespan: en années
+        seed_storage: ~
+        seedhead_yield: en grammes
+        seedheads_per_kg: Unités
+        seedling_hotbed: ~
+        seedling_irrigation_frequency: ~
+        seedling_irrigation_quantity: ~
+        seedling_irrigation: en cl
+        several_strains: ~
+        soil: ~
+        sowing_date: Nombre de semaines
+        sowing_density: nbre/m2
+        strain_origin: ~
+        substratum: ~
+        targeted_audience: ~
+        taste_rating: ~
+        taste: ~
+        texture: ~
+        tkw: en grammes
+        transplant_date: Nombre de semaines
+        transplant_hotbed: ~
+        transplant_irrigation_frequency: ~
+        transplant_irrigation_quantity: ~
+        transplant_irrigation: en cl
+        transplant: ~
+        treatments: ~
+        tutoring: ~
+        usages: ~
+        yield_rating: ~
+        yield: Poids des légumes par m2 (en kg)
+
+    label:
+        alias: Synonymes
+        amateur_descriptions: Conseils de culture Amateurs
+        area_per_kg: Surface pour produire 1kg de graines
+        base_seed_per_kg: Besoins semence de base pour 1kg de graines
+        children:
+        code: Code
+        commercial_descriptions: Offre commerciale
+        culture_descriptions: Culture
+        distance_between_lines: Écartement des lignes
+        distance_on_line: Distance sur la ligne
+        families: Familles
+        family: Famille
+        generate_variety_code: Générer le code
+        genus: Genre
+        genuses: Genres
+        germination_rate: Taux de germination AS
+        images: Images
+        inner_descriptions: Descriptions personnelles
+        is_strain: Souche
+        latin_name: Nom latin
+        legal_germination_rate: Taux de germination légal
+        life_cycle_annual: Plante annuelle
+        life_cycle_biennial: Plante bisannuelle
+        life_cycle_perennial: Plante vivace
+        life_cycle: Cycle végétatif
+        official_date_in: Date d'inscription
+        official_date_out: Date de radiation
+        official_maintainer: Mainteneur
+        official_name: Nom au catalogue officiel
+        official: Inscrit au catalogue officiel
+        parent_species: Est une sous-espèce de
+        parent: Variété
+        plant_categories: Catégories
+        plant_category: Catégorie
+        plant_density: Densité au m²
+        plant_descriptions: Caractéristiques de la plante
+        production_descriptions: Mise en production
+        professional_descriptions: Conseils de culture Professionels
+        raise_duration: Durée de levée dans les conditions naturelles
+        regulatory_status: Statut réglementaire
+        seed_lifespan: Durée de vie théorique de la graine
+        seedhead_yield: Rendement par porte-graines
+        seedheads_per_kg: Nombre de porte-graines par kg
+        selection_advice: Conseils de sélection
+        selection_criteria: Critères de sélection
+        several_strains: Plusieurs souches
+        species_name: Espèce
+        species: Espèce
+        specieses: Espèces
+        strain_characteristics: Charactéristiques de la souche
+        subspecieses: Sous-espèces
+        tkw: Poids de mille graines
+        transmitted_diseases: Maladies transmises par les semences
+        tree_parent: Catégorie parente
+        varieties: Variétés
+    link:
+        family_create: Nouvelle famille
+        family_list: Liste des familles
+        genus_create: Nouveau genre
+        genus_list: Liste des genres
+        plant_category_create: Nouvelle catégorie de plantes
+        plant_category_list: Liste des catégories de plantes
+        species_create: Nouvelle espèce
+        species_list: Liste des espèces
+        strain_create: Nouvelle souche
+        strain_list: Liste des souches
+        variety_create: Nouvelle variété
+        variety_list: Liste des variétés
+
+    varieties:
+        family_admin.label: Famille
+        genus_admin.label: Genre
+        plant_category_admin.label: Catégorie de variété
+        species_admin.label: Espèce
+        strain_admin.label: Souche
+        variety_admin.label: Variété
+        variety_description_amateur_admin.label: Conseils Jardiniers
+        variety_description_commercial_admin.label: Commercial
+        variety_description_culture_admin.label: Culture
+        variety_description_plant_admin.label: Caractéristiques de la plante
+        variety_description_production_admin.label: Mise en production
+        variety_description_professional_admin.label: Conseils pros
+
+
+
+A species cannot be both a sub-species and a parent species: Une espèce ne peut être à la fois une sous-espèce et une espèce parente.
+action_strain: Souche
+advised_outcome: Débouchées conseillées
+annual: Plante annuelle
+between_distance: Distance entre les lignes
+biennial: Plante bisannuelle
+biodynamics: Biodynamie
+Create strain: Créer une souche
+cultivation_ease: Facilité de culture
+cutting_date: Date de bouturage
+cuttings_period: Période de bouturage
+description: Description
+development: Développement
+exposure: Exposition
+Family: Famille
+Field: Champ
+foliage_color: Couleur du feuillage
+foliage_type: Type de feuillage
+germination_light: Lumière de germination
+germination_temperature: Température de germination
+grade: Calibre
+harvest_storage: Stockage optimal (récolte)
+inner_commment: Commentaire spécifique
+location: Localisation
+main_color: Couleur principale
+main_usages: Usages principaux
+manure_quantity: Quantité fumure
+manure: Fumure
+max_harvest_span: Etalement max. de la récolte
+min_harvest_span: Etalement min. de la récolte
+no: non
+nutrients: Nutriments
+nutrition_rating: Qualité nutritive
+on_line_distance: Distance sur ligne
+perennial: Plante vivace
+plant_hotbed: Couche chaude (plante)
+plant_type: Type de plante
+possible_outcome: Débouchées possibles
+possible_sowing_periods: Périodes de semis possibles
+pot_cultivation_ease: Culture en pot
+precocity: Précocité
+prefered_zone: Zone de culture préférée
+required_size: Taille nécessaire
+rusticicty: Rusticité
+secondary_color: Couleur secondaire
+seed_storage: Stockage optimal (semence)
+seedling_hotbed: Couche chaude (semis)
+seedling_irrigation_frequency: Irrigation stade semis (Fréquence)
+seedling_irrigation_quantity: Irrigation stade semis (Quantité)
+several_strains: Plusieurs souches disponibles
+soil: Sol
+sowing_date: Date de semis
+sowing_density: Densité de semis
+strain_origin: Origine de la souche
+Strain: Souche
+Strains: Souches
+substratum: Substrat
+targeted_audience: Public visé
+taste_rating: Qualité gustative
+taste: Qualités gustatives
+texture: Texture
+This code is already used by another species.: Ce code est déjà utilisé par une autre espèce.
+transplant_date: Date de repiquage
+transplant_hotbed: Couche chaude (repiquage)
+transplant_irrigation_frequency: Irrigation stade repiquage (Fréquence)
+transplant_irrigation_quantity: Irrigation stade repiquage (Quantité)
+transplant: Repiquage
+treatments: Traitements
+tutoring: Tuteurage
+usages: Usages conseillés
+Value: Valeur
+Varieties: Variétés
+Wrong species code format: Mauvais format pour le code espèce
+yes: oui
+yield_rating: Rendement
+yield: Rendement
