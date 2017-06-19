@@ -263,6 +263,7 @@ librinfo:
         generate_variety_code: Générer le code
         genus: Genre
         genuses: Genres
+        genuses_name: Genres
         germination_rate: Taux de germination AS
         images: Images
         inner_descriptions: Descriptions personnelles
@@ -295,6 +296,7 @@ librinfo:
         selection_criteria: Critères de sélection
         several_strains: Plusieurs souches
         species_name: Espèce
+        specieses_name: Espèces
         species: Espèce
         specieses: Espèces
         strain_characteristics: Charactéristiques de la souche
