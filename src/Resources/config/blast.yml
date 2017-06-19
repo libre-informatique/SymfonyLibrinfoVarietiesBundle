@@ -62,22 +62,22 @@ parameters:
                                 attr:
                                     class: new-line
                                     height: 200
-                    form_group_genuses:
-                        '':
-                            genuses:
-                                type: sonata_type_collection
-                                by_reference: false
-                                type_options:
-                                    required: false
-                                    btn_add: false
-                                    delete: false
-                                required: false
-                                label: false
-                                _options:
-                                    edit: inline
-                                    inline: table
-                                    allow_delete: false
-                                    admin_code: librinfo_varieties.admin.genus_embedded
+                    # form_group_genuses:
+                    #     '':
+                    #         genuses:
+                    #             type: sonata_type_collection
+                    #             by_reference: false
+                    #             type_options:
+                    #                 required: false
+                    #                 btn_add: false
+                    #                 delete: false
+                    #             required: false
+                    #             label: false
+                    #             _options:
+                    #                 edit: inline
+                    #                 inline: table
+                    #                 allow_delete: false
+                    #                 admin_code: librinfo_varieties.admin.genus_embedded
                     _options:
                         tabsOrder: [form_group_general, form_group_genuses]
                     _helper_links:
@@ -94,6 +94,8 @@ parameters:
                         identifier: true
                     latin_name: ~
                     alias: ~
+                    genuses:
+                        admin_code: librinfo_varieties.admin.genus
                     _export_formats:
                         csv: [name, latinName, alias, description, createdAt, updatedAt]
                         xls: csv
@@ -103,12 +105,16 @@ parameters:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
                           class: framacalc
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add:
+                    name: ~
+                    genuses.name: ~
 
 ##########
 # GENUS
 ##########
 
-        Librinfo\VarietiesBundle\Entity\Genus:
+        Librinfo\VarietiesBundle\Admin\GenusAdmin:
             Sonata\AdminBundle\Show\ShowMapper:
                 remove: [description, createdAt, updatedAt]
                 add:
@@ -164,24 +170,24 @@ parameters:
                                 attr:
                                     class: new-line
                                     height: 200
-                    form_tab_specieses:
-                        '':
-                            specieses:
-                                type: sonata_type_collection
-                                by_reference: false
-                                type_options:
-                                    required: false
-                                    btn_add: false
-                                    delete: false
-                                required: false
-                                label: false
-                                _options:
-                                    edit: inline
-                                    # inline: table
-                                    allow_delete: false
-                                    admin_code: librinfo_varieties.admin.species_embedded
+                    # form_tab_specieses:
+                    #     '':
+                    #         specieses:
+                    #             type: sonata_type_collection
+                    #             by_reference: false
+                    #             type_options:
+                    #                 required: false
+                    #                 btn_add: false
+                    #                 delete: false
+                    #             required: false
+                    #             label: false
+                    #             _options:
+                    #                 edit: inline
+                    #                 # inline: table
+                    #                 allow_delete: false
+                    #                 admin_code: librinfo_varieties.admin.species_embedded
                     _options:
-                        tabsOrder: [form_tab_general, form_tab_specieses]
+                        tabsOrder: [form_tab_general]
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
@@ -197,12 +203,15 @@ parameters:
                     alias: ~
                     family: ~
                     description: ~
+                    specieses:
+                        admin_code: librinfo_varieties.admin.species
                     _options:
                         fieldsOrder:
                             - name
                             - latin_name
                             - alias
                             - family
+                            - specieses
                             - description
                     _export_formats:
                         csv: [name, latinName, alias, family, description, createdAt, updatedAt]
@@ -217,7 +226,8 @@ parameters:
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
                     name: ~
-
+                    specieses.name: ~
+                    family.name: ~
 
 #################
 # PLANT CATEGORY
