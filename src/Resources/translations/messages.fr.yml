@@ -318,6 +318,7 @@ librinfo:
         strain_list: Liste des souches
         variety_create: Nouvelle variété
         variety_list: Liste des variétés
+        plantcategory_list: Liste des catégories de plantes
 
     varieties:
         family_admin.label: Famille
