@@ -597,6 +597,7 @@ parameters:
                 forceTabs: true
                 remove:
                     description: ~
+                    name: ~
                 add:
                     form_tab_general:
                         form_group_general:
