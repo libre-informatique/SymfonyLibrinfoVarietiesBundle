@@ -696,6 +696,7 @@ parameters:
                             species:
                                 type: sonata_type_model
                                 placeholder: ''
+                                required: true
                                 attr:
                                     class: new-line
                                     width: 30
@@ -717,12 +718,14 @@ parameters:
                             name:
                                 type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
+                                required: true
                                 attr:
                                     class: inline-block
 
                             latin_name:
                                 type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
+                                required: true
                                 attr:
                                     class: inline-block
                                     width: 30
