@@ -170,81 +170,81 @@ librinfo:
         missing_variety_name: Veuillez renseigner le nom de la variété/souche
 
     help:
-        advised_outcome: ~
+        advised_outcome: ' '
         area_per_kg: en m²
         base_seed_per_kg: en grammes
         between_distance: en cm
-        biodynamics: ~
-        cultivation_ease: ~
+        biodynamics: ' '
+        cultivation_ease: ' '
         cutting_date: Nombre de semaines
         cuttings_period: semaines après levée
-        description: ~
-        development: ~
+        description: ' '
+        development: ' '
         distance_between_lines: en cm
         distance_on_line: en cm
-        exposure: ~
-        foliage_color: ~
-        foliage_type: ~
-        germination_conditions: ~
-        germination_light: ~
-        germination_rate: en %
-        germination_temperature: ~
-        grade: ~
-        harvest_storage: ~
+        exposure: ' '
+        foliage_color: ' '
+        foliage_type: ' '
+        germination_conditions: ' '
+        germination_light: ' '
+        germination_rate: 'en %'
+        germination_temperature: ' '
+        grade: ' '
+        harvest_storage: ' '
         inner_commment: non mutualisé
-        legal_germination_rate: (si inscrit au catalogue) - en %
-        location: ~
-        main_color: ~
-        main_usages: ~
+        legal_germination_rate: '(si inscrit au catalogue) - en %'
+        location: ' '
+        main_color: ' '
+        main_usages: ' '
         manure_quantity: en grammes
-        manure: ~
+        manure: ' '
         max_harvest_span: en semaines
         min_harvest_span: en semaines
-        nutrients: ~
-        nutrition_rating: ~
+        nutrients: ' '
+        nutrition_rating: ' '
         on_line_distance: en cm
         plant_density: 'unité : nombre de porte-graines ???'
-        plant_hotbed: ~
-        plant_transplant_hotbed: ~
-        plant_type: ~
-        possible_outcome: ~
-        possible_sowing_periods: ~
-        pot_cultivation_ease: ~
-        precocity: ~
-        prefered_zone: ~
+        plant_hotbed: ' '
+        plant_transplant_hotbed: ' '
+        plant_type: ' '
+        possible_outcome: ' '
+        possible_sowing_periods: ' '
+        pot_cultivation_ease: ' '
+        precocity: ' '
+        prefered_zone: ' '
         raise_duration: en jours
         required_size: en cm
-        rusticicty: ~
-        secondary_color: ~
+        rusticicty: ' '
+        secondary_color: ' '
         seed_lifespan: en années
-        seed_storage: ~
+        seed_storage: ' '
         seedhead_yield: en grammes
         seedheads_per_kg: Unités
-        seedling_hotbed: ~
-        seedling_irrigation_frequency: ~
-        seedling_irrigation_quantity: ~
+        seedling_hotbed: ' '
+        seedling_irrigation_frequency: ' '
+        seedling_irrigation_quantity: ' '
         seedling_irrigation: en cl
-        several_strains: ~
-        soil: ~
+        several_strains: ' '
+        soil: ' '
         sowing_date: Nombre de semaines
         sowing_density: nbre/m2
-        strain_origin: ~
-        substratum: ~
-        targeted_audience: ~
-        taste_rating: ~
-        taste: ~
-        texture: ~
+        strain_origin: ' '
+        substratum: ' '
+        targeted_audience: ' '
+        taste_rating: ' '
+        taste: ' '
+        texture: ' '
         tkw: en grammes
         transplant_date: Nombre de semaines
-        transplant_hotbed: ~
-        transplant_irrigation_frequency: ~
-        transplant_irrigation_quantity: ~
+        transplant_hotbed: ' '
+        transplant_irrigation_frequency: ' '
+        transplant_irrigation_quantity: ' '
         transplant_irrigation: en cl
-        transplant: ~
-        treatments: ~
-        tutoring: ~
-        usages: ~
-        yield_rating: ~
+        transplant: ' '
+        treatments: ' '
+        tutoring: ' '
+        usages: ' '
+        yield_rating: ' '
         yield: Poids des légumes par m2 (en kg)
 
     label:
