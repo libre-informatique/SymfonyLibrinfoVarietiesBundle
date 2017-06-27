@@ -260,6 +260,7 @@ librinfo:
         distance_on_line: Distance sur la ligne
         families: Familles
         family: Famille
+        family_name: Famille
         generate_variety_code: Générer le code
         genus: Genre
         genuses: Genres
@@ -311,6 +312,7 @@ librinfo:
         family_list: Liste des familles
         genus_create: Nouveau genre
         genus_list: Liste des genres
+        genus_delete: Supprimer un genre
         plant_category_create: Nouvelle catégorie de plantes
         plant_category_list: Liste des catégories de plantes
         species_create: Nouvelle espèce
@@ -334,7 +336,8 @@ librinfo:
         variety_description_plant_admin.label: Caractéristiques de la plante
         variety_description_production_admin.label: Mise en production
         variety_description_professional_admin.label: Conseils pros
-
+    new_variety:
+        label: Nouvelle variété
 
 
 A species cannot be both a sub-species and a parent species: Une espèce ne peut être à la fois une sous-espèce et une espèce parente.

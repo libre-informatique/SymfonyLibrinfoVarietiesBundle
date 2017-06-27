@@ -42,6 +42,7 @@ parameters:
                             name:
                                 type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
+                                required: true
                                 attr:
                                     class: inline-block
                             latin_name:
@@ -144,12 +145,14 @@ parameters:
                         '':
                             family:
                                 type: sonata_type_model
+                                required: true
                                 attr:
                                     class: new-line
                                     width: 30
                             name:
                                 type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
+                                required: true
                                 attr:
                                     class: inline-block
                             latin_name:
@@ -250,8 +253,16 @@ parameters:
                         '':
                             name:
                                 type: Blast\UtilsBundle\Form\Type\UniqueFieldType
+                                required: true
+                                attr:
+                                    class: inline-block
+                                    width: 45
                             code:
                                 type: text
+                                required: true
+                                attr:
+                                    class: inline-block
+                                    width: 45
                             treeParent:
                                 type: Blast\BaseEntitiesBundle\Form\Type\NestedTreeableType
                                 class: Librinfo\VarietiesBundle\Entity\PlantCategory
