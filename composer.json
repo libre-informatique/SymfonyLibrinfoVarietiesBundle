@@ -11,7 +11,7 @@
         "libre-informatique/media-bundle": "dev-wip-lisem"
     },
     "require-dev": {
-	"symfony/phpunit-bridge": ">=3.2",
+    	"symfony/phpunit-bridge": ">=3.2",
         "blast-project/outer-extension-bundle": "dev-wip-lisem"
     },
     "license": "LGPL-3.0",
@@ -41,8 +41,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Librinfo\\VarietiesBundle\\": "src/",
-            "Librinfo\\VarietiesBundle\\Tests\\": "tests/"
+            "Librinfo\\VarietiesBundle\\": "src/"
         }
     },
     "extra": {
