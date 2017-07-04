@@ -42,6 +42,7 @@ parameters:
                             name:
                                 type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
+                                required: true
                                 attr:
                                     class: inline-block
                             latin_name:
@@ -144,12 +145,14 @@ parameters:
                         '':
                             family:
                                 type: sonata_type_model
+                                required: true
                                 attr:
                                     class: new-line
                                     width: 30
                             name:
                                 type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
+                                required: true
                                 attr:
                                     class: inline-block
                             latin_name:
@@ -250,8 +253,16 @@ parameters:
                         '':
                             name:
                                 type: Blast\UtilsBundle\Form\Type\UniqueFieldType
+                                required: true
+                                attr:
+                                    class: inline-block
+                                    width: 45
                             code:
                                 type: text
+                                required: true
+                                attr:
+                                    class: inline-block
+                                    width: 45
                             treeParent:
                                 type: Blast\BaseEntitiesBundle\Form\Type\NestedTreeableType
                                 class: Librinfo\VarietiesBundle\Entity\PlantCategory
@@ -687,6 +698,8 @@ parameters:
                 add:
                     form_tab_general:
                         form_group_general:
+                            _options:
+                                class: col-md-12
                             isStrain:
                                 required: false
                                 type: checkbox
@@ -699,7 +712,7 @@ parameters:
                                 required: true
                                 attr:
                                     class: new-line
-                                    width: 30
+                                    width: 100
                                     strain_disabled: true
                                     inherit: source
                                 _options:
@@ -721,14 +734,14 @@ parameters:
                                 required: true
                                 attr:
                                     class: inline-block
-
+                                    width: 50
                             latin_name:
                                 type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
                                 required: true
                                 attr:
                                     class: inline-block
-                                    width: 30
+                                    width: 50
                                     inherit: target
                             alias:
                                 type: text
@@ -741,8 +754,8 @@ parameters:
                                 type: Blast\CoreBundle\Form\Type\EntityCodeType
                                 required: true
                                 attr:
-                                    class: new-line
-                                    width: 30
+                                    class: inline-block
+                                    width: 50
                             plant_categories:
                                 type: Blast\BaseEntitiesBundle\Form\Type\NestedTreeableType
                                 class: Librinfo\VarietiesBundle\Entity\PlantCategory
@@ -759,6 +772,7 @@ parameters:
                                 attr:
                                     class: inline-block
                                     inherit: target
+                                    width: 25
                             germination_rate:
                                 help: librinfo.help.germination_rate
                                 attr:
@@ -766,8 +780,8 @@ parameters:
                             tkw:
                                 help: librinfo.help.tkw
                                 attr:
-                                    class: new-line
-                                    width: 30
+                                    class: inline-block
+                                    width: 50
                                     inherit: target
                             seed_lifespan:
                                 help: librinfo.help.seed_lifespan
@@ -809,6 +823,8 @@ parameters:
                                     class: new-line
                                     height: 200
                         form_group_offical_catalogue:
+                            _options:
+                                class: col-md-12
                             official: ~
                             official_name:
                                 attr:
