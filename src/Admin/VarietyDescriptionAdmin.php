@@ -1,10 +1,12 @@
 <?php
 
 /*
+ * This file is part of the Blast Project package.
+ *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * This file is licenced under the GNU LGPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -17,7 +19,6 @@ use Sonata\AdminBundle\Form\FormMapper;
 
 class VarietyDescriptionAdmin extends CoreAdmin
 {
-
     use EmbeddedAdmin;
 
     /**
@@ -31,8 +32,6 @@ class VarietyDescriptionAdmin extends CoreAdmin
             $this->subject = $this->formFieldDescriptions['fieldset']->getAdmin()->getSubject();
         }
 
-
-
         $fieldset = $this->subject->getFieldset();
         $field = $this->subject->getField();
         $config = empty($vd_config[$fieldset][$field]) ? '' : $vd_config[$fieldset][$field];
@@ -40,23 +39,29 @@ class VarietyDescriptionAdmin extends CoreAdmin
         $choiceType = CustomChoiceType::class;
         $options = empty($config['options']) ? [] : $config['options'];
 
-        if (isset($options['choices']) && empty($options['choices']))
+        if (isset($options['choices']) && empty($options['choices'])) {
             unset($options['choices']);
+        }
 
-        if (isset($options['choices_class']) && $type != $choiceType)
+        if (isset($options['choices_class']) && $type != $choiceType) {
             unset($options['choices_class']);
+        }
 
-        if (isset($options['blast_choices']) && $type != $choiceType)
+        if (isset($options['blast_choices']) && $type != $choiceType) {
             unset($options['blast_choices']);
+        }
 
-        if (!isset($options['label']) || !$options['label'])
-            $options['label'] = sprintf("librinfo_description_%s_%s", $fieldset, $field);
+        if (!isset($options['label']) || !$options['label']) {
+            $options['label'] = sprintf('librinfo_description_%s_%s', $fieldset, $field);
+        }
 
-        if (!isset($options['help']) || !$options['help'])
-            $options['help'] = sprintf("librinfo.help.%s", $field);
+        if (!isset($options['help']) || !$options['help']) {
+            $options['help'] = sprintf('librinfo.help.%s', $field);
+        }
 
-        if ($this->subject->getValue() === "")
+        if ($this->subject->getValue() === '') {
             $this->subject->setValue(null);
+        }
 
         //dump([$fieldset,$field,$type,$options]);
 
@@ -67,5 +72,4 @@ class VarietyDescriptionAdmin extends CoreAdmin
             ->add('value', $type, $options)
         ;
     }
-
 }

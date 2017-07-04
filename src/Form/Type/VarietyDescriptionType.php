@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of the Blast Project package.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU LGPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Librinfo\VarietiesBundle\Form\Type;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -10,7 +20,6 @@ use Librinfo\VarietiesBundle\Form\ChoiceLoader\VarietyDescriptionChoiceLoader;
 
 class VarietyDescriptionType extends BaseAbstractType
 {
-
     /** @var EntityManager */
     private $manager;
 
@@ -42,9 +51,9 @@ class VarietyDescriptionType extends BaseAbstractType
 
         $resolver->setDefaults([
             'placeholder' => '',
-            'choice_loader' => $choiceLoader
+            'choice_loader' => $choiceLoader,
         ]);
-        
+
         $resolver->setDefined('fieldset');
         $resolver->setDefined('field');
     }

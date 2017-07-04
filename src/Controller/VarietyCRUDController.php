@@ -1,10 +1,12 @@
 <?php
 
 /*
+ * This file is part of the Blast Project package.
+ *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * This file is licenced under the GNU LGPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -29,12 +31,12 @@ class VarietyCRUDController extends BaseCRUDController
         $serializer = $this->container->get('jms_serializer');
         $species = $serializer->toArray($species);
 
-        if( isset($species['plant_categories']) )
-        {
+        if (isset($species['plant_categories'])) {
             $cats = [];
 
-            foreach($species['plant_categories'] as $key => $cat)
+            foreach ($species['plant_categories'] as $key => $cat) {
                 $cats[] = $cat['id'];
+            }
 
             $species['plant_categories'] = $cats;
         }
@@ -43,7 +45,7 @@ class VarietyCRUDController extends BaseCRUDController
     }
 
     /**
-     * Creates a strain from a variety and passes it to create action
+     * Creates a strain from a variety and passes it to create action.
      *
      * @return Response
      */
@@ -58,15 +60,13 @@ class VarietyCRUDController extends BaseCRUDController
 
         $fieldSets = ['Professional', 'Amateur', 'Production', 'Commercial', 'Plant', 'Culture', 'Inner'];
 
-        foreach($fieldSets as $label)
-        {
-            $getter = 'get' . $label . 'Descriptions';
-            $adder = 'add' . $label . 'Description';
+        foreach ($fieldSets as $label) {
+            $getter = 'get'.$label.'Descriptions';
+            $adder = 'add'.$label.'Description';
             $collection = $object->$getter();
             $collection->initialize();
 
-            foreach($collection as $desc)
-            {
+            foreach ($collection as $desc) {
                 $new = clone $desc;
                 $strain->$adder($new);
             }
@@ -74,16 +74,18 @@ class VarietyCRUDController extends BaseCRUDController
 
         $this->duplicateFiles($object, $strain);
 
-        foreach($object->getPlantCategories() as $cat)
+        foreach ($object->getPlantCategories() as $cat) {
             $strain->addPlantCategory($cat);
+        }
 
         return $this->createAction($strain);
     }
 
     /**
-     * Get field widget for filter form
+     * Get field widget for filter form.
      *
-     * @param String $fieldName the name of the field to get the form widget for
+     * @param string $fieldName the name of the field to get the form widget for
+     *
      * @return JsonResponse
      */
     public function getFilterWidgetAction(Request $request)
@@ -98,39 +100,44 @@ class VarietyCRUDController extends BaseCRUDController
         $options = $fieldConfig['options'];
         $type = $fieldConfig['type'] != 'textarea' ? $fieldConfig['type'] : 'text';
 
-        if ( $type == 'blast_custom_checkbox' )
-        {
+        if ($type == 'blast_custom_checkbox') {
             $type = 'choice';
             $options = array_merge($options, array(
-                'choices' => array('1' => $translator->trans('yes'), '0' => $translator->trans('no'))
+                'choices' => array('1' => $translator->trans('yes'), '0' => $translator->trans('no')),
             ));
         }
 
-        if ( $type == $choiceType )
-        {
+        if ($type == $choiceType) {
             $options['is_filter'] = true;
 
-            if ( isset($options['expanded']) )
+            if (isset($options['expanded'])) {
                 unset($options['expanded']);
+            }
 
-            if ( isset($options['multiple']) )
+            if (isset($options['multiple'])) {
                 unset($options['multiple']);
+            }
         }
 
-        if ( $type == 'blast_tinymce' )
+        if ($type == 'blast_tinymce') {
             $type = 'text';
+        }
 
-        if ( isset($options['choices']) && empty($options['choices']) )
+        if (isset($options['choices']) && empty($options['choices'])) {
             unset($options['choices']);
+        }
 
-        if ( isset($options['choices_class']) && $type != $choiceType )
+        if (isset($options['choices_class']) && $type != $choiceType) {
             unset($options['choices_class']);
+        }
 
-        if ( isset($options['blast_choices']) && $type != $choiceType )
+        if (isset($options['blast_choices']) && $type != $choiceType) {
             unset($options['blast_choices']);
+        }
 
-        if ( isset($options['help']) )
+        if (isset($options['help'])) {
             unset($options['help']);
+        }
 
         $view = $this->createFormBuilder()
                 ->add('value', $type, $options)
@@ -141,7 +148,7 @@ class VarietyCRUDController extends BaseCRUDController
         return $this->render(
             'LibrinfoVarietiesBundle:Form:filter_widget.html.twig',
             array(
-                'form' => $view
+                'form' => $view,
             ),
             null
         );
@@ -160,11 +167,9 @@ class VarietyCRUDController extends BaseCRUDController
 
         $id = $request->get($this->admin->getIdParameter());
 
-        if ( $id )
-        {
+        if ($id) {
             $subject = $this->admin->getObject($id);
-            if ( !$subject )
-            {
+            if (!$subject) {
                 $error = sprintf('unable to find the object with id : %s', $id);
 
                 return new JsonResponse(['error' => $error]);
@@ -177,9 +182,9 @@ class VarietyCRUDController extends BaseCRUDController
 
                 return new JsonResponse(['error' => $error]);
             }
-        }
-        else
+        } else {
             $subject = $this->admin->getNewInstance();
+        }
 
         $this->admin->setSubject($subject);
 
@@ -188,8 +193,9 @@ class VarietyCRUDController extends BaseCRUDController
         $data = $request->request->get($form->getName());
 
         // prevent 'false' being interpreted as true
-        if( $data['isStrain'] == 'false' )
+        if ($data['isStrain'] == 'false') {
             $data['isStrain'] = false;
+        }
 
         $form->submit($data);
         $entity = $form->getData();
@@ -210,7 +216,5 @@ class VarietyCRUDController extends BaseCRUDController
 
             return new JsonResponse(['error' => $error, 'generator' => get_class($generator)]);
         }
-
     }
-
 }

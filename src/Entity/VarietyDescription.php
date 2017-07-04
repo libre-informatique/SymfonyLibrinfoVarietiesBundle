@@ -1,20 +1,29 @@
 <?php
 
+/*
+ * This file is part of the Blast Project package.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU LGPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Librinfo\VarietiesBundle\Entity;
 
 /**
- * VarietyDescription
+ * VarietyDescription.
  */
 class VarietyDescription extends GenericDescription
 {
-
     /**
      * @var \Librinfo\VarietiesBundle\Entity\Variety
      */
     protected $variety;
 
     /**
-     * Set variety
+     * Set variety.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Variety $variety
      *
@@ -28,7 +37,7 @@ class VarietyDescription extends GenericDescription
     }
 
     /**
-     * Get variety
+     * Get variety.
      *
      * @return \Librinfo\VarietiesBundle\Entity\Variety
      */
@@ -36,11 +45,10 @@ class VarietyDescription extends GenericDescription
     {
         return $this->variety;
     }
-    
+
     public function __clone()
     {
         $this->id = null;
         $this->setVariety(null);
     }
-    
 }

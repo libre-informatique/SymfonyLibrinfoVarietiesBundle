@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Blast Project package.
  *
- * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU LGPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -18,7 +20,7 @@ use Blast\BaseEntitiesBundle\Entity\Traits\Timestampable;
 use Blast\OuterExtensionBundle\Entity\Traits\OuterExtensible;
 
 /**
- * Family
+ * Family.
  */
 class Family
 {
@@ -46,7 +48,7 @@ class Family
     private $genuses;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -65,7 +67,7 @@ class Family
     }
 
     /**
-     * Set latinName
+     * Set latinName.
      *
      * @param string $latinName
      *
@@ -79,7 +81,7 @@ class Family
     }
 
     /**
-     * Get latinName
+     * Get latinName.
      *
      * @return string
      */
@@ -89,7 +91,7 @@ class Family
     }
 
     /**
-     * Set alias
+     * Set alias.
      *
      * @param string $alias
      *
@@ -103,7 +105,7 @@ class Family
     }
 
     /**
-     * Get alias
+     * Get alias.
      *
      * @return string
      */
@@ -113,7 +115,7 @@ class Family
     }
 
     /**
-     * Add genus
+     * Add genus.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Genus $genus
      *
@@ -123,15 +125,16 @@ class Family
     {
         $genus->setFamily($this);
         $this->genuses->add($genus);
+
         return $this;
     }
 
     /**
-     * Remove genus
+     * Remove genus.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Genus $genus
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removeGenus(\Librinfo\VarietiesBundle\Entity\Genus $genus)
     {
@@ -139,7 +142,7 @@ class Family
     }
 
     /**
-     * Get genuses
+     * Get genuses.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

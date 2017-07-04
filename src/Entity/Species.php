@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Blast Project package.
  *
- * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU LGPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -20,7 +22,7 @@ use Blast\OuterExtensionBundle\Entity\Traits\OuterExtensible;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Species
+ * Species.
  */
 class Species implements \JsonSerializable
 {
@@ -54,17 +56,17 @@ class Species implements \JsonSerializable
     private $life_cycle;
 
     /**
-     * @var integer
+     * @var int
      */
     private $legal_germination_rate;
 
     /**
-     * @var integer
+     * @var int
      */
     private $seed_lifespan;
 
     /**
-     * @var integer
+     * @var int
      */
     private $raise_duration;
 
@@ -72,7 +74,7 @@ class Species implements \JsonSerializable
      * @var float
      */
     private $tkw;
-    
+
     /**
      * @var string
      */
@@ -104,7 +106,7 @@ class Species implements \JsonSerializable
     private $plant_categories;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -125,7 +127,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Set latinName
+     * Set latinName.
      *
      * @param string $latinName
      *
@@ -139,7 +141,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Get latinName
+     * Get latinName.
      *
      * @return string
      */
@@ -149,7 +151,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Set alias
+     * Set alias.
      *
      * @param string $alias
      *
@@ -163,7 +165,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Get alias
+     * Get alias.
      *
      * @return string
      */
@@ -173,7 +175,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Set code
+     * Set code.
      *
      * @param string $code
      *
@@ -187,7 +189,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Get code
+     * Get code.
      *
      * @return string
      */
@@ -197,7 +199,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Set lifeCycle
+     * Set lifeCycle.
      *
      * @param string $lifeCycle
      *
@@ -211,7 +213,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Get lifeCycle
+     * Get lifeCycle.
      *
      * @return string
      */
@@ -220,10 +222,11 @@ class Species implements \JsonSerializable
         return $this->life_cycle;
     }
 
-        /**
-     * Set legal_germination_rate
+    /**
+     * Set legal_germination_rate.
      *
-     * @param integer $legalGerminationRate
+     * @param int $legalGerminationRate
+     *
      * @return Species
      */
     public function setLegalGerminationRate($legalGerminationRate)
@@ -234,9 +237,9 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Get legal_germination_rate
+     * Get legal_germination_rate.
      *
-     * @return integer
+     * @return int
      */
     public function getLegalGerminationRate()
     {
@@ -244,9 +247,10 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Set seed_lifespan
+     * Set seed_lifespan.
      *
-     * @param integer $seedLifespan
+     * @param int $seedLifespan
+     *
      * @return Species
      */
     public function setSeedLifespan($seedLifespan)
@@ -257,9 +261,9 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Get seed_lifespan
+     * Get seed_lifespan.
      *
-     * @return integer
+     * @return int
      */
     public function getSeedLifespan()
     {
@@ -267,9 +271,10 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Set raise_duration
+     * Set raise_duration.
      *
-     * @param integer $raiseDuration
+     * @param int $raiseDuration
+     *
      * @return Species
      */
     public function setRaiseDuration($raiseDuration)
@@ -280,9 +285,9 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Get raise_duration
+     * Get raise_duration.
      *
-     * @return integer
+     * @return int
      */
     public function getRaiseDuration()
     {
@@ -290,9 +295,10 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Set tkw
+     * Set tkw.
      *
      * @param float $tkw
+     *
      * @return Species
      */
     public function setTkw($tkw)
@@ -303,7 +309,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Get tkw
+     * Get tkw.
      *
      * @return float
      */
@@ -311,9 +317,9 @@ class Species implements \JsonSerializable
     {
         return $this->tkw;
     }
-    
+
     /**
-     * Set regulatoryStatus
+     * Set regulatoryStatus.
      *
      * @param string $regulatoryStatus
      *
@@ -327,7 +333,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Get regulatoryStatus
+     * Get regulatoryStatus.
      *
      * @return string
      */
@@ -337,7 +343,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Set genus
+     * Set genus.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Genus $genus
      *
@@ -351,7 +357,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Get genus
+     * Get genus.
      *
      * @return \Librinfo\VarietiesBundle\Entity\Genus
      */
@@ -361,7 +367,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Add variety
+     * Add variety.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Variety $variety
      *
@@ -371,15 +377,16 @@ class Species implements \JsonSerializable
     {
         $variety->setSpecies($this);
         $this->varieties->add($variety);
+
         return $this;
     }
 
     /**
-     * Remove variety
+     * Remove variety.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Variety $variety
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removeVariety(\Librinfo\VarietiesBundle\Entity\Variety $variety)
     {
@@ -387,7 +394,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Get varieties
+     * Get varieties.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -397,7 +404,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Add subspecies
+     * Add subspecies.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Species $subspecies
      *
@@ -407,15 +414,16 @@ class Species implements \JsonSerializable
     {
         $subspecies->setParentSpecies($this);
         $this->subspecieses[] = $subspecies;
+
         return $this;
     }
 
     /**
-     * Remove subspecies
+     * Remove subspecies.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Species $subspecies
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removeSubspeciese(\Librinfo\VarietiesBundle\Entity\Species $subspecies)
     {
@@ -423,7 +431,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Get subspecieses
+     * Get subspecieses.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -433,18 +441,17 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Has sub-specieses
+     * Has sub-specieses.
      *
-     * @return boolean
+     * @return bool
      */
     public function hasSubspecieses()
     {
         return count($this->subspecieses) > 0;
     }
 
-
     /**
-     * Set parentSpecies
+     * Set parentSpecies.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Species $parentSpecies
      *
@@ -458,7 +465,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Get parentSpecies
+     * Get parentSpecies.
      *
      * @return \Librinfo\VarietiesBundle\Entity\Species
      */
@@ -468,9 +475,9 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Has parent species
+     * Has parent species.
      *
-     * @return boolean
+     * @return bool
      */
     public function hasParentSpecies()
     {
@@ -479,9 +486,9 @@ class Species implements \JsonSerializable
 
     /**
      * Check if a species has a grand parent
-     * This should never happen (used for validation methods)
+     * This should never happen (used for validation methods).
      *
-     * @return boolean
+     * @return bool
      */
     public function hasGrandParentSpecies()
     {
@@ -489,7 +496,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Add plantCategory
+     * Add plantCategory.
      *
      * @param \Librinfo\VarietiesBundle\Entity\PlantCategory $plantCategory
      *
@@ -503,11 +510,11 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Remove plantCategory
+     * Remove plantCategory.
      *
      * @param \Librinfo\VarietiesBundle\Entity\PlantCategory $plantCategory
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removePlantCategory(\Librinfo\VarietiesBundle\Entity\PlantCategory $plantCategory)
     {
@@ -515,7 +522,7 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Get plantCategories
+     * Get plantCategories.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -525,12 +532,10 @@ class Species implements \JsonSerializable
     }
 
     /**
-     * Set plantCategories
-     *
+     * Set plantCategories.
      */
     public function setPlantCategories($plant_categories)
     {
         $this->plant_categories = $plant_categories;
     }
 }
-

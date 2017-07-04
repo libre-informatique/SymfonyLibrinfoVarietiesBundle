@@ -1,10 +1,12 @@
 <?php
 
 /*
+ * This file is part of the Blast Project package.
+ *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * This file is licenced under the GNU LGPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -12,13 +14,11 @@ namespace Librinfo\VarietiesBundle\Form\Type;
 
 use Blast\CoreBundle\Form\AbstractType as BaseAbstractType;
 use Doctrine\ORM\EntityManager;
-use Librinfo\VarietiesBundle\Form\Type\VarietyDescriptionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class VarietyDescriptionFilterType extends BaseAbstractType
 {
-
     /** @var EntityManager */
     private $manager;
 
@@ -31,7 +31,7 @@ class VarietyDescriptionFilterType extends BaseAbstractType
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -39,7 +39,7 @@ class VarietyDescriptionFilterType extends BaseAbstractType
 
         $librinfoOptions = array(
             'fieldset' => $fieldSet,
-            'required' => false
+            'required' => false,
         );
 
         $builder->add('Field', VarietyDescriptionType::class, array_merge($librinfoOptions, $options['field_options']));
@@ -47,7 +47,7 @@ class VarietyDescriptionFilterType extends BaseAbstractType
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
@@ -58,12 +58,10 @@ class VarietyDescriptionFilterType extends BaseAbstractType
 
         $resolver->setDefined('fieldset');
         $resolver->setDefined('field_type');
-
     }
 
     public function getBlockPrefix()
     {
         return 'librinfo_variety_description_filter';
     }
-
 }

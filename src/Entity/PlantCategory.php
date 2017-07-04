@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of the Blast Project package.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU LGPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Librinfo\VarietiesBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -10,7 +20,7 @@ use Blast\BaseEntitiesBundle\Entity\Traits\NestedTreeable;
 use Blast\BaseEntitiesBundle\Entity\Traits\Jsonable;
 
 /**
- * PlantCategory
+ * PlantCategory.
  */
 class PlantCategory implements \JsonSerializable
 {
@@ -19,7 +29,7 @@ class PlantCategory implements \JsonSerializable
         NestedTreeable,
         Jsonable
     ;
-    
+
     /**
      * @var string
      */
@@ -29,14 +39,14 @@ class PlantCategory implements \JsonSerializable
      * @var \Doctrine\Common\Collections\ArrayCollection
      */
     private $species;
-    
+
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      */
     private $varieties;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -47,7 +57,7 @@ class PlantCategory implements \JsonSerializable
     }
 
     /**
-     * Set code
+     * Set code.
      *
      * @param string $code
      *
@@ -61,7 +71,7 @@ class PlantCategory implements \JsonSerializable
     }
 
     /**
-     * Get code
+     * Get code.
      *
      * @return string
      */
@@ -71,7 +81,7 @@ class PlantCategory implements \JsonSerializable
     }
 
     /**
-     * Add variety
+     * Add variety.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Variety $variety
      *
@@ -85,11 +95,11 @@ class PlantCategory implements \JsonSerializable
     }
 
     /**
-     * Remove variety
+     * Remove variety.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Variety $variety
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removeVariety(\Librinfo\VarietiesBundle\Entity\Variety $variety)
     {
@@ -97,7 +107,7 @@ class PlantCategory implements \JsonSerializable
     }
 
     /**
-     * Get varieties
+     * Get varieties.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -105,9 +115,9 @@ class PlantCategory implements \JsonSerializable
     {
         return $this->varieties;
     }
-    
+
     /**
-     * Add species
+     * Add species.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Species $species
      *
@@ -121,11 +131,11 @@ class PlantCategory implements \JsonSerializable
     }
 
     /**
-     * Remove species
+     * Remove species.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Species $species
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removeSpecies(\Librinfo\VarietiesBundle\Entity\Species $species)
     {
@@ -133,7 +143,7 @@ class PlantCategory implements \JsonSerializable
     }
 
     /**
-     * Get species
+     * Get species.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -146,22 +156,19 @@ class PlantCategory implements \JsonSerializable
     {
         $path = rtrim($node->getRealMaterializedPath(), static::getMaterializedPathSeparator());
         $this->setMaterializedPath($path);
-        $this->setSortMaterializedPath($path . static::getMaterializedPathSeparator() . $this->getId());
+        $this->setSortMaterializedPath($path.static::getMaterializedPathSeparator().$this->getId());
 
-        if (null !== $this->parentNode)
-        {
+        if (null !== $this->parentNode) {
             $this->parentNode->getChildNodes()->removeElement($this);
         }
 
         $this->parentNode = $node;
         $this->parentNode->addChildNode($this);
 
-        foreach ($this->getChildNodes() as $child)
-        {
+        foreach ($this->getChildNodes() as $child) {
             $child->setChildNodeOf($this);
         }
 
         return $this;
     }
 }
-

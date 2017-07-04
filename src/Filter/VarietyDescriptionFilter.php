@@ -1,10 +1,12 @@
 <?php
 
 /*
+ * This file is part of the Blast Project package.
+ *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * This file is licenced under the GNU LGPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -17,7 +19,6 @@ use Sonata\DoctrineORMAdminBundle\Filter\Filter;
 
 class VarietyDescriptionFilter extends Filter
 {
-
     /**
      * @param ProxyQueryInterface|QueryBuilder $queryBuilder
      *
@@ -25,8 +26,7 @@ class VarietyDescriptionFilter extends Filter
      */
     public function filter(ProxyQueryInterface $queryBuilder, $alias, $field, $data)
     {
-        if (!$data || !is_array($data) || !array_key_exists('value', $data) || !$data['value']['Value'])
-        {
+        if (!$data || !is_array($data) || !array_key_exists('value', $data) || !$data['value']['Value']) {
             return;
         }
 
@@ -36,18 +36,16 @@ class VarietyDescriptionFilter extends Filter
 
         $queryBuilder->entityJoin(array(
             $name => array(
-                'fieldName' => $name
-            ))
+                'fieldName' => $name,
+            ), )
         );
 
-        if($data['type'] == 1)
-        {
+        if ($data['type'] == 1) {
             $operator = 'LIKE';
-            $value = '%' . $value . '%';
-        }else if($data['type'] == 2)
-        {
+            $value = '%'.$value.'%';
+        } elseif ($data['type'] == 2) {
             $operator = 'NOT LIKE';
-            $value = '%' . $value . '%';
+            $value = '%'.$value.'%';
         }
 
         $this->applyWhere($queryBuilder, sprintf('s_%s.field = :field', $name));
@@ -79,5 +77,4 @@ class VarietyDescriptionFilter extends Filter
                 'label' => $this->getLabel(),
         ));
     }
-
 }

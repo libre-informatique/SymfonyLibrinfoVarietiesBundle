@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Blast Project package.
  *
- * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU LGPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -20,11 +22,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Librinfo\MediaBundle\Entity\File;
 
 /**
- * Variety
+ * Variety.
  */
 class Variety
 {
-
     use Nameable {
         getName as getNameTrait;
     }
@@ -250,7 +251,7 @@ class Variety
     }
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -271,17 +272,20 @@ class Variety
     public function __call($name, $unusedArg)
     {
         $name = explode('||', $name);
-        $getter = 'get' . ucfirst($name[0]) . '_descriptions';
+        $getter = 'get'.ucfirst($name[0]).'_descriptions';
 
-        foreach ($this->$getter() as $desc)
-            if ($desc->getField() == $name[1])
+        foreach ($this->$getter() as $desc) {
+            if ($desc->getField() == $name[1]) {
                 return $desc->getValue();
+            }
+        }
     }
 
     public function getName()
     {
-        if ($this->hasParent() && null == $this->name)
+        if ($this->hasParent() && null == $this->name) {
             return $this->getParent()->getName();
+        }
 
         return $this->getNameTrait();
     }
@@ -297,7 +301,7 @@ class Variety
     }
 
     /**
-     * Set latinName
+     * Set latinName.
      *
      * @param string $latinName
      *
@@ -311,20 +315,21 @@ class Variety
     }
 
     /**
-     * Get latinName
+     * Get latinName.
      *
      * @return string
      */
     public function getLatinName()
     {
-        if ($this->hasParent() && !$this->latin_name)
+        if ($this->hasParent() && !$this->latin_name) {
             return $this->getParent()->getLatinName();
+        }
 
         return $this->latin_name;
     }
 
     /**
-     * Set isStrain
+     * Set isStrain.
      *
      * @param string $isStrain
      *
@@ -338,7 +343,7 @@ class Variety
     }
 
     /**
-     * Get isStrain
+     * Get isStrain.
      *
      * @return string
      */
@@ -348,7 +353,7 @@ class Variety
     }
 
     /**
-     * Set alias
+     * Set alias.
      *
      * @param string $alias
      *
@@ -362,20 +367,21 @@ class Variety
     }
 
     /**
-     * Get alias
+     * Get alias.
      *
      * @return string
      */
     public function getAlias()
     {
-        if ($this->hasParent() && !$this->alias)
+        if ($this->hasParent() && !$this->alias) {
             return $this->getParent()->getAlias();
+        }
 
         return $this->alias;
     }
 
     /**
-     * Set code
+     * Set code.
      *
      * @param string $code
      *
@@ -389,7 +395,7 @@ class Variety
     }
 
     /**
-     * Get code
+     * Get code.
      *
      * @return string
      */
@@ -399,7 +405,7 @@ class Variety
     }
 
     /**
-     * Set lifeCycle
+     * Set lifeCycle.
      *
      * @param string $lifeCycle
      *
@@ -413,23 +419,25 @@ class Variety
     }
 
     /**
-     * Get lifeCycle
+     * Get lifeCycle.
      *
      * @return string
      */
     public function getLifeCycle()
     {
-        if ($this->hasParent() && !$this->life_cycle)
+        if ($this->hasParent() && !$this->life_cycle) {
             return $this->getParent()->getLifeCycle();
+        }
 
-        if (!$this->life_cycle && $this->getSpecies())
+        if (!$this->life_cycle && $this->getSpecies()) {
             return $this->getSpecies()->getLifeCycle();
+        }
 
         return $this->life_cycle;
     }
 
     /**
-     * Set official
+     * Set official.
      *
      * @param bool $official
      *
@@ -443,7 +451,7 @@ class Variety
     }
 
     /**
-     * Get official
+     * Get official.
      *
      * @return bool
      */
@@ -453,7 +461,7 @@ class Variety
     }
 
     /**
-     * Set officialName
+     * Set officialName.
      *
      * @param string $officialName
      *
@@ -467,7 +475,7 @@ class Variety
     }
 
     /**
-     * Get officialName
+     * Get officialName.
      *
      * @return string
      */
@@ -477,7 +485,7 @@ class Variety
     }
 
     /**
-     * Set officialDateIn
+     * Set officialDateIn.
      *
      * @param \DateTime $officialDateIn
      *
@@ -491,7 +499,7 @@ class Variety
     }
 
     /**
-     * Get officialDateIn
+     * Get officialDateIn.
      *
      * @return \DateTime
      */
@@ -501,7 +509,7 @@ class Variety
     }
 
     /**
-     * Set officialDateOut
+     * Set officialDateOut.
      *
      * @param \DateTime $officialDateOut
      *
@@ -515,7 +523,7 @@ class Variety
     }
 
     /**
-     * Get officialDateOut
+     * Get officialDateOut.
      *
      * @return \DateTime
      */
@@ -525,7 +533,7 @@ class Variety
     }
 
     /**
-     * Set officialMaintainer
+     * Set officialMaintainer.
      *
      * @param string $officialMaintainer
      *
@@ -539,7 +547,7 @@ class Variety
     }
 
     /**
-     * Get officialMaintainer
+     * Get officialMaintainer.
      *
      * @return string
      */
@@ -549,7 +557,7 @@ class Variety
     }
 
     /**
-     * Set legalGerminationRate
+     * Set legalGerminationRate.
      *
      * @param int $legalGerminationRate
      *
@@ -563,20 +571,21 @@ class Variety
     }
 
     /**
-     * Get legalGerminationRate
+     * Get legalGerminationRate.
      *
      * @return int
      */
     public function getLegalGerminationRate()
     {
-        if (!$this->legal_germination_rate && $this->getSpecies())
+        if (!$this->legal_germination_rate && $this->getSpecies()) {
             return $this->getSpecies()->getLegalGerminationRate();
+        }
 
         return $this->legal_germination_rate;
     }
 
     /**
-     * Set regulatoryStatus
+     * Set regulatoryStatus.
      *
      * @param string $regulatoryStatus
      *
@@ -590,7 +599,7 @@ class Variety
     }
 
     /**
-     * Get regulatoryStatus
+     * Get regulatoryStatus.
      *
      * @return string
      */
@@ -600,7 +609,7 @@ class Variety
     }
 
     /**
-     * Set germinationRate
+     * Set germinationRate.
      *
      * @param int $germinationRate
      *
@@ -614,7 +623,7 @@ class Variety
     }
 
     /**
-     * Get germinationRate
+     * Get germinationRate.
      *
      * @return int
      */
@@ -624,7 +633,7 @@ class Variety
     }
 
     /**
-     * Set parent
+     * Set parent.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Variety $parent
      *
@@ -638,7 +647,7 @@ class Variety
     }
 
     /**
-     * Get parent
+     * Get parent.
      *
      * @return \Librinfo\VarietiesBundle\Entity\Variety
      */
@@ -648,7 +657,7 @@ class Variety
     }
 
     /**
-     * Add child
+     * Add child.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Variety $child
      *
@@ -662,11 +671,11 @@ class Variety
     }
 
     /**
-     * Remove child
+     * Remove child.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Variety $child
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removeChild(\Librinfo\VarietiesBundle\Entity\Variety $child)
     {
@@ -674,7 +683,7 @@ class Variety
     }
 
     /**
-     * Get children
+     * Get children.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -684,7 +693,7 @@ class Variety
     }
 
     /**
-     * Set species
+     * Set species.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Species $species
      *
@@ -698,20 +707,21 @@ class Variety
     }
 
     /**
-     * Get species
+     * Get species.
      *
      * @return \Librinfo\VarietiesBundle\Entity\Species
      */
     public function getSpecies()
     {
-        if ($this->hasParent() && !$this->species)
+        if ($this->hasParent() && !$this->species) {
             return $this->getParent()->getSpecies();
+        }
 
         return $this->species;
     }
 
     /**
-     * Add plantCategory
+     * Add plantCategory.
      *
      * @param \Librinfo\VarietiesBundle\Entity\PlantCategory $plantCategory
      *
@@ -725,11 +735,11 @@ class Variety
     }
 
     /**
-     * Remove plantCategory
+     * Remove plantCategory.
      *
      * @param \Librinfo\VarietiesBundle\Entity\PlantCategory $plantCategory
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removePlantCategory(\Librinfo\VarietiesBundle\Entity\PlantCategory $plantCategory)
     {
@@ -737,21 +747,21 @@ class Variety
     }
 
     /**
-     * Get plantCategories
+     * Get plantCategories.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getPlantCategories()
     {
-        if (!$this->plant_categories && $this->getSpecies())
+        if (!$this->plant_categories && $this->getSpecies()) {
             return $this->getSpecies()->getPlantCategories();
+        }
 
         return $this->plant_categories;
     }
 
     /**
-     * Set plantCategories
-     *
+     * Set plantCategories.
      */
     public function setPlantCategories($plant_categories)
     {
@@ -759,7 +769,7 @@ class Variety
     }
 
     /**
-     * Set selectionAdvice
+     * Set selectionAdvice.
      *
      * @param string $selectionAdvice
      *
@@ -773,7 +783,7 @@ class Variety
     }
 
     /**
-     * Get selectionAdvice
+     * Get selectionAdvice.
      *
      * @return string
      */
@@ -783,7 +793,7 @@ class Variety
     }
 
     /**
-     * Set selectionCriteria
+     * Set selectionCriteria.
      *
      * @param string $selectionCriteria
      *
@@ -797,7 +807,7 @@ class Variety
     }
 
     /**
-     * Get selectionCriteria
+     * Get selectionCriteria.
      *
      * @return string
      */
@@ -807,7 +817,7 @@ class Variety
     }
 
     /**
-     * Set miscAdvice
+     * Set miscAdvice.
      *
      * @param string $miscAdvice
      *
@@ -821,7 +831,7 @@ class Variety
     }
 
     /**
-     * Get miscAdvice
+     * Get miscAdvice.
      *
      * @return string
      */
@@ -831,7 +841,7 @@ class Variety
     }
 
     /**
-     * Set tkw
+     * Set tkw.
      *
      * @param float $tkw
      *
@@ -845,20 +855,21 @@ class Variety
     }
 
     /**
-     * Get tkw
+     * Get tkw.
      *
      * @return float
      */
     public function getTkw()
     {
-        if (!$this->tkw && $this->getSpecies())
+        if (!$this->tkw && $this->getSpecies()) {
             return $this->getSpecies()->getTkw();
+        }
 
         return $this->tkw;
     }
 
     /**
-     * Set seedLifespan
+     * Set seedLifespan.
      *
      * @param int $seedLifespan
      *
@@ -872,20 +883,21 @@ class Variety
     }
 
     /**
-     * Get seedLifespan
+     * Get seedLifespan.
      *
      * @return int
      */
     public function getSeedLifespan()
     {
-        if (!$this->seed_lifespan && $this->getSpecies())
+        if (!$this->seed_lifespan && $this->getSpecies()) {
             return $this->getSpecies()->getSeedLifeSpan();
+        }
 
         return $this->seed_lifespan;
     }
 
     /**
-     * Set raiseDuration
+     * Set raiseDuration.
      *
      * @param int $raiseDuration
      *
@@ -899,20 +911,21 @@ class Variety
     }
 
     /**
-     * Get raiseDuration
+     * Get raiseDuration.
      *
      * @return int
      */
     public function getRaiseDuration()
     {
-        if (!$this->raise_duration && $this->getSpecies())
+        if (!$this->raise_duration && $this->getSpecies()) {
             return $this->getSpecies()->getRaiseDuration();
+        }
 
         return $this->raise_duration;
     }
 
     /**
-     * Set seedheadYield
+     * Set seedheadYield.
      *
      * @param int $seedheadYield
      *
@@ -926,7 +939,7 @@ class Variety
     }
 
     /**
-     * Get seedheadYield
+     * Get seedheadYield.
      *
      * @return int
      */
@@ -936,7 +949,7 @@ class Variety
     }
 
     /**
-     * Set distanceOnLine
+     * Set distanceOnLine.
      *
      * @param int $distanceOnLine
      *
@@ -950,7 +963,7 @@ class Variety
     }
 
     /**
-     * Get distanceOnLine
+     * Get distanceOnLine.
      *
      * @return int
      */
@@ -960,7 +973,7 @@ class Variety
     }
 
     /**
-     * Set distanceBetweenLines
+     * Set distanceBetweenLines.
      *
      * @param int $distanceBetweenLines
      *
@@ -974,7 +987,7 @@ class Variety
     }
 
     /**
-     * Get distanceBetweenLines
+     * Get distanceBetweenLines.
      *
      * @return int
      */
@@ -984,7 +997,7 @@ class Variety
     }
 
     /**
-     * Set plantDensity
+     * Set plantDensity.
      *
      * @param int $plantDensity
      *
@@ -998,7 +1011,7 @@ class Variety
     }
 
     /**
-     * Get plantDensity
+     * Get plantDensity.
      *
      * @return int
      */
@@ -1008,7 +1021,7 @@ class Variety
     }
 
     /**
-     * Set areaPerKg
+     * Set areaPerKg.
      *
      * @param int $areaPerKg
      *
@@ -1022,7 +1035,7 @@ class Variety
     }
 
     /**
-     * Get areaPerKg
+     * Get areaPerKg.
      *
      * @return int
      */
@@ -1032,7 +1045,7 @@ class Variety
     }
 
     /**
-     * Set seedheadsPerKg
+     * Set seedheadsPerKg.
      *
      * @param int $seedheadsPerKg
      *
@@ -1046,7 +1059,7 @@ class Variety
     }
 
     /**
-     * Get seedheadsPerKg
+     * Get seedheadsPerKg.
      *
      * @return int
      */
@@ -1056,7 +1069,7 @@ class Variety
     }
 
     /**
-     * Set baseSeedPerKg
+     * Set baseSeedPerKg.
      *
      * @param int $baseSeedPerKg
      *
@@ -1070,7 +1083,7 @@ class Variety
     }
 
     /**
-     * Get baseSeedPerKg
+     * Get baseSeedPerKg.
      *
      * @return int
      */
@@ -1080,7 +1093,7 @@ class Variety
     }
 
     /**
-     * Set transmittedDiseases
+     * Set transmittedDiseases.
      *
      * @param \strin $transmittedDiseases
      *
@@ -1094,7 +1107,7 @@ class Variety
     }
 
     /**
-     * Get transmittedDiseases
+     * Get transmittedDiseases.
      *
      * @return \strin
      */
@@ -1104,7 +1117,7 @@ class Variety
     }
 
     /**
-     * Set strainCharacteristics
+     * Set strainCharacteristics.
      *
      * @param string $strainCharacteristics
      *
@@ -1118,7 +1131,7 @@ class Variety
     }
 
     /**
-     * Get strainCharacteristics
+     * Get strainCharacteristics.
      *
      * @return string
      */
@@ -1128,7 +1141,7 @@ class Variety
     }
 
     /**
-     * Set variety
+     * Set variety.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Variety $variety
      *
@@ -1142,7 +1155,7 @@ class Variety
     }
 
     /**
-     * Get variety
+     * Get variety.
      *
      * @return \Librinfo\VarietiesBundle\Entity\Variety
      */
@@ -1152,7 +1165,7 @@ class Variety
     }
 
     /**
-     * Add professionalDescription
+     * Add professionalDescription.
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionProfessional $professionalDescription
      *
@@ -1166,11 +1179,11 @@ class Variety
     }
 
     /**
-     * Remove professionalDescription
+     * Remove professionalDescription.
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionProfessional $professionalDescription
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removeProfessionalDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescriptionProfessional $professionalDescription)
     {
@@ -1178,7 +1191,7 @@ class Variety
     }
 
     /**
-     * Get professionalDescriptions
+     * Get professionalDescriptions.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -1188,7 +1201,8 @@ class Variety
     }
 
     /**
-     * alias for getProfessionalDescriptions()
+     * alias for getProfessionalDescriptions().
+     *
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getProfessional_descriptions()
@@ -1197,20 +1211,24 @@ class Variety
     }
 
     /**
-     * Set professional descriptions
+     * Set professional descriptions.
+     *
      * @param \Doctrine\Common\Collections\Collection $descriptions
+     *
      * @return Variety
      */
     public function setProfessionalDescriptions($descriptions)
     {
-        foreach ($descriptions as $description)
+        foreach ($descriptions as $description) {
             $description->setVariety($this);
+        }
         $this->professional_descriptions = $descriptions;
+
         return $this;
     }
 
     /**
-     * Add amateurDescription
+     * Add amateurDescription.
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionAmateur amateurDescription
      *
@@ -1224,11 +1242,11 @@ class Variety
     }
 
     /**
-     * Remove amateurDescription
+     * Remove amateurDescription.
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionAmateur $amateurDescription
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removeAmateurDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescriptionAmateur $amateurDescription)
     {
@@ -1236,7 +1254,7 @@ class Variety
     }
 
     /**
-     * Get amateurDescriptions
+     * Get amateurDescriptions.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -1246,7 +1264,8 @@ class Variety
     }
 
     /**
-     * alias for getAmateurDescriptions()
+     * alias for getAmateurDescriptions().
+     *
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getAmateur_descriptions()
@@ -1255,20 +1274,24 @@ class Variety
     }
 
     /**
-     * Set amateur descriptions
+     * Set amateur descriptions.
+     *
      * @param \Doctrine\Common\Collections\Collection $descriptions
+     *
      * @return Variety
      */
     public function setAmateurDescriptions($descriptions)
     {
-        foreach ($descriptions as $description)
+        foreach ($descriptions as $description) {
             $description->setVariety($this);
+        }
         $this->amateur_descriptions = $descriptions;
+
         return $this;
     }
 
     /**
-     * Add productionDescription
+     * Add productionDescription.
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionProduction $productionDescription
      *
@@ -1282,11 +1305,11 @@ class Variety
     }
 
     /**
-     * Remove productionDescription
+     * Remove productionDescription.
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionProduction $productionDescription
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removeProductionDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescriptionProduction $productionDescription)
     {
@@ -1294,7 +1317,7 @@ class Variety
     }
 
     /**
-     * Get productionDescriptions
+     * Get productionDescriptions.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -1304,7 +1327,8 @@ class Variety
     }
 
     /**
-     * alias for getProductionDescriptions()
+     * alias for getProductionDescriptions().
+     *
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getProduction_descriptions()
@@ -1313,20 +1337,24 @@ class Variety
     }
 
     /**
-     * Set production descriptions
+     * Set production descriptions.
+     *
      * @param \Doctrine\Common\Collections\Collection $descriptions
+     *
      * @return Variety
      */
     public function setProductionDescriptions($descriptions)
     {
-        foreach ($descriptions as $description)
+        foreach ($descriptions as $description) {
             $description->setVariety($this);
+        }
         $this->production_descriptions = $descriptions;
+
         return $this;
     }
 
     /**
-     * Add commercialDescription
+     * Add commercialDescription.
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionCommercial $commercialDescription
      *
@@ -1340,11 +1368,11 @@ class Variety
     }
 
     /**
-     * Remove commercialDescription
+     * Remove commercialDescription.
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionCommercial $commercialDescription
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removeCommercialDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescriptionCommercial $commercialDescription)
     {
@@ -1352,7 +1380,7 @@ class Variety
     }
 
     /**
-     * Get commercialDescriptions
+     * Get commercialDescriptions.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -1362,7 +1390,8 @@ class Variety
     }
 
     /**
-     * alias for getCommercialDescriptions()
+     * alias for getCommercialDescriptions().
+     *
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getCommercial_descriptions()
@@ -1371,20 +1400,24 @@ class Variety
     }
 
     /**
-     * Set commercial descriptions
+     * Set commercial descriptions.
+     *
      * @param \Doctrine\Common\Collections\Collection $descriptions
+     *
      * @return Variety
      */
     public function setCommercialDescriptions($descriptions)
     {
-        foreach ($descriptions as $description)
+        foreach ($descriptions as $description) {
             $description->setVariety($this);
+        }
         $this->commercial_descriptions = $descriptions;
+
         return $this;
     }
 
     /**
-     * Add plantDescription
+     * Add plantDescription.
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionPlant $plantDescription
      *
@@ -1398,11 +1431,11 @@ class Variety
     }
 
     /**
-     * Remove plantDescription
+     * Remove plantDescription.
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionPlant $plantDescription
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removePlantDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescriptionPlant $plantDescription)
     {
@@ -1410,7 +1443,7 @@ class Variety
     }
 
     /**
-     * Get plantDescriptions
+     * Get plantDescriptions.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -1420,7 +1453,8 @@ class Variety
     }
 
     /**
-     * alias for getPlantDescriptions()
+     * alias for getPlantDescriptions().
+     *
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getPlant_descriptions()
@@ -1429,20 +1463,24 @@ class Variety
     }
 
     /**
-     * Set plant descriptions
+     * Set plant descriptions.
+     *
      * @param \Doctrine\Common\Collections\Collection $descriptions
+     *
      * @return Variety
      */
     public function setPlantDescriptions($descriptions)
     {
-        foreach ($descriptions as $description)
+        foreach ($descriptions as $description) {
             $description->setVariety($this);
+        }
         $this->plant_descriptions = $descriptions;
+
         return $this;
     }
 
     /**
-     * Add cultureDescription
+     * Add cultureDescription.
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionCulture $cultureDescription
      *
@@ -1456,11 +1494,11 @@ class Variety
     }
 
     /**
-     * Remove cultureDescription
+     * Remove cultureDescription.
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionCulture $cultureDescription
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removeCultureDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescriptionCulture $cultureDescription)
     {
@@ -1468,7 +1506,7 @@ class Variety
     }
 
     /**
-     * Get cultureDescriptions
+     * Get cultureDescriptions.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -1478,7 +1516,8 @@ class Variety
     }
 
     /**
-     * alias for getCultureDescriptions()
+     * alias for getCultureDescriptions().
+     *
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getCulture_descriptions()
@@ -1487,20 +1526,24 @@ class Variety
     }
 
     /**
-     * Set culture descriptions
+     * Set culture descriptions.
+     *
      * @param \Doctrine\Common\Collections\Collection $descriptions
+     *
      * @return Variety
      */
     public function setCultureDescriptions($descriptions)
     {
-        foreach ($descriptions as $description)
+        foreach ($descriptions as $description) {
             $description->setVariety($this);
+        }
         $this->culture_descriptions = $descriptions;
+
         return $this;
     }
 
     /**
-     * Add innerDescription
+     * Add innerDescription.
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionInner $innerDescription
      *
@@ -1514,11 +1557,11 @@ class Variety
     }
 
     /**
-     * Remove innerDescription
+     * Remove innerDescription.
      *
      * @param \Librinfo\VarietiesBundle\Entity\VarietyDescriptionInner $innerDescription
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removeInnerDescription(\Librinfo\VarietiesBundle\Entity\VarietyDescriptionInner $innerDescription)
     {
@@ -1526,7 +1569,7 @@ class Variety
     }
 
     /**
-     * Get innerDescriptions
+     * Get innerDescriptions.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -1536,20 +1579,24 @@ class Variety
     }
 
     /**
-     * Set inner descriptions
+     * Set inner descriptions.
+     *
      * @param \Doctrine\Common\Collections\Collection $descriptions
+     *
      * @return Variety
      */
     public function setInnerDescriptions($descriptions)
     {
         $this->inner_descriptions = $descriptions;
+
         return $this;
     }
 
     /**
-     * alias for LibrinfoMediaBundle/CRUDController::handleFiles()
+     * alias for LibrinfoMediaBundle/CRUDController::handleFiles().
      *
      * @param File $file
+     *
      * @return Variety
      */
     public function addLibrinfoFile(File $file = null)
@@ -1557,13 +1604,15 @@ class Variety
         if (!$this->images->contains($file)) {
             $this->images->add($file);
         }
+
         return $this;
     }
 
     /**
-     * alias for LibrinfoMediaBundle/CRUDController::handleFiles()
+     * alias for LibrinfoMediaBundle/CRUDController::handleFiles().
      *
      * @param File $file
+     *
      * @return Variety
      */
     public function removeLibrinfoFile(File $file)
@@ -1571,6 +1620,7 @@ class Variety
         if ($this->images->contains($file)) {
             $this->images->removeElement($file);
         }
+
         return $this;
     }
 
@@ -1582,9 +1632,7 @@ class Variety
     public function setImages(ArrayCollection $images)
     {
         $this->images = $images;
+
         return $this;
     }
-
-
-
 }

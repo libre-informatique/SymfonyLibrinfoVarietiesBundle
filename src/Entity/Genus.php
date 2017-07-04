@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Blast Project package.
  *
- * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU LGPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -18,7 +20,7 @@ use Blast\BaseEntitiesBundle\Entity\Traits\Timestampable;
 use Blast\OuterExtensionBundle\Entity\Traits\OuterExtensible;
 
 /**
- * Genus
+ * Genus.
  */
 class Genus
 {
@@ -51,7 +53,7 @@ class Genus
     private $specieses;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -70,7 +72,7 @@ class Genus
     }
 
     /**
-     * Set latinName
+     * Set latinName.
      *
      * @param string $latinName
      *
@@ -84,7 +86,7 @@ class Genus
     }
 
     /**
-     * Get latinName
+     * Get latinName.
      *
      * @return string
      */
@@ -94,7 +96,7 @@ class Genus
     }
 
     /**
-     * Set alias
+     * Set alias.
      *
      * @param string $alias
      *
@@ -108,7 +110,7 @@ class Genus
     }
 
     /**
-     * Get alias
+     * Get alias.
      *
      * @return string
      */
@@ -118,7 +120,7 @@ class Genus
     }
 
     /**
-     * Set family
+     * Set family.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Family $family
      *
@@ -132,7 +134,7 @@ class Genus
     }
 
     /**
-     * Get family
+     * Get family.
      *
      * @return \Librinfo\VarietiesBundle\Entity\Family
      */
@@ -142,20 +144,22 @@ class Genus
     }
 
     /**
-     * Alias for addSpecies
+     * Alias for addSpecies.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Species $species
+     *
      * @return \Librinfo\VarietiesBundle\Entity\Genus
      */
     public function addSpeciese(\Librinfo\VarietiesBundle\Entity\Species $species)
     {
         $species->setGenus($this);
         $this->specieses->add($species);
+
         return $this;
     }
 
     /**
-     * Add species
+     * Add species.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Species $species
      *
@@ -165,15 +169,16 @@ class Genus
     {
         $species->setGenus($this);
         $this->specieses->add($species);
+
         return $this;
     }
 
     /**
-     * Remove speciese
+     * Remove speciese.
      *
      * @param \Librinfo\VarietiesBundle\Entity\Species $species
      *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removeSpecies(\Librinfo\VarietiesBundle\Entity\Species $species)
     {
@@ -181,7 +186,7 @@ class Genus
     }
 
     /**
-     * Get specieses
+     * Get specieses.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

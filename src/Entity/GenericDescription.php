@@ -1,11 +1,21 @@
 <?php
 
+/*
+ * This file is part of the Blast Project package.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU LGPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Librinfo\VarietiesBundle\Entity;
 
 use Blast\BaseEntitiesBundle\Entity\Traits\BaseEntity;
 
 /**
- * GenericDescription
+ * GenericDescription.
  */
 class GenericDescription
 {
@@ -26,9 +36,8 @@ class GenericDescription
      */
     private $value;
 
-
     /**
-     * Set fieldset
+     * Set fieldset.
      *
      * @param string $fieldset
      *
@@ -42,7 +51,7 @@ class GenericDescription
     }
 
     /**
-     * Get fieldset
+     * Get fieldset.
      *
      * @return string
      */
@@ -52,7 +61,7 @@ class GenericDescription
     }
 
     /**
-     * Set field
+     * Set field.
      *
      * @param string $field
      *
@@ -66,7 +75,7 @@ class GenericDescription
     }
 
     /**
-     * Get field
+     * Get field.
      *
      * @return string
      */
@@ -76,7 +85,7 @@ class GenericDescription
     }
 
     /**
-     * Set value
+     * Set value.
      *
      * @param string $value
      *
@@ -90,7 +99,7 @@ class GenericDescription
     }
 
     /**
-     * Get value
+     * Get value.
      *
      * @return string
      */
@@ -99,4 +108,3 @@ class GenericDescription
         return $this->value;
     }
 }
-

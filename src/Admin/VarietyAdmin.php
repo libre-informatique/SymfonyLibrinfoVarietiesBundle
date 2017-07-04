@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of the Blast Project package.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU LGPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Librinfo\VarietiesBundle\Admin;
 
 use Sonata\AdminBundle\Form\FormMapper;
@@ -9,10 +19,9 @@ use Blast\CoreBundle\Admin\CoreAdmin;
 use Blast\CoreBundle\Admin\Traits\HandlesRelationsAdmin;
 use Librinfo\VarietiesBundle\Traits\DynamicDescriptions;
 
-
 class VarietyAdmin extends CoreAdmin
 {
-   use HandlesRelationsAdmin {
+    use HandlesRelationsAdmin {
         configureFormFields as configFormHandlesRelations;
         configureShowFields as configShowHandlesRelations;
     }
@@ -20,7 +29,7 @@ class VarietyAdmin extends CoreAdmin
     use DynamicDescriptions;
 
     /**
-     * Configure routes for list actions
+     * Configure routes for list actions.
      *
      * @param RouteCollection $collection
      */
@@ -44,7 +53,7 @@ class VarietyAdmin extends CoreAdmin
     }
 
     /**
-     * Configure create/edit form fields
+     * Configure create/edit form fields.
      *
      * @param FormMapper
      */
@@ -56,7 +65,7 @@ class VarietyAdmin extends CoreAdmin
     }
 
     /**
-     * Configure Show view fields
+     * Configure Show view fields.
      *
      * @param ShowMapper $mapper
      */
@@ -67,16 +76,17 @@ class VarietyAdmin extends CoreAdmin
         $this->configureShowDescriptions($mapper);
 
         //Removal of Variety/Strain specific fields
-        if ( $this->getSubject() )
-            if ( $this->getSubject()->getIsStrain() )
-            {
+        if ($this->getSubject()) {
+            if ($this->getSubject()->getIsStrain()) {
                 $tabs = $mapper->getadmin()->getShowTabs();
                 unset($tabs['form_tab_strains']);
                 $mapper->getAdmin()->setShowTabs($tabs);
                 $mapper->remove('children');
                 $mapper->remove('several_strains');
-            } else
+            } else {
                 $mapper->remove('parent');
+            }
+        }
     }
 
     //prevent primary key loop
@@ -84,9 +94,11 @@ class VarietyAdmin extends CoreAdmin
     {
         parent::prePersist($variety);
 
-        if ( $variety->getParent() )
-            if ( $variety->getParent()->getId() == $variety->getId() )
-                $variety->setParent(NULL);
+        if ($variety->getParent()) {
+            if ($variety->getParent()->getId() == $variety->getId()) {
+                $variety->setParent(null);
+            }
+        }
 
 //        $config = $this->getConfigurationPool()->getContainer()->getParameter('librinfo_varieties')['variety_descriptions'];
 //

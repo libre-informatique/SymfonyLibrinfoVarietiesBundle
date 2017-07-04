@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of the Blast Project package.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU LGPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Librinfo\VarietiesBundle\CodeGenerator;
 
 use Doctrine\ORM\EntityManager;
@@ -23,20 +33,24 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
     }
 
     /**
-     * @param  Variety $variety
-     * @param array|null $existingCodes   if null, existing codes will be fetched from database
+     * @param Variety    $variety
+     * @param array|null $existingCodes if null, existing codes will be fetched from database
+     *
      * @return string
+     *
      * @throws InvalidEntityCodeException
      */
     public static function generate($variety, $existingCodes = null)
     {
-        if (!$variety->getName())
+        if (!$variety->getName()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_variety_name');
-        if ($variety->getIsStrain() && !$variety->getParent())
+        }
+        if ($variety->getIsStrain() && !$variety->getParent()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_strain_parent');
-        if (!$variety->getSpecies())
+        }
+        if (!$variety->getSpecies()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_species');
-
+        }
         $name = preg_replace('/^'.$variety->getSpecies()->getName().' /', '', $variety->getName());
 
         if ($variety->getIsStrain()) {
@@ -49,8 +63,7 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
             );
             $length = 2;
             $pad = 'x';
-        }
-        else {
+        } else {
             $prefix = '';
             // Unaccent, remove marks and punctuation, upper case
             $translit = transliterator_transliterate(
@@ -65,81 +78,94 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
         $cleaned = preg_replace('/[^A-Z0-9]/', '', $translit);
 
         // first chars of name, right padded with "X" if necessary
-        $code = $prefix . str_pad(substr($cleaned, 0, $length), $length, $pad);
+        $code = $prefix.str_pad(substr($cleaned, 0, $length), $length, $pad);
 
-        if (self::isCodeUnique($code, $variety, $existingCodes))
+        if (self::isCodeUnique($code, $variety, $existingCodes)) {
             return $code;
+        }
 
         // XX1 ... XX9
-        for($i = 1; $i < 10; $i++) {
-            $code = $prefix . sprintf('%s%d', substr($code, 0, $length-1), $i);
-            if (self::isCodeUnique($code, $variety, $existingCodes))
+        for ($i = 1; $i < 10; ++$i) {
+            $code = $prefix.sprintf('%s%d', substr($code, 0, $length - 1), $i);
+            if (self::isCodeUnique($code, $variety, $existingCodes)) {
                 return $code;
+            }
         }
 
         // X01 ... X99
-        for($i = 1; $i < 100; $i++) {
-            $code = $prefix . sprintf('%s%02d', substr($code, 0, $length-2), $i);
-            if (self::isCodeUnique($code, $variety, $existingCodes))
+        for ($i = 1; $i < 100; ++$i) {
+            $code = $prefix.sprintf('%s%02d', substr($code, 0, $length - 2), $i);
+            if (self::isCodeUnique($code, $variety, $existingCodes)) {
                 return $code;
+            }
         }
 
         // 001 ... 999
         // TODO: find a better solution !!
-        if (!$variety->getIsStrain())
-            for($i = 1; $i < 1000; $i++) {
+        if (!$variety->getIsStrain()) {
+            for ($i = 1; $i < 1000; ++$i) {
                 $code = sprintf('%03d', $i);
-                if (self::isCodeUnique($code, $variety, $existingCodes))
+                if (self::isCodeUnique($code, $variety, $existingCodes)) {
                     return $code;
+                }
             }
+        }
+
         return '';
     }
 
     /**
-     * @param string    $code
-     * @param Variety   $variety
-     * @return          boolean
+     * @param string  $code
+     * @param Variety $variety
+     *
+     * @return bool
      */
     public static function validate($code, $variety = null)
     {
         if ($variety->getIsStrain()) {
-            if ($variety->getParent() && substr($code, 0, 3) != $variety->getParent()->getCode())
+            if ($variety->getParent() && substr($code, 0, 3) != $variety->getParent()->getCode()) {
                 return false;
+            }
+
             return preg_match('/^[A-Z0-9]{3}[a-z0-9]{2}$/', $code) > 0;
-        }
-        else
+        } else {
             return preg_match('/^[A-Z0-9]{3}$/', $code) > 0;
+        }
     }
 
     /**
-     * @param string $code
-     * @param Variety $variety
-     * @param array|null $existingCodes   if null, existing codes will be fetched from database
-     * @return boolean
+     * @param string     $code
+     * @param Variety    $variety
+     * @param array|null $existingCodes if null, existing codes will be fetched from database
+     *
+     * @return bool
      */
     private static function isCodeUnique($code, $variety, $existingCodes = null)
     {
         if (null !== $existingCodes) {
             $speciesId = $variety->getSpecies()->getId();
-            if (in_array(['species_id'=>$speciesId, 'code'=>$code], $existingCodes))
+            if (in_array(['species_id' => $speciesId, 'code' => $code], $existingCodes)) {
                 return false;
+            }
+
             return true;
         }
-        
+
         $repo = self::$em->getRepository('Librinfo\VarietiesBundle\Entity\Variety');
         $query = $repo->createQueryBuilder('v')
             ->where('v.code = :code')
             ->andWhere('v.species = :species')
             ->setParameters(['code' => $code, 'species' => $variety->getSpecies()]);
-        if ($variety->getId())
-            $query->andWhere('v.id != :id')->setParameter ('id', $variety->getId());
+        if ($variety->getId()) {
+            $query->andWhere('v.id != :id')->setParameter('id', $variety->getId());
+        }
         $result = $query->getQuery()->setMaxResults(1)->getOneOrNullResult();
+
         return $result == null;
     }
 
     public static function getHelp()
     {
-        return "3 chars (A-Z and/or 0-9) + 2 chars (a-z and/or 0-9) for the strain";
+        return '3 chars (A-Z and/or 0-9) + 2 chars (a-z and/or 0-9) for the strain';
     }
-
 }
