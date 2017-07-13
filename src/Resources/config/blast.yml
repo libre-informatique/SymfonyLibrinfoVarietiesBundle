@@ -814,7 +814,8 @@ parameters:
                                    - Contrôlé
                                    - Non contrôlé
                                 attr:
-                                    class: inline-block
+                                    class: new-line
+                                    width: 30
                                     inherit: target
                             description:
                                 required: false
