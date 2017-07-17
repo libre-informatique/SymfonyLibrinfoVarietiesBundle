@@ -32,7 +32,7 @@ class LibrinfoVarietiesExtension extends BlastCoreExtension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
         $loader->load('admin.yml');
 
@@ -50,6 +50,6 @@ class LibrinfoVarietiesExtension extends BlastCoreExtension
             $loader->load('datafixtures.yml');
         }
 
-        $this->mergeParameter('blast', $container, __DIR__.'/../Resources/config');
+        $this->mergeParameter('blast', $container, __DIR__ . '/../Resources/config');
     }
 }

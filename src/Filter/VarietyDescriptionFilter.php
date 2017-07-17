@@ -42,10 +42,10 @@ class VarietyDescriptionFilter extends Filter
 
         if ($data['type'] == 1) {
             $operator = 'LIKE';
-            $value = '%'.$value.'%';
+            $value = '%' . $value . '%';
         } elseif ($data['type'] == 2) {
             $operator = 'NOT LIKE';
-            $value = '%'.$value.'%';
+            $value = '%' . $value . '%';
         }
 
         $this->applyWhere($queryBuilder, sprintf('s_%s.field = :field', $name));

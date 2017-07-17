@@ -61,8 +61,8 @@ class VarietyCRUDController extends BaseCRUDController
         $fieldSets = ['Professional', 'Amateur', 'Production', 'Commercial', 'Plant', 'Culture', 'Inner'];
 
         foreach ($fieldSets as $label) {
-            $getter = 'get'.$label.'Descriptions';
-            $adder = 'add'.$label.'Description';
+            $getter = 'get' . $label . 'Descriptions';
+            $adder = 'add' . $label . 'Description';
             $collection = $object->$getter();
             $collection->initialize();
 

@@ -36,7 +36,7 @@ class VarietyAdmin extends CoreAdmin
     protected function configureRoutes(RouteCollection $collection)
     {
         parent::configureRoutes($collection);
-        $collection->add('strain', $this->getRouterIdParameter().'/strain');
+        $collection->add('strain', $this->getRouterIdParameter() . '/strain');
         $collection->add('getFilterWidget', 'getFilterWidget/{fieldset}/{field}');
         $collection->add('hierarchy', 'hierarchy/{id}');
     }

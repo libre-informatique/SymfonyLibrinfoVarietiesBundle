@@ -38,22 +38,22 @@ trait DynamicDescriptions
                 return;
             }
             $subject = $this->getSubject();
-            $getter = 'get'.ucfirst($fieldset).'Descriptions';
-            $setter = 'set'.ucfirst($fieldset).'Descriptions';
+            $getter = 'get' . ucfirst($fieldset) . 'Descriptions';
+            $setter = 'set' . ucfirst($fieldset) . 'Descriptions';
             $tabs = $showMapper->getAdmin()->getShowTabs();
             $descs = $subject->$getter();
 
             //$this->sortDescriptions($config, $fieldset, $subject, $getter, $setter);
 
-            $showMapper->remove($fieldset.'_descriptions');
-            unset($tabs['form_tab_'.$fieldset]);
-            $showMapper->tab('form_tab_'.$fieldset)
-                    ->with('form_group_'.$fieldset)
+            $showMapper->remove($fieldset . '_descriptions');
+            unset($tabs['form_tab_' . $fieldset]);
+            $showMapper->tab('form_tab_' . $fieldset)
+                    ->with('form_group_' . $fieldset)
             ;
 
             foreach ($descs as $key => $desc) {
                 $field = $desc->getField();
-                $name = $fieldset.'||'.$desc->getField();
+                $name = $fieldset . '||' . $desc->getField();
                 $type = 'text';
                 $options = array();
                 $options['label'] = sprintf('librinfo_description_%s_%s', $fieldset, $field);

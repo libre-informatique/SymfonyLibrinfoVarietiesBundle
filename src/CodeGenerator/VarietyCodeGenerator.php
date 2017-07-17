@@ -51,7 +51,7 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
         if (!$variety->getSpecies()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_species');
         }
-        $name = preg_replace('/^'.$variety->getSpecies()->getName().' /', '', $variety->getName());
+        $name = preg_replace('/^' . $variety->getSpecies()->getName() . ' /', '', $variety->getName());
 
         if ($variety->getIsStrain()) {
             // Prepend with parent name
@@ -78,7 +78,7 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
         $cleaned = preg_replace('/[^A-Z0-9]/', '', $translit);
 
         // first chars of name, right padded with "X" if necessary
-        $code = $prefix.str_pad(substr($cleaned, 0, $length), $length, $pad);
+        $code = $prefix . str_pad(substr($cleaned, 0, $length), $length, $pad);
 
         if (self::isCodeUnique($code, $variety, $existingCodes)) {
             return $code;
@@ -86,7 +86,7 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
 
         // XX1 ... XX9
         for ($i = 1; $i < 10; ++$i) {
-            $code = $prefix.sprintf('%s%d', substr($code, 0, $length - 1), $i);
+            $code = $prefix . sprintf('%s%d', substr($code, 0, $length - 1), $i);
             if (self::isCodeUnique($code, $variety, $existingCodes)) {
                 return $code;
             }
@@ -94,7 +94,7 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
 
         // X01 ... X99
         for ($i = 1; $i < 100; ++$i) {
-            $code = $prefix.sprintf('%s%02d', substr($code, 0, $length - 2), $i);
+            $code = $prefix . sprintf('%s%02d', substr($code, 0, $length - 2), $i);
             if (self::isCodeUnique($code, $variety, $existingCodes)) {
                 return $code;
             }
