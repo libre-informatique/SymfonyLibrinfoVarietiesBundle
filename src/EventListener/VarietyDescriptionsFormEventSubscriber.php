@@ -61,11 +61,11 @@ class VarietyDescriptionsFormEventSubscriber implements EventSubscriberInterface
 
         if ($eventType === FormEvents::PRE_SET_DATA) {
             foreach ($this->config as $fieldset => $field) {
-                $getter = 'get'.ucfirst($fieldset).'Descriptions';
-                $setter = 'set'.ucfirst($fieldset).'Descriptions';
-                $remover = 'remove'.ucfirst($fieldset).'Description';
-                $adder = 'add'.ucfirst($fieldset).'Description';
-                $constructor = '\Librinfo\VarietiesBundle\Entity\VarietyDescription'.ucfirst($fieldset);
+                $getter = 'get' . ucfirst($fieldset) . 'Descriptions';
+                $setter = 'set' . ucfirst($fieldset) . 'Descriptions';
+                $remover = 'remove' . ucfirst($fieldset) . 'Description';
+                $adder = 'add' . ucfirst($fieldset) . 'Description';
+                $constructor = '\Librinfo\VarietiesBundle\Entity\VarietyDescription' . ucfirst($fieldset);
 
                 // Hide VarietyDescriptions that are not found in configuration
                 foreach ($subject->$getter() as $desc) {

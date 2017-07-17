@@ -272,7 +272,7 @@ class Variety
     public function __call($name, $unusedArg)
     {
         $name = explode('||', $name);
-        $getter = 'get'.ucfirst($name[0]).'_descriptions';
+        $getter = 'get' . ucfirst($name[0]) . '_descriptions';
 
         foreach ($this->$getter() as $desc) {
             if ($desc->getField() == $name[1]) {

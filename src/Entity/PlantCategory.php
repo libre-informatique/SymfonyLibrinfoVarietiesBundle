@@ -156,7 +156,7 @@ class PlantCategory implements \JsonSerializable
     {
         $path = rtrim($node->getRealMaterializedPath(), static::getMaterializedPathSeparator());
         $this->setMaterializedPath($path);
-        $this->setSortMaterializedPath($path.static::getMaterializedPathSeparator().$this->getId());
+        $this->setSortMaterializedPath($path . static::getMaterializedPathSeparator() . $this->getId());
 
         if (null !== $this->parentNode) {
             $this->parentNode->getChildNodes()->removeElement($this);
