@@ -1,5 +1,18 @@
 # Change Log
 
+## [0.4.5](https://github.com/libre-informatique/VarietiesBundle/tree/0.4.5) (2017-07-26)
+[Full Changelog](https://github.com/libre-informatique/VarietiesBundle/compare/0.4.4...0.4.5)
+
+**Merged pull requests:**
+
+- DevKit updates for VarietiesBundle [\#19](https://github.com/libre-informatique/VarietiesBundle/pull/19) ([BlastCI](https://github.com/BlastCI))
+- Lisem fix & features [\#17](https://github.com/libre-informatique/VarietiesBundle/pull/17) ([FanchTheSystem](https://github.com/FanchTheSystem))
+- DevKit updates for VarietiesBundle [\#16](https://github.com/libre-informatique/VarietiesBundle/pull/16) ([BlastCI](https://github.com/BlastCI))
+- DevKit updates for VarietiesBundle [\#15](https://github.com/libre-informatique/VarietiesBundle/pull/15) ([BlastCI](https://github.com/BlastCI))
+- Wip lisem [\#14](https://github.com/libre-informatique/VarietiesBundle/pull/14) ([FanchTheSystem](https://github.com/FanchTheSystem))
+- DevKit updates for VarietiesBundle [\#13](https://github.com/libre-informatique/VarietiesBundle/pull/13) ([BlastCI](https://github.com/BlastCI))
+- DevKit updates for VarietiesBundle [\#12](https://github.com/libre-informatique/VarietiesBundle/pull/12) ([BlastCI](https://github.com/BlastCI))
+
 ## [0.4.4](https://github.com/libre-informatique/VarietiesBundle/tree/0.4.4) (2017-06-27)
 [Full Changelog](https://github.com/libre-informatique/VarietiesBundle/compare/0.4.3...0.4.4)
 
