@@ -302,6 +302,7 @@ librinfo:
         species: Espèce
         specieses: Espèces
         strain_characteristics: Charactéristiques de la souche
+        strains_children: Liste des souches
         subspecieses: Sous-espèces
         tkw: Poids de mille graines
         transmitted_diseases: Maladies transmises par les semences
