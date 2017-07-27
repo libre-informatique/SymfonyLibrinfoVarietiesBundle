@@ -89,8 +89,6 @@ class VarietyTest extends TestCase
 
     /**
      * @covers \Librinfo\VarietiesBundle\Entity\Variety::__clone
-     *
-     *  @todo test method __clone call this method initOuterExtendedClasses();
      */
     public function test__clone()
     {
@@ -108,8 +106,6 @@ class VarietyTest extends TestCase
 
     /**
      * @covers \Librinfo\VarietiesBundle\Entity\Variety::__call
-     *
-     * @todo  I have to put the method name in variable because of the operator || used in  method name (maybe need to change it in the __call method of Variety.php)
      */
     public function test__call()
     {
@@ -373,10 +369,6 @@ class VarietyTest extends TestCase
 
     /**
      * @covers \Librinfo\VarietiesBundle\Entity\Variety::getLegalGerminationRate
-     *
-     * @todo add test to this return
-     *          if (!$this->legal_germination_rate && $this->getSpecies())
-     *              return $this->getSpecies()->getLegalGerminationRate();
      */
     public function testGetLegalGerminationRate()
     {
@@ -515,8 +507,6 @@ class VarietyTest extends TestCase
 
     /**
      * @covers \Librinfo\VarietiesBundle\Entity\Variety::getPlantCategories
-     *
-     * @todo  test not complete need to test this  return $this->getSpecies()->getPlantCategories();
      */
     public function testGetPlantCategories()
     {
@@ -607,19 +597,6 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::getTkw
-     *
-     * @todo   Implement testGetTkw().
-     */
-    public function testGetTkw()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
      * @covers \Librinfo\VarietiesBundle\Entity\Variety::setSeedLifespan
      */
     public function testSetSeedLifespan()
@@ -632,39 +609,11 @@ class VarietyTest extends TestCase
 
     /**
      * @covers \Librinfo\VarietiesBundle\Entity\Variety::getSeedLifespan
-     *
-     * @todo    add Test to this return $this->getSpecies()->getSeedLifeSpan();
      */
     public function testGetSeedLifespan()
     {
         $get = $this->object->getSeedLifespan();
         $this->assertEquals($get, '');
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::setRaiseDuration
-     *
-     * @todo   Implement testSetRaiseDuration().
-     */
-    public function testSetRaiseDuration()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::getRaiseDuration
-     *
-     * @todo   Implement testGetRaiseDuration().
-     */
-    public function testGetRaiseDuration()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
     }
 
     /**
@@ -889,18 +838,6 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::setProfessionalDescriptions
-     *
-     * @todo   Implement testSetProfessionalDescriptions().
-     */
-    public function testSetProfessionalDescriptions()
-    {
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
      * @covers \Librinfo\VarietiesBundle\Entity\Variety::addAmateurDescription
      */
     public function testAddAmateurDescription()
@@ -938,19 +875,6 @@ class VarietyTest extends TestCase
         $get = $this->object->getAmateur_descriptions();
         $get2 = $this->object->getAmateurDescriptions();
         $this->assertEquals($get, $get2);
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::setAmateurDescriptions
-     *
-     * @todo   Implement testSetAmateurDescriptions().
-     */
-    public function testSetAmateurDescriptions()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
     }
 
     /**
@@ -994,19 +918,6 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::setProductionDescriptions
-     *
-     * @todo   Implement testSetProductionDescriptions().
-     */
-    public function testSetProductionDescriptions()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
      * @covers \Librinfo\VarietiesBundle\Entity\Variety::addCommercialDescription
      */
     public function testAddCommercialDescription()
@@ -1044,19 +955,6 @@ class VarietyTest extends TestCase
         $get = $this->object->getCommercial_descriptions();
         $get2 = $this->object->getCommercialDescriptions();
         $this->assertEquals($get, $get2);
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::setCommercialDescriptions
-     *
-     * @todo   Implement testSetCommercialDescriptions().
-     */
-    public function testSetCommercialDescriptions()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
     }
 
     /**
@@ -1100,19 +998,6 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::setPlantDescriptions
-     *
-     * @todo   Implement testSetPlantDescriptions().
-     */
-    public function testSetPlantDescriptions()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
      * @covers \Librinfo\VarietiesBundle\Entity\Variety::addCultureDescription
      */
     public function testAddCultureDescription()
@@ -1150,19 +1035,6 @@ class VarietyTest extends TestCase
         $get = $this->object->getCulture_descriptions();
         $get2 = $this->object->getCultureDescriptions();
         $this->assertEquals($get, $get2);
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::setCultureDescriptions
-     *
-     * @todo   Implement testSetCultureDescriptions().
-     */
-    public function testSetCultureDescriptions()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
     }
 
     /**
@@ -1204,252 +1076,5 @@ class VarietyTest extends TestCase
         $this->object->setInnerDescriptions($test);
         $get = $this->object->getInnerDescriptions();
         $this->assertEquals($get, 'test');
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::addLibrinfoFile
-     *
-     * @todo   Implement testAddLibrinfoFile().
-     */
-    public function testAddLibrinfoFile()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::removeLibrinfoFile
-     *
-     * @todo   Implement testRemoveLibrinfoFile().
-     */
-    public function testRemoveLibrinfoFile()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::setName
-     *
-     * @todo   Implement testSetName().
-     */
-    public function testSetName()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::getNameTrait
-     *
-     * @todo   Implement testGetNameTrait().
-     */
-    public function testGetNameTrait()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::getId
-     *
-     * @todo   Implement testGetId().
-     */
-    public function testGetId()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::setId
-     *
-     * @todo   Implement testSetId().
-     */
-    public function testSetId()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::isNew
-     *
-     * @todo   Implement testIsNew().
-     */
-    public function testIsNew()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::__toString
-     *
-     * @todo   Implement test__toString().
-     */
-    public function test__toString()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::addImage
-     *
-     * @todo   Implement testAddImage().
-     */
-    public function testAddImage()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::removeImage
-     *
-     * @todo   Implement testRemoveImage().
-     */
-    public function testRemoveImage()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::getImages
-     *
-     * @todo   Implement testGetImages().
-     */
-    public function testGetImages()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::setImages
-     *
-     * @todo   Implement testSetImages().
-     */
-    public function testSetImages()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::getLibrinfoFiles
-     *
-     * @todo   Implement testGetLibrinfoFiles().
-     */
-    public function testGetLibrinfoFiles()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::getCreatedAt
-     *
-     * @todo   Implement testGetCreatedAt().
-     */
-    public function testGetCreatedAt()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::setCreatedAt
-     *
-     * @todo   Implement testSetCreatedAt().
-     */
-    public function testSetCreatedAt()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::getUpdatedAt
-     *
-     * @todo   Implement testGetUpdatedAt().
-     */
-    public function testGetUpdatedAt()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::setUpdatedAt
-     *
-     * @todo   Implement testSetUpdatedAt().
-     */
-    public function testSetUpdatedAt()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::setDescription
-     *
-     * @todo   Implement testSetDescription().
-     */
-    public function testSetDescription()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers \Librinfo\VarietiesBundle\Entity\Variety::getDescription
-     *
-     * @todo   Implement testGetDescription().
-     */
-    public function testGetDescription()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
     }
 }
