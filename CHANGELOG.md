@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/libre-informatique/VarietiesBundle/tree/HEAD)
+
+[Full Changelog](https://github.com/libre-informatique/VarietiesBundle/compare/0.4.5...HEAD)
+
+**Merged pull requests:**
+
+- Wip test [\#20](https://github.com/libre-informatique/VarietiesBundle/pull/20) ([AhamadaMBARAKA](https://github.com/AhamadaMBARAKA))
+
 ## [0.4.5](https://github.com/libre-informatique/VarietiesBundle/tree/0.4.5) (2017-07-26)
 [Full Changelog](https://github.com/libre-informatique/VarietiesBundle/compare/0.4.4...0.4.5)
 
