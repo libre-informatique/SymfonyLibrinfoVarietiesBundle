@@ -236,6 +236,11 @@ class Variety
      */
     private $images;
 
+    /**
+     * @var string
+     */
+    private $plant_type;
+
     public function initCollections()
     {
         $this->children = new ArrayCollection();
@@ -1632,6 +1637,26 @@ class Variety
     public function setImages(ArrayCollection $images)
     {
         $this->images = $images;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlantType()
+    {
+        return $this->plant_type;
+    }
+
+    /**
+     * @param string plant_type
+     *
+     * @return self
+     */
+    public function setPlantType($plant_type)
+    {
+        $this->plant_type = $plant_type;
 
         return $this;
     }

@@ -293,10 +293,12 @@ parameters:
             Sonata\AdminBundle\Show\ShowMapper:
                 remove:
                     description: ~
+                    name: ~
                 add:
                     form_tab_general:
                         '':
-
+                            name: ~
+                            code: ~
                             latin_name: ~
                             alias: ~
                             genus:
@@ -305,13 +307,15 @@ parameters:
                                 admin_code: librinfo_varieties.admin.species_embedded
                             subspecieses:
                                 admin_code: librinfo_varieties.admin.species_embedded
+                            plant_categories: ~
                             life_cycle:
                                 type: trans
                                 catalogue: varieties
                             varieties:
                                 admin_code: librinfo_varieties.admin.variety
-                            description: ~
-                            regulatory_status: ~
+                                label: librinfo.label.varieties_list
+                            description:
+                                template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
                             legal_germination_rate: ~
                             seed_lifespan: ~
                             raise_duration: ~
@@ -322,16 +326,18 @@ parameters:
                           class: framacalc
 
             Sonata\AdminBundle\Form\FormMapper:
+                remove:
+                    description: ~
                 add:
                     form_tab_general:
-                        '':
+                        form_group_identification:
                             genus:
                                 type: sonata_type_model
                                 _options:
                                     admin_code: librinfo_varieties.admin.genus
                                 attr:
-                                    class: new-line
-                                    width: 30
+                                    class: inline-block
+                                    width: 50
                             parent_species:
                                 type: sonata_type_model_autocomplete
                                 property: name
@@ -339,39 +345,33 @@ parameters:
                                 _options:
                                     admin_code: librinfo_varieties.admin.species_embedded
                                 attr:
-                                    class: new-line
-                                    width: 30
+                                    class: inline-block
+                                    width: 50
                             code:
                                 type: Blast\CoreBundle\Form\Type\EntityCodeType
                                 required: true
                                 attr:
-                                    class: new-line
-                                    width: 30
+                                    class: inline-block
+                                    width: 50
                             name:
                                 type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
                                 attr:
                                     class: inline-block
+                                    width: 50
                             latin_name:
                                 type: Blast\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
                                 required: false
                                 attr:
                                     class: inline-block
-                                    width: 30
+                                    width: 50
                             alias:
                                 type: text
                                 required: false
                                 attr:
                                     class: inline-block
                                     width: 50
-                            description:
-                                required: false
-                                type: Blast\UtilsBundle\Form\Type\TinyMceType
-                                attr:
-                                    class: new-line
-                                    height: 200
-
                             plant_categories:
                                 type: Blast\BaseEntitiesBundle\Form\Type\NestedTreeableType
                                 class: Librinfo\VarietiesBundle\Entity\PlantCategory
@@ -382,48 +382,58 @@ parameters:
                                     width: 50
                                 _options:
                                     btn_add: true
-                            regulatory_status:
+                            _options:
+                                fieldsOrder:
+                                    - genus
+                                    - parent_species
+                                    - name
+                                    - code
+                                    - latin_name
+                                    - alias
+                                    - plant_categories
+                        form_group_description:
+                            description:
                                 required: false
-                                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
-                                choices_field: regulatory_status
-                                blast_choices:
-                                   - Contrôlé
-                                   - Non contrôlé
+                                type: Blast\UtilsBundle\Form\Type\TinyMceType
                                 attr:
-                                    class: inline-block
+                                    class: new-line
+                                    height: 200
                             legal_germination_rate:
                                 attr:
                                     class: inline-block
+                                    width: 33
                             raise_duration:
                                 attr:
                                     class: inline-block
+                                    width: 33
                             tkw:
                                 help: librinfo.help.tkw
                                 attr:
-                                    class: new-line
+                                    class: inline-block
                                     width: 30
                             life_cycle:
                                 type: Librinfo\VarietiesBundle\Form\Type\LifeCycleType
                                 required: false
                                 attr:
-                                    class: new-line
+                                    class: inline-block
+                                    width: 50
+                            seed_lifespan:
+                                type: text
+                                required: false
+                                attr:
+                                    class: inline-block
                                     width: 50
                             _options:
                                 fieldsOrder:
                                     - description
-                                    - genus
-                                    - parent_species
-                                    - name
-                                    - latin_name
-                                    - alias
-                                    - code
-                                    - plant_categories
-                                    - regulatory_status
                                     - legal_germination_rate
                                     - raise_duration
                                     - tkw
                                     - life_cycle
-
+                        _options:
+                            groupsOrder:
+                                - form_group_identification
+                                - form_group_description
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
@@ -484,7 +494,6 @@ parameters:
                     alias: ~
                     description: ~
                     plant_categories: ~
-                    regulatory_status: ~
                     legal_germination_rate: ~
                     raise_duration: ~
                     tkw: ~
@@ -549,15 +558,6 @@ parameters:
                                     width: 50
                                 _options:
                                     btn_add: true
-                            regulatory_status:
-                                required: false
-                                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
-                                choices_field: regulatory_status
-                                blast_choices:
-                                   - Contrôlé
-                                   - Non contrôlé
-                                attr:
-                                    class: inline-block
                             legal_germination_rate:
                                 attr:
                                     class: inline-block
@@ -585,7 +585,6 @@ parameters:
                                     - code
                                     - description
                                     - plant_categories
-                                    - regulatory_status
                                     - legal_germination_rate
                                     - raise_duration
                                     - tkw
@@ -696,11 +695,27 @@ parameters:
                             - form_tab_images
             Sonata\AdminBundle\Form\FormMapper:
                 titleTemplate: LibrinfoVarietiesBundle:VarietyAdmin:edit_title.html.twig
+                remove:
+                    description: ~
+                    legal_germination_rate: ~
+                    germination_rate: ~
+                    tkw: ~
+                    seed_lifespan: ~
+                    raise_duration: ~
+                    transmitted_diseases: ~
+                    life_cycle: ~
+                    regulatory_status: ~
+                    species: ~
+                    isStrain: ~
+                    parent: ~
+                    name: ~
+                    latin_name: ~
+                    alias: ~
+                    code: ~
+                    plant_categories: ~
                 add:
                     form_tab_general:
-                        form_group_general:
-                            _options:
-                                class: col-md-12
+                        form_group_identification:
                             isStrain:
                                 required: false
                                 type: checkbox
@@ -712,12 +727,23 @@ parameters:
                                 placeholder: ''
                                 required: true
                                 attr:
-                                    class: new-line
-                                    width: 100
+                                    class: inline-block
+                                    width: 50
                                     strain_disabled: true
                                     inherit: source
                                 _options:
                                     admin_code: librinfo_varieties.admin.species
+                            plant_type:
+                                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
+                                choices_field: plant_type
+                                blast_choices:
+                                    - Feuille
+                                    - Fruit
+                                    - Racine
+                                    - Fleur
+                                attr:
+                                    class: inline-block
+                                    width: 50
                             parent:
                                 type: sonata_type_model
                                 placeholder: ''
@@ -763,49 +789,70 @@ parameters:
                                 required: false
                                 multiple: true
                                 attr:
-                                    class: new-line
+                                    class: new-line-after
                                     width: 50
                                     inherit: target
                                 _options:
                                     btn_add: true
+                            _options:
+                                fieldsOrder:
+                                    - species
+                                    - plant_type
+                                    - plant_categories
+                                    - isStrain
+                                    - parent
+                                    - name
+                                    - code
+                                    - latin_name
+                                    - alias
+                        form_group_description:
+                            description:
+                                required: false
+                                type: Blast\UtilsBundle\Form\Type\TinyMceType
+                                attr:
+                                    class: new-line
+                                    height: 200
                             legal_germination_rate:
                                 help: librinfo.help.legal_germination_rate
                                 attr:
                                     class: inline-block
                                     inherit: target
-                                    width: 25
+                                    width: 33
                             germination_rate:
                                 help: librinfo.help.germination_rate
                                 attr:
                                     class: inline-block
+                                    width: 33
                             tkw:
                                 help: librinfo.help.tkw
                                 attr:
                                     class: inline-block
-                                    width: 50
+                                    width: 33
                                     inherit: target
                             seed_lifespan:
                                 help: librinfo.help.seed_lifespan
                                 attr:
                                     class: inline-block
+                                    width: 50
                                     inherit: target
                             raise_duration:
                                 help: librinfo.help.raise_duration
                                 attr:
                                     class: inline-block
+                                    width: 50
                                     inherit: target
                             transmitted_diseases:
                                 required: false
                                 type: text
                                 attr:
                                     class: new-line
-                                    width: 50
+                                    width: 100
                             life_cycle:
                                 type: Librinfo\VarietiesBundle\Form\Type\LifeCycleType
                                 required: false
                                 attr:
-                                    class: new-line
-                                    width: 30
+                                    class: inline-block
+                                    width: 50
                                     inherit: target
                             regulatory_status:
                                 required: false
@@ -815,18 +862,23 @@ parameters:
                                    - Contrôlé
                                    - Non contrôlé
                                 attr:
-                                    class: new-line
-                                    width: 30
+                                    class: inline-block
+                                    width: 50
                                     inherit: target
-                            description:
-                                required: false
-                                type: Blast\UtilsBundle\Form\Type\TinyMceType
-                                attr:
-                                    class: new-line
-                                    height: 200
+                            _options:
+                                fieldsOrder:
+                                    - description
+                                    - legal_germination_rate
+                                    - germination_rate
+                                    - tkw
+                                    - seed_lifespan
+                                    - raise_duration
+                                    - transmitted_diseases
+                                    - life_cycle
+                                    - regulatory_status
                         form_group_offical_catalogue:
                             _options:
-                                class: col-md-12
+                                class: col-md-6
                             official: ~
                             official_name:
                                 attr:
@@ -846,6 +898,11 @@ parameters:
                                 attr:
                                     class: new-line
                                     width: 30
+                        _options:
+                            groupsOrder:
+                                - form_group_identification
+                                - form_group_description
+                                - form_group_offical_catalogue
                     form_tab_inner:
                         form_group_inner:
                     form_tab_professional:
@@ -939,20 +996,24 @@ parameters:
                                 required: false
                                 attr:
                                     class: inline-block
+                                    width: 50
                             area_per_kg:
                                 required: false
                                 help: librinfo.help.area_per_kg
                                 attr:
                                     class: inline-block
+                                    width: 50
                             seedheads_per_kg:
                                 required: false
                                 attr:
                                     class: inline-block
+                                    width: 50
                                 help: librinfo.help.seedheads_per_kg
                             base_seed_per_kg:
                                 required: false
                                 attr:
                                     class: inline-block
+                                    width: 50
                                 help: librinfo.help.base_seed_per_kg
                         form_group_density:
                             distance_on_line:
@@ -961,12 +1022,14 @@ parameters:
                                 help: librinfo.help.distance_on_line
                                 attr:
                                     class: inline-block
+                                    width: 50
                             distance_between_lines:
                                 required: false
                                 type: integer
                                 help: librinfo.help.distance_between_lines
                                 attr:
                                     class: inline-block
+                                    width: 50
                         form_group_selection:
                             selection_advice:
                                 type: textarea

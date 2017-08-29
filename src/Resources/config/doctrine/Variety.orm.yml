@@ -114,6 +114,9 @@ Librinfo\VarietiesBundle\Entity\Variety:
         isStrain:
             type: boolean
             nullable: true
+        plant_type:
+            type:     string
+            nullable: true
     oneToMany:
         children:
             targetEntity: Variety

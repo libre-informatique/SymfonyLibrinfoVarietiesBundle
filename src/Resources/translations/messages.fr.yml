@@ -8,6 +8,8 @@ form_group_plant: Caractéristiques de la plante
 form_group_production: Mise en production
 form_group_professional: Conseils de culture pour les professionnels
 form_group_selection: Sélection
+form_group_identification: Identification
+form_group_description: Description
 
 form_tab_amateur: Conseils Jardiniers
 form_tab_commercial: Commercial
@@ -56,6 +58,7 @@ librinfo_description_amateur_transplant: Repiquage
 librinfo_description_amateur_treatments: Traitements
 librinfo_description_amateur_tutoring: Tuteurage
 librinfo_description_amateur_yield: Rendement
+librinfo_description_amateur_inner_commment: Commentaires / description spécifique
 
 librinfo_description_commercial_cultivation_ease: Facilité de culture
 librinfo_description_commercial_grade: Calibre
@@ -162,6 +165,7 @@ librinfo_description_professional_transplant: Repiquage
 librinfo_description_professional_treatments: Traitements
 librinfo_description_professional_tutoring: Tuteurage
 librinfo_description_professional_yield: Rendement
+librinfo_description_professional_inner_commment: Commentaires / description spécifique
 
 librinfo:
     error:
@@ -200,6 +204,7 @@ librinfo:
         manure: ' '
         max_harvest_span: en semaines
         min_harvest_span: en semaines
+        no_help: ' '
         nutrients: ' '
         nutrition_rating: ' '
         on_line_distance: en cm
@@ -281,12 +286,14 @@ librinfo:
         official_maintainer: Mainteneur
         official_name: Nom au catalogue officiel
         official: Inscrit au catalogue officiel
-        parent_species: Est une sous-espèce de
+        # parent_species: Est une sous-espèce de
+        parent_species: Espèce parente
         parent: Variété
         plant_categories: Catégories
         plant_category: Catégorie
         plant_density: Densité au m²
         plant_descriptions: Caractéristiques de la plante
+        plant_type: Type de plante
         production_descriptions: Mise en production
         professional_descriptions: Conseils de culture Professionels
         raise_duration: Durée de levée dans les conditions naturelles
@@ -308,6 +315,7 @@ librinfo:
         transmitted_diseases: Maladies transmises par les semences
         tree_parent: Catégorie parente
         varieties: Variétés
+        varieties_list: Liste des variétés
     link:
         family_create: Nouvelle famille
         family_list: Liste des familles
