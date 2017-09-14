@@ -50,7 +50,7 @@ class VarietyDescriptionType extends BaseAbstractType
         };
 
         $resolver->setDefaults([
-            'placeholder' => '',
+            'placeholder'   => '',
             'choice_loader' => $choiceLoader,
         ]);
 

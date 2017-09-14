@@ -72,9 +72,9 @@ class VarietyDescriptionFilter extends Filter
     {
         return array('sonata_type_filter_default', array(
                 'operator_type' => 'sonata_type_equal',
-                'field_type' => VarietyDescriptionFilterType::class,
+                'field_type'    => VarietyDescriptionFilterType::class,
                 'field_options' => array_merge($this->getDefaultOptions(), $this->getFieldOptions()),
-                'label' => $this->getLabel(),
+                'label'         => $this->getLabel(),
         ));
     }
 }
