@@ -1,25 +1,21 @@
 # Change Log
 
-## [Unreleased](https://github.com/libre-informatique/VarietiesBundle/tree/HEAD)
-
-[Full Changelog](https://github.com/libre-informatique/VarietiesBundle/compare/0.4.5...HEAD)
+## [0.5.1](https://github.com/libre-informatique/VarietiesBundle/tree/0.5.1) (2017-09-15)
+[Full Changelog](https://github.com/libre-informatique/VarietiesBundle/compare/0.4.5...0.5.1)
 
 **Merged pull requests:**
 
-- Wip test [\#20](https://github.com/libre-informatique/VarietiesBundle/pull/20) ([AhamadaMBARAKA](https://github.com/AhamadaMBARAKA))
+- Lisem fix & features [\#24](https://github.com/libre-informatique/VarietiesBundle/pull/24) ([FanchTheSystem](https://github.com/FanchTheSystem))
+- Lisem fix & features [\#23](https://github.com/libre-informatique/VarietiesBundle/pull/23) ([FanchTheSystem](https://github.com/FanchTheSystem))
 
-## [0.4.5](https://github.com/libre-informatique/VarietiesBundle/tree/0.4.5) (2017-07-26)
+## [0.4.5](https://github.com/libre-informatique/VarietiesBundle/tree/0.4.5) (2017-07-28)
 [Full Changelog](https://github.com/libre-informatique/VarietiesBundle/compare/0.4.4...0.4.5)
 
 **Merged pull requests:**
 
-- DevKit updates for VarietiesBundle [\#19](https://github.com/libre-informatique/VarietiesBundle/pull/19) ([BlastCI](https://github.com/BlastCI))
+- Wip test [\#20](https://github.com/libre-informatique/VarietiesBundle/pull/20) ([AhamadaMBARAKA](https://github.com/AhamadaMBARAKA))
 - Lisem fix & features [\#17](https://github.com/libre-informatique/VarietiesBundle/pull/17) ([FanchTheSystem](https://github.com/FanchTheSystem))
-- DevKit updates for VarietiesBundle [\#16](https://github.com/libre-informatique/VarietiesBundle/pull/16) ([BlastCI](https://github.com/BlastCI))
-- DevKit updates for VarietiesBundle [\#15](https://github.com/libre-informatique/VarietiesBundle/pull/15) ([BlastCI](https://github.com/BlastCI))
 - Wip lisem [\#14](https://github.com/libre-informatique/VarietiesBundle/pull/14) ([FanchTheSystem](https://github.com/FanchTheSystem))
-- DevKit updates for VarietiesBundle [\#13](https://github.com/libre-informatique/VarietiesBundle/pull/13) ([BlastCI](https://github.com/BlastCI))
-- DevKit updates for VarietiesBundle [\#12](https://github.com/libre-informatique/VarietiesBundle/pull/12) ([BlastCI](https://github.com/BlastCI))
 
 ## [0.4.4](https://github.com/libre-informatique/VarietiesBundle/tree/0.4.4) (2017-06-27)
 [Full Changelog](https://github.com/libre-informatique/VarietiesBundle/compare/0.4.3...0.4.4)
@@ -29,20 +25,12 @@
 
 **Merged pull requests:**
 
-- DevKit updates for VarietiesBundle [\#11](https://github.com/libre-informatique/VarietiesBundle/pull/11) ([BlastCI](https://github.com/BlastCI))
 - Add First Phpunit Test \(\#8\) [\#10](https://github.com/libre-informatique/VarietiesBundle/pull/10) ([FanchTheSystem](https://github.com/FanchTheSystem))
 - Phpunit [\#8](https://github.com/libre-informatique/VarietiesBundle/pull/8) ([erwanrolland](https://github.com/erwanrolland))
-- DevKit updates for VarietiesBundle [\#7](https://github.com/libre-informatique/VarietiesBundle/pull/7) ([BlastCI](https://github.com/BlastCI))
 - New README.md [\#6](https://github.com/libre-informatique/VarietiesBundle/pull/6) ([erwanrolland](https://github.com/erwanrolland))
-- DevKit updates for VarietiesBundle [\#5](https://github.com/libre-informatique/VarietiesBundle/pull/5) ([BlastCI](https://github.com/BlastCI))
-- DevKit updates for VarietiesBundle [\#3](https://github.com/libre-informatique/VarietiesBundle/pull/3) ([BlastCI](https://github.com/BlastCI))
 
 ## [0.4.2](https://github.com/libre-informatique/VarietiesBundle/tree/0.4.2) (2017-05-05)
 [Full Changelog](https://github.com/libre-informatique/VarietiesBundle/compare/0.2...0.4.2)
-
-**Merged pull requests:**
-
-- DevKit updates for VarietiesBundle [\#2](https://github.com/libre-informatique/VarietiesBundle/pull/2) ([BlastCI](https://github.com/BlastCI))
 
 ## [0.2](https://github.com/libre-informatique/VarietiesBundle/tree/0.2) (2017-03-07)
 [Full Changelog](https://github.com/libre-informatique/VarietiesBundle/compare/0.1...0.2)
