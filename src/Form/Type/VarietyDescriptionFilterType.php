@@ -52,7 +52,7 @@ class VarietyDescriptionFilterType extends BaseAbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'placeholder' => '',
+            'placeholder'   => '',
             'field_options' => array(),
         ]);
 

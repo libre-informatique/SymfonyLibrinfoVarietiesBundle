@@ -32,7 +32,7 @@ class LifeCycleType extends BaseAbstractType
         $resolver->setDefaults([
             'multiple' => false,
             'expanded' => false,
-            'choices' => $choices,
+            'choices'  => $choices,
         ]);
     }
 }
