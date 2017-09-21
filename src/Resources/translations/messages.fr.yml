@@ -347,6 +347,8 @@ librinfo:
         variety_description_professional_admin.label: Conseils pros
     new_variety:
         label: Nouvelle variété
+    ui:
+        variety_tab: Variété
 
 
 A species cannot be both a sub-species and a parent species: Une espèce ne peut être à la fois une sous-espèce et une espèce parente.

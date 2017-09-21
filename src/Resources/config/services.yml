@@ -53,5 +53,6 @@ services:
         class: Librinfo\VarietiesBundle\Twig\VarietyDescription
         calls:
             - [setVarietyConfig, ['%librinfo_varieties%']]
+            - [setTranslator, ['@translator']]
         tags:
             - { name: twig.extension }
