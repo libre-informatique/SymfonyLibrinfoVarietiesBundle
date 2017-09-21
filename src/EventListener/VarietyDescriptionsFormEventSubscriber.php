@@ -96,10 +96,6 @@ class VarietyDescriptionsFormEventSubscriber implements EventSubscriberInterface
 
                 $this->sortDescriptions($this->config, $fieldset, $subject, $getter, $setter);
             }
-        } else {
-            dump($subject);
-            dump($form->get('commercial_descriptions'));
-            die;
         }
     }
 

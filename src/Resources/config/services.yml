@@ -49,3 +49,9 @@ services:
         tags:
             - { name: blast.entity_code_generator }
 
+    librinfo_varieties.twig.variety_description:
+        class: Librinfo\VarietiesBundle\Twig\VarietyDescription
+        calls:
+            - [setVarietyConfig, ['%librinfo_varieties%']]
+        tags:
+            - { name: twig.extension }
