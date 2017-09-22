@@ -13,6 +13,9 @@
 namespace Librinfo\VarietiesBundle\Twig;
 
 use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Component\PropertyAccess\PropertyAccessor;
+use Librinfo\VarietiesBundle\Entity\Variety;
+use Librinfo\VarietiesBundle\Entity\VarietyDescription as VarietyDescriptionEntity;
 
 class VarietyDescription extends \Twig_Extension
 {
@@ -26,39 +29,83 @@ class VarietyDescription extends \Twig_Extension
      */
     private $varietyConfig;
 
+    /**
+     * @var VarietyDescriptionEntity
+     */
+    private $fieldDescription;
+
+    /**
+     * {@inheritdoc}
+     */
     public function getFunctions()
     {
         return [
+            new \Twig_SimpleFunction('sortVarietyDescriptions', [$this, 'sortVarietyDescriptions'], ['is_safe'=>['html']]),
             new \Twig_SimpleFunction('displayVarietyDescriptionLabel', [$this, 'displayVarietyDescriptionLabel'], ['is_safe'=>['html']]),
             new \Twig_SimpleFunction('displayVarietyDescriptionValue', [$this, 'displayVarietyDescriptionValue'], ['is_safe'=>['html']]),
         ];
     }
 
-    public function displayVarietyDescriptionLabel($varietyDescription)
+    public function sortVarietyDescriptions(Variety $variety, string $fieldSet): string
+    {
+        $config = $this->getVarietyConfiguration();
+
+        if (isset($config[$fieldSet])) {
+            $keys = array_flip(array_keys($config[$fieldSet]));
+            $sortedArray = [];
+            $propertyAccessor = new PropertyAccessor();
+            $descriptions = $propertyAccessor->getValue($variety, $fieldSet . '_descriptions')->toArray();
+
+            array_walk($descriptions, function ($item) use ($keys, &$sortedArray) {
+                $field = $item->getField();
+                $sortedArray[$keys[$field]] = $item;
+            });
+
+            ksort($sortedArray);
+
+            $propertyAccessor->getValue($variety, $fieldSet . '_descriptions')->clear();
+
+            foreach ($sortedArray as $desc) {
+                $propertyAccessor->setValue($variety, 'add' . $fieldSet . '_description', $desc);
+            }
+        }
+
+        return '';
+    }
+
+    /**
+     * @param VarietyDescriptionEntity $varietyDescription
+     *
+     * @return string
+     */
+    public function displayVarietyDescriptionLabel(VarietyDescriptionEntity $varietyDescription): string
     {
         return $this->displayVarietyDescription($varietyDescription, true);
     }
 
-    public function displayVarietyDescriptionValue($varietyDescription)
+    /**
+     * @param VarietyDescriptionEntity $varietyDescription
+     *
+     * @return string
+     */
+    public function displayVarietyDescriptionValue(VarietyDescriptionEntity $varietyDescription): string
     {
         return $this->displayVarietyDescription($varietyDescription, false);
     }
 
-    public function displayVarietyDescription($varietyDescription, $label = false)
+    /**
+     * @param VarietyDescriptionEntity $varietyDescription
+     * @param bool                     $label
+     *
+     * @return string
+     */
+    private function displayVarietyDescription(VarietyDescriptionEntity $varietyDescription, $displayLabel = false): string
     {
-        $fieldSet = $varietyDescription->getFieldset();
-        $field = $varietyDescription->getField();
-        $value = $varietyDescription->getValue();
+        $this->initFieldDescription($varietyDescription);
 
-        $config = $this->varietyConfig['variety_descriptions'];
-
-        if (array_key_exists($fieldSet, $config)) {
-            $configFieldset = $config[$fieldSet];
-        }
-
-        if ($label) {
-            $help = $this->translator->trans('librinfo.help.' . $field, [], 'messages');
-            $label = $this->translator->trans($field, [], 'messages');
+        if ($displayLabel) {
+            $help = $this->translator->trans('librinfo.help.' . $varietyDescription->getField(), [], 'messages');
+            $label = $this->translator->trans('librinfo_description_' . $this->varietyDescription->getFieldset() . '_' . $varietyDescription->getField(), [], 'messages');
 
             if ($help != ' ') {
                 $label .= ' <small>(' . $help . ')</small>';
@@ -66,8 +113,71 @@ class VarietyDescription extends \Twig_Extension
 
             return $label;
         } else {
-            return $value;
+            return $this->handleValueWidget();
         }
+    }
+
+    private function handleValueWidget(): string
+    {
+        $config = $this->getVarietyFieldConfiguration();
+        $field = $this->varietyDescription->getField();
+        $value = $this->varietyDescription->getValue();
+
+        if (isset($config[$field]['options'])) {
+            $options = $config[$field]['options'];
+
+            if (isset($options['multiple']) && $options['multiple'] === true && strpos($value, '||') !== false) {
+                $list = explode('||', $value);
+
+                $list = is_array($list) ? $list : [];
+
+                $out = '<div class="ui list divided">';
+
+                foreach ($list as $item) {
+                    $out .= '<div class="item">';
+                    $out .= '    <i class="caret right icon"></i> ' . $item;
+                    $out .= '</div>';
+                }
+
+                return $out .= '</div>';
+            }
+        }
+
+        return (string) $value;
+    }
+
+    private function initFieldDescription(VarietyDescriptionEntity $varietyDescription)
+    {
+        $varietyDescription->setFieldset($varietyDescription->getFieldset());
+
+        $this->varietyDescription = $varietyDescription;
+    }
+
+    /**
+     * @return array|null
+     */
+    private function getVarietyFieldConfiguration(): ?array
+    {
+        $config = $this->getVarietyConfiguration();
+
+        if (array_key_exists($this->varietyDescription->getFieldset(), $config)) {
+            $configFieldset = $config[$this->varietyDescription->getFieldSet()];
+
+            if (array_key_exists($this->varietyDescription->getField(), $configFieldset)) {
+                return [
+                    $this->varietyDescription->getField() => $configFieldset[$this->varietyDescription->getField()],
+                ];
+            }
+
+            return null;
+        }
+
+        return null;
+    }
+
+    private function getVarietyConfiguration()
+    {
+        return $this->varietyConfig['variety_descriptions'];
     }
 
     public function setVarietyConfig($config)

@@ -195,7 +195,7 @@ librinfo:
         germination_temperature: ' '
         grade: ' '
         harvest_storage: ' '
-        inner_commment: non mutualisé
+        inner_commment: ' '
         legal_germination_rate: '(si inscrit au catalogue) - en %'
         location: ' '
         main_color: ' '
@@ -348,7 +348,7 @@ librinfo:
     new_variety:
         label: Nouvelle variété
     ui:
-        variety_tab: Variété
+        commercial_tab_title: Informations variété
 
 
 A species cannot be both a sub-species and a parent species: Une espèce ne peut être à la fois une sous-espèce et une espèce parente.
