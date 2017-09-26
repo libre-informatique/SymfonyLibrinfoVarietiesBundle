@@ -40,10 +40,21 @@ class VarietyDescription extends \Twig_Extension
     public function getFunctions()
     {
         return [
+            new \Twig_SimpleFunction('getDescription', [$this, 'getDescription'], ['is_safe'=>['html']]),
             new \Twig_SimpleFunction('sortVarietyDescriptions', [$this, 'sortVarietyDescriptions'], ['is_safe'=>['html']]),
             new \Twig_SimpleFunction('displayVarietyDescriptionLabel', [$this, 'displayVarietyDescriptionLabel'], ['is_safe'=>['html']]),
             new \Twig_SimpleFunction('displayVarietyDescriptionValue', [$this, 'displayVarietyDescriptionValue'], ['is_safe'=>['html']]),
         ];
+    }
+
+    public function getDescription($variety, $fieldSet, $field)
+    {
+        $propertyAccessor = new PropertyAccessor();
+        $descriptions = $propertyAccessor->getValue($variety, $fieldSet . '_descriptions');
+        $description = $descriptions->filter(function ($desc) use ($field) {
+            return $desc->getField() === $field;
+        })->first();
+        return $description;
     }
 
     public function sortVarietyDescriptions(Variety $variety, string $fieldSet): string

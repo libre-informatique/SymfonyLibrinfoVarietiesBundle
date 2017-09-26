@@ -17,6 +17,13 @@ namespace Librinfo\VarietiesBundle\Entity;
  */
 class VarietyDescription extends GenericDescription
 {
+    const DESCRIPTION_AMATEUR = 'amateur';
+    const DESCRIPTION_COMMERCIAL = 'commercial';
+    const DESCRIPTION_CULTURE = 'culture';
+    const DESCRIPTION_PLANT = 'plant';
+    const DESCRIPTION_PRODUCTION = 'production';
+    const DESCRIPTION_PROFESSIONAL = 'professional';
+
     /**
      * @var \Librinfo\VarietiesBundle\Entity\Variety
      */
