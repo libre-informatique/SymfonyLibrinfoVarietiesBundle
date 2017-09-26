@@ -9,6 +9,10 @@ services:
 
 # SYMFONY CUSTOM FORM TYPES
 
+    blast_core.label.strategy.librinfo_varieties:
+        class: Blast\CoreBundle\Translator\LibrinfoLabelTranslatorStrategy
+        arguments: ['Librinfo\VarietiesBundle']
+
     librinfo_varieties.form.type.life_cycle:
         class: Librinfo\VarietiesBundle\Form\Type\LifeCycleType
         tags:
@@ -49,10 +53,3 @@ services:
         tags:
             - { name: blast.entity_code_generator }
 
-    librinfo_varieties.twig.variety_description:
-        class: Librinfo\VarietiesBundle\Twig\VarietyDescription
-        calls:
-            - [setVarietyConfig, ['%librinfo_varieties%']]
-            - [setTranslator, ['@translator']]
-        tags:
-            - { name: twig.extension }
