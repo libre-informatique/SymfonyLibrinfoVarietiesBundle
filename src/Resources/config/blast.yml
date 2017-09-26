@@ -313,7 +313,6 @@ parameters:
                                 catalogue: varieties
                             varieties:
                                 admin_code: librinfo_varieties.admin.variety
-                                label: librinfo.label.varieties_list
                             description:
                                 template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
                             legal_germination_rate: ~
@@ -674,7 +673,6 @@ parameters:
                     form_tab_strains:
                         '':
                             children:
-                                label: librinfo.label.strains_children
                                 admin_code: librinfo_varieties.admin.variety
                     form_tab_images:
                         '':
@@ -1099,26 +1097,20 @@ parameters:
                     selection_criteria:
                         global_search: false
                     professional_descriptions:
-                        label: librinfo.label.professional_descriptions
                         type: doctrine_orm_librinfo_variety_description
                     amateur_descriptions:
                         type: doctrine_orm_librinfo_variety_description
-                        label: librinfo.label.amateur_descriptions
                     production_descriptions:
                         type: doctrine_orm_librinfo_variety_description
-                        label: librinfo.label.production_descriptions
                     commercial_descriptions:
                         type: doctrine_orm_librinfo_variety_description
-                        label: librinfo.label.commercial_descriptions
                     plant_descriptions:
                         type: doctrine_orm_librinfo_variety_description
-                        label: librinfo.label.plant_descriptions
                     culture_descriptions:
                         type: doctrine_orm_librinfo_variety_description
-                        label: librinfo.label.culture_descriptions
                     inner_descriptions:
                         type: doctrine_orm_librinfo_variety_description
-                        label: librinfo.label.inner_descriptions
+                        
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
                     name: ~
