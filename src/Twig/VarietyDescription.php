@@ -41,6 +41,7 @@ class VarietyDescription extends \Twig_Extension
     {
         return [
             new \Twig_SimpleFunction('getDescription', [$this, 'getDescription'], ['is_safe'=>['html']]),
+            new \Twig_SimpleFunction('getDescriptionValue', [$this, 'getDescriptionValue'], ['is_safe'=>['html']]),
             new \Twig_SimpleFunction('sortVarietyDescriptions', [$this, 'sortVarietyDescriptions'], ['is_safe'=>['html']]),
             new \Twig_SimpleFunction('displayVarietyDescriptionLabel', [$this, 'displayVarietyDescriptionLabel'], ['is_safe'=>['html']]),
             new \Twig_SimpleFunction('displayVarietyDescriptionValue', [$this, 'displayVarietyDescriptionValue'], ['is_safe'=>['html']]),
@@ -51,10 +52,24 @@ class VarietyDescription extends \Twig_Extension
     {
         $propertyAccessor = new PropertyAccessor();
         $descriptions = $propertyAccessor->getValue($variety, $fieldSet . '_descriptions');
+
         $description = $descriptions->filter(function ($desc) use ($field) {
             return $desc->getField() === $field;
         })->first();
+
         return $description;
+    }
+
+    public function getDescriptionValue($variety, $fieldSet, $field)
+    {
+        $value = null;
+        $desc = $this->getDescription($variety, $fieldSet, $field);
+
+        if ($desc) {
+            $value = $desc->getValue();
+        }
+
+        return $value;
     }
 
     public function sortVarietyDescriptions(Variety $variety, string $fieldSet): string
