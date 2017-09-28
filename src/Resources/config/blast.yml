@@ -1167,4 +1167,5 @@ parameters:
                     fieldsdet: ~
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
-                    fieldset: ~
+                    fieldset:
+                        type: doctrine_orm_string
