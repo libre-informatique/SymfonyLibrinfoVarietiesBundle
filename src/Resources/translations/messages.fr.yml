@@ -1,19 +1,6 @@
 
 librinfo:
     varietiesbundle:
-        admin:
-            family: ~
-            genus: ~
-            plant_category: ~
-            species: ~
-            variety: ~
-            variety_description_amateur: ~
-            variety_description_commercial: ~
-            variety_description_culture: ~
-            variety_description_inner: ~
-            variety_description_plant: ~
-            variety_description_production: ~
-            variety_description_professional: ~
         family:
             breadcrumb:
                 family_create: Nouvelle famille
@@ -22,14 +9,14 @@ librinfo:
                 genus_list: Liste des genres
             form:
                 alias: Synonymes
-                createdat: ~
-                createdby: ~
+                createdat: Créé le 
+                createdby: Crée par
                 description: Description
                 family: Famille
                 latin_name: Nom latin
-                name: 'Nom'
-                updatedat: ~
-                updatedby: ~
+                name: Nom
+                updatedat: Modifié le 
+                updatedby: Modifié par
         species:
             list:
                 alias: Synonymes
@@ -59,7 +46,7 @@ librinfo:
                 
         plantcategory:
             breadcrumb:
-                plantcategory_create: ~
+                plantcategory_create: Nouvelle catégorie de plantes
                 plantcategory_list: Liste des catégories de plantes
                 species_create: Nouvelle espèce
                 species_list: Liste des espèces
@@ -73,7 +60,7 @@ librinfo:
                 germination_rate: Taux de germination AS
                 legal_germination_rate: Taux de germination légal
                 life_cycle: Cycle végétatif
-                name: 'Nom'
+                name: Nom
                 official: Inscrit au catalogue officiel
                 official_date_in: Date d'inscription
                 #'
@@ -86,7 +73,6 @@ librinfo:
                 seed_lifespan: Durée de vie théorique de la graine
                 tkw: Poids de mille graines
                 transmitted_diseases: Maladies transmises par les semences
-                treeparent: ~
                 updatedat: Modifié le 
                 updatedby: Modifié par
                 createdat: Créé le 
@@ -108,8 +94,6 @@ librinfo:
             breadcrumb:
                 variety_create: Nouvelle variété
                 variety_list: Liste des variétés
-                varietydescriptionamateur_create: ~
-                varietydescriptionamateur_list: ~
             form:
                 area_per_kg: Surface pour produire 1kg de graines
                 base_seed_per_kg: Besoins semence de base pour 1kg de graines
@@ -121,28 +105,6 @@ librinfo:
                 seedheads_per_kg: Nombre de porte-graines par kg
                 selection_advice: Conseils de sélection
                 selection_criteria: Critères de sélection
-        varietydescriptioncommercial:
-            breadcrumb:
-                varietydescriptioncommercial_create: ~
-                varietydescriptioncommercial_list: ~
-        varietydescriptionculture:
-                varietydescriptionculture_create: ~
-                varietydescriptionculture_list: ~
-        varietydescriptioninner:
-                varietydescriptioninner_create: ~
-                varietydescriptioninner_list: ~
-        varietydescriptionplant:
-                varietydescriptionplant_create: ~
-                varietydescriptionplant_list: ~
-        varietydescriptionproduction:
-                varietydescriptionproduction_create: ~
-                varietydescriptionproduction_list: ~
-        varietydescriptionprofessional:
-                varietydescriptionprofessional_create: ~
-                varietydescriptionprofessional_list: ~
-
-
-
 
                 
 
