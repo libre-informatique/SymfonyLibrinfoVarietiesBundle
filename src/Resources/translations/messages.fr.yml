@@ -89,22 +89,20 @@ librinfo:
     ui:
         commercial_tab_title: Informations variété
 
-# should it be removed or not
-    varieties:
-        family_admin.label: Famille
-        genus_admin.label: Genre
-        plant_category_admin.label: Catégorie de variété
-        species_admin.label: Espèce
-        strain_admin.label: Souche
-        variety_admin.label: Variété
-        variety_description_amateur_admin.label: Conseils Jardiniers
-        variety_description_commercial_admin.label: Commercial
-        variety_description_culture_admin.label: Culture
-        variety_description_plant_admin.label: Caractéristiques de la plante
-        variety_description_production_admin.label: Mise en production
-        variety_description_professional_admin.label: Conseils pros
-        
     varietiesbundle:
+        admin:
+            family: Famille
+            genus: Genre
+            plant_category: Catégorie de variété
+            species: Espèce
+            strain: Souche
+            variety: Variété
+            variety_description_amateur: Conseils Jardiniers
+            variety_description_commercial: Commercial
+            variety_description_culture: Culture
+            variety_description_plant: Caractéristiques de la plante
+            variety_description_production: Mise en production
+            variety_description_professional: Conseils pros
         family:
             breadcrumb:
                 family_create: Nouvelle famille
@@ -144,9 +142,15 @@ librinfo:
             form:
                 alias: Synonymes
                 code: Code
+                createdat: Créé le
+                createdby: Crée par
                 latin_name: Nom latin 
                 name: Nom
                 parent_species: Espèce parente
+                plant_type: Type de plante
+                species: Espèce
+                updatedat: Modifié le
+                updatedby: Modifié par
                 
         plantcategory:
             breadcrumb:
@@ -177,10 +181,22 @@ librinfo:
                 seed_lifespan: Durée de vie théorique de la graine
                 tkw: Poids de mille graines
                 transmitted_diseases: Maladies transmises par les semences
+                treeparent: Catégorie parente
                 updatedat: Modifié le 
                 updatedby: Modifié par
                 createdat: Créé le 
         variety:
+            form:
+                alias: Synonymes
+                code: Code
+                createdat: Créé le
+                createdby: Crée par
+                isstrain: Souche
+                latin_name: Nom latin
+                name: Nom
+                parent: Parent
+                updatedat: Modifié le
+                updatedby: Modifié par
             show:
                 description: Description
                 legal_germination_rate: Taux de germination légal
@@ -191,6 +207,10 @@ librinfo:
         genus:
             form:
                 genus: Genre
+                createdat: Créé le
+                createdby: Crée par
+                updatedat: Modifié le
+                updatedby: Modifié par
             show:
                 parent_species: Espèce parente
                 
