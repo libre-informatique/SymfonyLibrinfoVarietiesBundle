@@ -84,6 +84,7 @@ librinfo:
         usages: ' '
         yield_rating: ' '
         yield: Poids des légumes par m2 (en kg)
+        
     new_variety:
         label: Nouvelle variété
     ui:
@@ -103,6 +104,8 @@ librinfo:
             variety_description_plant: Caractéristiques de la plante
             variety_description_production: Mise en production
             variety_description_professional: Conseils pros
+        link:
+            species_list: Liste des Espèces
         family:
             breadcrumb:
                 family_create: Nouvelle famille
@@ -186,6 +189,14 @@ librinfo:
                 updatedby: Modifié par
                 createdat: Créé le 
         variety:
+            breadcrumb:
+                species_list: Liste des Espèces
+           filter:
+               alias: Synonymes
+               code: Code
+               description: Description
+               latin_name: Nom latin
+               name: Nom
             form:
                 alias: Synonymes
                 code: Code
@@ -218,6 +229,9 @@ librinfo:
             breadcrumb:
                 variety_create: Nouvelle variété
                 variety_list: Liste des variétés
+                varietydescriptionamateur_create: Conseils Jardiniers
+                varietydescriptionamateur_list: Liste des conseils jardiniers
+
             form:
                 area_per_kg: Surface pour produire 1kg de graines
                 base_seed_per_kg: Besoins semence de base pour 1kg de graines
@@ -229,7 +243,31 @@ librinfo:
                 seedheads_per_kg: Nombre de porte-graines par kg
                 selection_advice: Conseils de sélection
                 selection_criteria: Critères de sélection
-
+                
+        varietydescriptioncommercial:
+            breadcrumb:
+                varietydescriptioncommercial_create: Commercial
+                varietydescriptioncommercial_list: Liste des conseils commercial
+        varietydescriptionculture:
+            breadcrumb:
+                varietydescriptionculture_create: Culture
+                varietydescriptionculture_list: Liste des conseils de culture
+        varietydescriptioninner:
+            breadcrumb:
+                varietydescriptioninner_create: ?
+                varietydescriptioninner_list: ?
+        varietydescriptionplant:
+            breadcrumb:
+                varietydescriptionplant_create: Caractéristiques de la plante
+                varietydescriptionplant_list: Liste des Caractéristiques de la plante
+        varietydescriptionproduction:
+            breadcrumb:
+                varietydescriptionproduction_create: Mise en production
+                varietydescriptionproduction_list:  Liste des mise en production
+        varietydescriptionprofessional:
+            breadcrumb:
+                varietydescriptionprofessional_create: Conseils pros
+                varietydescriptionprofessional_list: Liste des conseils pros
                 
 
 form_group_amateur: Conseils de culture pour les jardiniers amateurs
