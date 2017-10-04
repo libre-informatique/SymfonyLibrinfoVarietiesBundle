@@ -106,169 +106,78 @@ librinfo:
             variety_description_professional: Conseils pros
         link:
             species_list: Liste des Espèces
-        family:
-            breadcrumb:
-                family_create: Nouvelle famille
-                family_list: Liste des familles
-                genus_create: Nouveau genre
-                genus_list: Liste des genres
-            form:
-                alias: Synonymes
-                createdat: Créé le 
-                createdby: Crée par
-                description: Description
-                family: Famille
-                latin_name: Nom latin
-                name: Nom
-                updatedat: Modifié le 
-                updatedby: Modifié par
-        species:
-            list:
-                alias: Synonymes
-                code: Code
-                latin_name: Nom latin
-                name: Nom
-                _action: Action
-            show:
-                alias: Synonymes
-                code: Code
-                createdat: Créé le 
-                createdby: Crée par
-                genus: Genre
-                latin_name: Nom latin
-                life_cycle: Cycle végétatif
-                name: Nom
-                plant_categories: Catégories
-                subspecieses: Sous-espèces
-                updatedat: Modifié le 
-                updatedby: Modifié par
-            form:
-                alias: Synonymes
-                code: Code
-                createdat: Créé le
-                createdby: Crée par
-                latin_name: Nom latin 
-                name: Nom
-                parent_species: Espèce parente
-                plant_type: Type de plante
-                species: Espèce
-                updatedat: Modifié le
-                updatedby: Modifié par
-                
-        plantcategory:
-            breadcrumb:
-                plantcategory_create: Nouvelle catégorie de plantes
-                plantcategory_list: Liste des catégories de plantes
-                species_create: Nouvelle espèce
-                species_list: Liste des espèces
-            show:
-                life_cycle: Cycle végétatif
-                varieties: Liste des variétés
-            form:
-                code: Code
-                createdby: Crée par
-                description: Description
-                germination_rate: Taux de germination AS
-                legal_germination_rate: Taux de germination légal
-                life_cycle: Cycle végétatif
-                name: Nom
-                official: Inscrit au catalogue officiel
-                official_date_in: Date d'inscription
-                #'
-                official_date_out: Date de radiation
-                official_maintainer: Mainteneur
-                official_name: Nom au catalogue officiel
-                plant_categories: Catégories
-                raise_duration: Durée de levée dans les conditions naturelles
-                regulatory_status: Statut réglementaire
-                seed_lifespan: Durée de vie théorique de la graine
-                tkw: Poids de mille graines
-                transmitted_diseases: Maladies transmises par les semences
-                treeparent: Catégorie parente
-                updatedat: Modifié le 
-                updatedby: Modifié par
-                createdat: Créé le 
-        variety:
-            breadcrumb:
-                species_list: Liste des Espèces
-            filter:
-               alias: Synonymes
-               code: Code
-               description: Description
-               latin_name: Nom latin
-               name: Nom
-            form:
-                alias: Synonymes
-                code: Code
-                createdat: Créé le
-                createdby: Crée par
-                isstrain: Souche
-                latin_name: Nom latin
-                name: Nom
-                parent: Parent
-                updatedat: Modifié le
-                updatedby: Modifié par
-            show:
-                description: Description
-                legal_germination_rate: Taux de germination légal
-                raise_duration: Durée de levée dans les conditions naturelles
-                seed_lifespan: Durée de vie théorique de la graine
-                tkw: Poids de mille graines
-                
-        genus:
-            form:
-                genus: Genre
-                createdat: Créé le
-                createdby: Crée par
-                updatedat: Modifié le
-                updatedby: Modifié par
-            show:
-                parent_species: Espèce parente
-                
-        varietydescriptionamateur:
-            breadcrumb:
-                variety_create: Nouvelle variété
-                variety_list: Liste des variétés
-                varietydescriptionamateur_create: Conseils Jardiniers
-                varietydescriptionamateur_list: Liste des conseils jardiniers
 
-            form:
-                area_per_kg: Surface pour produire 1kg de graines
-                base_seed_per_kg: Besoins semence de base pour 1kg de graines
-                distance_between_lines: Écartement des lignes
-                distance_on_line: Distance sur la ligne
-                images: Images
-                misc_advice: Astuces diverses
-                seedhead_yield: Rendement par porte-graines
-                seedheads_per_kg: Nombre de porte-graines par kg
-                selection_advice: Conseils de sélection
-                selection_criteria: Critères de sélection
-                
-        varietydescriptioncommercial:
-            breadcrumb:
-                varietydescriptioncommercial_create: Commercial
-                varietydescriptioncommercial_list: Liste des conseils commercial
-        varietydescriptionculture:
-            breadcrumb:
-                varietydescriptionculture_create: Culture
-                varietydescriptionculture_list: Liste des conseils de culture
-        varietydescriptioninner:
-            breadcrumb:
-                varietydescriptioninner_create: Creer un commentaires / description spécifique
-                varietydescriptioninner_list: Liste des commentaires
-        varietydescriptionplant:
-            breadcrumb:
-                varietydescriptionplant_create: Caractéristiques de la plante
-                varietydescriptionplant_list: Liste des Caractéristiques de la plante
-        varietydescriptionproduction:
-            breadcrumb:
-                varietydescriptionproduction_create: Mise en production
-                varietydescriptionproduction_list:  Liste des mise en production
-        varietydescriptionprofessional:
-            breadcrumb:
-                varietydescriptionprofessional_create: Conseils pros
-                varietydescriptionprofessional_list: Liste des conseils pros
-                
+
+
+        _action: Action
+        alias: Synonymes
+        area_per_kg: Surface pour produire 1kg de graines
+        base_seed_per_kg: Besoins semence de base pour 1kg de graines
+        code: Code
+        createdat: Créé le 
+        createdby: Crée par
+        description: Description
+        distance_between_lines: Écartement des lignes
+        distance_on_line: Distance sur la ligne
+        family: Famille
+        family_create: Nouvelle famille
+        family_list: Liste des familles
+        genus: Genre
+        genus_create: Nouveau genre
+        genus_list: Liste des genres
+        germination_rate: Taux de germination AS
+        images: Images
+        isstrain: Souche
+        latin_name: Nom latin 
+        legal_germination_rate: Taux de germination légal
+        life_cycle: Cycle végétatif
+        misc_advice: Astuces diverses
+        name: Nom
+        official: Inscrit au catalogue officiel
+        official_date_in: 'Date d''inscription'
+        official_date_out: Date de radiation
+        official_maintainer: Mainteneur
+        official_name: Nom au catalogue officiel
+        parent: Parent
+        parent_species: Espèce parente
+        plant_categories: Catégories de plante
+        plant_type: Type de plante
+        plantcategory_create: Nouvelle catégorie de plantes
+        plantcategory_list: Liste des catégories de plantes
+        raise_duration: Durée de levée dans les conditions naturelles
+        regulatory_status: Statut réglementaire
+        seed_lifespan: Durée de vie théorique de la graine
+        seedhead_yield: Rendement par porte-graines
+        seedheads_per_kg: Nombre de porte-graines par kg
+        selection_advice: Conseils de sélection
+        selection_criteria: Critères de sélection
+        species: Espèce
+        species_create: Nouvelle espèce
+        species_list: Liste des espèces
+        subspecieses: Sous-espèces
+        tkw: Poids de mille graines
+        transmitted_diseases: Maladies transmises par les semences
+        treeparent: Catégorie parente
+        updatedat: Modifié le 
+        updatedby: Modifié par
+        varieties: Liste des variétés
+        variety_create: Nouvelle variété
+        variety_list: Liste des variétés
+        varietydescriptionamateur_create: Conseils Jardiniers
+        varietydescriptionamateur_list: Liste des conseils jardiniers
+        varietydescriptioncommercial_create: Commercial
+        varietydescriptioncommercial_list: Liste des conseils commercial
+        varietydescriptionculture_create: Culture
+        varietydescriptionculture_list: Liste des conseils de culture
+        varietydescriptioninner_create: Creer un commentaires / description spécifique
+        varietydescriptioninner_list: Liste des commentaires
+        varietydescriptionplant_create: Caractéristiques de la plante
+        varietydescriptionplant_list: Liste des Caractéristiques de la plante
+        varietydescriptionproduction_create: Mise en production
+        varietydescriptionproduction_list:  Liste des mise en production
+        varietydescriptionprofessional_create: Conseils pros
+        varietydescriptionprofessional_list: Liste des conseils pros
+        
 
 form_group_amateur: Conseils de culture pour les jardiniers amateurs
 form_group_commercial: Commercial
