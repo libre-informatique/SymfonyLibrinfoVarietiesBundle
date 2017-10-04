@@ -191,7 +191,7 @@ librinfo:
         variety:
             breadcrumb:
                 species_list: Liste des Espèces
-           filter:
+            filter:
                alias: Synonymes
                code: Code
                description: Description
