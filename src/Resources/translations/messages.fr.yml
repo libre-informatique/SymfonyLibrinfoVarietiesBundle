@@ -254,8 +254,8 @@ librinfo:
                 varietydescriptionculture_list: Liste des conseils de culture
         varietydescriptioninner:
             breadcrumb:
-                varietydescriptioninner_create: ?
-                varietydescriptioninner_list: ?
+                varietydescriptioninner_create: Creer un commentaires / description spécifique
+                varietydescriptioninner_list: Liste des commentaires
         varietydescriptionplant:
             breadcrumb:
                 varietydescriptionplant_create: Caractéristiques de la plante
