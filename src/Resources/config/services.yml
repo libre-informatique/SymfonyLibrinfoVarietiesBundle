@@ -52,4 +52,11 @@ services:
         arguments: ['%librinfo_varieties.code_generator.variety%', '@doctrine.orm.entity_manager']
         tags:
             - { name: blast.entity_code_generator }
-
+            
+    librinfo_varieties.twig.variety_description:
+        class: Librinfo\VarietiesBundle\Twig\VarietyDescription
+        calls:
+            - [setVarietyConfig, ['%librinfo_varieties%']]
+            - [setTranslator, ['@translator']]
+        tags:
+            - { name: twig.extension }
