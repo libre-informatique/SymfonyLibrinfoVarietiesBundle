@@ -92,6 +92,7 @@ librinfo:
 
     varietiesbundle:
         admin:
+            variety_description_inner: Description spécifique
             family: Famille
             genus: Genre
             plant_category: Catégorie de variété
@@ -107,26 +108,33 @@ librinfo:
         link:
             species_list: Liste des Espèces
 
-
-
         _action: Action
         alias: Synonymes
+        amateur_descriptions: Conseils Jardiniers
         area_per_kg: Surface pour produire 1kg de graines
         base_seed_per_kg: Besoins semence de base pour 1kg de graines
         code: Code
+        commercial_descriptions: Commercial
         createdat: Créé le 
         createdby: Crée par
+        culture_descriptions: Culture
         description: Description
         distance_between_lines: Écartement des lignes
         distance_on_line: Distance sur la ligne
         family: Famille
         family_create: Nouvelle famille
         family_list: Liste des familles
+        family_name: Famille
+        fieldset: Champs
         genus: Genre
         genus_create: Nouveau genre
         genus_list: Liste des genres
+        genuses: Genres
+        genuses_name: Genres
         germination_rate: Taux de germination AS
         images: Images
+        inner_descriptions: Commentaire
+        is_strain: Souche
         isstrain: Souche
         latin_name: Nom latin 
         legal_germination_rate: Taux de germination légal
@@ -141,9 +149,12 @@ librinfo:
         parent: Parent
         parent_species: Espèce parente
         plant_categories: Catégories de plante
+        plant_descriptions: Caractéristiques de la plante
         plant_type: Type de plante
         plantcategory_create: Nouvelle catégorie de plantes
         plantcategory_list: Liste des catégories de plantes
+        production_descriptions: Mise en production
+        professional_descriptions: Conseils pros
         raise_duration: Durée de levée dans les conditions naturelles
         regulatory_status: Statut réglementaire
         seed_lifespan: Durée de vie théorique de la graine
@@ -151,9 +162,12 @@ librinfo:
         seedheads_per_kg: Nombre de porte-graines par kg
         selection_advice: Conseils de sélection
         selection_criteria: Critères de sélection
+        several_strains: Plusieurs souches
         species: Espèce
         species_create: Nouvelle espèce
         species_list: Liste des espèces
+        specieses: Espèces
+        specieses_name: Espèces
         subspecieses: Sous-espèces
         tkw: Poids de mille graines
         transmitted_diseases: Maladies transmises par les semences
@@ -177,7 +191,7 @@ librinfo:
         varietydescriptionproduction_list:  Liste des mise en production
         varietydescriptionprofessional_create: Conseils pros
         varietydescriptionprofessional_list: Liste des conseils pros
-        
+       
 
 form_group_amateur: Conseils de culture pour les jardiniers amateurs
 form_group_commercial: Commercial
