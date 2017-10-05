@@ -62,6 +62,9 @@ class VarietyDescription extends \Twig_Extension
 
     public function getDescriptionValue($variety, $fieldSet, $field)
     {
+        if ($variety === null)
+            return null;
+
         $value = null;
         $desc = $this->getDescription($variety, $fieldSet, $field);
 
