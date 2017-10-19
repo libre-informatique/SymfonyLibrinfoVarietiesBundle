@@ -38,7 +38,7 @@ class SpeciesCodeGenerator implements CodeGeneratorInterface
      *
      * @return string
      *
-     * @throws InvalidSpeciesCodeException
+     * @throws InvalidEntityCodeException
      */
     public static function generate($species, $existingCodes = null)
     {

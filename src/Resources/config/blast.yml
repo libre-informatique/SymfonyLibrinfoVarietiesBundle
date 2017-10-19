@@ -400,16 +400,20 @@ parameters:
                             legal_germination_rate:
                                 attr:
                                     class: inline-block
-                                    width: 33
+                                    width: 50
+                            germination_rate:
+                                attr:
+                                    class: new-line-after
+                                    width: 50
                             raise_duration:
                                 attr:
                                     class: inline-block
-                                    width: 33
+                                    width: 50
                             tkw:
                                 help: librinfo.help.tkw
                                 attr:
                                     class: inline-block
-                                    width: 30
+                                    width: 50
                             life_cycle:
                                 type: Librinfo\VarietiesBundle\Form\Type\LifeCycleType
                                 required: false
@@ -420,12 +424,13 @@ parameters:
                                 type: text
                                 required: false
                                 attr:
-                                    class: inline-block
+                                    class: new-line-after
                                     width: 50
                             _options:
                                 fieldsOrder:
                                     - description
                                     - legal_germination_rate
+                                    - germination_rate
                                     - raise_duration
                                     - tkw
                                     - life_cycle
@@ -1110,7 +1115,7 @@ parameters:
                         type: doctrine_orm_librinfo_variety_description
                     inner_descriptions:
                         type: doctrine_orm_librinfo_variety_description
-                        
+
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
                     name: ~

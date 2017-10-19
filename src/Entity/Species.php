@@ -63,6 +63,11 @@ class Species implements \JsonSerializable
     /**
      * @var int
      */
+    private $germination_rate;
+
+    /**
+     * @var int
+     */
     private $seed_lifespan;
 
     /**
@@ -244,6 +249,22 @@ class Species implements \JsonSerializable
     public function getLegalGerminationRate()
     {
         return $this->legal_germination_rate;
+    }
+
+    /**
+     * @return int
+     */
+    public function getGerminationRate(): int
+    {
+        return $this->germination_rate;
+    }
+
+    /**
+     * @param int $germination_rate
+     */
+    public function setGerminationRate(?int $germination_rate): void
+    {
+        $this->germination_rate = $germination_rate;
     }
 
     /**

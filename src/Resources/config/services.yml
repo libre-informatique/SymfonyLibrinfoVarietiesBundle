@@ -1,12 +1,5 @@
 services:
 
-#    librinfo_varieties.plant_category.listener:
-#        class: Librinfo\VarietiesBundle\EventListener\PlantCategoryListener
-#        tags:
-#            - { name: doctrine.event_listener, event: prePersist }
-#            - { name: doctrine.event_listener, event: preUpdate }
-#            - { name: doctrine.event_listener, event: preFlush }
-
 # SYMFONY CUSTOM FORM TYPES
 
     blast_core.label.strategy.librinfo_varieties:
@@ -52,7 +45,7 @@ services:
         arguments: ['%librinfo_varieties.code_generator.variety%', '@doctrine.orm.entity_manager']
         tags:
             - { name: blast.entity_code_generator }
-            
+
     librinfo_varieties.twig.variety_description:
         class: Librinfo\VarietiesBundle\Twig\VarietyDescription
         calls:
