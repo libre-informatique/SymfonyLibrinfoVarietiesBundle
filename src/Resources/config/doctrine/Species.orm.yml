@@ -18,6 +18,11 @@ Librinfo\VarietiesBundle\Entity\Species:
         legal_germination_rate:
             type:     integer
             nullable: true
+        germination_rate:
+            type:     integer
+            nullable: true
+            options:
+                default: 0
         seed_lifespan:
             type:     integer
             nullable: true

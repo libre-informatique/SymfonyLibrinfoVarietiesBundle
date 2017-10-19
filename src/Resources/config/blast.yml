@@ -313,7 +313,6 @@ parameters:
                                 catalogue: varieties
                             varieties:
                                 admin_code: librinfo_varieties.admin.variety
-                                label: librinfo.label.varieties_list
                             description:
                                 template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
                             legal_germination_rate: ~
@@ -401,16 +400,20 @@ parameters:
                             legal_germination_rate:
                                 attr:
                                     class: inline-block
-                                    width: 33
+                                    width: 50
+                            germination_rate:
+                                attr:
+                                    class: new-line-after
+                                    width: 50
                             raise_duration:
                                 attr:
                                     class: inline-block
-                                    width: 33
+                                    width: 50
                             tkw:
                                 help: librinfo.help.tkw
                                 attr:
                                     class: inline-block
-                                    width: 30
+                                    width: 50
                             life_cycle:
                                 type: Librinfo\VarietiesBundle\Form\Type\LifeCycleType
                                 required: false
@@ -421,12 +424,13 @@ parameters:
                                 type: text
                                 required: false
                                 attr:
-                                    class: inline-block
+                                    class: new-line-after
                                     width: 50
                             _options:
                                 fieldsOrder:
                                     - description
                                     - legal_germination_rate
+                                    - germination_rate
                                     - raise_duration
                                     - tkw
                                     - life_cycle
@@ -674,7 +678,6 @@ parameters:
                     form_tab_strains:
                         '':
                             children:
-                                label: librinfo.label.strains_children
                                 admin_code: librinfo_varieties.admin.variety
                     form_tab_images:
                         '':
@@ -1099,26 +1102,20 @@ parameters:
                     selection_criteria:
                         global_search: false
                     professional_descriptions:
-                        label: librinfo.label.professional_descriptions
                         type: doctrine_orm_librinfo_variety_description
                     amateur_descriptions:
                         type: doctrine_orm_librinfo_variety_description
-                        label: librinfo.label.amateur_descriptions
                     production_descriptions:
                         type: doctrine_orm_librinfo_variety_description
-                        label: librinfo.label.production_descriptions
                     commercial_descriptions:
                         type: doctrine_orm_librinfo_variety_description
-                        label: librinfo.label.commercial_descriptions
                     plant_descriptions:
                         type: doctrine_orm_librinfo_variety_description
-                        label: librinfo.label.plant_descriptions
                     culture_descriptions:
                         type: doctrine_orm_librinfo_variety_description
-                        label: librinfo.label.culture_descriptions
                     inner_descriptions:
                         type: doctrine_orm_librinfo_variety_description
-                        label: librinfo.label.inner_descriptions
+
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
                     name: ~
@@ -1175,4 +1172,5 @@ parameters:
                     fieldsdet: ~
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
-                    fieldset: ~
+                    fieldset:
+                        type: doctrine_orm_string

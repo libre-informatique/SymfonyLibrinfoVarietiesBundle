@@ -20,5 +20,5 @@ class SpeciesEmbeddedAdmin extends CoreAdmin
     use EmbeddedAdmin;
 
     protected $baseRouteName = 'admin_librinfo_varietiesbundle_speciesembeddedadmin';
-    protected $baseRoutePattern = 'species-embedded';
+    protected $baseRoutePattern = 'librinfo/speciesembedded';
 }
