@@ -58,12 +58,12 @@ class Species implements \JsonSerializable
     /**
      * @var int
      */
-    private $legal_germination_rate;
+    private $legal_germination_rate = 0;
 
     /**
      * @var int
      */
-    private $germination_rate;
+    private $germination_rate = 0;
 
     /**
      * @var int
