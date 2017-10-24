@@ -84,7 +84,7 @@ librinfo:
         usages: ' '
         yield_rating: ' '
         yield: Poids des légumes par m2 (en kg)
-        
+
     new_variety:
         label: Nouvelle variété
     ui:
@@ -115,7 +115,7 @@ librinfo:
         base_seed_per_kg: Besoins semence de base pour 1kg de graines
         code: Code
         commercial_descriptions: Commercial
-        createdat: Créé le 
+        createdat: Créé le
         createdby: Crée par
         culture_descriptions: Culture
         description: Description
@@ -136,7 +136,7 @@ librinfo:
         inner_descriptions: Commentaire
         is_strain: Souche
         isstrain: Souche
-        latin_name: Nom latin 
+        latin_name: Nom latin
         legal_germination_rate: Taux de germination légal
         life_cycle: Cycle végétatif
         misc_advice: Astuces diverses
@@ -162,7 +162,7 @@ librinfo:
         seedheads_per_kg: Nombre de porte-graines par kg
         selection_advice: Conseils de sélection
         selection_criteria: Critères de sélection
-        several_strains: Plusieurs souches
+        several_strains: Une ou plusieurs souches
         species: Espèce
         species_create: Nouvelle espèce
         species_list: Liste des espèces
@@ -172,7 +172,7 @@ librinfo:
         tkw: Poids de mille graines
         transmitted_diseases: Maladies transmises par les semences
         treeparent: Catégorie parente
-        updatedat: Modifié le 
+        updatedat: Modifié le
         updatedby: Modifié par
         varieties: Liste des variétés
         variety_create: Nouvelle variété
@@ -191,7 +191,7 @@ librinfo:
         varietydescriptionproduction_list:  Liste des mise en production
         varietydescriptionprofessional_create: Conseils pros
         varietydescriptionprofessional_list: Liste des conseils pros
-       
+
 
 form_group_amateur: Conseils de culture pour les jardiniers amateurs
 form_group_commercial: Commercial
@@ -279,7 +279,7 @@ librinfo_description_commercial_yield_rating: Rendement
 
 librinfo_description_culture_description: Description
 librinfo_description_culture_location: Localisation
-librinfo_description_culture_several_strains: Plusieurs souches disponibles
+librinfo_description_culture_several_strains: Une ou plusieurs souches disponibles
 librinfo_description_culture_strain_origin: Origine de la souche
 
 librinfo_description_plant_development: Développement
@@ -412,7 +412,7 @@ seed_storage: Stockage optimal (semence)
 seedling_hotbed: Couche chaude (semis)
 seedling_irrigation_frequency: Irrigation stade semis (Fréquence)
 seedling_irrigation_quantity: Irrigation stade semis (Quantité)
-several_strains: Plusieurs souches disponibles
+several_strains: Une ou plusieurs souches disponibles
 soil: Sol
 sowing_date: Date de semis
 sowing_density: Densité de semis

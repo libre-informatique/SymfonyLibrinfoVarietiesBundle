@@ -625,7 +625,8 @@ parameters:
                             alias: ~
                             code: ~
                             plant_categories: ~
-                            several_strains: ~
+                            several_strains:
+                                type: boolean
                             legal_germination_rate: ~
                             germination_rate: ~
                             tkw: ~
