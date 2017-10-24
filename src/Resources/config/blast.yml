@@ -115,7 +115,7 @@ parameters:
 # GENUS
 ##########
 
-        Librinfo\VarietiesBundle\Admin\GenusAdmin:
+        Librinfo\VarietiesBundle\Entity\Genus:
             Sonata\AdminBundle\Show\ShowMapper:
                 remove: [description, createdAt, updatedAt]
                 add:
