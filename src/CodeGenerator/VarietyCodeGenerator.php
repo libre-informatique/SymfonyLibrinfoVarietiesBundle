@@ -143,21 +143,16 @@ class VarietyCodeGenerator implements CodeGeneratorInterface
     private static function isCodeUnique($code, $variety, $existingCodes = null)
     {
         if (null !== $existingCodes) {
-            $speciesId = $variety->getSpecies()->getId();
-            if (in_array(['species_id' => $speciesId, 'code' => $code], $existingCodes)) {
-                return false;
-            }
-
-            return true;
+            return !in_array($code, $existingCodes);
         }
 
         $repo = self::$em->getRepository('Librinfo\VarietiesBundle\Entity\Variety');
         $query = $repo->createQueryBuilder('v')
-            ->where('v.code = :code')
-            ->andWhere('v.species = :species')
-            ->setParameters(['code' => $code, 'species' => $variety->getSpecies()]);
+               ->where('v.code = :code')
+               ->setParameter('code', $code);
         if ($variety->getId()) {
-            $query->andWhere('v.id != :id')->setParameter('id', $variety->getId());
+            $query->andWhere('v.id != :id')
+                ->setParameter('id', $variety->getId());
         }
         $result = $query->getQuery()->setMaxResults(1)->getOneOrNullResult();
 
