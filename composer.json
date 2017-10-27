@@ -46,5 +46,6 @@
     },
     "suggest": {
         "libre-informatique/crm-bundle": "Manage contacts, organisms and more..."
-    }
+    },
+    "version": "dev-wip-lisem"
 }
