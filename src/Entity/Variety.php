@@ -302,7 +302,7 @@ class Variety
 
     public function getSeveralStrains()
     {
-        return count($this->children) > 1;
+        return count($this->children) >= 1;
     }
 
     /**

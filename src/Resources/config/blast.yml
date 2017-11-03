@@ -115,7 +115,7 @@ parameters:
 # GENUS
 ##########
 
-        Librinfo\VarietiesBundle\Admin\GenusAdmin:
+        Librinfo\VarietiesBundle\Entity\Genus:
             Sonata\AdminBundle\Show\ShowMapper:
                 remove: [description, createdAt, updatedAt]
                 add:
@@ -625,7 +625,8 @@ parameters:
                             alias: ~
                             code: ~
                             plant_categories: ~
-                            several_strains: ~
+                            several_strains:
+                                type: boolean
                             legal_germination_rate: ~
                             germination_rate: ~
                             tkw: ~
