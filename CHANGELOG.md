@@ -1,6 +1,15 @@
 # Change Log
 
-## [0.5.2](https://github.com/libre-informatique/VarietiesBundle/tree/0.5.2) (2017-10-19)
+## [0.6.4](https://github.com/libre-informatique/VarietiesBundle/tree/0.6.4) (2017-11-03)
+[Full Changelog](https://github.com/libre-informatique/VarietiesBundle/compare/0.5.2...0.6.4)
+
+**Merged pull requests:**
+
+- DevKit updates for VarietiesBundle [\#30](https://github.com/libre-informatique/VarietiesBundle/pull/30) ([BlastCI](https://github.com/BlastCI))
+- Lisem fix & features [\#28](https://github.com/libre-informatique/VarietiesBundle/pull/28) ([FanchTheSystem](https://github.com/FanchTheSystem))
+- DevKit updates for VarietiesBundle [\#27](https://github.com/libre-informatique/VarietiesBundle/pull/27) ([BlastCI](https://github.com/BlastCI))
+
+## [0.5.2](https://github.com/libre-informatique/VarietiesBundle/tree/0.5.2) (2017-10-23)
 [Full Changelog](https://github.com/libre-informatique/VarietiesBundle/compare/0.5.1...0.5.2)
 
 **Merged pull requests:**
