@@ -10,19 +10,19 @@
  * file that was distributed with this source code.
  */
 
-namespace Librinfo\VarietiesBundle\DependencyInjection;
+namespace Sil\Bundle\VarietyBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader;
-use Blast\CoreBundle\DependencyInjection\BlastCoreExtension;
+use Blast\Bundle\CoreBundle\DependencyInjection\BlastCoreExtension;
 
 /**
  * This is the class that loads and manages your bundle configuration.
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class LibrinfoVarietiesExtension extends BlastCoreExtension
+class SilVarietiesExtension extends BlastCoreExtension
 {
     /**
      * {@inheritdoc}

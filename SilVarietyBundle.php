@@ -10,10 +10,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Librinfo\VarietiesBundle;
+namespace Sil\Bundle\VarietyBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class LibrinfoVarietiesBundle extends Bundle
+class SilVarietyBundle extends Bundle
 {
 }
