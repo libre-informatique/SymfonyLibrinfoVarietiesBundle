@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "Plant taxonomy management : Family / Genus / Species / Subspecies / Variety",
     "require": {
-	"php": ">=7.1",
+        "php": ">=7.1",
         "symfony/symfony": ">=3.2",
         "blast-project/core-bundle": "self.version",
         "blast-project/base-entities-bundle": "self.version",
@@ -11,7 +11,7 @@
         "libre-informatique/media-bundle": "self.version"
     },
     "require-dev": {
-	"symfony/phpunit-bridge": ">=3.2",
+        "symfony/phpunit-bridge": ">=3.2",
         "blast-project/outer-extension-bundle": "self.version",
         "phpunit/phpunit": "^6.4"
     },
@@ -42,7 +42,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Librinfo\\VarietiesBundle\\": "src/"
+            "Librinfo\\VarietiesBundle\\": "/"
         }
     },
     "suggest": {
