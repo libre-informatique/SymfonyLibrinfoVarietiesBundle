@@ -1,6 +1,6 @@
 
 services:
-    sil_varieties.admin.species_embedded:
+    sil_variety.admin.species_embedded:
         class: Sil\Bundle\VarietyBundle\Admin\SpeciesEmbeddedAdmin
         arguments: [~, "%sil_variety.enttity.species.class%", BlastCoreBundle:CRUD]
         tags:

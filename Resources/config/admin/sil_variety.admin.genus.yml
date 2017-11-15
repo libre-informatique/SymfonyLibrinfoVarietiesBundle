@@ -1,6 +1,6 @@
 
 services:
-    sil_varieties.admin.genus:
+    sil_variety.admin.genus:
         class: Sil\Bundle\VarietyBundle\Admin\GenusAdmin
         arguments: [~, "%sil_variety.enttity.genus.class%", BlastCoreBundle:CRUD]
         tags:

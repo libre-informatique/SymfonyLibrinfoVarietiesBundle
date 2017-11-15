@@ -1,6 +1,6 @@
 
 services:
-    sil_varieties.admin.variety:
+    sil_variety.admin.variety:
         class: Sil\Bundle\VarietyBundle\Admin\VarietyAdmin
         arguments: [~, "%sil_variety.enttity.variety.class%", SilVarietyBundle:VarietyCRUD]
         tags:
